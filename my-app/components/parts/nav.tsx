@@ -34,10 +34,10 @@ export default function Navbar() {
           <a href="#" className="relative text-blue-600 font-medium border-b-2 border-blue-600 pb-1">
             Home
           </a>
-          <a href="#about" className="relative text-gray-700 hover:text-blue-600 transition-colors pb-1 hover:border-b-2 hover:border-blue-600">
+          <a href="/about" className="relative text-gray-700 hover:text-blue-600 transition-colors pb-1 hover:border-b-2 hover:border-blue-600">
             About
           </a>
-          <a href="#services" className="relative text-gray-700 hover:text-blue-600 transition-colors pb-1 hover:border-b-2 hover:border-blue-600">
+          <a href="/services" className="relative text-gray-700 hover:text-blue-600 transition-colors pb-1 hover:border-b-2 hover:border-blue-600">
             Services
           </a>
           <a href="#contact" className="relative text-gray-700 hover:text-blue-600 transition-colors pb-1 hover:border-b-2 hover:border-blue-600">
