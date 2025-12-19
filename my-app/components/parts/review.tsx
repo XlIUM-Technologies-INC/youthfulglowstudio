@@ -1,6 +1,7 @@
 "use client"
 import { useState } from 'react';
 import { Star, ChevronLeft, ChevronRight, Quote } from 'lucide-react';
+import Link from 'next/link';
 
 export default function ClientReviewsSection() {
   const [currentReview, setCurrentReview] = useState(0);
@@ -75,7 +76,7 @@ export default function ClientReviewsSection() {
 
         {/* Main Featured Review */}
         <div className="max-w-4xl mx-auto mb-16">
-          <div className="bg-gradient-to-br from-gray-50 to-blue-50 rounded-3xl p-8 md:p-12 shadow-xl relative">
+          <div className="bg-linear-to-br from-gray-50 to-blue-50 rounded-3xl p-8 md:p-12 shadow-xl relative">
             {/* Quote Icon */}
             <div className="absolute top-8 left-8 opacity-10">
               <Quote className="w-20 h-20 text-blue-600" fill="currentColor" />
@@ -182,9 +183,13 @@ export default function ClientReviewsSection() {
         {/* CTA */}
         <div className="text-center mt-12">
           <p className="text-gray-600 mb-6">Join hundreds of satisfied clients</p>
-          <button className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-10 py-4 rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
-            Book Your Consultation
-          </button>
+          <Link
+            href="https://cal.com/youthfulglowstudiobookings?overlayCalendar=true"
+            data-cal-link="https://cal.com/youthfulglowstudiobookings?overlayCalendar=true"
+            data-cal-config='{"layout":"month_view","theme":"light"}'
+            className="bg-linear-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-10 py-4 rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
+              Book Your Consultation
+            </Link>
         </div>
       </div>
     </div>

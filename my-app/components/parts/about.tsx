@@ -1,5 +1,6 @@
 "use client"
 import { Check } from 'lucide-react';
+import Link from 'next/link';
 
 export default function AboutSection() {
   return (
@@ -31,7 +32,7 @@ export default function AboutSection() {
 
             <div className="space-y-4">
               <div className="flex items-start gap-3">
-                <div className="w-6 h-6 rounded-full bg-blue-600 flex items-center justify-center flex-shrink-0 mt-1">
+                <div className="w-6 h-6 rounded-full bg-blue-600 flex items-center justify-center shrink-0 mt-1">
                   <Check className="w-4 h-4 text-white" />
                 </div>
                 <div>
@@ -41,7 +42,7 @@ export default function AboutSection() {
               </div>
 
               <div className="flex items-start gap-3">
-                <div className="w-6 h-6 rounded-full bg-blue-600 flex items-center justify-center flex-shrink-0 mt-1">
+                <div className="w-6 h-6 rounded-full bg-blue-600 flex items-center justify-center shrink-0 mt-1">
                   <Check className="w-4 h-4 text-white" />
                 </div>
                 <div>
@@ -51,7 +52,7 @@ export default function AboutSection() {
               </div>
 
               <div className="flex items-start gap-3">
-                <div className="w-6 h-6 rounded-full bg-blue-600 flex items-center justify-center flex-shrink-0 mt-1">
+                <div className="w-6 h-6 rounded-full bg-blue-600 flex items-center justify-center shrink-0 mt-1">
                   <Check className="w-4 h-4 text-white" />
                 </div>
                 <div>
@@ -61,9 +62,11 @@ export default function AboutSection() {
               </div>
             </div>
 
-            <button className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 mt-4">
-              Get In Touch
-            </button>
+            <Link href="/contact">
+              <button className="bg-linear-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 mt-4">
+                Get In Touch
+              </button>
+            </Link>
           </div>
         </div>
       </div>

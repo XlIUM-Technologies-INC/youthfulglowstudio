@@ -1,5 +1,6 @@
 "use client"
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
 
 export default function Navbar() {
@@ -31,21 +32,21 @@ export default function Navbar() {
         <div className={`hidden md:flex items-center gap-8 transition-all duration-500 ${
           scrolled ? 'text-sm' : 'text-base'
         }`}>
-          <a href="#" className="relative text-blue-600 font-medium border-b-2 border-blue-600 pb-1">
+          <Link href="/" className="relative text-blue-600 font-medium border-b-2 border-blue-600 pb-1">
             Home
-          </a>
-          <a href="/about" className="relative text-gray-700 hover:text-blue-600 transition-colors pb-1 hover:border-b-2 hover:border-blue-600">
+          </Link>
+          <Link href="/about" className="relative text-gray-700 hover:text-blue-600 transition-colors pb-1 hover:border-b-2 hover:border-blue-600">
             About
-          </a>
-          <a href="/services" className="relative text-gray-700 hover:text-blue-600 transition-colors pb-1 hover:border-b-2 hover:border-blue-600">
+          </Link>
+          <Link href="/services" className="relative text-gray-700 hover:text-blue-600 transition-colors pb-1 hover:border-b-2 hover:border-blue-600">
             Services
-          </a>
-          <a href="#contact" className="relative text-gray-700 hover:text-blue-600 transition-colors pb-1 hover:border-b-2 hover:border-blue-600">
+          </Link>
+          <Link href="/contact" className="relative text-gray-700 hover:text-blue-600 transition-colors pb-1 hover:border-b-2 hover:border-blue-600">
             Contact
-          </a>
-          <a href="#reviews" className="relative text-gray-700 hover:text-blue-600 transition-colors pb-1 hover:border-b-2 hover:border-blue-600">
+          </Link>
+          <Link href="/review" className="relative text-gray-700 hover:text-blue-600 transition-colors pb-1 hover:border-b-2 hover:border-blue-600">
             Clients Review
-          </a>
+          </Link>
         </div>
 
         {/* Mobile Menu Button */}
@@ -62,21 +63,21 @@ export default function Navbar() {
         mobileMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
       }`}>
         <div className="bg-white border-t border-gray-200 px-6 py-4 space-y-3">
-          <a href="#" className="block text-blue-600 font-medium py-2 px-3 bg-blue-50 rounded-lg">
+          <Link href="/" className="block text-blue-600 font-medium py-2 px-3 bg-blue-50 rounded-lg">
             Home
-          </a>
-          <a href="#about" className="block text-gray-700 hover:text-blue-600 py-2 px-3 hover:bg-blue-50 rounded-lg transition-colors">
+          </Link>
+          <Link href="/about" className="block text-gray-700 hover:text-blue-600 py-2 px-3 hover:bg-blue-50 rounded-lg transition-colors">
             About
-          </a>
-          <a href="#services" className="block text-gray-700 hover:text-blue-600 py-2 px-3 hover:bg-blue-50 rounded-lg transition-colors">
+          </Link>
+          <Link href="/services" className="block text-gray-700 hover:text-blue-600 py-2 px-3 hover:bg-blue-50 rounded-lg transition-colors">
             Services
-          </a>
-          <a href="#contact" className="block text-gray-700 hover:text-blue-600 py-2 px-3 hover:bg-blue-50 rounded-lg transition-colors">
+          </Link>
+          <Link href="/#contact" className="block text-gray-700 hover:text-blue-600 py-2 px-3 hover:bg-blue-50 rounded-lg transition-colors">
             Contact
-          </a>
-          <a href="#reviews" className="block text-gray-700 hover:text-blue-600 py-2 px-3 hover:bg-blue-50 rounded-lg transition-colors">
+          </Link>
+          <Link href="/#reviews" className="block text-gray-700 hover:text-blue-600 py-2 px-3 hover:bg-blue-50 rounded-lg transition-colors">
             Clients Review
-          </a>
+          </Link>
         </div>
       </div>
     </nav>

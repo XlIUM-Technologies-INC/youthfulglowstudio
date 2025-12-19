@@ -1,16 +1,13 @@
 // app/about/page.tsx
 "use client"
-import Nav from "@/components/parts/nav";
-import Footer from "@/components/parts/footer";
+import RootLayout from "@/components/layouts/RootLayout";
 import { Heart, Sparkles, Award, Users } from 'lucide-react';
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50">
-      <Nav />
-      
+    <RootLayout>
       {/* Hero Section */}
-      <div className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-20">
+      <div className="bg-linear-to-r from-blue-600 to-blue-800 text-white py-20">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <h1 className="text-5xl md:text-6xl font-bold mb-6">Who We Are</h1>
           <p className="text-xl md:text-2xl max-w-3xl mx-auto opacity-90">
@@ -97,7 +94,7 @@ export default function AboutPage() {
         </div>
 
         {/* Meet Marcia Section */}
-        <div className="bg-gradient-to-r from-blue-600 to-blue-800 rounded-3xl shadow-2xl overflow-hidden">
+        <div className="bg-linear-to-r from-blue-600 to-blue-800 rounded-3xl shadow-2xl overflow-hidden">
           <div className="grid md:grid-cols-2 gap-0">
             <div className="p-12 text-white flex flex-col justify-center">
               <h2 className="text-4xl font-bold mb-6">Meet Marcia Edmondson</h2>
@@ -127,14 +124,12 @@ export default function AboutPage() {
           <p className="text-gray-600 text-lg mb-8 max-w-2xl mx-auto">
             Book your appointment today and discover why our clients love their experience at Youthful Glow Studio.
           </p>
-          <button className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-12 py-5 rounded-full font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 inline-flex items-center gap-3">
+          <button className="bg-linear-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-12 py-5 rounded-full font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 inline-flex items-center gap-3">
             <Sparkles className="w-6 h-6" />
             Book Your Glow Session
           </button>
         </div>
       </div>
-
-      <Footer />
-    </div>
+    </RootLayout>
   );
 }

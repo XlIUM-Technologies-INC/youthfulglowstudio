@@ -1,8 +1,9 @@
 "use client"
+import RootLayout from "@/components/layouts/RootLayout";
 import { useState } from 'react';
 import { Star, ChevronLeft, ChevronRight, Quote } from 'lucide-react';
 
-export default function ClientReviewsSection() {
+export default function ReviewPage() {
   const [currentReview, setCurrentReview] = useState(0);
 
   const reviews = [
@@ -57,7 +58,8 @@ export default function ClientReviewsSection() {
   };
 
   return (
-    <div id="reviews" className="py-20 bg-white relative overflow-hidden">
+    <RootLayout>
+      <section id="reviews" className="py-20 bg-white relative overflow-hidden">
       {/* Decorative Background Elements */}
       <div className="absolute top-20 left-10 w-40 h-40 border-4 border-blue-600 opacity-5 rounded-full"></div>
       <div className="absolute bottom-20 right-10 w-32 h-32 border-4 border-blue-600 opacity-5 rotate-45"></div>
@@ -75,7 +77,7 @@ export default function ClientReviewsSection() {
 
         {/* Main Featured Review */}
         <div className="max-w-4xl mx-auto mb-16">
-          <div className="bg-gradient-to-br from-gray-50 to-blue-50 rounded-3xl p-8 md:p-12 shadow-xl relative">
+          <div className="bg-linear-to-br from-gray-50 to-blue-50 rounded-3xl p-8 md:p-12 shadow-xl relative">
             {/* Quote Icon */}
             <div className="absolute top-8 left-8 opacity-10">
               <Quote className="w-20 h-20 text-blue-600" fill="currentColor" />
@@ -182,11 +184,12 @@ export default function ClientReviewsSection() {
         {/* CTA */}
         <div className="text-center mt-12">
           <p className="text-gray-600 mb-6">Join hundreds of satisfied clients</p>
-          <button className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-10 py-4 rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
+          <button className="bg-linear-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-10 py-4 rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
             Book Your Consultation
           </button>
         </div>
       </div>
-    </div>
+      </section>
+    </RootLayout>
   );
 }

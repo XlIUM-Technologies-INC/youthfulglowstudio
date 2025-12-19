@@ -1,9 +1,11 @@
 "use client"
+import Link from 'next/link';
 import { Phone, Mail, MapPin, Facebook, Instagram, Twitter } from 'lucide-react';
+import { SERVICES } from '@/lib/services';
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-white pt-16 pb-8">
+    <footer id="contact" className="bg-gray-900 text-white pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
@@ -21,16 +23,16 @@ export default function Footer() {
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">Home</a>
+                <Link href="/" className="text-gray-400 hover:text-blue-400 transition-colors">Home</Link>
               </li>
               <li>
-                <a href="#about" className="text-gray-400 hover:text-blue-400 transition-colors">About Us</a>
+                <Link href="/#about" className="text-gray-400 hover:text-blue-400 transition-colors">About Us</Link>
               </li>
               <li>
-                <a href="#services" className="text-gray-400 hover:text-blue-400 transition-colors">Services</a>
+                <Link href="/services" className="text-gray-400 hover:text-blue-400 transition-colors">Services</Link>
               </li>
               <li>
-                <a href="#contact" className="text-gray-400 hover:text-blue-400 transition-colors">Contact</a>
+                <Link href="/#contact" className="text-gray-400 hover:text-blue-400 transition-colors">Contact</Link>
               </li>
             </ul>
           </div>
@@ -39,10 +41,13 @@ export default function Footer() {
           <div>
             <h4 className="text-lg font-semibold mb-4">Our Services</h4>
             <ul className="space-y-2">
-              <li className="text-gray-400">Facial Treatments</li>
-              <li className="text-gray-400">Hair Care</li>
-              <li className="text-gray-400">Eye Treatments</li>
-              <li className="text-gray-400">Hand Massage</li>
+              {SERVICES.map((service) => (
+                <li key={service.slug}>
+                  <Link href={`/services/${service.slug}`} className="text-gray-400 hover:text-blue-400 transition-colors">
+                    {service.title}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -51,15 +56,15 @@ export default function Footer() {
             <h4 className="text-lg font-semibold mb-4">Contact Us</h4>
             <ul className="space-y-3">
               <li className="flex items-start gap-3 text-gray-400">
-                <Phone className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" />
+                <Phone className="w-5 h-5 text-blue-400 shrink-0 mt-0.5" />
                 <span>+1 (555) 123-4567</span>
               </li>
               <li className="flex items-start gap-3 text-gray-400">
-                <Mail className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" />
+                <Mail className="w-5 h-5 text-blue-400 shrink-0 mt-0.5" />
                 <span>info@youthfulglow.com</span>
               </li>
               <li className="flex items-start gap-3 text-gray-400">
-                <MapPin className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" />
+                <MapPin className="w-5 h-5 text-blue-400 shrink-0 mt-0.5" />
                 <span>123 Beauty Lane, Wellness City, ST 12345</span>
               </li>
             </ul>
@@ -73,13 +78,13 @@ export default function Footer() {
           </p>
           
           <div className="flex gap-4">
-            <a href="#" className="w-10 h-10 bg-gray-800 hover:bg-blue-600 rounded-full flex items-center justify-center transition-colors">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-gray-800 hover:bg-blue-600 rounded-full flex items-center justify-center transition-colors">
               <Facebook className="w-5 h-5" />
             </a>
-            <a href="#" className="w-10 h-10 bg-gray-800 hover:bg-blue-600 rounded-full flex items-center justify-center transition-colors">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-gray-800 hover:bg-blue-600 rounded-full flex items-center justify-center transition-colors">
               <Instagram className="w-5 h-5" />
             </a>
-            <a href="#" className="w-10 h-10 bg-gray-800 hover:bg-blue-600 rounded-full flex items-center justify-center transition-colors">
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-gray-800 hover:bg-blue-600 rounded-full flex items-center justify-center transition-colors">
               <Twitter className="w-5 h-5" />
             </a>
           </div>
