@@ -4,7 +4,18 @@ import RootLayout from "@/components/layouts/RootLayout";
 import { Sparkles } from "lucide-react";
 import Link from "next/link";
 
-const ServiceCard = ({ id, title, price, description, duration, bestFor, reasons, image }) => (
+interface ServiceCardProps {
+  id: string;
+  title: string;
+  price: string;
+  description: string;
+  duration?: string;
+  bestFor?: string;
+  reasons?: string[];
+  image?: string;
+}
+
+const ServiceCard = ({ id, title, price, description, duration, bestFor, reasons, image }: ServiceCardProps) => (
   <div id={id} className="bg-white rounded-3xl shadow-xl overflow-hidden mb-12">
     {image && <img src={image} alt={title} className="w-full h-64 object-cover" />}
     <div className="p-8">
