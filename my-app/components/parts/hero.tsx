@@ -76,7 +76,7 @@ export default function HeroSection() {
                 <img 
                   src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=800&h=1000&fit=crop" 
                   alt="Beautiful woman with clear, glowing skin" 
-                  className="w-full h-[600px] object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                  className="w-full h-[600px] object-cover transition-all duration-700 hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-transparent to-transparent"></div>
                 

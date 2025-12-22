@@ -14,7 +14,7 @@ export default function AboutSection() {
               <img 
                 src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&h=600&fit=crop" 
                 alt="Skincare professional" 
-                className="w-full h-full object-cover grayscale"
+                className="w-full h-full object-cover transition-all duration-700 hover:scale-105"
               />
             </div>
           </div>

@@ -1,9 +1,11 @@
 "use client"
 import { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
 
 export default function Navbar() {
+  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -15,6 +17,8 @@ export default function Navbar() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const isActive = (path: string) => pathname === path;
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-transparent mt-2 ${
@@ -32,19 +36,39 @@ export default function Navbar() {
         <div className={`hidden md:flex items-center gap-8 transition-all duration-500 ${
           scrolled ? 'text-sm' : 'text-base'
         }`}>
-          <Link href="/" className="relative text-blue-600 font-medium border-b-2 border-blue-600 pb-1">
+          <Link href="/" className={`relative font-medium pb-1 transition-colors ${
+            isActive('/') 
+              ? 'text-blue-600 border-b-2 border-blue-600' 
+              : 'text-gray-700 hover:text-blue-600 hover:border-b-2 hover:border-blue-600'
+          }`}>
             Home
           </Link>
-          <Link href="/about" className="relative text-gray-700 hover:text-blue-600 transition-colors pb-1 hover:border-b-2 hover:border-blue-600">
+          <Link href="/about" className={`relative font-medium pb-1 transition-colors ${
+            isActive('/about') 
+              ? 'text-blue-600 border-b-2 border-blue-600' 
+              : 'text-gray-700 hover:text-blue-600 hover:border-b-2 hover:border-blue-600'
+          }`}>
             About
           </Link>
-          <Link href="/services" className="relative text-gray-700 hover:text-blue-600 transition-colors pb-1 hover:border-b-2 hover:border-blue-600">
+          <Link href="/services" className={`relative font-medium pb-1 transition-colors ${
+            isActive('/services') 
+              ? 'text-blue-600 border-b-2 border-blue-600' 
+              : 'text-gray-700 hover:text-blue-600 hover:border-b-2 hover:border-blue-600'
+          }`}>
             Services
           </Link>
-          <Link href="/contact" className="relative text-gray-700 hover:text-blue-600 transition-colors pb-1 hover:border-b-2 hover:border-blue-600">
+          <Link href="/contact" className={`relative font-medium pb-1 transition-colors ${
+            isActive('/contact') 
+              ? 'text-blue-600 border-b-2 border-blue-600' 
+              : 'text-gray-700 hover:text-blue-600 hover:border-b-2 hover:border-blue-600'
+          }`}>
             Contact
           </Link>
-          <Link href="/review" className="relative text-gray-700 hover:text-blue-600 transition-colors pb-1 hover:border-b-2 hover:border-blue-600">
+          <Link href="/review" className={`relative font-medium pb-1 transition-colors ${
+            isActive('/review') 
+              ? 'text-blue-600 border-b-2 border-blue-600' 
+              : 'text-gray-700 hover:text-blue-600 hover:border-b-2 hover:border-blue-600'
+          }`}>
             Clients Review
           </Link>
         </div>
@@ -63,19 +87,39 @@ export default function Navbar() {
         mobileMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
       }`}>
         <div className="bg-white border-t border-gray-200 px-6 py-4 space-y-3">
-          <Link href="/" className="block text-blue-600 font-medium py-2 px-3 bg-blue-50 rounded-lg">
+          <Link href="/" className={`block font-medium py-2 px-3 rounded-lg transition-colors ${
+            isActive('/') 
+              ? 'text-blue-600 bg-blue-50 border-l-4 border-blue-600' 
+              : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50'
+          }`}>
             Home
           </Link>
-          <Link href="/about" className="block text-gray-700 hover:text-blue-600 py-2 px-3 hover:bg-blue-50 rounded-lg transition-colors">
+          <Link href="/about" className={`block font-medium py-2 px-3 rounded-lg transition-colors ${
+            isActive('/about') 
+              ? 'text-blue-600 bg-blue-50 border-l-4 border-blue-600' 
+              : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50'
+          }`}>
             About
           </Link>
-          <Link href="/services" className="block text-gray-700 hover:text-blue-600 py-2 px-3 hover:bg-blue-50 rounded-lg transition-colors">
+          <Link href="/services" className={`block font-medium py-2 px-3 rounded-lg transition-colors ${
+            isActive('/services') 
+              ? 'text-blue-600 bg-blue-50 border-l-4 border-blue-600' 
+              : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50'
+          }`}>
             Services
           </Link>
-          <Link href="/#contact" className="block text-gray-700 hover:text-blue-600 py-2 px-3 hover:bg-blue-50 rounded-lg transition-colors">
+          <Link href="/contact" className={`block font-medium py-2 px-3 rounded-lg transition-colors ${
+            isActive('/contact') 
+              ? 'text-blue-600 bg-blue-50 border-l-4 border-blue-600' 
+              : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50'
+          }`}>
             Contact
           </Link>
-          <Link href="/#reviews" className="block text-gray-700 hover:text-blue-600 py-2 px-3 hover:bg-blue-50 rounded-lg transition-colors">
+          <Link href="/review" className={`block font-medium py-2 px-3 rounded-lg transition-colors ${
+            isActive('/review') 
+              ? 'text-blue-600 bg-blue-50 border-l-4 border-blue-600' 
+              : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50'
+          }`}>
             Clients Review
           </Link>
         </div>
