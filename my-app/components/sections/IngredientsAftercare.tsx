@@ -8,13 +8,13 @@ interface IngredientsAfterCareProps {
 
 export default function IngredientsAftercare({ ingredients, aftercare }: IngredientsAfterCareProps) {
   return (
-    <section className="py-16 bg-blue-50 rounded-3xl">
+    <section className="py-16 bg-[#5A95CD]/5 rounded-3xl">
       <div className="max-w-5xl mx-auto px-6">
         <div className="grid md:grid-cols-2 gap-12">
           {/* Ingredients */}
           <div>
             <h3 className="text-2xl font-bold mb-6 flex items-center gap-2">
-              <Zap className="w-6 h-6 text-blue-600" />
+              <Zap className="w-6 h-6 text-[#5A95CD]" />
               Premium Ingredients
             </h3>
             <div className="space-y-3">

@@ -25,13 +25,13 @@ export default function ProcessSection({ steps }: ProcessSectionProps) {
             <div key={index} className="relative">
               {/* Connector line */}
               {index < steps.length - 1 && (
-                <div className="hidden md:block absolute top-12 -right-2 w-4 h-1 bg-linear-to-r from-blue-600 to-blue-400"></div>
+                <div className="hidden md:block absolute top-12 -right-2 w-4 h-1 bg-linear-to-r from-[#5A95CD] to-blue-400"></div>
               )}
 
               {/* Step card */}
               <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow h-full">
                 <div className="flex items-center gap-3 mb-3">
-                  <div className="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold">
+                  <div className="w-10 h-10 rounded-full bg-[#5A95CD] text-white flex items-center justify-center font-bold">
                     {step.step}
                   </div>
                   <h3 className="font-semibold text-gray-900">{step.title}</h3>
@@ -47,7 +47,7 @@ export default function ProcessSection({ steps }: ProcessSectionProps) {
           {steps.map((step, index) => (
             <div key={index} className="flex gap-4">
               <div className="flex flex-col items-center">
-                <div className="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold shrink-0">
+                <div className="w-10 h-10 rounded-full bg-[#5A95CD] text-white flex items-center justify-center font-bold shrink-0">
                   {step.step}
                 </div>
                 {index < steps.length - 1 && <div className="w-1 h-12 bg-blue-200 mt-2"></div>}

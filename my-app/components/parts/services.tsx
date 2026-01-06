@@ -6,12 +6,12 @@ import { SERVICES } from '@/lib/services';
 export default function ServicesSection() {
   // Keep this section a short, visual summary. Each card links to its detail page.
   return (
-    <div id="services" className="py-20 bg-linear-to-br from-gray-50 via-white to-blue-50">
+    <div id="services" className="py-20 bg-linear-to-br from-gray-50 via-white to-[#5A95CD]/5">
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Our Special <span className="text-blue-600">Services</span>
+            Our Special <span className="text-[#5A95CD]">Services</span>
           </h2>
           <p className="text-gray-600 text-lg max-w-2xl mx-auto">
             A quick snapshot of what we offer — click any card to learn more and book.
@@ -44,7 +44,7 @@ export default function ServicesSection() {
 
         {/* CTA */}
         <div className="text-center mt-10">
-          <Link href="/services" className="bg-linear-to-r from-blue-600 to-blue-700 text-white px-8 py-3 rounded-full font-semibold shadow-lg inline-flex items-center gap-2">
+          <Link href="/services" className="bg-linear-to-r from-[#5A95CD] to-[#4A85BD] text-white px-8 py-3 rounded-full font-semibold shadow-lg inline-flex items-center gap-2">
             <Sparkles className="w-4 h-4" />
             View All Services
           </Link>

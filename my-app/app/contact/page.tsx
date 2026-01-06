@@ -51,7 +51,7 @@ export default function ContactPage() {
     <RootLayout>
       <Toaster richColors />
       {/* Hero Section */}
-      <section className="bg-linear-to-r from-blue-600 to-blue-800 text-white py-20 text-center">
+      <section className="bg-linear-to-r from-[#5A95CD] to-[#3A75AD] text-white py-20 text-center">
         <h1 className="text-5xl font-bold mb-4">Get In Touch</h1>
         <p className="text-xl opacity-90">We'd love to hear from you. Let's talk!</p>
       </section>
@@ -66,7 +66,7 @@ export default function ContactPage() {
             </div>
 
             <div className="flex items-start gap-4">
-              <Phone className="w-6 h-6 text-blue-600 mt-1 shrink-0" />
+              <Phone className="w-6 h-6 text-[#5A95CD] mt-1 shrink-0" />
               <div>
                 <h3 className="font-semibold text-gray-900 mb-1">Phone</h3>
                 <p className="text-gray-600">+1 (555) 123-4567</p>
@@ -74,7 +74,7 @@ export default function ContactPage() {
             </div>
 
             <div className="flex items-start gap-4">
-              <Mail className="w-6 h-6 text-blue-600 mt-1 shrink-0" />
+              <Mail className="w-6 h-6 text-[#5A95CD] mt-1 shrink-0" />
               <div>
                 <h3 className="font-semibold text-gray-900 mb-1">Email</h3>
                 <p className="text-gray-600">info@youthfulglow.com</p>
@@ -82,7 +82,7 @@ export default function ContactPage() {
             </div>
 
             <div className="flex items-start gap-4">
-              <MapPin className="w-6 h-6 text-blue-600 mt-1 shrink-0" />
+              <MapPin className="w-6 h-6 text-[#5A95CD] mt-1 shrink-0" />
               <div>
                 <h3 className="font-semibold text-gray-900 mb-1">Location</h3>
                 <p className="text-gray-600">123 Beauty Lane<br />Wellness City, ST 12345</p>
@@ -90,7 +90,7 @@ export default function ContactPage() {
             </div>
 
             <div className="flex items-start gap-4">
-              <Clock className="w-6 h-6 text-blue-600 mt-1 shrink-0" />
+              <Clock className="w-6 h-6 text-[#5A95CD] mt-1 shrink-0" />
               <div>
                 <h3 className="font-semibold text-gray-900 mb-1">Hours</h3>
                 <p className="text-gray-600">
@@ -159,7 +159,7 @@ export default function ContactPage() {
               <button 
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-linear-to-r from-blue-600 to-blue-700 text-white font-semibold py-3 rounded-lg hover:shadow-lg transition-all flex items-center justify-center gap-2 disabled:opacity-50"
+                className="w-full bg-linear-to-r from-[#5A95CD] to-[#4A85BD] text-white font-semibold py-3 rounded-lg hover:shadow-lg transition-all flex items-center justify-center gap-2 disabled:opacity-50"
               >
                 <Send className="w-5 h-5" />
                 {isSubmitting ? "Sending..." : "Send Message"}
@@ -170,7 +170,7 @@ export default function ContactPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-blue-50 py-16 text-center">
+      <section className="bg-[#5A95CD]/5 py-16 text-center">
         <div className="max-w-2xl mx-auto px-6">
           <h2 className="text-3xl font-bold mb-4 text-gray-900">Prefer to book directly?</h2>
           <p className="text-gray-600 mb-8">Visit our services page to schedule your appointment.</p>
@@ -178,7 +178,7 @@ export default function ContactPage() {
             href="https://cal.com/youthfulglowstudiobookings?overlayCalendar=true"
             data-cal-link="https://cal.com/youthfulglowstudiobookings?overlayCalendar=true"
             data-cal-config='{"layout":"month_view","theme":"light"}'
-            className="bg-linear-to-r from-blue-600 to-blue-700 text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all"
+            className="bg-linear-to-r from-[#5A95CD] to-[#4A85BD] text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all"
           >
             Book Now
           </Link>

@@ -9,7 +9,7 @@ export default function AboutSection() {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left - Image */}
           <div className="relative">
-            <div className="absolute inset-0 bg-blue-600 rounded-full opacity-10 blur-3xl"></div>
+            <div className="absolute inset-0 bg-[#5A95CD] rounded-full opacity-10 blur-3xl"></div>
             <div className="relative rounded-full overflow-hidden w-full aspect-square shadow-2xl border-8 border-white">
               <img 
                 src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&h=600&fit=crop" 
@@ -23,7 +23,7 @@ export default function AboutSection() {
           <div className="space-y-6">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
               Our Journey at<br />
-              <span className="text-blue-600">Youthful Glow Studio</span>
+              <span className="text-[#5A95CD]">Youthful Glow Studio</span>
             </h2>
 
             <p className="text-gray-700 text-lg leading-relaxed">
@@ -32,7 +32,7 @@ export default function AboutSection() {
 
             <div className="space-y-4">
               <div className="flex items-start gap-3">
-                <div className="w-6 h-6 rounded-full bg-blue-600 flex items-center justify-center shrink-0 mt-1">
+                <div className="w-6 h-6 rounded-full bg-[#5A95CD] flex items-center justify-center shrink-0 mt-1">
                   <Check className="w-4 h-4 text-white" />
                 </div>
                 <div>
@@ -42,7 +42,7 @@ export default function AboutSection() {
               </div>
 
               <div className="flex items-start gap-3">
-                <div className="w-6 h-6 rounded-full bg-blue-600 flex items-center justify-center shrink-0 mt-1">
+                <div className="w-6 h-6 rounded-full bg-[#5A95CD] flex items-center justify-center shrink-0 mt-1">
                   <Check className="w-4 h-4 text-white" />
                 </div>
                 <div>
@@ -52,7 +52,7 @@ export default function AboutSection() {
               </div>
 
               <div className="flex items-start gap-3">
-                <div className="w-6 h-6 rounded-full bg-blue-600 flex items-center justify-center shrink-0 mt-1">
+                <div className="w-6 h-6 rounded-full bg-[#5A95CD] flex items-center justify-center shrink-0 mt-1">
                   <Check className="w-4 h-4 text-white" />
                 </div>
                 <div>
@@ -63,7 +63,7 @@ export default function AboutSection() {
             </div>
 
             <Link href="/contact">
-              <button className="bg-linear-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 mt-4">
+              <button className="bg-linear-to-r from-[#5A95CD] to-[#4A85BD] hover:from-[#4A85BD] hover:to-[#3A75AD] text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 mt-4">
                 Get In Touch
               </button>
             </Link>

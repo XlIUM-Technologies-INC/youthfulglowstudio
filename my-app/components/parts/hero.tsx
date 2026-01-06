@@ -19,8 +19,8 @@ export default function HeroSection() {
     <Dialog>
       <div className="pt-24 md:pt-32 pb-16 relative overflow-hidden bg-gradient-to-br from-gray-50 via-white to-blue-50">
         {/* Decorative Elements */}
-        <div className="absolute top-40 right-20 w-32 h-32 border-4 border-blue-600 opacity-10 rotate-45"></div>
-        <div className="absolute bottom-20 left-10 w-20 h-20 border-4 border-blue-600 opacity-10 rotate-12"></div>
+        <div className="absolute top-40 right-20 w-32 h-32 border-4 border-[#5A95CD] opacity-10 rotate-45"></div>
+        <div className="absolute bottom-20 left-10 w-20 h-20 border-4 border-[#5A95CD] opacity-10 rotate-12"></div>
         
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -28,18 +28,18 @@ export default function HeroSection() {
             <div className="space-y-8">
               <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
                 <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight mb-4">
-                  Window to<br />
-                  <span className="text-blue-600">Radiant Beauty</span><br />
-                  and Confidence
+                  Glowing Skin,<br />
+                  <span className="text-[#5A95CD]">Graceful Aging</span><br />
+                  Personalized Skincare by Marcia
                 </h1>
               </div>
 
               <div className={`transition-all duration-1000 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-                <div className="flex items-start gap-3 bg-white p-6 rounded-2xl shadow-lg border-l-4 border-blue-600">
-                  <div className="text-6xl text-blue-600 leading-none">"</div>
+                <div className="flex items-start gap-3 bg-white p-6 rounded-2xl shadow-lg border-l-4 border-[#5A95CD]">
+                  <div className="text-6xl text-[#5A95CD] leading-none">"</div>
                   <div>
                     <p className="text-gray-700 text-lg leading-relaxed italic">
-                      Skin care isn't a luxury; it's your daily commitment to nurturing your unique beauty.
+                      At Youthful Glow Studio, we believe in nurturing your skin and spirit. Our personalized treatments are designed to target concerns like hyperpigmentation, acne, and collagen loss—helping you achieve visibly healthier, radiant skin. From expert hair removal and soothing relaxation massage to advanced skincare solutions, each visit is a step toward glowing confidence and true self-care.
                     </p>
                   </div>
                 </div>
@@ -47,7 +47,7 @@ export default function HeroSection() {
 
               <div className={`transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
                 <Link href="/contact">
-                  <button className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-10 py-4 rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 flex items-center gap-2">
+                  <button className="bg-gradient-to-r from-[#5A95CD] to-[#4A85BD] hover:from-[#4A85BD] hover:to-[#3A75AD] text-white px-10 py-4 rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 flex items-center gap-2">
                     Get In Touch
                     <span className="text-xl">→</span>
                   </button>
@@ -84,7 +84,7 @@ export default function HeroSection() {
                 <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
                   <DialogTrigger asChild>
                     <button className="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform duration-300">
-                      <Play className="w-8 h-8 text-blue-600 ml-1" fill="currentColor" />
+                      <Play className="w-8 h-8 text-[#5A95CD] ml-1" fill="currentColor" />
                     </button>
                   </DialogTrigger>
                 </div>

@@ -20,7 +20,7 @@ export default function ServiceDetailPage({ params }: Props) {
           <div className="text-center">
             <h2 className="text-2xl font-bold">Service not found</h2>
             <p className="text-gray-600 mt-4">We couldn't find that service.</p>
-            <Link href="/services" className="text-blue-600 hover:underline mt-6 inline-block">
+            <Link href="/services" className="text-[#5A95CD] hover:underline mt-6 inline-block">
               Back to services
             </Link>
           </div>
@@ -33,7 +33,7 @@ export default function ServiceDetailPage({ params }: Props) {
     <RootLayout>
       <main>
         {/* Hero Section */}
-        <section className="bg-linear-to-r from-blue-600 to-blue-800 text-white py-12">
+        <section className="bg-linear-to-r from-[#5A95CD] to-blue-800 text-white py-12">
           <div className="max-w-6xl mx-auto px-6">
             <Link href="/services" className="text-blue-200 hover:text-white mb-4 inline-block">
               ← Back to services
@@ -59,7 +59,7 @@ export default function ServiceDetailPage({ params }: Props) {
                 <div className="space-y-4 mb-6">
                   <div>
                     <p className="text-sm text-gray-600">Price</p>
-                    <p className="text-3xl font-bold text-blue-600">{service.price}</p>
+                    <p className="text-3xl font-bold text-[#5A95CD]">{service.price}</p>
                   </div>
                   <div className="border-t pt-4">
                     <div className="flex items-center gap-2 text-gray-700">
@@ -71,16 +71,16 @@ export default function ServiceDetailPage({ params }: Props) {
 
                 <button
                   data-cal-namespace="demo"
-                  data-cal-link="hakim-kelly-ksltrj/test"
+                  data-cal-link={`hakim-kelly-ksltrj/${params.slug}`}
                   data-cal-config='{"layout":"month_view","theme":"light"}'
-                  className="w-full bg-linear-to-r from-blue-600 to-blue-700 text-white font-semibold py-4 rounded-xl mb-3 hover:shadow-lg transition-all"
+                  className="w-full bg-linear-to-r from-[#5A95CD] to-blue-700 text-white font-semibold py-4 rounded-xl mb-3 hover:shadow-lg transition-all"
                 >
                   Book This Service
                 </button>
 
                 <Link
                   href="/services"
-                  className="w-full block text-center py-3 border border-blue-200 text-blue-600 font-semibold rounded-xl hover:bg-blue-50 transition-colors"
+                  className="w-full block text-center py-3 border border-blue-200 text-[#5A95CD] font-semibold rounded-xl hover:bg-blue-50 transition-colors"
                 >
                   View Other Services
                 </Link>
@@ -142,7 +142,7 @@ export default function ServiceDetailPage({ params }: Props) {
         </section>
 
         {/* CTA Section */}
-        <section className="bg-linear-to-r from-blue-600 to-blue-700 text-white py-16 mt-16">
+        <section className="bg-linear-to-r from-[#5A95CD] to-blue-700 text-white py-16 mt-16">
           <div className="max-w-4xl mx-auto px-6 text-center">
             <h2 className="text-4xl font-bold mb-4">Ready to Book?</h2>
             <p className="text-xl text-blue-100 mb-8">
@@ -154,7 +154,7 @@ export default function ServiceDetailPage({ params }: Props) {
                 data-cal-namespace="demo"
                 data-cal-link="hakim-kelly-ksltrj/test"
                 data-cal-config='{"layout":"month_view","theme":"light"}'
-                className="px-8 py-3 bg-white text-blue-600 font-semibold rounded-xl hover:bg-blue-50 transition-all"
+                className="px-8 py-3 bg-white text-[#5A95CD] font-semibold rounded-xl hover:bg-blue-50 transition-all"
               >
                 Book Now
               </button>

@@ -2,6 +2,7 @@
 import RootLayout from "@/components/layouts/RootLayout";
 import { useState } from 'react';
 import { Star, ChevronLeft, ChevronRight, Quote } from 'lucide-react';
+import Link from "next/link";
 
 export default function ReviewPage() {
   const [currentReview, setCurrentReview] = useState(0);
@@ -61,14 +62,14 @@ export default function ReviewPage() {
     <RootLayout>
       <section id="reviews" className="py-20 bg-white relative overflow-hidden">
       {/* Decorative Background Elements */}
-      <div className="absolute top-20 left-10 w-40 h-40 border-4 border-blue-600 opacity-5 rounded-full"></div>
-      <div className="absolute bottom-20 right-10 w-32 h-32 border-4 border-blue-600 opacity-5 rotate-45"></div>
+      <div className="absolute top-20 left-10 w-40 h-40 border-4 border-[#5A95CD] opacity-5 rounded-full"></div>
+      <div className="absolute bottom-20 right-10 w-32 h-32 border-4 border-[#5A95CD] opacity-5 rotate-45"></div>
 
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            What Our <span className="text-blue-600">Clients Say</span>
+            Client <span className="text-[#5A95CD]">Reviews</span>
           </h2>
           <p className="text-gray-600 text-lg max-w-2xl mx-auto">
             Real experiences from real people who trusted us with their skincare journey
@@ -77,16 +78,16 @@ export default function ReviewPage() {
 
         {/* Main Featured Review */}
         <div className="max-w-4xl mx-auto mb-16">
-          <div className="bg-linear-to-br from-gray-50 to-blue-50 rounded-3xl p-8 md:p-12 shadow-xl relative">
+          <div className="bg-linear-to-br from-gray-50 to-[#5A95CD]/5 rounded-3xl p-8 md:p-12 shadow-xl relative">
             {/* Quote Icon */}
             <div className="absolute top-8 left-8 opacity-10">
-              <Quote className="w-20 h-20 text-blue-600" fill="currentColor" />
+              <Quote className="w-20 h-20 text-[#5A95CD]" fill="currentColor" />
             </div>
 
             {/* Stars */}
             <div className="flex justify-center gap-1 mb-6 relative z-10">
               {[...Array(reviews[currentReview].rating)].map((_, i) => (
-                <Star key={i} className="w-6 h-6 text-blue-600 fill-blue-600" />
+                <Star key={i} className="w-6 h-6 text-[#5A95CD] fill-blue-600" />
               ))}
             </div>
 
@@ -115,13 +116,13 @@ export default function ReviewPage() {
             <div className="flex justify-center gap-4 mt-8">
               <button 
                 onClick={prevReview}
-                className="w-12 h-12 rounded-full bg-white hover:bg-blue-600 text-gray-900 hover:text-white shadow-lg transition-all duration-300 flex items-center justify-center group"
+                className="w-12 h-12 rounded-full bg-white hover:bg-[#5A95CD] text-gray-900 hover:text-white shadow-lg transition-all duration-300 flex items-center justify-center group"
               >
                 <ChevronLeft className="w-6 h-6" />
               </button>
               <button 
                 onClick={nextReview}
-                className="w-12 h-12 rounded-full bg-white hover:bg-blue-600 text-gray-900 hover:text-white shadow-lg transition-all duration-300 flex items-center justify-center group"
+                className="w-12 h-12 rounded-full bg-white hover:bg-[#5A95CD] text-gray-900 hover:text-white shadow-lg transition-all duration-300 flex items-center justify-center group"
               >
                 <ChevronRight className="w-6 h-6" />
               </button>
@@ -135,7 +136,7 @@ export default function ReviewPage() {
                   onClick={() => setCurrentReview(index)}
                   className={`w-2 h-2 rounded-full transition-all duration-300 ${
                     index === currentReview 
-                      ? 'bg-blue-600 w-8' 
+                      ? 'bg-[#5A95CD] w-8' 
                       : 'bg-gray-300 hover:bg-gray-400'
                   }`}
                 />
@@ -149,12 +150,12 @@ export default function ReviewPage() {
           {reviews.slice(0, 3).map((review, index) => (
             <div 
               key={index}
-              className="bg-white border-2 border-gray-100 rounded-2xl p-6 hover:border-blue-600 hover:shadow-xl transition-all duration-300 group"
+              className="bg-white border-2 border-gray-100 rounded-2xl p-6 hover:border-[#5A95CD] hover:shadow-xl transition-all duration-300 group"
             >
               {/* Stars */}
               <div className="flex gap-1 mb-4">
                 {[...Array(review.rating)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 text-blue-600 fill-blue-600" />
+                  <Star key={i} className="w-4 h-4 text-[#5A95CD] fill-blue-600" />
                 ))}
               </div>
 
@@ -165,7 +166,7 @@ export default function ReviewPage() {
 
               {/* Client Info */}
               <div className="flex items-center gap-3 pt-4 border-t border-gray-100">
-                <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-gray-200 group-hover:border-blue-600 transition-colors">
+                <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-gray-200 group-hover:border-[#5A95CD] transition-colors">
                   <img 
                     src={review.image}
                     alt={review.name}
@@ -184,9 +185,11 @@ export default function ReviewPage() {
         {/* CTA */}
         <div className="text-center mt-12">
           <p className="text-gray-600 mb-6">Join hundreds of satisfied clients</p>
-          <button className="bg-linear-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-10 py-4 rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
-            Book Your Consultation
-          </button>
+          <Link href="/services">
+            <button className="bg-linear-to-r from-[#5A95CD] to-[#4A85BD] hover:from-[#4A85BD] hover:to-[#3A75AD] text-white px-10 py-4 rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
+              Book Your Consultation
+            </button>
+          </Link>
         </div>
       </div>
       </section>

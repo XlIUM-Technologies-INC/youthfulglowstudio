@@ -85,21 +85,21 @@ export default function BlogInsightsSection() {
 
   return (
     <Dialog>
-      <div id="blog" className="py-20 bg-linear-to-br from-gray-50 via-white to-blue-50 relative">
+      <div id="blog" className="py-20 bg-linear-to-br from-gray-50 via-white to-[#5A95CD]/5 relative">
         <div className="absolute top-0 left-0 right-0 h-1 bg-linear-to-r from-transparent via-blue-600 to-transparent opacity-30"></div>
         <div className="absolute bottom-0 left-0 right-0 h-1 bg-linear-to-r from-transparent via-blue-600 to-transparent opacity-30"></div>
 
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex justify-between items-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
-              Beauty and Wellness <span className="text-blue-600">Insights</span>
+              Beauty and Wellness <span className="text-[#5A95CD]">Insights</span>
             </h2>
           § ~§90-=-0987654wq    457
           </div>
 
           <div className="grid lg:grid-cols-2 gap-6">
             <div className="lg:row-span-2">
-              <div className="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 h-full border-2 border-gray-900 hover:border-blue-600">
+              <div className="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 h-full border-2 border-gray-900 hover:border-[#5A95CD]">
                 <div className="relative h-96 overflow-hidden">
                   <img 
                     src={articles[0].image}
@@ -108,7 +108,7 @@ export default function BlogInsightsSection() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent"></div>
                   <div className="absolute top-4 left-4">
-                    <span className="bg-blue-600 text-white px-4 py-1 rounded-full text-sm font-semibold">
+                    <span className="bg-[#5A95CD] text-white px-4 py-1 rounded-full text-sm font-semibold">
                       {articles[0].category}
                     </span>
                   </div>
@@ -121,7 +121,7 @@ export default function BlogInsightsSection() {
                     {articles[0].description}
                   </p>
                   <DialogTrigger asChild onClick={() => handleOpenArticle(articles[0])}>
-                    <button className="flex items-center gap-2 text-gray-900 font-semibold hover:text-blue-600 transition-colors group">
+                    <button className="flex items-center gap-2 text-gray-900 font-semibold hover:text-[#5A95CD] transition-colors group">
                       Continue Reading
                       <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
                     </button>
@@ -134,7 +134,7 @@ export default function BlogInsightsSection() {
               {articles.slice(1).map((article) => (
                 <div 
                   key={article.id}
-                  className="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border-2 border-gray-900 hover:border-blue-600"
+                  className="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border-2 border-gray-900 hover:border-[#5A95CD]"
                 >
                   <div className="grid md:grid-cols-5 gap-0">
                     <div className="relative md:col-span-2 h-48 md:h-full overflow-hidden">
@@ -147,7 +147,7 @@ export default function BlogInsightsSection() {
                     </div>
                     <div className="md:col-span-3 p-6 flex flex-col justify-between">
                       <div>
-                        <span className="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-xs font-semibold mb-3 inline-block">
+                        <span className="bg-blue-100 text-[#5A95CD] px-3 py-1 rounded-full text-xs font-semibold mb-3 inline-block">
                           {article.category}
                         </span>
                         <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-3 leading-tight">
@@ -158,7 +158,7 @@ export default function BlogInsightsSection() {
                         </p>
                       </div>
                       <DialogTrigger asChild onClick={() => handleOpenArticle(article)}>
-                        <button className="flex items-center gap-2 text-gray-900 font-semibold hover:text-blue-600 transition-colors text-sm group self-start">
+                        <button className="flex items-center gap-2 text-gray-900 font-semibold hover:text-[#5A95CD] transition-colors text-sm group self-start">
                           Continue Reading
                           <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
                         </button>
@@ -185,7 +185,7 @@ export default function BlogInsightsSection() {
         {selectedArticle && (
           <>
             <DialogHeader className="p-8 pb-0">
-              <span className="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-xs font-semibold mb-2 inline-block self-start">
+              <span className="bg-blue-100 text-[#5A95CD] px-3 py-1 rounded-full text-xs font-semibold mb-2 inline-block self-start">
                 {selectedArticle.category}
               </span>
               <DialogTitle className="text-3xl font-bold text-gray-900 leading-tight">
