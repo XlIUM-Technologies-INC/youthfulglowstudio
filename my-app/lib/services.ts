@@ -1,5 +1,196 @@
 export const SERVICES = [
   {
+    slug: "dermaplaning",
+    title: "Dermaplaning",
+    short: "Exfoliation treatment that removes dead skin and vellus hair.",
+    image:
+      "https://images.unsplash.com/photo-1677091508080-d6ee28356318?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    price: "$115",
+    duration: "60 minutes",
+    benefits: ["Smoother skin", "Brighter complexion", "Better product absorption"],
+    fullDescription: `Dermaplaning provides an effective and safe exfoliation treatment that promotes deeper product penetration, boosting the effects of skin care products while making the skin look and feel smoother. It is also beneficial for reducing the appearance of acne scars. The treatment also works to remove facial hair that can trap dirt and oils.`,
+    detailedBenefits: [
+      "Provides deeper product penetration",
+      "Removes soft facial hair that traps dirt and oils",
+      "Promotes smoother skin",
+      "Reduces the appearance of acne scars",
+      "Diminishes the look of fine lines",
+      "Works on all skin types",
+      "Instant results and no downtime"
+    ],
+    process: [
+      {
+        step: 1,
+        title: "Cleansing",
+        description: "We start with a gentle cleanser to remove impurities and prepare your skin."
+      },
+      {
+        step: 2,
+        title: "Dermaplaning",
+        description: "A sterile surgical blade is used to gently exfoliate the skin's surface."
+      },
+      {
+        step: 3,
+        title: "Enzyme Peel",
+        description: "A gentle enzyme peel is applied to further exfoliate and brighten the skin."
+      },
+      {
+        step: 4,
+        title: "Hydrating Mask",
+        description: "A hydrating mask is applied to soothe and moisturize the skin."
+      },
+      {
+        step: 5,
+        title: "Finishing Touches",
+        description: "The treatment is finished with a serum, moisturizer, and SPF."
+      }
+    ],
+    faqs: [
+      {
+        question: "Is dermaplaning safe for all skin types?",
+        answer: "Yes, dermaplaning is safe and effective for all skin types. However, it is not recommended for those with active acne."
+      },
+      {
+        question: "How often should I get dermaplaning?",
+        answer: "For best results, we recommend a treatment every 3-4 weeks."
+      },
+      {
+        question: "Will my hair grow back thicker?",
+        answer: "No, the vellus hair on the face will not grow back thicker or darker."
+      }
+    ],
+    aftercare: "Avoid sun exposure for 24 hours. Stay hydrated and use a gentle cleanser. Apply moisturizer morning and night. Avoid exfoliants for 48 hours.",
+    ingredients: ["Surgical-grade blade", "Enzyme Peel", "Hyaluronic Acid"],
+    testimonials: []
+  },
+  {
+    slug: "zena-algae-peel",
+    title: "Zena Algae Peel",
+    short: "A 100% natural peel that stimulates collagen and accelerates cell renewal.",
+    description:
+      "The Zena Algae Peel is a 100% natural peel made from algae from the lakes of Ukraine. The micro-needles in the algae powder penetrate the skin, stimulating collagen production and accelerating cell renewal.",
+    image:
+      "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=800&h=600&fit=crop",
+    price: "$200",
+    duration: "60 minutes",
+    benefits: ["Reduces acne", "Lightens pigmentation", "Improves skin texture"],
+    fullDescription: `The Zena Algae Peel is a unique, 100% natural peel that offers a range of benefits for the skin. It is particularly effective for treating acne, as it has antibacterial properties and helps to regulate sebum production. It also helps to lighten pigmentation, reduce the appearance of fine lines and wrinkles, and improve overall skin texture.`,
+    detailedBenefits: [
+      "Reduces acne and inflammation",
+      "Lightens pigmentation and sunspots",
+      "Reduces the appearance of fine lines and wrinkles",
+      "Improves skin texture and tone",
+      "Stimulates collagen production",
+      "Regulates sebum production",
+      "Reduces the appearance of stretch marks"
+    ],
+    process: [
+      {
+        step: 1,
+        title: "Cleansing",
+        description: "The skin is cleansed to remove any makeup, dirt, or oil."
+      },
+      {
+        step: 2,
+        title: "Peel Application",
+        description: "The Zena Algae Peel powder is mixed with water and applied to the skin."
+      },
+      {
+        step: 3,
+        title: "Massage",
+        description: "The peel is massaged into the skin for 5-10 minutes."
+      },
+      {
+        step: 4,
+        title: "Resting",
+        description: "The peel is left on the skin to work its magic."
+      },
+      {
+        step: 5,
+        title: "Removal",
+        description: "The peel is gently removed with water."
+      }
+    ],
+    faqs: [
+      {
+        question: "What does the Zena Algae Peel feel like?",
+        answer: "The peel feels prickly on the skin, similar to microneedling, but less intense. You may experience some redness and peeling for a few days after the treatment."
+      },
+      {
+        question: "How many treatments will I need?",
+        answer: "A series of 2-4 treatments is recommended for best results."
+      },
+      {
+        question: "Is there any downtime?",
+        answer: "Yes, you can expect 3-5 days of redness and peeling."
+      }
+    ],
+    aftercare: "Avoid sun exposure, saunas, and swimming for at least one week after the treatment. Use a gentle cleanser and moisturizer, and apply SPF daily.",
+    ingredients: ["100% natural algae powder"],
+    testimonials: []
+  },
+  {
+    slug: "microdermabrasion",
+    title: "Microdermabrasion",
+    short: "A minimally invasive procedure to renew overall skin tone and texture.",
+    description:
+      "Microdermabrasion is a minimally invasive procedure used to renew overall skin tone and texture. It can improve the appearance of sun damage, wrinkles, fine lines, age spots, acne scarring, melasma, and other skin-related concerns and conditions.",
+    image:
+      "https://plus.unsplash.com/premium_photo-1661281252293-173617fdc3e9?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    price: "$100",
+    duration: "60 minutes",
+    benefits: ["Reduces fine lines and wrinkles", "Improves skin tone and texture", "Treats acne and acne scars"],
+    fullDescription: `Microdermabrasion is a cosmetic procedure that uses a diamond-tipped wand to gently exfoliate the top layer of skin. This helps to remove dead skin cells, unclog pores, and stimulate collagen production. The result is smoother, brighter, and more even-toned skin.`,
+    detailedBenefits: [
+      "Reduces the appearance of fine lines and wrinkles",
+      "Improves skin tone and texture",
+      "Treats acne and acne scars",
+      "Reduces the appearance of sun damage and age spots",
+      "Unclogs pores and reduces pore size",
+      "Stimulates collagen production",
+      "Leaves skin feeling soft and smooth"
+    ],
+    process: [
+      {
+        step: 1,
+        title: "Cleansing",
+        description: "The skin is cleansed to remove any makeup, dirt, or oil."
+      },
+      {
+        step: 2,
+        title: "Microdermabrasion",
+        description: "A diamond-tipped wand is used to gently exfoliate the skin."
+      },
+      {
+        step: 3,
+        title: "Hydrating Mask",
+        description: "A hydrating mask is applied to soothe and moisturize the skin."
+      },
+      {
+        step: 4,
+        title: "Finishing Touches",
+        description: "The treatment is finished with a serum, moisturizer, and SPF."
+      }
+    ],
+    faqs: [
+      {
+        question: "Is microdermabrasion painful?",
+        answer: "No, microdermabrasion is a gentle and painless procedure. You may feel a mild scratching sensation as the wand moves across your skin."
+      },
+      {
+        question: "How many treatments will I need?",
+        answer: "A series of 6-12 treatments is recommended for best results, with a treatment every 2-4 weeks."
+      },
+      {
+        question: "Is there any downtime?",
+        answer: "There is no downtime with microdermabrasion. Your skin may be slightly red for a few hours after the treatment, but you can return to your normal activities immediately."
+      }
+    ],
+    aftercare: "Avoid sun exposure for a few days after the treatment and use a gentle cleanser and moisturizer. It is also important to wear SPF to protect your skin.",
+    ingredients: ["Diamond-tipped wand"],
+    testimonials: []
+  },
+  {
     slug: "made-for-you-facial",
     title: "Made for You Facial",
     short: "Customized deep-cleansing facial tailored to your skin's needs.",
@@ -86,263 +277,239 @@ Perfect for all skin types—whether you're a first-timer or looking for regular
     ]
   },
   {
-    slug: "hair-treatment",
-    title: "Hair Treatment",
-    short: "Nourishing hair therapy to restore shine.",
+    slug: "dermalogica-lactic-acid-peel",
+    title: "Dermalogica Lactic Acid Brightening Peel",
+    short: "A brightening peel with 30% lactic acid.",
     description:
-      "Nourishing treatments designed to restore shine and vitality to your hair. Includes bespoke mask and scalp massage tailored to your hair needs.",
+      "A brightening peel with 30% lactic acid that helps to even out skin tone and texture, reduce the appearance of fine lines and wrinkles, and leave the skin with a healthy glow.",
     image:
-      "https://images.unsplash.com/photo-1522338242992-e1a54906a8da?w=800&h=600&fit=crop",
-    price: "$60",
-    duration: "30 minutes",
-    benefits: ["Restores shine", "Strengthens strands", "Scalp nourishment"],
-    fullDescription: `Transform damaged, dull hair into silky, lustrous locks with our comprehensive hair treatment. This professional-grade service combines deep conditioning, scalp massage, and nourishing masks specifically formulated for your hair type.
-
-Whether your hair is damaged from heat styling, color treatments, or environmental stress, our specialized formulas penetrate deep into the hair shaft, restoring moisture, strength, and shine. The scalp massage component stimulates blood flow to hair follicles, promoting healthier hair growth from the root.`,
+      "https://images.unsplash.com/photo-1620916566398-39f1a3a76825?w=800&h=600&fit=crop",
+    price: "$100",
+    duration: "45 minutes",
+    benefits: ["Evens skin tone", "Reduces fine lines", "Brightens skin"],
+    fullDescription: `The Dermalogica Lactic Acid Brightening Peel is a professional-grade peel that provides intense exfoliation and hydration. It is ideal for those with hyperpigmentation, uneven skin tone, and signs of aging. The peel is formulated with 30% lactic acid, which helps to remove dead skin cells, stimulate cell renewal, and brighten the skin.`,
     detailedBenefits: [
-      "Deep hydration and moisture restoration",
-      "Repairs damage from heat and chemicals",
-      "Enhances natural shine and luster",
-      "Strengthens hair strands",
-      "Reduces frizz and flyaways",
-      "Improves scalp health",
-      "Promotes healthier hair growth",
-      "Protects color-treated hair",
-      "Smooths cuticles for silky texture",
-      "Reduces breakage and split ends"
-    ],
-    process: [
-      {
-        step: 1,
-        title: "Consultation",
-        description: "We assess your hair type and condition to select the perfect treatment formula."
-      },
-      {
-        step: 2,
-        title: "Scalp Massage",
-        description: "Stimulating massage to improve blood circulation and prepare hair follicles."
-      },
-      {
-        step: 3,
-        title: "Deep Conditioning Mask",
-        description: "Application of nutrient-rich mask tailored to your specific hair needs."
-      },
-      {
-        step: 4,
-        title: "Steam Treatment",
-        description: "Heat therapy to help mask penetrate deep into the hair shaft."
-      },
-      {
-        step: 5,
-        title: "Rinse & Style",
-        description: "Gentle rinse and optional blow-dry or styling to showcase your revitalized hair."
-      }
-    ],
-    faqs: [
-      {
-        question: "How often should I get a hair treatment?",
-        answer: "For damaged or color-treated hair, we recommend monthly treatments. For maintenance, every 6-8 weeks is ideal."
-      },
-      {
-        question: "Will this treatment fix split ends?",
-        answer: "Our treatment significantly improves hair appearance and prevents future damage. For severe split ends, we recommend a trim alongside treatment."
-      },
-      {
-        question: "Is this suitable for all hair types?",
-        answer: "Yes! We have customized formulations for straight, curly, wavy, fine, and thick hair types."
-      },
-      {
-        question: "How long do the results last?",
-        answer: "You'll see results immediately, with benefits lasting 2-3 weeks. Regular treatments provide cumulative, longer-lasting results."
-      }
-    ],
-    aftercare: "Use sulfate-free shampoo. Minimize heat styling for 48 hours. Apply leave-in conditioner. Avoid chlorine and salt water.",
-    ingredients: ["Argan Oil", "Keratin", "Coconut Oil", "Shea Butter", "Biotin"],
-    testimonials: [
-      {
-        name: "Michelle D.",
-        text: "My hair was fried from color treatments. This brought it back to life!",
-        rating: 5
-      },
-      {
-        name: "Rachel K.",
-        text: "So shiny and smooth now. My curls have never looked better!",
-        rating: 5
-      }
-    ]
-  },
-  {
-    slug: "under-eye-treatment",
-    title: "Under Eye Treatment",
-    short: "Targeted care to reduce dark circles and puffiness.",
-    description:
-      "Specialized under-eye therapy that reduces dark circles and puffiness using cooling tools, targeted serums, and gentle massage techniques.",
-    image:
-      "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=800&h=600&fit=crop",
-    price: "$40",
-    duration: "25 minutes",
-    benefits: ["Reduces puffiness", "Brightens under-eye area", "Soothing and cooling"],
-    fullDescription: `The delicate under-eye area is often the first place to show signs of aging and fatigue. Our specialized under-eye treatment targets this sensitive zone with precision, using cooling technology, brightening serums, and expert techniques to reduce dark circles, eliminate puffiness, and reveal a more youthful, refreshed appearance.
-
-This treatment is perfect for anyone struggling with tired eyes, whether from lack of sleep, stress, or aging. The cooling jade rollers and specialized serums work together to constrict blood vessels and reduce inflammation, while brightening ingredients like vitamin C and coffee extract help fade dark circles.`,
-    detailedBenefits: [
-      "Reduces dark circles and discoloration",
-      "Eliminates under-eye puffiness and bags",
-      "Brightens and awakens tired eyes",
-      "Tightens and firms delicate skin",
-      "Hydrates the thin under-eye skin",
-      "Reduces fine lines and wrinkles",
-      "Decreases inflammation",
-      "Improves circulation",
-      "Soothes and cools irritated eyes",
-      "Provides instant refreshed appearance"
+      "Evens out skin tone and texture",
+      "Reduces the appearance of fine lines and wrinkles",
+      "Brightens and illuminates the skin",
+      "Hydrates and moisturizes the skin",
+      "Reduces the appearance of hyperpigmentation",
+      "Leaves the skin with a healthy glow"
     ],
     process: [
       {
         step: 1,
         title: "Cleansing",
-        description: "Gentle cleansing of the eye area with specialized solutions."
+        description: "The skin is cleansed to remove any makeup, dirt, or oil."
       },
       {
         step: 2,
-        title: "Jade Roller Massage",
-        description: "Cold jade roller application to reduce puffiness and wake up the eyes."
+        title: "Peel Application",
+        description: "The lactic acid peel is applied to the skin and left on for a few minutes."
       },
       {
         step: 3,
-        title: "Brightening Serum",
-        description: "Application of potent serum with vitamin C and coffee extract to fade dark circles."
+        title: "Neutralization",
+        description: "The peel is neutralized and removed from the skin."
       },
       {
         step: 4,
-        title: "Eye Mask",
-        description: "Specialized hydrating and brightening mask tailored for delicate eye skin."
+        title: "Hydrating Mask",
+        description: "A hydrating mask is applied to soothe and moisturize the skin."
       },
       {
         step: 5,
-        title: "Eye Cream & SPF",
-        description: "Final nourishing eye cream and SPF protection for long-lasting results."
+        title: "Finishing Touches",
+        description: "The treatment is finished with a serum, moisturizer, and SPF."
       }
     ],
     faqs: [
       {
-        question: "Is this safe for sensitive eyes?",
-        answer: "Absolutely. We use hypoallergenic, ophthalmologist-tested products. The treatment never touches the eye itself, only the surrounding skin."
+        question: "Is this peel suitable for sensitive skin?",
+        answer: "This peel may not be suitable for those with very sensitive skin. We recommend a patch test before the full treatment."
       },
       {
-        question: "When will I see results?",
-        answer: "You'll notice immediate reduction in puffiness and brightness. Dark circles continue to fade over the next few days as skin heals."
+        question: "How many treatments will I need?",
+        answer: "A series of 3-6 treatments is recommended for best results."
       },
       {
-        question: "Can I get this before makeup?",
-        answer: "Yes! This is perfect before events. The cooling effect makes makeup application easier and smoother."
-      },
-      {
-        question: "How often should I do this treatment?",
-        answer: "For maintenance, we recommend monthly. For stubborn dark circles, you can do bi-weekly treatments for 2 months, then monthly."
+        question: "Is there any downtime?",
+        answer: "You may experience some redness and mild peeling for a few days after the treatment."
       }
     ],
-    aftercare: "Avoid touching the eye area. Use SPF daily. Stay hydrated. Avoid alcohol and caffeine for 24 hours for best results.",
-    ingredients: ["Vitamin C", "Coffee Extract", "Hyaluronic Acid", "Caffeine", "Peptides"],
-    testimonials: [
-      {
-        name: "Anna R.",
-        text: "I looked like I'd gotten 8 hours of sleep! The puffiness was gone immediately.",
-        rating: 5
-      },
-      {
-        name: "Maria S.",
-        text: "Finally found something that works on my dark circles! Much less noticeable now.",
-        rating: 5
-      }
-    ]
+    aftercare: "Avoid sun exposure and use a gentle cleanser and moisturizer. It is also important to wear SPF to protect your skin.",
+    ingredients: ["30% Lactic Acid"],
+    testimonials: []
   },
   {
-    slug: "hand-massage",
-    title: "Hand Massage",
-    short: "Soothing hand massage to relieve tension and hydrate.",
+    slug: "back-facial",
+    title: "Back Facial",
+    short: "A deep cleansing facial for your back.",
     description:
-      "A soothing hand massage that relieves tension, improves mobility and deeply moisturizes the skin. Includes a nourishing mask and warm towels.",
+      "A deep cleansing facial for your back that targets clogged pores, back acne, and dehydrated skin. Includes a deep cleanse, exfoliation, extractions, mask, and moisturizer.",
     image:
-      "https://images.unsplash.com/photo-1519415510236-718bdfcd89c8?w=800&h=600&fit=crop",
-    price: "$35",
-    duration: "20 minutes",
-    benefits: ["Relieves tension", "Hydrates skin", "Improves circulation"],
-    fullDescription: `Our hands work hard every day, yet they're often the most neglected part of our skincare routine. This specialized hand massage and treatment focuses on relieving tension, improving circulation, and deeply nourishing the delicate skin on your hands and forearms.
-
-Using a combination of therapeutic massage techniques, warming oils, and luxurious nourishing masks, we restore softness, improve flexibility, and reduce the visible signs of aging on your hands. This treatment is especially beneficial for those with arthritis, carpal tunnel, or anyone who works extensively with their hands.`,
+      "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=800&h=600&fit=crop",
+    price: "$90",
+    duration: "60 minutes",
+    benefits: ["Treats back acne", "Deeply cleanses and exfoliates", "Hydrates the skin"],
+    fullDescription: `The back facial is a treatment that consists of deep cleansing, exfoliation, and extractions. It is performed on your back. In a back facial, an esthetician will use creams and possibly steam to exfoliate and clean your skin before extracting oil and debris. The treatment ends with a detoxifying mask for hydration.`,
     detailedBenefits: [
-      "Relieves hand and wrist tension",
-      "Improves circulation and flexibility",
-      "Deeply hydrates dry hand skin",
-      "Reduces age spots and discoloration",
-      "Softens cuticles and strengthens nails",
-      "Alleviates carpal tunnel symptoms",
-      "Reduces arthritis and joint pain",
-      "Improves grip and dexterity",
-      "Enhances skin tone and texture",
-      "Promotes relaxation and stress relief"
+      "Treats back acne and clogged pores",
+      "Deeply cleanses and exfoliates the skin",
+      "Hydrates and moisturizes the skin",
+      "Leaves the skin on your back feeling soft and smooth",
+      "Reduces inflammation and redness"
     ],
     process: [
       {
         step: 1,
-        title: "Soaking",
-        description: "Warm soak in luxury oils to soften skin and prepare for massage."
+        title: "Cleansing",
+        description: "The back is cleansed to remove any dirt or oil."
       },
       {
         step: 2,
         title: "Exfoliation",
-        description: "Gentle removal of dead skin and calluses with natural scrub."
+        description: "An exfoliating scrub is used to remove dead skin cells."
       },
       {
         step: 3,
-        title: "Massage",
-        description: "Therapeutic massage targeting pressure points and tension areas."
+        title: "Extractions",
+        description: "Extractions are performed to remove any blackheads or whiteheads."
       },
       {
         step: 4,
-        title: "Nourishing Mask",
-        description: "Application of rich hydrating mask while hands relax in warmth."
+        title: "Mask",
+        description: "A detoxifying mask is applied to the back."
       },
       {
         step: 5,
-        title: "Moisturize & Protect",
-        description: "Final application of premium hand cream with SPF protection."
+        title: "Moisturizer",
+        description: "The treatment is finished with a moisturizer."
       }
     ],
     faqs: [
       {
-        question: "Is this suitable if I have arthritis?",
-        answer: "Yes! The massage and warmth can help relieve arthritis pain. Please mention this during booking so we can customize the pressure."
+        question: "Who is a back facial for?",
+        answer: "A back facial is for anyone who wants to improve the appearance and health of the skin on their back. It is especially beneficial for those who are prone to back acne."
       },
       {
-        question: "Can I get this if my nails are weak?",
-        answer: "Absolutely. We'll treat your cuticles and nails gently while strengthening them with nourishing treatments."
-      },
-      {
-        question: "How long do the benefits last?",
-        answer: "Immediate relief from tension and softness that lasts 1-2 weeks. Regular treatments (monthly) provide cumulative benefits."
-      },
-      {
-        question: "Can I do other activities after?",
-        answer: "Yes, but we recommend avoiding harsh cleaning products and excessive water for at least 6 hours to maximize hydration."
+        question: "How often should I get a back facial?",
+        answer: "We recommend a back facial every 4-6 weeks for best results."
       }
     ],
-    aftercare: "Use gentle hand soaps. Apply hand cream frequently. Wear gloves for cleaning and gardening. Use SPF on hands daily.",
-    ingredients: ["Shea Butter", "Jojoba Oil", "Almond Oil", "Vitamin E", "Glycerin"],
-    testimonials: [
+    aftercare: "Avoid sun exposure for 24 hours and use a gentle cleanser and moisturizer.",
+    ingredients: ["Exfoliating scrub", "Detoxifying mask"],
+    testimonials: []
+  },
+  {
+    slug: "relaxation-massage",
+    title: "Relaxation Massage",
+    short: "A gentle massage that promotes relaxation and relieves muscle tension.",
+    description:
+      "A gentle, soothing massage that uses smooth, gliding strokes to help you relax. The massage therapist will move at a slower pace and use lighter pressure than in other types of massage. Relaxation massage is all about relaxing. It focuses on giving the client time to recover from the stresses of daily life.",
+    image:
+      "https://images.unsplash.com/photo-1519415510236-718bdfcd89c8?w=800&h=600&fit=crop",
+    price: "$90",
+    duration: "60 minutes",
+    benefits: ["Promotes relaxation", "Relieves muscle tension", "Improves circulation"],
+    fullDescription: `A relaxation massage is a smooth, gentle, flowing style that promotes general relaxation, relieves muscular tension, plus improves circulation and range of movement. Your therapist will aim to relax, revive and rejuvenate you at a massage depth that does not cause discomfort.`,
+    detailedBenefits: [
+      "Promotes relaxation and reduces stress",
+      "Relieves muscle tension and stiffness",
+      "Improves circulation and blood flow",
+      "Increases flexibility and range of motion",
+      "Improves sleep quality",
+      "Boosts the immune system"
+    ],
+    process: [
       {
-        name: "Tom H.",
-        text: "The arthritis pain in my hands is so much better after this treatment. I feel years younger!",
-        rating: 5
+        step: 1,
+        title: "Consultation",
+        description: "The massage therapist will ask you about any areas of concern and your desired pressure."
       },
       {
-        name: "Patricia L.",
-        text: "My hands look as good as they feel. Worth every penny!",
-        rating: 5
+        step: 2,
+        title: "Massage",
+        description: "The therapist will use long, smooth, gliding strokes to massage your entire body."
+      },
+      {
+        step: 3,
+        title: "Finishing Touches",
+        description: "The massage will end with some gentle stretches."
       }
-    ]
+    ],
+    faqs: [
+      {
+        question: "What is the difference between a relaxation massage and a deep tissue massage?",
+        answer: "A relaxation massage uses lighter pressure and slower strokes to promote relaxation, while a deep tissue massage uses more pressure to target deeper layers of muscle and connective tissue."
+      },
+      {
+        question: "What should I wear for a relaxation massage?",
+        answer: "You can wear whatever you feel comfortable in. You will be draped with a sheet during the massage, so you can undress to your comfort level."
+      }
+    ],
+    aftercare: "Drink plenty of water to help flush out toxins. Avoid strenuous activity for the rest of the day.",
+    ingredients: ["Massage oil"],
+    testimonials: []
   },
+  {
+    slug: "waxing-hair-removal",
+    title: "Waxing Hair Removal",
+    short: "A hair removal method that removes hair from the root.",
+    description:
+      "Waxing is a hair removal method that uses a sticky substance, such as wax, to remove hair from the root. It is a long-lasting method of hair removal, as it can take 2-8 weeks for the hair to grow back.",
+    image: "https://images.unsplash.com/photo-1522338242992-e1a54906a8da?w=800&h=600&fit=crop",
+    price: "Varies",
+    duration: "Varies",
+    benefits: ["Long-lasting results", "Softer and finer hair regrowth", "Exfoliates the skin"],
+    fullDescription: `Waxing is a popular hair removal method that is effective for removing hair from all parts of the body. It is a great alternative to shaving, as it provides longer-lasting results and can help to reduce hair growth over time.`,
+    detailedBenefits: [
+      "Long-lasting results (2-8 weeks)",
+      "Softer and finer hair regrowth",
+      "Exfoliates the skin",
+      "Reduces hair growth over time",
+      "Quick and efficient"
+    ],
+    process: [
+      {
+        step: 1,
+        title: "Cleansing",
+        description: "The area to be waxed is cleansed and prepped."
+      },
+      {
+        step: 2,
+        title: "Wax Application",
+        description: "Warm wax is applied to the skin in the direction of hair growth."
+      },
+      {
+        step: 3,
+        title: "Hair Removal",
+        description: "A cloth strip is placed over the wax and quickly removed, pulling the hair out from the root."
+      },
+      {
+        step: 4,
+        title: "Soothing",
+        description: "A soothing lotion is applied to the skin to calm any redness or irritation."
+      }
+    ],
+    faqs: [
+      {
+        question: "Does waxing hurt?",
+        answer: "Waxing can be uncomfortable, especially for the first time. However, the pain is brief and most people find that it is well worth the results."
+      },
+      {
+        question: "How long does my hair need to be for waxing?",
+        answer: "Your hair should be at least 1/4 inch long for best results."
+      },
+      {
+        question: "How often should I get waxed?",
+        answer: "We recommend getting waxed every 4-6 weeks."
+      }
+    ],
+    aftercare: "Avoid sun exposure, hot baths, and saunas for 24 hours after waxing. Exfoliate the skin a few days after waxing to prevent ingrown hairs.",
+    ingredients: ["Wax"],
+    testimonials: []
+  }
 ];
 
 export function getServiceBySlug(slug: string) {

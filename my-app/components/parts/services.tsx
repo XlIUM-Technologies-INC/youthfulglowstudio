@@ -4,7 +4,7 @@ import { Sparkles } from 'lucide-react';
 import { SERVICES } from '@/lib/services';
 
 export default function ServicesSection() {
-  // Keep this section a short, visual summary. Each card links to its detail page.
+  // Keep this section a short, visual summary of our services.
   return (
     <div id="services" className="py-20 bg-linear-to-br from-gray-50 via-white to-[#5A95CD]/5">
       <div className="max-w-7xl mx-auto px-6">
@@ -14,23 +14,22 @@ export default function ServicesSection() {
             Our Special <span className="text-[#5A95CD]">Services</span>
           </h2>
           <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-            A quick snapshot of what we offer — click any card to learn more and book.
+            A quick snapshot of what we offer.
           </p>
         </div>
 
         {/* Summary Grid (short descriptions, click-through) */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {SERVICES.map((service) => (
-            <Link
+            <div
               key={service.slug}
-              href={`/services/${service.slug}`}
-              className="group block bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2"
+              className="block bg-white rounded-3xl overflow-hidden shadow-lg"
             >
               <div className="relative h-56 overflow-hidden">
                 <img
                   src={service.image}
                   alt={service.title}
-                  className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
+                  className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-gray-900/40 to-transparent"></div>
               </div>
@@ -38,7 +37,7 @@ export default function ServicesSection() {
                 <h3 className="text-lg font-semibold text-gray-900 mb-1">{service.title}</h3>
                 <p className="text-sm text-gray-600">{service.short}</p>
               </div>
-            </Link>
+            </div>
           ))}
         </div>
 
