@@ -283,7 +283,7 @@ Perfect for all skin types—whether you're a first-timer or looking for regular
     description:
       "A brightening peel with 30% lactic acid that helps to even out skin tone and texture, reduce the appearance of fine lines and wrinkles, and leave the skin with a healthy glow.",
     image:
-      "https://images.unsplash.com/photo-1620916566398-39f1a3a76825?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1654781350550-0dc72ecb6fae?q=80&w=998&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     price: "$100",
     duration: "45 minutes",
     benefits: ["Evens skin tone", "Reduces fine lines", "Brightens skin"],
