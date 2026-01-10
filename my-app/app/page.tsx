@@ -10,7 +10,6 @@ export default function HomePage() {
       <HeroSection />
       <ServicesSection />
       <AboutSection />
-      <BlogInsightsSection />
-   </RootLayout>
+    </RootLayout>
   );
 }
