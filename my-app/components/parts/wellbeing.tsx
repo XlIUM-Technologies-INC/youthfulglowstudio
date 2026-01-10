@@ -94,7 +94,6 @@ export default function BlogInsightsSection() {
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
               Beauty and Wellness <span className="text-[#5A95CD]">Insights</span>
             </h2>
-          § ~§90-=-0987654wq    457
           </div>
 
           <div className="grid lg:grid-cols-2 gap-6">
