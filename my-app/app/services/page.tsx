@@ -6,18 +6,36 @@ import Link from "next/link";
 import { useState } from "react";
 import { SERVICES } from "@/lib/services";
 
+// Mapping from service slug to cal.com booking slug
+const slugToCalComSlug = (slug: string): string => {
+  const mapping: Record<string, string> = {
+    "dermaplaning": "dermaplaning",
+    "zena-algae-peel": "zena-algae-peel",
+    "microdermabrasion": "microdermabrasion",
+    "made-for-you-facial": "signature-facial",
+    "dermalogica-lactic-acid-peel": "chemical-peels",
+    "back-facial": "back-facial",
+    "relaxation-massage": "aromatherapy-massage",
+    "waxing-hair-removal": "waxing",
+  };
+  return mapping[slug] || slug;
+};
+
 interface ServiceCardProps {
   slug: string;
   title: string;
   price: string;
-  description: string;
+  short?: string;
+  description?: string;
   duration?: string;
   benefits?: string[];
   fullDescription?: string;
 }
 
-const ServiceCard = ({ slug, title, price, description, duration, benefits, fullDescription }: ServiceCardProps) => {
+const ServiceCard = ({ slug, title, price, short, description, duration, benefits, fullDescription }: ServiceCardProps) => {
   const [isOpen, setIsOpen] = useState(false);
+  const calComSlug = slugToCalComSlug(slug);
+  const displayDescription = fullDescription || description || short || "";
 
   return (
     <div id={slug} className="bg-white rounded-2xl shadow-lg overflow-hidden mb-6 border border-gray-100 hover:shadow-xl transition-shadow">
@@ -40,7 +58,7 @@ const ServiceCard = ({ slug, title, price, description, duration, benefits, full
         <div className="border-t border-gray-100 bg-gray-50/30 p-6 md:p-8 space-y-6 animate-in fade-in duration-200">
           <div>
             <h4 className="font-semibold text-gray-800 mb-2">What to Expect</h4>
-            <p className="text-gray-700 leading-relaxed">{fullDescription || description}</p>
+            <p className="text-gray-700 leading-relaxed">{displayDescription}</p>
           </div>
 
           {duration && (
@@ -65,10 +83,12 @@ const ServiceCard = ({ slug, title, price, description, duration, benefits, full
           )}
 
           <Link
-            href={`/contact`}
+            href={`https://cal.com/youthfulglowstudiobookings/${calComSlug}?overlayCalendar=true`}
+            data-cal-link={`https://cal.com/youthfulglowstudiobookings/${calComSlug}?overlayCalendar=true`}
+            data-cal-config='{"layout":"month_view","theme":"light"}'
             className="inline-flex items-center gap-2 bg-linear-to-r from-[#5A95CD] to-[#4A85BD] hover:from-[#4A85BD] hover:to-[#3A75AD] text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 mt-4"
           >
-            Learn More & Book
+            <Sparkles className="w-4 h-4" /> BOOK Now
           </Link>
         </div>
       )}

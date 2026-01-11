@@ -175,10 +175,8 @@ export default function ContactPage() {
           <h2 className="text-3xl font-bold mb-4 text-gray-900">Prefer to book directly?</h2>
           <p className="text-gray-600 mb-8">Visit our services page to schedule your appointment.</p>
           <Link
-            href="https://cal.com/youthfulglowstudiobookings?overlayCalendar=true"
-            data-cal-link="https://cal.com/youthfulglowstudiobookings?overlayCalendar=true"
-            data-cal-config='{"layout":"month_view","theme":"light"}'
-            className="bg-linear-to-r from-[#5A95CD] to-[#4A85BD] text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all"
+            href="/services"
+            className="bg-linear-to-r from-[#5A95CD] to-[#4A85BD] text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all inline-block"
           >
             Book Now
           </Link>
