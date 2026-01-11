@@ -20,6 +20,9 @@ export const metadata: Metadata = {
   description: "Professional skincare and beauty treatments including facial massage, hair therapy, under-eye treatments, and hand massage. Book your glow session today.",
   keywords: "skincare, beauty, facial massage, treatments, wellness",
   authors: [{ name: "Youthful Glow Studio" }],
+  icons: {
+    icon: "/favicon.webp",
+  },
 };
 
 export default function RootLayout({

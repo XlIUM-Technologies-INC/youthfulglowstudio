@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Menu, X } from 'lucide-react';
 
 export default function Navbar() {
@@ -26,11 +27,18 @@ export default function Navbar() {
     }`}>
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
-        <div className={`transition-all duration-500 ${scrolled ? 'text-xl' : 'text-2xl'}`}>
+        <Link href="/" className={`transition-all duration-500 flex items-center gap-2 ${scrolled ? 'text-xl' : 'text-2xl'}`}>
+          <Image
+            src="/favicon.webp"
+            alt="Youthful Glow Studio Logo"
+            width={scrolled ? 50 : 80}
+            height={scrolled ? 50 : 80}
+            className="transition-all duration-500"
+          />
           <h1 className="font-bold text-[#5A95CD]">
             YOUTHFUL GLOW
           </h1>
-        </div>
+        </Link>
         
         {/* Desktop Navigation */}
         <div className={`hidden md:flex items-center gap-8 transition-all duration-500 ${
