@@ -9,44 +9,32 @@ export default function ReviewPage() {
 
   const reviews = [
     {
-      name: "Sarah Johnson",
-      role: "Marketing Executive",
-      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop",
+      name: "Dorina Cercel",
+      role: "Client",
       rating: 5,
-      review: "Absolutely transformative experience! The personalized facial treatment has given me the confidence I needed. My skin has never looked better, and the team is so professional and caring.",
-      date: "2 weeks ago"
+      review: "Excellent service! I really enjoyed my facial and my massage! Highly recommended!",
+      date: "Google Reviews"
     },
     {
-      name: "Emily Martinez",
-      role: "Business Owner",
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop",
+      name: "Melissa",
+      role: "Client",
       rating: 5,
-      review: "I've tried many skincare studios, but Youthful Glow is exceptional. The under-eye treatment worked wonders, and I love how they customize everything to my specific needs. Highly recommend!",
-      date: "1 month ago"
+      review: "I've gotten a chemical peel done here a couple of times and the results are always amazing! The service is professional and Marcia does a great job making you feel comfortable. My skin looks brand new afterwards so I look forward to coming back for more services!",
+      date: "Google Reviews"
     },
     {
-      name: "Jessica Chen",
-      role: "Fashion Designer",
-      image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop",
+      name: "Donna B.",
+      role: "Client",
       rating: 5,
-      review: "The hair treatment and facial massage combo is pure bliss! Not only did my skin glow, but I felt completely relaxed. This is my go-to place for self-care now.",
-      date: "3 weeks ago"
+      review: "Got microdermabrasion and dermaplaning with Marcia and all 4 times I had the treatments they were amazing experiences. Marcia is friendly and knowledgeable about the treatment she is providing and the products being used. She explains the process thoroughly and what to expect after the treatment. She treated my skin with care, with an end result of it feeling relaxed, rejuvenated and glowing. She makes you feel at home, comfortable and the whole experience was very pleasant.",
+      date: "Google Reviews"
     },
     {
-      name: "Amanda Williams",
-      role: "Real Estate Agent",
-      image: "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=150&h=150&fit=crop",
+      name: "Claudia Koop",
+      role: "Client",
       rating: 5,
-      review: "Professional, clean, and results-driven. Marcia truly understands skin care and takes time to explain every step. I've seen amazing improvements in my hyperpigmentation issues.",
-      date: "2 months ago"
-    },
-    {
-      name: "Rebecca Thompson",
-      role: "Healthcare Professional",
-      image: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=150&h=150&fit=crop",
-      rating: 5,
-      review: "The attention to detail and genuine care for clients sets this studio apart. Every visit feels like a retreat. My skin has never been healthier, and I always leave feeling rejuvenated.",
-      date: "1 week ago"
+      review: "I went for a facial last week and it was one of the best. My face didn't feel and look that good in years. I will be going regularly and highly recommended it to all my family and friends. Thank you so much!!",
+      date: "Google Reviews"
     }
   ];
 
@@ -59,7 +47,8 @@ export default function ReviewPage() {
   };
 
   return (
-    <RootLayout>
+    <>
+      <RootLayout>
       <section id="reviews" className="py-20 bg-white relative overflow-hidden">
       {/* Decorative Background Elements */}
       <div className="absolute top-20 left-10 w-40 h-40 border-4 border-[#5A95CD] opacity-5 rounded-full"></div>
@@ -68,12 +57,27 @@ export default function ReviewPage() {
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Client <span className="text-[#5A95CD]">Reviews</span>
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4" style={{fontFamily: 'Playfair Display, serif'}}>
+            What Our Clients Are <span className="text-[#5A95CD]">Saying</span>
           </h2>
-          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-            Real experiences from real people who trusted us with their skincare journey
-          </p>
+          <div className="max-w-3xl mx-auto space-y-4">
+            <p className="text-gray-700 text-lg leading-relaxed">
+              At Youthful Glow Studio, every client is treated with care, intention, and the goal of glowing from the inside out. Here's what some of our wonderful clients have shared about their experiences.
+            </p>
+            <p className="text-gray-600 text-base">
+              Whether it's your first facial or your fifth, your feedback means the world to me — and helps others feel confident booking their own self-care journey.
+            </p>
+            <p className="text-gray-600 text-base italic">
+              I personally respond to every review, because your glow is my passion.
+            </p>
+            <p className="text-gray-700 font-medium mt-6">
+              We're so grateful for the kind words from our glowing clients!<br />
+              <span className="text-sm text-gray-600">These reviews are real feedback from those who've experienced our treatments</span>
+            </p>
+            <p className="text-gray-600 text-sm">
+              Reviews on Instagram @youthfulglowstudio or Google Reviews
+            </p>
+          </div>
         </div>
 
         {/* Main Featured Review */}
@@ -98,21 +102,12 @@ export default function ReviewPage() {
 
             {/* Client Info */}
             <div className="flex items-center justify-center gap-4 relative z-10">
-              <div className="w-16 h-16 rounded-full overflow-hidden border-4 border-white shadow-lg">
-                <img 
-                  src={reviews[currentReview].image}
-                  alt={reviews[currentReview].name}
-                  className="w-full h-full object-cover grayscale"
-                />
+              <div>
+                <h4 className="font-bold text-gray-900 text-lg text-center">{reviews[currentReview].name}</h4>
+                <p className="text-gray-600 text-sm text-center">{reviews[currentReview].role}</p>
+                <p className="text-gray-500 text-xs mt-1 text-center">{reviews[currentReview].date}</p>
               </div>
-              <div className="text-left">
-                <h4 className="font-bold text-gray-900 text-lg">{reviews[currentReview].name}</h4>
-                <p className="text-gray-600 text-sm">{reviews[currentReview].role}</p>
-                <p className="text-gray-500 text-xs mt-1">{reviews[currentReview].date}</p>
-              </div>
-            </div>
-
-            {/* Navigation Arrows */}
+            </div>            {/* Navigation Arrows */}
             <div className="flex justify-center gap-4 mt-8">
               <button 
                 onClick={prevReview}
@@ -145,44 +140,8 @@ export default function ReviewPage() {
           </div>
         </div>
 
-        {/* Review Grid */}
-        <div className="grid md:grid-cols-3 gap-6">
-          {reviews.slice(0, 3).map((review, index) => (
-            <div 
-              key={index}
-              className="bg-white border-2 border-gray-100 rounded-2xl p-6 hover:border-[#5A95CD] hover:shadow-xl transition-all duration-300 group"
-            >
-              {/* Stars */}
-              <div className="flex gap-1 mb-4">
-                {[...Array(review.rating)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 text-[#5A95CD] fill-blue-600" />
-                ))}
-              </div>
 
-              {/* Review Text */}
-              <p className="text-gray-700 text-sm leading-relaxed mb-4 line-clamp-4">
-                "{review.review}"
-              </p>
-
-              {/* Client Info */}
-              <div className="flex items-center gap-3 pt-4 border-t border-gray-100">
-                <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-gray-200 group-hover:border-[#5A95CD] transition-colors">
-                  <img 
-                    src={review.image}
-                    alt={review.name}
-                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
-                  />
-                </div>
-                <div>
-                  <h4 className="font-semibold text-gray-900 text-sm">{review.name}</h4>
-                  <p className="text-gray-600 text-xs">{review.role}</p>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* CTA */}
+       {/* CTA */}
         <div className="text-center mt-12">
           <p className="text-gray-600 mb-6">Join hundreds of satisfied clients</p>
           <Link href="/services">
@@ -194,5 +153,6 @@ export default function ReviewPage() {
       </div>
       </section>
     </RootLayout>
+    </>
   );
 }

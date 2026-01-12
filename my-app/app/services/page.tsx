@@ -1,229 +1,272 @@
 "use client";
 
-import RootLayout from "@/components/layouts/RootLayout";
-import { Sparkles, ChevronDown } from "lucide-react";
-import Link from "next/link";
 import { useState } from "react";
-import { SERVICES } from "@/lib/services";
+import RootLayout from "@/components/layouts/RootLayout";
+import {
+  Sparkles,
+  ArrowRight,
+  Check,
+  Star,
+  Clock,
+  DollarSign,
+  Scissors,
+  Waves,
+  Gem,
+  Heart,
+  Droplets,
+  Sun,
+  UserCheck,
+  Wand2,
+} from "lucide-react";
 
-// Mapping from service slug to cal.com booking slug
-const slugToCalComSlug = (slug: string): string => {
-  const mapping: Record<string, string> = {
-    "dermaplaning": "dermaplaning",
-    "zena-algae-peel": "zena-algae-peel",
-    "microdermabrasion": "microdermabrasion",
-    "made-for-you-facial": "signature-facial",
-    "dermalogica-lactic-acid-peel": "chemical-peels",
-    "back-facial": "back-facial",
-    "relaxation-massage": "aromatherapy-massage",
-    "waxing-hair-removal": "waxing",
-  };
-  return mapping[slug] || slug;
-};
+/* -------------------- SERVICES DATA -------------------- */
 
-interface ServiceCardProps {
-  slug: string;
-  title: string;
-  price: string;
-  short?: string;
-  description?: string;
-  duration?: string;
-  benefits?: string[];
-  fullDescription?: string;
-}
+const SERVICES = [
+  {
+    slug: "dermaplaning",
+    title: "Dermaplaning",
+    icon: Scissors,
+    short: "Manual exfoliation to remove dead skin and peach fuzz for instant glow.",
+    description:
+      "Manual exfoliation using a sterile blade to remove dead skin and peach fuzz. Includes a full facial with customized mask, serum, moisturizer, and SPF for immediate smoothness and radiance.",
+    image:
+      "https://plus.unsplash.com/premium_photo-1661281252293-173617fdc3e9?q=80&w=2070&auto=format&fit=crop",
+    price: "$130",
+    packagePrice: "Package of 6 – $660 (Save $120)",
+    duration: "60 minutes",
+    bestFor:
+      "Anyone looking for ultra-smooth, glowing skin — especially before events or makeup application.",
+    whyLoveIt: [
+      "Makeup applies flawlessly",
+      "Baby-soft skin instantly",
+      "Non-invasive & relaxing",
+      "Immediate glow",
+    ],
+    concerns: ["dull-skin", "texture", "event-prep"],
+    areas: ["face"],
+  },
 
-const ServiceCard = ({ slug, title, price, short, description, duration, benefits, fullDescription }: ServiceCardProps) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const calComSlug = slugToCalComSlug(slug);
-  const displayDescription = fullDescription || description || short || "";
+  {
+    slug: "zena-algae-peel",
+    title: "Zena Algae Peel",
+    icon: Waves,
+    short: "Natural marine algae peel for resurfacing and collagen stimulation.",
+    description:
+      "A natural mechanical resurfacing peel using marine algae crystals. Lifts pigmentation, smooths texture, reduces acne, stretch marks, and improves overall skin tone with minimal downtime.",
+    image:
+      "https://images.unsplash.com/photo-1664549761426-6a1cb1032854?w=900&auto=format&fit=crop&q=60",
+    price: "From $180",
+    duration: "40 minutes",
+    bestFor:
+      "Clients with acne, scarring, dull skin, or uneven tone seeking a gentle yet powerful peel.",
+    whyLoveIt: [
+      "Natural alternative to harsh peels",
+      "Improves clarity and smoothness",
+      "Minimal downtime",
+      "Safe for sensitive skin",
+    ],
+    concerns: ["acne", "pigmentation", "dull-skin"],
+    areas: ["face", "body", "back"],
+  },
 
-  return (
-    <div id={slug} className="bg-white rounded-2xl shadow-lg overflow-hidden mb-6 border border-gray-100 hover:shadow-xl transition-shadow">
-      {/* Surface Level - Always Visible */}
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="w-full p-6 md:p-8 flex flex-col md:flex-row justify-between md:items-center gap-4 hover:bg-gray-50/50 transition-colors text-left"
-      >
-        <div className="flex-1">
-          <h3 className="text-2xl font-bold text-gray-900">{title}</h3>
-          <p className="text-[#5A95CD] font-semibold mt-2">{price}</p>
-        </div>
-        <ChevronDown 
-          className={`w-6 h-6 text-[#5A95CD] transition-transform duration-300 shrink-0 ${isOpen ? 'rotate-180' : ''}`}
-        />
-      </button>
+  {
+    slug: "microdermabrasion",
+    title: "Microdermabrasion",
+    icon: Gem,
+    short: "Diamond-tip exfoliation for smoother, brighter skin.",
+    description:
+      "A gentle yet effective exfoliation using a diamond-tipped wand to remove dead skin cells, followed by hydrating serums, mask, moisturizer, and SPF.",
+    image:
+      "https://images.unsplash.com/photo-1728949202477-bad2935775cb?w=900&auto=format&fit=crop&q=60",
+    price: "$120",
+    packagePrice: "Package of 6 – $600 (Save $120)",
+    duration: "60 minutes",
+    bestFor:
+      "Clients with dull, rough, uneven skin tone, fine lines, or mild acne scars.",
+    whyLoveIt: [
+      "Instant visible results",
+      "No downtime",
+      "Boosts product absorption",
+    ],
+    concerns: ["dull-skin", "texture"],
+    areas: ["face"],
+  },
 
-      {/* Expandable Details */}
-      {isOpen && (
-        <div className="border-t border-gray-100 bg-gray-50/30 p-6 md:p-8 space-y-6 animate-in fade-in duration-200">
-          <div>
-            <h4 className="font-semibold text-gray-800 mb-2">What to Expect</h4>
-            <p className="text-gray-700 leading-relaxed">{displayDescription}</p>
-          </div>
+  {
+    slug: "made-for-you-facial",
+    title: "Made For You Facial",
+    icon: Heart,
+    short: "Fully customized deep-cleansing facial.",
+    description:
+      "A personalized facial tailored to your skin needs. Includes double cleanse, exfoliation, steam, extractions (if needed), facial massage, mask, serum, moisturizer, and SPF.",
+    image:
+      "https://plus.unsplash.com/premium_photo-1664298510406-043afac0ac20?q=80&w=2069&auto=format&fit=crop",
+    price: "$110",
+    packagePrice: "Package of 6 – $570 (Save $90)",
+    duration: "60 minutes",
+    bestFor:
+      "All skin types — ideal for first-timers or regular skincare maintenance.",
+    whyLoveIt: [
+      "Fully personalized",
+      "Relaxing massage included",
+      "Instant refreshed glow",
+    ],
+    concerns: ["first-time", "general"],
+    areas: ["face"],
+  },
 
-          {duration && (
-            <div>
-              <h4 className="font-semibold text-gray-800 mb-2">Duration</h4>
-              <p className="text-gray-600">{duration}</p>
-            </div>
-          )}
+  {
+    slug: "back-facial",
+    title: "Back Facial",
+    icon: Droplets,
+    short: "Deep-cleansing treatment for back acne and texture.",
+    description:
+      "A deep-cleansing facial for the back including exfoliation, steam, extractions (if needed), purifying mask, and hydration.",
+    image:
+      "https://plus.unsplash.com/premium_photo-1681873742740-9a0e9eaa4584?q=80&w=987&auto=format&fit=crop",
+    price: "$120",
+    duration: "60 minutes",
+    bestFor:
+      "Back acne, clogged pores, dry skin, or preparing for special events.",
+    whyLoveIt: [
+      "Clears congestion",
+      "Smooths skin",
+      "Often overlooked self-care",
+    ],
+    concerns: ["acne", "texture"],
+    areas: ["back"],
+  },
 
-          {benefits && (
-            <div>
-              <h4 className="font-semibold text-gray-800 mb-3">Why Clients Love It</h4>
-              <ul className="space-y-2">
-                {benefits.map((reason, i) => (
-                  <li key={i} className="flex gap-3 text-gray-600">
-                    <span className="text-[#5A95CD] font-bold shrink-0">✓</span>
-                    <span>{reason}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
+  {
+    slug: "relaxation-massage",
+    title: "Relaxation Massage",
+    icon: Sparkles,
+    short: "Full-body aromatherapy massage for stress relief.",
+    description:
+      "A calming full-body massage using light to moderate pressure and soothing essential oils to relax the body and mind.",
+    image:
+      "https://images.unsplash.com/photo-1519415510236-718bdfcd89c8?w=900&auto=format&fit=crop&q=60",
+    price: "$85",
+    duration: "60 minutes",
+    bestFor:
+      "Stress relief, better sleep, and gentle wellness reset.",
+    whyLoveIt: [
+      "Relieves stress & anxiety",
+      "Improves circulation",
+      "Deep relaxation",
+    ],
+    concerns: ["relaxation", "stress"],
+    areas: ["body"],
+  },
 
-          <Link
-            href={`https://cal.com/youthfulglowstudiobookings/${calComSlug}?overlayCalendar=true`}
-            data-cal-link={`https://cal.com/youthfulglowstudiobookings/${calComSlug}?overlayCalendar=true`}
-            data-cal-config='{"layout":"month_view","theme":"light"}'
-            className="inline-flex items-center gap-2 bg-linear-to-r from-[#5A95CD] to-[#4A85BD] hover:from-[#4A85BD] hover:to-[#3A75AD] text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 mt-4"
-          >
-            <Sparkles className="w-4 h-4" /> BOOK Now
-          </Link>
-        </div>
-      )}
-    </div>
-  );
-};
+  {
+    slug: "waxing",
+    title: "Waxing Hair Removal",
+    icon: Wand2,
+    short: "Professional waxing for smooth, long-lasting results.",
+    description:
+      "Professional hair removal using hygienic techniques for smooth skin lasting weeks. Suitable for face and body.",
+    image:
+      "https://images.unsplash.com/photo-1522338242992-e1a54906a8da?w=900&auto=format&fit=crop&q=60",
+    price: "From $10",
+    duration: "Varies",
+    bestFor:
+      "Anyone wanting longer-lasting smoothness than shaving.",
+    whyLoveIt: [
+      "Smooth results for weeks",
+      "Gentle & hygienic",
+      "Reduces regrowth over time",
+    ],
+    concerns: ["hair-removal"],
+    areas: ["face", "body"],
+  },
+];
 
-const WaxingTable = () => {
-  const [isOpen, setIsOpen] = useState(false);
+/* -------------------- COMPONENT -------------------- */
 
-  const waxingServices = [
-    { name: "Brows", price: "$10" },
-    { name: "Brows & Upper Lip", price: "$15" },
-    { name: "Lip & Chin", price: "$15" },
-    { name: "Full Face", price: "$40" },
-    { name: "Under Arms", price: "$20" },
-    { name: "Half Arms", price: "$30" },
-    { name: "Full Arms", price: "$45" },
-    { name: "Lower Legs", price: "$35" },
-    { name: "Upper Legs", price: "$40" },
-    { name: "Full Legs", price: "$65" },
-    { name: "Full Legs with Bikini", price: "$70" },
-    { name: "Bikini Line", price: "$20" },
-    { name: "Belly Line", price: "$20" },
-    { name: "Brazilian", price: "$50" },
-    { name: "Back & Chest", price: "$80" },
-    { name: "Back & Shoulders", price: "$70" },
-    { name: "Chest & Abdomen", price: "$60" },
-  ];
+export default function ServiceFinder() {
+  const [showQuiz, setShowQuiz] = useState(false);
 
-  return (
-    <div id="waxing" className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition-shadow">
-      {/* Surface Level */}
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="w-full p-6 md:p-8 flex flex-col md:flex-row justify-between md:items-center gap-4 hover:bg-gray-50/50 transition-colors text-left"
-      >
-        <div className="flex-1">
-          <h3 className="text-2xl font-bold text-gray-900">Waxing Hair Removal</h3>
-          <p className="text-[#5A95CD] font-semibold mt-2">Starting from $10</p>
-        </div>
-        <ChevronDown 
-          className={`w-6 h-6 text-[#5A95CD] transition-transform duration-300 shrink-0 ${isOpen ? 'rotate-180' : ''}`}
-        />
-      </button>
-
-      {/* Expandable Details */}
-      {isOpen && (
-        <div className="border-t border-gray-100 bg-gray-50/30 p-6 md:p-8 space-y-6">
-          <div>
-            <h4 className="font-semibold text-gray-800 mb-4">Pricing</h4>
-            <div className="grid md:grid-cols-2 gap-4">
-              {waxingServices.map((service, idx) => (
-                <div key={idx} className="flex justify-between items-center py-2 border-b border-gray-200">
-                  <p className="text-gray-700">{service.name}</p>
-                  <p className="font-semibold text-gray-900">{service.price}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div>
-            <h4 className="font-semibold text-gray-800 mb-2">Best For</h4>
-            <p className="text-gray-600">Anyone looking for smooth, hair-free skin with longer-lasting results than shaving.</p>
-          </div>
-
-          <div>
-            <h4 className="font-semibold text-gray-800 mb-3">Why Clients Love It</h4>
-            <ul className="space-y-2">
-              <li className="flex gap-3 text-gray-600">
-                <span className="text-[#5A95CD] font-bold shrink-0">✓</span>
-                <span>Smooth results that last for weeks</span>
-              </li>
-              <li className="flex gap-3 text-gray-600">
-                <span className="text-[#5A95CD] font-bold shrink-0">✓</span>
-                <span>Professional, hygienic, and gentle technique</span>
-              </li>
-              <li className="flex gap-3 text-gray-600">
-                <span className="text-[#5A95CD] font-bold shrink-0">✓</span>
-                <span>Helps reduce hair regrowth over time</span>
-              </li>
-            </ul>
-          </div>
-
-          <Link
-            href="https://cal.com/youthfulglowstudiobookings/waxing?overlayCalendar=true"
-            data-cal-link="https://cal.com/youthfulglowstudiobookings/waxing?overlayCalendar=true"
-            data-cal-config='{"layout":"month_view","theme":"light"}'
-            className="inline-flex items-center gap-2 bg-linear-to-r from-[#5A95CD] to-[#4A85BD] hover:from-[#4A85BD] hover:to-[#3A75AD] text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 mt-4"
-          >
-            <Sparkles className="w-4 h-4" /> BOOK Appointment
-          </Link>
-        </div>
-      )}
-    </div>
-  );
-};
-
-export default function ServicesPage() {
-  const facialServices = SERVICES.filter(s => s.slug !== 'waxing-hair-removal' && s.slug !== 'relaxation-massage');
-  const massageServices = SERVICES.filter(s => s.slug === 'relaxation-massage');
-  
   return (
     <RootLayout>
-      {/* Hero */}
-      <section className="bg-linear-to-r from-[#5A95CD] to-[#3A75AD] text-white py-20 text-center">
-        <h1 className="text-5xl font-bold mb-4">Our Services</h1>
-        <p className="text-xl opacity-90 max-w-3xl mx-auto">
-          Personalized skincare treatments designed to help you feel confident and beautiful in your own skin.
-        </p>
-      </section>
+      <div className="max-w-6xl mx-auto p-6 space-y-12">
 
-      {/* Services List */}
-      <section className="max-w-4xl mx-auto px-6 py-16">
-        <div className="mb-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-2">Facial & Skincare Treatments</h2>
-          <p className="text-gray-600">All facials include a customized treatment with a professional-grade mask selected for your skin's unique needs.</p>
+        {/* INTRO */}
+        <div className="text-center space-y-4">
+          <h1 className="text-4xl font-black">Our Services</h1>
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            At Youthful Glow Studio, our mission is to help you feel confident and
+            beautiful in your own skin. Every treatment is personalized and
+            delivered in a calm, welcoming environment.
+          </p>
         </div>
-        
-        {facialServices.map((service) => (
-          <ServiceCard key={service.slug} {...service} />
-        ))}
-        
-        <div className="mt-16">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">Massage</h2>
-        </div>
-        {massageServices.map((service) => (
-          <ServiceCard key={service.slug} {...service} />
-        ))}
 
-        <div className="mt-16">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">Hair Removal</h2>
+        {/* SERVICES GRID */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {SERVICES.map((service) => {
+            const Icon = service.icon;
+            return (
+              <div
+                key={service.slug}
+                className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition"
+              >
+                <img
+                  src={service.image}
+                  alt={service.title}
+                  className="w-full h-52 object-cover"
+                />
+
+                <div className="p-6 space-y-4">
+                  <h3 className="text-xl font-bold flex items-center gap-2">
+                    <Icon className="w-5 h-5 text-[#5A95CD]" />
+                    {service.title}
+                  </h3>
+
+                  <p className="text-gray-600 text-sm">
+                    {service.short}
+                  </p>
+
+                  <div className="flex justify-between text-sm">
+                    <span className="font-semibold text-[#5A95CD]">
+                      {service.price}
+                    </span>
+                    <span className="text-gray-500 flex items-center gap-1">
+                      <Clock className="w-4 h-4" />
+                      {service.duration}
+                    </span>
+                  </div>
+
+                  <a
+                    href={`https://cal.com/youthfulglowstudiobookings/${service.slug}?overlayCalendar=true`}
+                    target="_blank"
+                    className="inline-flex items-center gap-2 bg-[#5A95CD] text-white px-4 py-2 rounded-lg font-semibold text-sm hover:bg-[#4A85BD]"
+                  >
+                    Book Your Glow Session <ArrowRight className="w-4 h-4" />
+                  </a>
+                </div>
+              </div>
+            );
+          })}
         </div>
-        <WaxingTable />
-      </section>
+
+        {/* BOOKING INFO */}
+        <div className="bg-blue-50 rounded-xl p-8 text-center space-y-4">
+          <h2 className="text-2xl font-bold">✨ How to Book Your Appointment</h2>
+          <p className="text-gray-700 max-w-2xl mx-auto">
+            Simply click “Book Your Glow Session” under any service to choose your
+            preferred date and time. You’ll receive instant confirmation by email.
+          </p>
+          <p className="font-semibold">
+            Questions? Email:
+            <a
+              href="mailto:marcia@youthfulglowstudio.com"
+              className="text-[#5A95CD] ml-1"
+            >
+              marcia@youthfulglowstudio.com
+            </a>
+          </p>
+        </div>
+      </div>
     </RootLayout>
   );
 }

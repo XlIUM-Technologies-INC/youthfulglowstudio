@@ -5,7 +5,7 @@ export const SERVICES = [
     short: "Exfoliation treatment that removes dead skin and vellus hair.",
     image:
       "https://images.unsplash.com/photo-1677091508080-d6ee28356318?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    price: "$115",
+    price: "$130",
     duration: "60 minutes",
     benefits: ["Smoother skin", "Brighter complexion", "Better product absorption"],
     fullDescription: `Dermaplaning provides an effective and safe exfoliation treatment that promotes deeper product penetration, boosting the effects of skin care products while making the skin look and feel smoother. It is also beneficial for reducing the appearance of acne scars. The treatment also works to remove facial hair that can trap dirt and oils.`,
@@ -71,7 +71,7 @@ export const SERVICES = [
       "The Zena Algae Peel is a 100% natural peel made from algae from the lakes of Ukraine. The micro-needles in the algae powder penetrate the skin, stimulating collagen production and accelerating cell renewal.",
     image:
       "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=800&h=600&fit=crop",
-    price: "$200",
+    price: "$180",
     duration: "60 minutes",
     benefits: ["Reduces acne", "Lightens pigmentation", "Improves skin texture"],
     fullDescription: `The Zena Algae Peel is a unique, 100% natural peel that offers a range of benefits for the skin. It is particularly effective for treating acne, as it has antibacterial properties and helps to regulate sebum production. It also helps to lighten pigmentation, reduce the appearance of fine lines and wrinkles, and improve overall skin texture.`,
@@ -137,7 +137,7 @@ export const SERVICES = [
       "Microdermabrasion is a minimally invasive procedure used to renew overall skin tone and texture. It can improve the appearance of sun damage, wrinkles, fine lines, age spots, acne scarring, melasma, and other skin-related concerns and conditions.",
     image:
       "https://plus.unsplash.com/premium_photo-1661281252293-173617fdc3e9?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    price: "$100",
+    price: "$120",
     duration: "60 minutes",
     benefits: ["Reduces fine lines and wrinkles", "Improves skin tone and texture", "Treats acne and acne scars"],
     fullDescription: `Microdermabrasion is a cosmetic procedure that uses a diamond-tipped wand to gently exfoliate the top layer of skin. This helps to remove dead skin cells, unclog pores, and stimulate collagen production. The result is smoother, brighter, and more even-toned skin.`,
@@ -284,8 +284,8 @@ Perfect for all skin types—whether you're a first-timer or looking for regular
       "A brightening peel with 30% lactic acid that helps to even out skin tone and texture, reduce the appearance of fine lines and wrinkles, and leave the skin with a healthy glow.",
     image:
       "https://images.unsplash.com/photo-1654781350550-0dc72ecb6fae?q=80&w=998&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    price: "$100",
-    duration: "45 minutes",
+    price: "$115",
+    duration: "60 minutes",
     benefits: ["Evens skin tone", "Reduces fine lines", "Brightens skin"],
     fullDescription: `The Dermalogica Lactic Acid Brightening Peel is a professional-grade peel that provides intense exfoliation and hydration. It is ideal for those with hyperpigmentation, uneven skin tone, and signs of aging. The peel is formulated with 30% lactic acid, which helps to remove dead skin cells, stimulate cell renewal, and brighten the skin.`,
     detailedBenefits: [
@@ -349,7 +349,7 @@ Perfect for all skin types—whether you're a first-timer or looking for regular
       "A deep cleansing facial for your back that targets clogged pores, back acne, and dehydrated skin. Includes a deep cleanse, exfoliation, extractions, mask, and moisturizer.",
     image:
       "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=800&h=600&fit=crop",
-    price: "$90",
+    price: "$120",
     duration: "60 minutes",
     benefits: ["Treats back acne", "Deeply cleanses and exfoliates", "Hydrates the skin"],
     fullDescription: `The back facial is a treatment that consists of deep cleansing, exfoliation, and extractions. It is performed on your back. In a back facial, an esthetician will use creams and possibly steam to exfoliate and clean your skin before extracting oil and debris. The treatment ends with a detoxifying mask for hydration.`,
@@ -409,7 +409,7 @@ Perfect for all skin types—whether you're a first-timer or looking for regular
       "A gentle, soothing massage that uses smooth, gliding strokes to help you relax. The massage therapist will move at a slower pace and use lighter pressure than in other types of massage. Relaxation massage is all about relaxing. It focuses on giving the client time to recover from the stresses of daily life.",
     image:
       "https://images.unsplash.com/photo-1519415510236-718bdfcd89c8?w=800&h=600&fit=crop",
-    price: "$90",
+    price: "$85",
     duration: "60 minutes",
     benefits: ["Promotes relaxation", "Relieves muscle tension", "Improves circulation"],
     fullDescription: `A relaxation massage is a smooth, gentle, flowing style that promotes general relaxation, relieves muscular tension, plus improves circulation and range of movement. Your therapist will aim to relax, revive and rejuvenate you at a massage depth that does not cause discomfort.`,

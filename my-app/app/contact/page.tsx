@@ -48,12 +48,13 @@ export default function ContactPage() {
   };
 
   return (
-    <RootLayout>
+    <>
+      <RootLayout>
       <Toaster richColors />
       {/* Hero Section */}
       <section className="bg-linear-to-r from-[#5A95CD] to-[#3A75AD] text-white py-20 text-center">
-        <h1 className="text-5xl font-bold mb-4">Get In Touch</h1>
-        <p className="text-xl opacity-90">We'd love to hear from you. Let's talk!</p>
+        <h1 className="text-5xl font-bold mb-4" style={{fontFamily: 'Playfair Display, serif'}}>Get In Touch</h1>
+        <p className="text-xl opacity-90" style={{fontFamily: 'Cormorant Garamond, serif'}}>We'd love to hear from you. Let's talk!</p>
       </section>
 
       {/* Contact Info & Form */}
@@ -183,5 +184,6 @@ export default function ContactPage() {
         </div>
       </section>
     </RootLayout>
+    </>
   );
 }

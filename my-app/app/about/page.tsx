@@ -1,17 +1,18 @@
 // app/about/page.tsx
 "use client"
 import RootLayout from "@/components/layouts/RootLayout";
-import { Heart, Sparkles, Award, Users } from 'lucide-react';
+import { Heart, Award, Sparkles, Users } from "lucide-react";
 import Link from "next/link";
 
 export default function AboutPage() {
   return (
-    <RootLayout>
+    <>
+      <RootLayout>
       {/* Hero Section */}
       <div className="bg-linear-to-r from-[#5A95CD] to-[#3A75AD] text-white py-20">
         <div className="max-w-7xl mx-auto px-6 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">Who We Are</h1>
-          <p className="text-xl md:text-2xl max-w-3xl mx-auto opacity-90">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6" style={{fontFamily: 'Playfair Display, serif'}}>Who We Are</h1>
+          <p className="text-xl md:text-2xl max-w-3xl mx-auto opacity-90" style={{fontFamily: 'Cormorant Garamond, serif'}}>
             Welcome to Youthful Glow Studio
           </p>
         </div>
@@ -23,7 +24,7 @@ export default function AboutPage() {
         <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
           <div>
             <img 
-              src="https://images.unsplash.com/photo-1560750588-73207b1ef5b8?w=800&h=600&fit=crop"
+              src="/WhatsApp Image 2026-01-11 at 22.18.00.jpeg"
               alt="Youthful Glow Studio"
               className="rounded-3xl shadow-2xl w-full h-[500px] object-cover"
             />
@@ -111,7 +112,7 @@ export default function AboutPage() {
             </div>
             <div className="h-full min-h-[400px]">
               <img 
-                src="https://images.unsplash.com/photo-1559599746-900c5e2b5fbb?w=800&h=800&fit=crop"
+                src="/facials-skincare-kitchener-waterloo.webp"
                 alt="Marcia Edmondson - Certified Medical Esthetician"
                 className="w-full h-full object-cover"
               />
@@ -134,5 +135,6 @@ export default function AboutPage() {
         </div>
       </div>
     </RootLayout>
+    </>
   );
 }
