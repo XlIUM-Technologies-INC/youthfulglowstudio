@@ -15,8 +15,8 @@ export default function ProcessSection({ steps }: ProcessSectionProps) {
   return (
     <section className="py-16">
       <div className="max-w-5xl mx-auto px-6">
-        <h2 className="text-3xl font-bold mb-2 text-center">How It Works</h2>
-        <p className="text-gray-600 text-center mb-12">
+        <h2 className="text-3xl font-black mb-2 text-center text-[#112250]" style={{fontFamily: 'Playfair Display, serif'}}>How It Works</h2>
+        <p className="text-[#3C507D] text-center mb-12 font-medium">
           A step-by-step breakdown of your treatment experience
         </p>
 
@@ -25,18 +25,18 @@ export default function ProcessSection({ steps }: ProcessSectionProps) {
             <div key={index} className="relative">
               {/* Connector line */}
               {index < steps.length - 1 && (
-                <div className="hidden md:block absolute top-12 -right-2 w-4 h-1 bg-linear-to-r from-[#5A95CD] to-blue-400"></div>
+                <div className="hidden md:block absolute top-12 -right-2 w-4 h-0.5 bg-[#E0C58F]"></div>
               )}
 
               {/* Step card */}
-              <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow h-full">
+              <div className="bg-white rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 h-full border border-[#E0C58F]/10">
                 <div className="flex items-center gap-3 mb-3">
-                  <div className="w-10 h-10 rounded-full bg-[#5A95CD] text-white flex items-center justify-center font-bold">
+                  <div className="w-10 h-10 rounded-full bg-[#112250] text-[#E0C58F] flex items-center justify-center font-bold border border-[#E0C58F]/30 shadow-md">
                     {step.step}
                   </div>
-                  <h3 className="font-semibold text-gray-900">{step.title}</h3>
+                  <h3 className="font-bold text-[#112250]">{step.title}</h3>
                 </div>
-                <p className="text-sm text-gray-600">{step.description}</p>
+                <p className="text-sm text-[#3C507D] font-medium leading-relaxed">{step.description}</p>
               </div>
             </div>
           ))}
@@ -47,14 +47,14 @@ export default function ProcessSection({ steps }: ProcessSectionProps) {
           {steps.map((step, index) => (
             <div key={index} className="flex gap-4">
               <div className="flex flex-col items-center">
-                <div className="w-10 h-10 rounded-full bg-[#5A95CD] text-white flex items-center justify-center font-bold shrink-0">
+                <div className="w-10 h-10 rounded-full bg-[#112250] text-[#E0C58F] flex items-center justify-center font-bold shrink-0 border border-[#E0C58F]/30">
                   {step.step}
                 </div>
-                {index < steps.length - 1 && <div className="w-1 h-12 bg-blue-200 mt-2"></div>}
+                {index < steps.length - 1 && <div className="w-0.5 h-12 bg-[#E0C58F]/50 mt-2"></div>}
               </div>
               <div className="pb-4">
-                <h3 className="font-semibold text-gray-900">{step.title}</h3>
-                <p className="text-sm text-gray-600 mt-1">{step.description}</p>
+                <h3 className="font-bold text-[#112250]">{step.title}</h3>
+                <p className="text-sm text-[#3C507D] mt-1 font-medium">{step.description}</p>
               </div>
             </div>
           ))}

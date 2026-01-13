@@ -28,7 +28,7 @@ export default function BlogInsightsSection() {
     setSelectedArticle(article);
   };
 
-  const articles = [
+  const articles: Article[] = [
     {
       id: 1,
       size: 'large',
@@ -85,20 +85,20 @@ export default function BlogInsightsSection() {
 
   return (
     <Dialog>
-      <div id="blog" className="py-20 bg-linear-to-br from-gray-50 via-white to-[#5A95CD]/5 relative">
-        <div className="absolute top-0 left-0 right-0 h-1 bg-linear-to-r from-transparent via-blue-600 to-transparent opacity-30"></div>
-        <div className="absolute bottom-0 left-0 right-0 h-1 bg-linear-to-r from-transparent via-blue-600 to-transparent opacity-30"></div>
+      <div id="blog" className="py-24 bg-[#F5F0E9] relative">
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#E0C58F] to-transparent opacity-30"></div>
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#E0C58F] to-transparent opacity-30"></div>
 
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex justify-between items-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
-              Beauty and Wellness <span className="text-[#5A95CD]">Insights</span>
+            <h2 className="text-4xl md:text-5xl font-black text-[#112250]" style={{fontFamily: 'Playfair Display, serif'}}>
+              Beauty and Wellness <span className="text-[#3C507D]">Insights</span>
             </h2>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-6">
             <div className="lg:row-span-2">
-              <div className="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 h-full border-2 border-gray-900 hover:border-[#5A95CD]">
+              <div className="group bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 h-full border border-[#E0C58F]/20 hover:border-[#E0C58F]/60">
                 <div className="relative h-96 overflow-hidden">
                   <img 
                     src={articles[0].image}
@@ -107,22 +107,22 @@ export default function BlogInsightsSection() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent"></div>
                   <div className="absolute top-4 left-4">
-                    <span className="bg-[#5A95CD] text-white px-4 py-1 rounded-full text-sm font-semibold">
+                    <span className="bg-[#112250] text-[#E0C58F] px-4 py-1.5 rounded-full text-sm font-bold tracking-wide uppercase border border-[#E0C58F]/30">
                       {articles[0].category}
                     </span>
                   </div>
                 </div>
                 <div className="p-8">
-                  <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-tight">
+                  <h3 className="text-2xl md:text-3xl font-bold text-[#112250] mb-4 leading-tight" style={{fontFamily: 'Playfair Display, serif'}}>
                     {articles[0].title}
                   </h3>
-                  <p className="text-gray-700 text-base leading-relaxed mb-6">
+                  <p className="text-[#3C507D] text-lg leading-relaxed mb-6 font-medium">
                     {articles[0].description}
                   </p>
                   <DialogTrigger asChild onClick={() => handleOpenArticle(articles[0])}>
-                    <button className="flex items-center gap-2 text-gray-900 font-semibold hover:text-[#5A95CD] transition-colors group">
+                    <button className="flex items-center gap-2 text-[#112250] font-bold hover:text-[#3C507D] transition-colors group">
                       Continue Reading
-                      <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
+                      <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform text-[#E0C58F]" />
                     </button>
                   </DialogTrigger>
                 </div>
@@ -133,7 +133,7 @@ export default function BlogInsightsSection() {
               {articles.slice(1).map((article) => (
                 <div 
                   key={article.id}
-                  className="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border-2 border-gray-900 hover:border-[#5A95CD]"
+                  className="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 border border-[#E0C58F]/10 hover:border-[#E0C58F]/40"
                 >
                   <div className="grid md:grid-cols-5 gap-0">
                     <div className="relative md:col-span-2 h-48 md:h-full overflow-hidden">
@@ -142,24 +142,24 @@ export default function BlogInsightsSection() {
                         alt={article.title}
                         className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-r from-transparent to-gray-900/20"></div>
+                      <div className="absolute inset-0 bg-gradient-to-r from-transparent to-[#112250]/10"></div>
                     </div>
                     <div className="md:col-span-3 p-6 flex flex-col justify-between">
                       <div>
-                        <span className="bg-blue-100 text-[#5A95CD] px-3 py-1 rounded-full text-xs font-semibold mb-3 inline-block">
+                        <span className="bg-[#112250] text-[#E0C58F] px-3 py-1 rounded-full text-xs font-bold mb-3 inline-block uppercase tracking-wider border border-[#E0C58F]/20">
                           {article.category}
                         </span>
-                        <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-3 leading-tight">
+                        <h3 className="text-lg md:text-xl font-bold text-[#112250] mb-3 leading-tight" style={{fontFamily: 'Playfair Display, serif'}}>
                           {article.title}
                         </h3>
-                        <p className="text-gray-600 text-sm leading-relaxed line-clamp-3 mb-4">
+                        <p className="text-[#3C507D] text-sm leading-relaxed line-clamp-3 mb-4 font-medium">
                           {article.description}
                         </p>
                       </div>
                       <DialogTrigger asChild onClick={() => handleOpenArticle(article)}>
-                        <button className="flex items-center gap-2 text-gray-900 font-semibold hover:text-[#5A95CD] transition-colors text-sm group self-start">
+                        <button className="flex items-center gap-2 text-[#112250] font-bold hover:text-[#3C507D] transition-colors text-sm group self-start">
                           Continue Reading
-                          <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
+                          <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform text-[#E0C58F]" />
                         </button>
                       </DialogTrigger>
                     </div>
@@ -171,9 +171,9 @@ export default function BlogInsightsSection() {
 
           <div className="flex md:hidden justify-center mt-8">
             <Link href="/blog">
-              <button className="flex items-center gap-2 px-8 py-3 bg-white border-2 border-gray-900 text-gray-900 rounded-full font-semibold hover:bg-gray-900 hover:text-white transition-all duration-300">
-                See All
-                <ArrowRight className="w-5 h-5" />
+              <button className="flex items-center gap-2 px-10 py-4 bg-[#112250] text-[#F5F0E9] rounded-full font-bold hover:bg-[#3C507D] transition-all duration-300 shadow-xl border border-[#E0C58F]/30">
+                See All Insights
+                <ArrowRight className="w-5 h-5 text-[#E0C58F]" />
               </button>
             </Link>
           </div>
@@ -184,10 +184,10 @@ export default function BlogInsightsSection() {
         {selectedArticle && (
           <>
             <DialogHeader className="p-8 pb-0">
-              <span className="bg-blue-100 text-[#5A95CD] px-3 py-1 rounded-full text-xs font-semibold mb-2 inline-block self-start">
+              <span className="bg-[#112250] text-[#E0C58F] px-4 py-1.5 rounded-full text-xs font-bold mb-4 inline-block self-start uppercase tracking-widest border border-[#E0C58F]/20">
                 {selectedArticle.category}
               </span>
-              <DialogTitle className="text-3xl font-bold text-gray-900 leading-tight">
+              <DialogTitle className="text-3xl md:text-4xl font-bold text-[#112250] leading-tight" style={{fontFamily: 'Playfair Display, serif'}}>
                   {selectedArticle.title}
                 </DialogTitle>
                 <DialogClose className="absolute top-4 right-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground">

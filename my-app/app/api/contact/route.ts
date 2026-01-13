@@ -52,7 +52,7 @@ export async function POST(request: NextRequest) {
 
     // Email to send to customer (confirmation)
     const customerEmailContent = `
-      <h2>Thank You for Contacting Youthful Glow Studio!</h2>
+      <h2>Thank You for Contacting Youth Glow Studio!</h2>
       <p>Hi ${body.name},</p>
       <p>We've received your message and appreciate you reaching out. Our team will get back to you as soon as possible.</p>
       <h3>Your Message Details:</h3>
@@ -66,9 +66,9 @@ export async function POST(request: NextRequest) {
       <ul>
         <li>Browse our services at <a href="${process.env.NEXT_PUBLIC_SITE_URL}/services">youthfulglowstudio.com/services</a></li>
         <li>Book directly using our online calendar</li>
-        <li>Call us at +1 (555) 123-4567</li>
+        <li>Call us at (416) 577-6409</li>
       </ul>
-      <p>Warm regards,<br/>The Youthful Glow Studio Team</p>
+      <p>Warm regards,<br/>The Youth Glow Studio Team</p>
     `;
 
     // Send email to business
@@ -84,7 +84,7 @@ export async function POST(request: NextRequest) {
     await transporter.sendMail({
       from: process.env.SMTP_FROM_EMAIL || process.env.SMTP_USER,
       to: body.email,
-      subject: 'We Received Your Message - Youthful Glow Studio',
+      subject: 'We Received Your Message - Youth Glow Studio',
       html: customerEmailContent,
     });
 

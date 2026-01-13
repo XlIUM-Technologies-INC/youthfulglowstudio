@@ -1,4 +1,4 @@
-# 🌟 Youthful Glow Studio - Complete Project
+# 🌟 Youth Glow Studio - Complete Project
 
 A modern, full-featured skincare studio website built with Next.js, React, and Tailwind CSS.
 

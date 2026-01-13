@@ -4,11 +4,11 @@ export const SERVICES = [
     title: "Dermaplaning",
     short: "Exfoliation treatment that removes dead skin and vellus hair.",
     image:
-      "https://images.unsplash.com/photo-1677091508080-d6ee28356318?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&q=80",
     price: "$130",
     duration: "60 minutes",
     benefits: ["Smoother skin", "Brighter complexion", "Better product absorption"],
-    fullDescription: `Dermaplaning provides an effective and safe exfoliation treatment that promotes deeper product penetration, boosting the effects of skin care products while making the skin look and feel smoother. It is also beneficial for reducing the appearance of acne scars. The treatment also works to remove facial hair that can trap dirt and oils.`,
+    fullDescription: `Elevate your skincare routine with Dermaplaning, a premier exfoliation treatment that meticulously removes dead skin cells and fine vellus hair (peach fuzz). This non-invasive procedure reveals a remarkably smooth, bright, and even-toned complexion. By clearing the skin's surface, it allows for significantly deeper absorption of medical-grade skincare products and creates a flawless canvas for makeup application.`,
     detailedBenefits: [
       "Provides deeper product penetration",
       "Removes soft facial hair that traps dirt and oils",
@@ -70,7 +70,7 @@ export const SERVICES = [
     description:
       "The Zena Algae Peel is a 100% natural peel made from algae from the lakes of Ukraine. The micro-needles in the algae powder penetrate the skin, stimulating collagen production and accelerating cell renewal.",
     image:
-      "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1596755389378-c31d21fd1273?auto=format&fit=crop&q=80",
     price: "$180",
     duration: "60 minutes",
     benefits: ["Reduces acne", "Lightens pigmentation", "Improves skin texture"],
@@ -136,7 +136,7 @@ export const SERVICES = [
     description:
       "Microdermabrasion is a minimally invasive procedure used to renew overall skin tone and texture. It can improve the appearance of sun damage, wrinkles, fine lines, age spots, acne scarring, melasma, and other skin-related concerns and conditions.",
     image:
-      "https://plus.unsplash.com/premium_photo-1661281252293-173617fdc3e9?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1552693673-1bf958298935?auto=format&fit=crop&q=80",
     price: "$120",
     duration: "60 minutes",
     benefits: ["Reduces fine lines and wrinkles", "Improves skin tone and texture", "Treats acne and acne scars"],
@@ -197,13 +197,11 @@ export const SERVICES = [
     description:
       "A customized deep-cleansing facial tailored to your skin's needs. Includes double cleanse, exfoliation, steam, extractions (if needed), facial massage, mask, serum, moisturizer, and SPF.",
     image:
-      "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&q=80",
     price: "$110",
     duration: "60 minutes",
     benefits: ["Personalized treatment", "Deep cleansing", "Instant refresh"],
-    fullDescription: `A customized deep-cleansing facial tailored to your skin's unique needs. This comprehensive treatment includes a double cleanse to remove all impurities, custom exfoliation to slough away dead skin cells, steam to open pores, professional extractions if needed, a relaxing facial massage, a professional-grade mask selected for your skin type, nourishing serum, moisturizer, and SPF protection.
-
-Perfect for all skin types—whether you're a first-timer or looking for regular maintenance, this facial adapts to what your skin needs right now. You'll leave with instantly refreshed, glowing skin.`,
+    fullDescription: `Experience the ultimate in personalized skincare with our 'Made for You' Facial. This bespoke treatment is meticulously crafted to address your unique skin concerns and goals. Beginning with a comprehensive skin analysis, we combine deep-cleansing techniques with professional-grade masks and serums to restore balance, hydration, and vitality. Whether you seek to combat aging, clear congestion, or simply indulge in a moment of pure relaxation, this facial is designed exclusively for you.`,
     detailedBenefits: [
       "Increases blood circulation to facial skin",
       "Promotes natural collagen production",
@@ -240,7 +238,7 @@ Perfect for all skin types—whether you're a first-timer or looking for regular
       {
         step: 5,
         title: "Cooling & Finishing",
-        description: "Cool jade roller treatment and final moisturizer for that signature glow."
+        description: "Cool jade roller treatment and final moisturizer for that youthful glow."
       }
     ],
     faqs: [
@@ -277,13 +275,13 @@ Perfect for all skin types—whether you're a first-timer or looking for regular
     ]
   },
   {
-    slug: "dermalogica-lactic-acid-peel",
+    slug: "chemical-peels",
     title: "Dermalogica Lactic Acid Brightening Peel",
     short: "A brightening peel with 30% lactic acid.",
     description:
       "A brightening peel with 30% lactic acid that helps to even out skin tone and texture, reduce the appearance of fine lines and wrinkles, and leave the skin with a healthy glow.",
     image:
-      "https://images.unsplash.com/photo-1654781350550-0dc72ecb6fae?q=80&w=998&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&q=80",
     price: "$115",
     duration: "60 minutes",
     benefits: ["Evens skin tone", "Reduces fine lines", "Brightens skin"],
@@ -348,7 +346,7 @@ Perfect for all skin types—whether you're a first-timer or looking for regular
     description:
       "A deep cleansing facial for your back that targets clogged pores, back acne, and dehydrated skin. Includes a deep cleanse, exfoliation, extractions, mask, and moisturizer.",
     image:
-      "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&q=80",
     price: "$120",
     duration: "60 minutes",
     benefits: ["Treats back acne", "Deeply cleanses and exfoliates", "Hydrates the skin"],
@@ -402,13 +400,13 @@ Perfect for all skin types—whether you're a first-timer or looking for regular
     testimonials: []
   },
   {
-    slug: "relaxation-massage",
+    slug: "aromatherapy-massage",
     title: "Relaxation Massage",
     short: "A gentle massage that promotes relaxation and relieves muscle tension.",
     description:
       "A gentle, soothing massage that uses smooth, gliding strokes to help you relax. The massage therapist will move at a slower pace and use lighter pressure than in other types of massage. Relaxation massage is all about relaxing. It focuses on giving the client time to recover from the stresses of daily life.",
     image:
-      "https://images.unsplash.com/photo-1519415510236-718bdfcd89c8?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?auto=format&fit=crop&q=80",
     price: "$85",
     duration: "60 minutes",
     benefits: ["Promotes relaxation", "Relieves muscle tension", "Improves circulation"],
@@ -453,12 +451,12 @@ Perfect for all skin types—whether you're a first-timer or looking for regular
     testimonials: []
   },
   {
-    slug: "waxing-hair-removal",
+    slug: "waxing",
     title: "Waxing Hair Removal",
     short: "A hair removal method that removes hair from the root.",
     description:
       "Waxing is a hair removal method that uses a sticky substance, such as wax, to remove hair from the root. It is a long-lasting method of hair removal, as it can take 2-8 weeks for the hair to grow back.",
-    image: "https://images.unsplash.com/photo-1522338242992-e1a54906a8da?w=800&h=600&fit=crop",
+    image: "https://images.unsplash.com/photo-1522338242992-e1a54906a8da?auto=format&fit=crop&q=80",
     price: "Varies",
     duration: "Varies",
     benefits: ["Long-lasting results", "Softer and finer hair regrowth", "Exfoliates the skin"],

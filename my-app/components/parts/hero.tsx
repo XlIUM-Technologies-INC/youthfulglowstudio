@@ -1,223 +1,285 @@
 "use client"
-import { useState, useEffect } from 'react';
-import { Play, Star } from 'lucide-react';
+import { useState, useEffect, useRef } from 'react';
+import { motion, useScroll, useTransform, AnimatePresence, Variants } from 'framer-motion';
+import { Play, ArrowRight, X, Camera, Heart, MessageCircle, Send, Info } from 'lucide-react';
+import Link from 'next/link';
 
 export default function HeroSection() {
-  const [isVisible, setIsVisible] = useState(false);
   const [currentReview, setCurrentReview] = useState(0);
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end start"]
+  });
+
+  // Parallax transforms
+  const y1 = useTransform(scrollYProgress, [0, 1], [0, 200]);
+  const y2 = useTransform(scrollYProgress, [0, 1], [0, -150]);
+  const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.9]);
+  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
   const reviews = [
     {
       name: "Dorina Cercel",
       role: "Client",
-      rating: 5,
       review: "Excellent service! I really enjoyed my facial and my massage! Highly recommended!",
       date: "Google Reviews"
     },
     {
       name: "Melissa",
       role: "Client",
-      rating: 5,
-      review: "I've gotten a chemical peel done here a couple of times and the results are always amazing! The service is professional and Marcia does a great job making you feel comfortable. My skin looks brand new afterwards so I look forward to coming back for more services!",
+      review: "I've gotten a chemical peel done here a couple of times and the results are always amazing!",
       date: "Google Reviews"
     },
     {
       name: "Donna B.",
       role: "Client",
-      rating: 5,
-      review: "Got microdermabrasion and dermaplaning with Marcia and all 4 times I had the treatments they were amazing experiences. Marcia is friendly and knowledgeable about the treatment she is providing and the products being used. She explains the process thoroughly and what to expect after the treatment. She treated my skin with care, with an end result of it feeling relaxed, rejuvenated and glowing. She makes you feel at home, comfortable and the whole experience was very pleasant.",
-      date: "Google Reviews"
-    },
-    {
-      name: "Claudia Koop",
-      role: "Client",
-      rating: 5,
-      review: "I went for a facial last week and it was one of the best. My face didn't feel and look that good in years. I will be going regularly and highly recommended it to all my family and friends. Thank you so much!!",
+      review: "Marcia is friendly and knowledgeable. My skin feels relaxed, rejuvenated and glowing.",
       date: "Google Reviews"
     }
   ];
 
   useEffect(() => {
-    setIsVisible(true);
-    
-    // Auto-scroll through reviews every 4 seconds
     const interval = setInterval(() => {
       setCurrentReview((prev) => (prev + 1) % reviews.length);
-    }, 4000);
-    
+    }, 5000);
     return () => clearInterval(interval);
   }, []);
 
+  const containerVariants: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.3
+      }
+    }
+  };
+
+  const itemVariants: Variants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.8, ease: "easeOut" }
+    }
+  };
+
+  const textRevealVariants: Variants = {
+    hidden: { clipPath: "polygon(0 0, 0 0, 0 100%, 0% 100%)", opacity: 0, y: 20 },
+    visible: { 
+      clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)", 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 1, ease: "circOut" }
+    }
+  };
+
   return (
-    <>
-      <style jsx global>{`
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap');
-      `}</style>
+    <section ref={containerRef} className="relative min-h-[110vh] flex items-center bg-[#F5F0E9] overflow-hidden">
+      {/* Dynamic Background Elements */}
+      <motion.div 
+        style={{ y: y1 }}
+        className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-[#E0C58F]/20 rounded-full blur-[120px]"
+      />
+      <motion.div 
+        style={{ y: y2 }}
+        className="absolute bottom-[-10%] right-[-10%] w-[60%] h-[60%] bg-[#3C507D]/10 rounded-full blur-[150px]"
+      />
+      
+      {/* Floating Particles */}
+      {[...Array(6)].map((_, i) => (
+        <motion.div
+          key={i}
+          animate={{
+            y: [0, -30, 0],
+            x: [0, 20, 0],
+            opacity: [0.2, 0.5, 0.2],
+          }}
+          transition={{
+            duration: 5 + i,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+          className="absolute hidden md:block bg-white rounded-full blur-sm"
+          style={{
+            width: Math.random() * 20 + 10,
+            height: Math.random() * 20 + 10,
+            left: `${Math.random() * 100}%`,
+            top: `${Math.random() * 100}%`,
+            opacity: 0.2
+          }}
+        />
+      ))}
 
-      <div className="relative min-h-screen bg-linear-to-br from-slate-50 via-blue-50/30 to-slate-100 overflow-hidden">
-        {/* Subtle decorative elements */}
-        <div className="absolute top-20 left-10 w-64 h-64 bg-blue-100 rounded-full opacity-20 blur-3xl"></div>
-        <div className="absolute bottom-20 right-10 w-80 h-80 bg-blue-200 rounded-full opacity-20 blur-3xl"></div>
-        
-        <div className="max-w-7xl mx-auto px-6 pt-32 pb-20">
-          {/* Location Badge */}
-          <div className={`transition-all duration-1000 mb-8 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'}`}>
-            <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm px-6 py-3 rounded-full shadow-md border border-blue-100">
-              <div className="w-2 h-2 bg-[#5A95CD] rounded-full animate-pulse"></div>
-              <span className="text-sm font-medium text-gray-700" style={{fontFamily: 'Montserrat, sans-serif'}}>
-                PERSONALIZED SKINCARE BY MARCIA
-              </span>
+      <div className="max-w-7xl mx-auto px-6 pt-20 pb-20 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          
+          {/* Left Content: Typography Focused */}
+          <motion.div 
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+            className="space-y-10"
+          >
+            <motion.div variants={itemVariants}>
+              <div className="inline-flex items-center gap-3 bg-white/60 backdrop-blur-xl px-5 py-2.5 rounded-full border border-[#E0C58F]/30 shadow-lg group">
+                <div className="w-2 h-2 bg-[#E0C58F] rounded-full animate-ping" />
+                <span className="text-[10px] md:text-sm font-black tracking-[0.4em] text-[#112250] uppercase">
+                  PERSONALIZED SKINCARE BY MARCIA
+                </span>
+              </div>
+            </motion.div>
+
+            {/* Main Title with Invisible to Visible Reveal */}
+            <div className="space-y-4">
+              <motion.h1 
+                variants={textRevealVariants}
+                className="text-6xl md:text-8xl lg:text-9xl font-black leading-[0.9] text-[#112250] tracking-tighter"
+                style={{ fontFamily: 'Playfair Display, serif' }}
+              >
+                Glowing Skin, <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#3C507D] to-[#E0C58F]">Graceful Aging</span>
+              </motion.h1>
+              <motion.p 
+                variants={itemVariants}
+                className="text-xl md:text-2xl text-[#3C507D] font-medium leading-relaxed max-w-xl italic"
+                style={{ fontFamily: 'Cormorant Garamond, serif' }}
+              >
+                "At Youth Glow Studio, we believe in nurturing your skin and spirit."
+              </motion.p>
             </div>
-          </div>
 
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            {/* Left Content */}
-            <div className="space-y-8">
-              <div className={`transition-all duration-1000 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-                <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold leading-tight mb-6">
-                  <span className="text-[#5A95CD] block mb-2" style={{fontFamily: 'Playfair Display, serif'}}>
-                    Glowing Skin,
-                  </span>
-                  <span className="text-slate-900 block" style={{fontFamily: 'Playfair Display, serif'}}>
-                    Graceful Aging
-                  </span>
-                </h1>
+            <motion.div 
+              variants={itemVariants}
+              className="relative p-8 rounded-3xl bg-white/40 backdrop-blur-2xl border border-white/50 shadow-2xl group overflow-hidden"
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-[#E0C58F]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+              <p className="relative z-10 text-[#112250] text-lg leading-relaxed font-medium">
+                Our personalized treatments are designed to target concerns like hyperpigmentation, acne, and collagen loss—helping you achieve visibly healthier, radiant skin. From expert hair removal and soothing relaxation massage to advanced skincare solutions, each visit is a step toward glowing confidence and true self-care.
+              </p>
+            </motion.div>
+
+            <motion.div variants={itemVariants} className="flex flex-wrap gap-5">
+              <Link href="https://cal.com/youthfulglowstudiobookings?overlayCalendar=true" target="_blank">
+                <button className="relative px-12 py-6 rounded-full font-black text-white tracking-[0.2em] uppercase text-xs overflow-hidden shadow-2xl group transition-transform active:scale-95">
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#112250] to-[#3C507D] group-hover:scale-110 transition-transform duration-700" />
+                  <div className="absolute inset-0 bg-[#E0C58F] translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
+                  <span className="relative z-10 group-hover:text-[#112250] transition-colors duration-500">BOOK NOW</span>
+                </button>
+              </Link>
+              
+              <Link href="/contact">
+                <button className="px-12 py-6 rounded-full font-bold text-[#112250] border-2 border-[#112250] hover:bg-[#112250] hover:text-[#F5F0E9] transition-all duration-500 shadow-xl flex items-center gap-3 active:scale-95">
+                  Get In Touch
+                  <ArrowRight className="w-5 h-5" />
+                </button>
+              </Link>
+
+              <div className="w-full flex justify-center lg:justify-start pt-2">
+                <Link href="#discovery" className="flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.3em] text-[#3C507D] hover:text-[#112250] transition-colors group">
+                  <div className="w-8 h-8 rounded-full bg-white shadow-sm flex items-center justify-center group-hover:bg-[#E0C58F] transition-colors">
+                    <Info className="w-4 h-4" />
+                  </div>
+                  Not sure which service? Use our Treatment Assistant
+                </Link>
               </div>
+            </motion.div>
+          </motion.div>
 
-              <div className={`transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-                <div className="bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-lg border-l-4 border-[#5A95CD]">
-                  <p className="text-gray-700 text-lg leading-relaxed" style={{fontFamily: 'Cormorant Garamond, serif', fontSize: '1.125rem'}}>
-                    At Youthful Glow Studio, we believe in nurturing your skin and spirit. Our personalized treatments are designed to target concerns like hyperpigmentation, acne, and collagen loss—helping you achieve visibly healthier, radiant skin. From expert hair removal and soothing relaxation massage to advanced skincare solutions, each visit is a step toward glowing confidence and true self-care.
-                  </p>
-                </div>
-              </div>
-
-              {/* CTA Buttons */}
-              <div className={`transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <a
-                    href="https://cal.com/youthfulglowstudiobookings?overlayCalendar=true"
-                    data-cal-link="https://cal.com/youthfulglowstudiobookings?overlayCalendar=true"
-                    data-cal-config='{"layout":"month_view","theme":"light"}'
-                    className="group relative inline-flex items-center justify-center"
-                  >
-                    <div className="absolute inset-0 bg-linear-to-r from-[#5A95CD] to-[#4A85BD] rounded-full blur-sm opacity-75 group-hover:opacity-100 transition-opacity"></div>
-                    <button className="relative bg-linear-to-r from-[#5A95CD] to-[#4A85BD] text-white px-10 py-5 rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105" style={{fontFamily: 'Montserrat, sans-serif'}}>
-                      BOOK NOW
-                    </button>
-                  </a>
-                  
-                  <a href="/contact" className="inline-flex items-center justify-center">
-                    <button className="bg-white border-2 border-[#5A95CD] text-[#5A95CD] hover:bg-[#5A95CD] hover:text-white px-10 py-5 rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105" style={{fontFamily: 'Montserrat, sans-serif'}}>
-                      Get In Touch
-                    </button>
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            {/* Right Content - Instagram Story/Reel Style */}
-            <div className={`relative transition-all duration-1000 delay-400 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
-              <div className="relative">
-                {/* Phone-like Container with Gold Border */}
-                <div className="relative rounded-[3rem] overflow-hidden shadow-2xl border-[6px] border-gradient-to-b from-amber-400 via-amber-500 to-amber-600" style={{
-                  background: 'linear-gradient(145deg, #d4a574 0%, #b8860b 100%)',
-                  padding: '6px'
-                }}>
-                  <div className="relative rounded-[2.5rem] overflow-hidden bg-black">
-                    {/* Main Image */}
-                    <img
-                      src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=600&h=900&fit=crop"
-                      alt="Beautiful woman with clear, glowing skin"
-                      className="w-full h-175 object-cover"
-                    />
-                    
-                    {/* Top Gradient Overlay */}
-                    <div className="absolute inset-0 bg-linear-to-b from-black/40 via-transparent to-black/60"></div>
-                    
-                    {/* Top Bar - X and Camera Icons */}
-                    <div className="absolute top-6 left-6 right-6 flex justify-between items-center z-20">
-                      <button className="w-10 h-10 flex items-center justify-center">
-                        <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" />
-                        </svg>
-                      </button>
-                      <button className="w-10 h-10 flex items-center justify-center">
-                        <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
-                        </svg>
-                      </button>
-                    </div>
-
-                    {/* Instagram Reels Style - Auto-scrolling Reviews */}
-                    <div className="absolute bottom-0 left-0 right-0 p-6 z-10">
-                      <div className="relative h-48 mb-4">
-                        {reviews.map((review, index) => (
-                          <div
-                            key={index}
-                            className={`absolute inset-0 transition-all duration-700 ${
-                              index === currentReview
-                                ? 'opacity-100 translate-y-0'
-                                : index < currentReview
-                                  ? 'opacity-0 -translate-y-full'
-                                  : 'opacity-0 translate-y-full'
-                            }`}
-                          >
-                            {/* Profile Section */}
-                            <div className="flex items-center gap-3 mb-4">
-                              <div className="w-12 h-12 rounded-full bg-linear-to-br from-[#5A95CD] to-[#4A85BD] flex items-center justify-center shrink-0 border-2 border-white">
-                                <span className="text-white font-bold text-lg">{review.name.charAt(0)}</span>
-                              </div>
-                              <span className="font-semibold text-white text-lg" style={{fontFamily: 'Montserrat, sans-serif'}}>
-                                {review.name}
-                              </span>
-                            </div>
-
-                            {/* Review Card */}
-                            <div className="bg-gray-800/80 backdrop-blur-md rounded-2xl p-5">
-                              <div className="flex gap-1 mb-3">
-                                {[...Array(review.rating)].map((_, i) => (
-                                  <Star key={i} className="w-6 h-6 text-amber-400 fill-amber-400" />
-                                ))}
-                              </div>
-                              <p className="text-white text-base leading-relaxed line-clamp-3" style={{fontFamily: 'Montserrat, sans-serif', fontWeight: 400}}>
-                                {review.review}
-                              </p>
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-
-                      {/* Bottom Action Buttons - Instagram Style */}
-                      <div className="flex items-center justify-start gap-6 mt-4">
-                        <button className="transform hover:scale-110 transition-transform">
-                          <svg className="w-9 h-9 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                          </svg>
-                        </button>
-                        <button className="transform hover:scale-110 transition-transform">
-                          <svg className="w-9 h-9 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-                          </svg>
-                        </button>
-                        <button className="transform hover:scale-110 transition-transform">
-                          <svg className="w-9 h-9 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
-                          </svg>
-                        </button>
-                      </div>
-                    </div>
+          {/* Right Content: Parallax Depth Card */}
+          <motion.div 
+            style={{ scale, opacity }}
+            className="relative h-full flex items-center justify-center lg:justify-end"
+          >
+            {/* Phone Mockup with 3D Effect */}
+            <motion.div 
+              initial={{ rotateY: 20, opacity: 0 }}
+              animate={{ rotateY: 0, opacity: 1 }}
+              transition={{ duration: 1.5, delay: 0.5, ease: "easeOut" }}
+              whileHover={{ rotateY: -5, rotateX: 5, scale: 1.02 }}
+              className="relative w-full max-w-[400px] aspect-[9/16] rounded-[3.5rem] p-4 bg-gradient-to-br from-[#E0C58F] to-[#D9CBC2] shadow-[0_50px_100px_-20px_rgba(17,34,80,0.5)] border-[8px] border-white/20"
+            >
+              <div className="w-full h-full rounded-[2.8rem] overflow-hidden bg-black relative">
+                {/* Main Visual */}
+                <motion.img 
+                  animate={{ scale: [1, 1.05, 1] }}
+                  transition={{ duration: 20, repeat: Infinity }}
+                  src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=800&fit=crop"
+                  alt="Radiant Skin"
+                  className="w-full h-full object-cover opacity-80"
+                />
+                
+                {/* Instagram Style Overlays */}
+                <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/80" />
+                
+                {/* Top UI */}
+                <div className="absolute top-8 left-8 right-8 flex justify-between items-center">
+                  <X className="text-white w-6 h-6 opacity-60" />
+                  <div className="flex gap-2">
+                    <Camera className="text-white w-6 h-6 opacity-60" />
+                    <div className="w-1.5 h-1.5 bg-[#E0C58F] rounded-full" />
                   </div>
                 </div>
 
-                {/* Decorative element */}
-                <div className="absolute -top-6 -right-6 w-32 h-32 bg-linear-to-br from-amber-400 to-amber-600 rounded-full opacity-20 blur-2xl"></div>
+                {/* Bottom Reviews Overlay */}
+                <div className="absolute bottom-8 left-6 right-6 space-y-4">
+                  <AnimatePresence mode="wait">
+                    <motion.div
+                      key={currentReview}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -20 }}
+                      className="bg-white/10 backdrop-blur-2xl p-6 rounded-3xl border border-white/20"
+                    >
+                      <div className="flex items-center gap-3 mb-3">
+                        <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#E0C58F] to-[#112250] flex items-center justify-center font-bold text-[#F5F0E9] text-xs">
+                          {reviews[currentReview].name.charAt(0)}
+                        </div>
+                        <div>
+                          <p className="text-white text-sm font-bold">{reviews[currentReview].name}</p>
+                          <p className="text-[#E0C58F] text-[10px] uppercase tracking-widest font-black">Verified Review</p>
+                        </div>
+                      </div>
+                      <p className="text-white/90 text-sm leading-relaxed italic">
+                        "{reviews[currentReview].review}"
+                      </p>
+                    </motion.div>
+                  </AnimatePresence>
+
+                  {/* Reaction Buttons */}
+                  <div className="flex gap-6 pb-2 pl-2">
+                    <Heart className="text-white w-7 h-7 hover:text-red-400 transition-colors cursor-pointer" />
+                    <MessageCircle className="text-white w-7 h-7 hover:text-[#E0C58F] transition-colors cursor-pointer" />
+                    <Send className="text-white w-7 h-7 hover:text-blue-400 transition-colors cursor-pointer" />
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
+            </motion.div>
+
+            {/* Depth Decors */}
+            <motion.div 
+              style={{ y: y1 }}
+              className="absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-br from-[#E0C58F] to-transparent rounded-full blur-2xl opacity-40"
+            />
+            <motion.div 
+              style={{ y: y2 }}
+              className="absolute -bottom-20 -left-20 w-48 h-48 bg-gradient-to-tr from-[#3C507D] to-transparent rounded-full blur-3xl opacity-30"
+            />
+          </motion.div>
         </div>
       </div>
-    </>
+      
+      {/* Scroll indicator */}
+      <motion.div 
+        animate={{ y: [0, 10, 0] }}
+        transition={{ duration: 2, repeat: Infinity }}
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-30"
+      >
+        <div className="w-px h-12 bg-gradient-to-b from-[#112250] to-transparent" />
+        <span className="text-[10px] font-black uppercase tracking-[0.3em] text-[#112250]">Scroll</span>
+      </motion.div>
+    </section>
   );
 }

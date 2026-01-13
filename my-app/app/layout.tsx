@@ -23,10 +23,10 @@ const cormorantGaramond = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "Youthful Glow Studio | Skincare & Beauty Treatments",
+  title: "Youth Glow Studio | Skincare & Beauty Treatments",
   description: "Professional skincare and beauty treatments including facial massage, hair therapy, under-eye treatments, and hand massage. Book your glow session today.",
   keywords: "skincare, beauty, facial massage, treatments, wellness",
-  authors: [{ name: "Youthful Glow Studio" }],
+  authors: [{ name: "Youth Glow Studio" }],
   icons: {
     icon: "/favicon.webp",
   },

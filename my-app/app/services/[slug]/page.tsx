@@ -1,387 +1,245 @@
-"use client"
-import { useState, useEffect } from 'react';
-import { Sparkles, ArrowRight } from 'lucide-react';
+"use client";
 
-const SERVICES = [
-  {
-    slug: 'zena-facial',
-    title: 'Zena Facial',
-    short: 'Rejuvenating treatment',
-    description: 'Experience our signature Zena Facial, a luxurious 60-minute treatment that combines advanced techniques with premium skincare products. This rejuvenating facial deeply cleanses, exfoliates, and hydrates your skin, leaving you with a radiant, youthful glow.',
-    duration: '60 mins',
-    image: 'https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?w=800&h=600&fit=crop'
-  },
-  {
-    slug: 'hydra-glow',
-    title: 'HydraGlow Therapy',
-    short: 'Deep hydration boost',
-    description: 'Our HydraGlow Therapy delivers intense moisture deep into your skin layers. Using cutting-edge hydration technology, this treatment plumps fine lines, restores elasticity, and gives your complexion an enviable dewy finish that lasts for days.',
-    duration: '45 mins',
-    image: 'https://images.unsplash.com/photo-1552693673-1bf958298935?w=800&h=600&fit=crop'
-  },
-  {
-    slug: 'diamond-peel',
-    title: 'Diamond Microdermabrasion',
-    short: 'Exfoliation perfection',
-    description: 'Reveal smoother, brighter skin with our Diamond Microdermabrasion treatment. This non-invasive procedure gently removes dead skin cells, minimizes pores, and reduces the appearance of fine lines and sun damage for a flawless complexion.',
-    duration: '50 mins',
-    image: 'https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=800&h=600&fit=crop'
-  },
+import { use, useState } from "react";
+import { getServiceBySlug } from "@/lib/services";
+import RootLayout from "@/components/layouts/RootLayout";
+import { notFound } from "next/navigation";
+import { 
+  Check, 
+  Clock, 
+  DollarSign, 
+  Sparkles, 
+  ChevronDown,
+  Info,
+  ShieldCheck,
+  Star
+} from "lucide-react";
+import Link from "next/link";
+import { motion, AnimatePresence } from "framer-motion";
 
-];
+export default function ServicePage({ params }: { params: Promise<{ slug: string }> }) {
+  const resolvedParams = use(params);
+  const service = getServiceBySlug(resolvedParams.slug);
 
-export default function ParallaxServices() {
-  const [scrollY, setScrollY] = useState(0);
-  const [hoveredIndex, setHoveredIndex] = useState(null);
+  if (!service) {
+    notFound();
+  }
 
-  useEffect(() => {
-    const handleScroll = () => setScrollY(window.scrollY);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  const [activeTab, setActiveTab] = useState("overview");
 
   return (
-    <div id="services" className="relative bg-gradient-to-b from-rose-50/30 via-white to-blue-50/30 overflow-hidden pt-20">
-      {/* Animated Artistic Background */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {/* Floating Beauty Elements */}
-        <div 
-          className="absolute top-20 left-10 w-32 h-32 rounded-full bg-gradient-to-br from-pink-200/40 to-rose-300/40 blur-3xl"
-          style={{
-            transform: `translateY(${scrollY * 0.1}px) rotate(${scrollY * 0.05}deg)`
-          }}
-        />
-        <div 
-          className="absolute top-40 right-20 w-40 h-40 rounded-full bg-gradient-to-br from-blue-200/40 to-cyan-300/40 blur-3xl"
-          style={{
-            transform: `translateY(${scrollY * 0.15}px) rotate(${-scrollY * 0.05}deg)`
-          }}
-        />
-        <div 
-          className="absolute top-96 left-1/4 w-48 h-48 rounded-full bg-gradient-to-br from-purple-200/30 to-pink-300/30 blur-3xl"
-          style={{
-            transform: `translateY(${scrollY * 0.08}px) translateX(${scrollY * 0.05}px)`
-          }}
-        />
-        <div 
-          className="absolute bottom-96 right-1/3 w-56 h-56 rounded-full bg-gradient-to-br from-amber-200/30 to-rose-300/30 blur-3xl"
-          style={{
-            transform: `translateY(${-scrollY * 0.12}px) translateX(${-scrollY * 0.05}px)`
-          }}
-        />
-        
-        {/* Organic Shapes */}
-        <div 
-          className="absolute top-1/4 right-10 w-64 h-64 opacity-20"
-          style={{
-            transform: `translateY(${scrollY * 0.2}px) rotate(${scrollY * 0.1}deg)`,
-            background: 'radial-gradient(ellipse at center, rgba(244, 114, 182, 0.3) 0%, transparent 70%)'
-          }}
-        />
-        <div 
-          className="absolute bottom-1/4 left-20 w-72 h-72 opacity-20"
-          style={{
-            transform: `translateY(${-scrollY * 0.18}px) rotate(${-scrollY * 0.08}deg)`,
-            background: 'radial-gradient(ellipse at center, rgba(147, 197, 253, 0.3) 0%, transparent 70%)'
-          }}
-        />
-        
-        {/* Decorative Dots Pattern */}
-        <div 
-          className="absolute top-60 left-1/2 grid grid-cols-6 gap-4 opacity-30"
-          style={{
-            transform: `translateY(${scrollY * 0.1}px)`
-          }}
-        >
-          {[...Array(24)].map((_, i) => (
-            <div 
-              key={i}
-              className="w-1 h-1 rounded-full bg-gradient-to-br from-pink-400 to-purple-400"
-              style={{
-                animationDelay: `${i * 0.1}s`,
-                animation: 'pulse 3s ease-in-out infinite'
-              }}
+    <RootLayout>
+      <div className="bg-white min-h-screen">
+        {/* Artistic Hero Section */}
+        <section className="relative h-[70vh] flex items-center justify-center overflow-hidden">
+          <div className="absolute inset-0 z-0">
+            <img 
+              src={service.image} 
+              alt={service.title} 
+              className="w-full h-full object-cover transition-transform duration-1000 scale-105"
             />
-          ))}
-        </div>
-        
-        {/* Floating Sparkles */}
-        <div 
-          className="absolute top-1/3 right-1/4"
-          style={{
-            transform: `translateY(${scrollY * 0.25}px) rotate(${scrollY * 0.15}deg)`
-          }}
-        >
-          <div className="relative w-3 h-3">
-            <div className="absolute inset-0 bg-gradient-to-r from-pink-400 to-rose-400 rounded-full animate-ping opacity-75" />
-            <div className="absolute inset-0 bg-white rounded-full" />
+            <div className="absolute inset-0 bg-gradient-to-b from-[#112250]/60 via-[#112250]/80 to-[#112250]"></div>
           </div>
-        </div>
-        <div 
-          className="absolute bottom-1/3 left-1/3"
-          style={{
-            transform: `translateY(${-scrollY * 0.22}px) rotate(${-scrollY * 0.12}deg)`
-          }}
-        >
-          <div className="relative w-2 h-2">
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full animate-ping opacity-75" />
-            <div className="absolute inset-0 bg-white rounded-full" />
-          </div>
-        </div>
-        
-        {/* Soft Gradient Waves */}
-        <svg 
-          className="absolute top-0 left-0 w-full h-96 opacity-30"
-          style={{
-            transform: `translateY(${scrollY * 0.15}px)`
-          }}
-          viewBox="0 0 1440 320"
-        >
-          <path 
-            fill="url(#wave-gradient)" 
-            d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"
-          />
-          <defs>
-            <linearGradient id="wave-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="rgba(251, 207, 232, 0.3)" />
-              <stop offset="50%" stopColor="rgba(191, 219, 254, 0.3)" />
-              <stop offset="100%" stopColor="rgba(224, 231, 255, 0.3)" />
-            </linearGradient>
-          </defs>
-        </svg>
-        
-        <svg 
-          className="absolute bottom-0 left-0 w-full h-96 opacity-30"
-          style={{
-            transform: `translateY(${-scrollY * 0.12}px) scaleY(-1)`
-          }}
-          viewBox="0 0 1440 320"
-        >
-          <path 
-            fill="url(#wave-gradient-2)" 
-            d="M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,213.3C672,224,768,224,864,213.3C960,203,1056,181,1152,181.3C1248,181,1344,203,1392,213.3L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
-          />
-          <defs>
-            <linearGradient id="wave-gradient-2" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="rgba(254, 202, 202, 0.3)" />
-              <stop offset="50%" stopColor="rgba(253, 230, 138, 0.3)" />
-              <stop offset="100%" stopColor="rgba(252, 231, 243, 0.3)" />
-            </linearGradient>
-          </defs>
-        </svg>
-        
-        {/* Floral Accent Shapes */}
-        <div 
-          className="absolute top-1/2 left-5 w-20 h-20 opacity-20"
-          style={{
-            transform: `translateY(${scrollY * 0.18}px) rotate(${scrollY * 0.2}deg)`,
-            background: 'radial-gradient(circle at 30% 30%, rgba(236, 72, 153, 0.4) 0%, rgba(236, 72, 153, 0.2) 25%, transparent 50%)',
-            borderRadius: '50% 70% 60% 40% / 40% 50% 60% 50%'
-          }}
-        />
-        <div 
-          className="absolute top-2/3 right-16 w-24 h-24 opacity-20"
-          style={{
-            transform: `translateY(${-scrollY * 0.16}px) rotate(${-scrollY * 0.15}deg)`,
-            background: 'radial-gradient(circle at 70% 70%, rgba(59, 130, 246, 0.4) 0%, rgba(59, 130, 246, 0.2) 25%, transparent 50%)',
-            borderRadius: '60% 40% 50% 70% / 50% 60% 40% 50%'
-          }}
-        />
-      </div>
 
-      {/* Section Title */}
-      <div className="max-w-7xl mx-auto px-6 mb-16">
-        <div className="text-center">
-          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-50 to-cyan-50 px-5 py-2 rounded-full mb-4">
-            <Sparkles className="w-4 h-4 text-blue-600" />
-            <span className="text-sm font-semibold text-blue-700 uppercase tracking-wide">Our Services</span>
-          </div>
-          <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6">
-            Luxury <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-cyan-600 to-blue-700">Treatments</span>
-          </h2>
-          <p className="text-gray-600 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
-            Indulge in our exclusive collection of premium beauty services, each crafted to perfection
-          </p>
-        </div>
-      </div>
-
-      {/* Header */}
-      <div className="relative py-20 px-6">
-        <div 
-          className="max-w-7xl mx-auto text-center"
-          style={{
-            transform: `translateY(${scrollY * 0.15}px)`,
-            opacity: Math.max(1 - scrollY / 800, 0)
-          }}
-        >
-          <div className="inline-flex items-center gap-2 bg-blue-50 px-4 py-2 rounded-full mb-6">
-            <Sparkles className="w-4 h-4 text-blue-600" />
-            <span className="text-sm font-medium text-blue-600">Premium Services</span>
-          </div>
-          <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-            Transform Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-600">Beauty Journey</span>
-          </h2>
-          <p className="text-gray-600 text-xl max-w-3xl mx-auto leading-relaxed">
-            Discover our curated collection of luxury treatments, each designed to reveal your natural radiance
-          </p>
-        </div>
-      </div>
-
-      {/* Services with Parallax */}
-      <div className="max-w-7xl mx-auto px-6 pb-32">
-        {SERVICES.map((service, index) => {
-          const isEven = index % 2 === 0;
-          const isHovered = hoveredIndex === index;
-          const parallaxSpeed = 0.05 + (index * 0.02);
-
-          return (
-            <div
-              key={service.slug}
-              className="relative mb-40 last:mb-20"
-              style={{
-                transform: `translateY(${scrollY * parallaxSpeed}px)`
-              }}
+          <div className="relative z-10 text-center text-white px-6 max-w-4xl">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
             >
-              <div className={`flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-8 items-center`}>
-                {/* Image Side */}
-                <div 
-                  className="lg:w-1/2 relative group cursor-pointer"
-                  onMouseEnter={() => setHoveredIndex(index)}
-                  onMouseLeave={() => setHoveredIndex(null)}
-                >
-                  <div className="relative overflow-hidden rounded-3xl shadow-2xl">
-                    {/* Main Image */}
-                    <div className="relative h-[500px] overflow-hidden">
-                      <img
-                        src={service.image}
-                        alt={service.title}
-                        className="w-full h-full object-cover transition-transform duration-700 ease-out"
-                        style={{
-                          transform: isHovered ? 'scale(1.1)' : 'scale(1)'
-                        }}
-                      />
-                      
-                      {/* Overlay */}
-                      <div 
-                        className="absolute inset-0 bg-gradient-to-br from-blue-900/80 via-blue-800/60 to-transparent transition-opacity duration-500"
-                        style={{
-                          opacity: isHovered ? 0.95 : 0.3
-                        }}
-                      />
-                      
-                      {/* Hover Content */}
-                      <div 
-                        className="absolute inset-0 flex flex-col justify-center p-12 transition-all duration-500"
-                        style={{
-                          transform: isHovered ? 'translateX(0)' : isEven ? 'translateX(-100%)' : 'translateX(100%)',
-                          opacity: isHovered ? 1 : 0
-                        }}
-                      >
-                        <div className="text-white">
-                          <div className="inline-block bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full mb-4">
-                            <span className="text-sm font-medium">{service.duration}</span>
-                          </div>
-                          <h3 className="text-4xl font-bold mb-4">{service.title}</h3>
-                          <p className="text-lg leading-relaxed opacity-90">{service.short}</p>
-                        </div>
-                      </div>
-
-                      {/* Always Visible Label (when not hovered) */}
-                      <div 
-                        className="absolute bottom-8 left-8 transition-all duration-500"
-                        style={{
-                          opacity: isHovered ? 0 : 1,
-                          transform: isHovered ? 'translateY(20px)' : 'translateY(0)'
-                        }}
-                      >
-                        <h3 className="text-3xl font-bold text-white mb-2">{service.title}</h3>
-                        <div className="flex items-center gap-2 text-white/80">
-                          <span className="text-sm">{service.duration}</span>
-                          <span className="text-white/60">•</span>
-                          <span className="text-sm flex items-center gap-1">
-                            Hover to explore <ArrowRight className="w-4 h-4" />
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Decorative Element */}
-                  <div 
-                    className={`absolute -z-10 w-full h-full rounded-3xl bg-gradient-to-br from-blue-400 to-cyan-400 transition-all duration-500 ${
-                      isEven ? '-right-8 -bottom-8' : '-left-8 -bottom-8'
-                    }`}
-                    style={{
-                      opacity: isHovered ? 0.2 : 0.1,
-                      transform: isHovered ? 'scale(1.05)' : 'scale(1)'
-                    }}
-                  />
+              <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-4 py-2 rounded-full mb-6 border border-[#E0C58F]/30">
+                <Sparkles className="w-4 h-4 text-[#E0C58F]" />
+                <span className="text-sm font-bold tracking-wider uppercase text-[#F5F0E9]">Our Services</span>
+              </div>
+              <h1 className="text-5xl md:text-7xl font-bold mb-6" style={{fontFamily: 'Playfair Display, serif'}}>
+                {service.title}
+              </h1>
+              <p className="text-xl md:text-2xl opacity-90 leading-relaxed mb-8" style={{fontFamily: 'Cormorant Garamond, serif'}}>
+                {service.short}
+              </p>
+              <div className="flex flex-wrap items-center justify-center gap-6">
+                <div className="flex items-center gap-2">
+                  <Clock className="w-5 h-5 text-[#E0C58F]" />
+                  <span className="font-bold text-[#F5F0E9]">{service.duration}</span>
                 </div>
-
-                {/* Text Side */}
-                <div className="lg:w-1/2">
-                  <div className="opacity-100">
-                    <div className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-50 to-cyan-50 px-4 py-2 rounded-full mb-6">
-                      <div className="w-2 h-2 rounded-full bg-blue-600 animate-pulse" />
-                      <span className="text-sm font-medium text-blue-700">Service {String(index + 1).padStart(2, '0')}</span>
-                    </div>
-
-                    <h3 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                      {service.title}
-                    </h3>
-
-                    <p className="text-gray-700 text-lg leading-relaxed mb-8">
-                      {service.description}
-                    </p>
-
-                    <div className="flex flex-wrap gap-4 mb-8">
-                      <div className="bg-white border-2 border-gray-100 rounded-2xl px-6 py-3 shadow-sm">
-                        <div className="text-sm text-gray-500 mb-1">Duration</div>
-                        <div className="font-semibold text-gray-900">{service.duration}</div>
-                      </div>
-                      <div className="bg-white border-2 border-gray-100 rounded-2xl px-6 py-3 shadow-sm">
-                        <div className="text-sm text-gray-500 mb-1">Experience</div>
-                        <div className="font-semibold text-gray-900">Premium</div>
-                      </div>
-                    </div>
-
-                    <button className="group inline-flex items-center gap-3 bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-8 py-4 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-                      <span>Book This Treatment</span>
-                      <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
-                    </button>
-                  </div>
+                <div className="flex items-center gap-2">
+                  <DollarSign className="w-5 h-5 text-[#E0C58F]" />
+                  <span className="font-bold text-[#F5F0E9]">Starting at {service.price}</span>
                 </div>
               </div>
-            </div>
-          );
-        })}
-      </div>
+            </motion.div>
+          </div>
 
-      {/* Bottom CTA */}
-      <div className="relative py-32 px-6 mt-20">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="bg-gradient-to-br from-blue-600 via-cyan-600 to-blue-700 rounded-3xl p-12 shadow-2xl relative overflow-hidden">
-            {/* Animated Background Pattern */}
-            <div className="absolute inset-0 opacity-10">
-              <div className="absolute top-0 left-0 w-64 h-64 bg-white rounded-full blur-3xl animate-pulse" />
-              <div className="absolute bottom-0 right-0 w-64 h-64 bg-white rounded-full blur-3xl animate-pulse delay-1000" />
-            </div>
+          <motion.div 
+            className="absolute bottom-10 left-1/2 -translate-x-1/2"
+            animate={{ y: [0, 10, 0] }}
+            transition={{ duration: 2, repeat: Infinity }}
+          >
+            <ChevronDown className="w-8 h-8 text-white/50" />
+          </motion.div>
+        </section>
 
-            <div className="relative z-10">
-              <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                Ready to Begin Your Transformation?
-              </h3>
-              <p className="text-white/90 text-lg mb-8 max-w-2xl mx-auto">
-                Schedule a consultation and let our experts create a personalized treatment plan just for you
-              </p>
-              <button className="inline-flex items-center gap-2 bg-white text-blue-600 px-8 py-4 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-                <Sparkles className="w-5 h-5" />
-                <span>Book Your Consultation</span>
-              </button>
+        {/* Content Navigation */}
+        <div className="sticky top-[112px] z-30 bg-[#F5F0E9]/90 backdrop-blur-xl border-b border-[#E0C58F]/20">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="flex overflow-x-auto no-scrollbar gap-8 py-4">
+              {['overview', 'benefits', 'process', 'faq'].map((tab) => (
+                <button
+                  key={tab}
+                  onClick={() => setActiveTab(tab)}
+                  className={`text-sm font-black uppercase tracking-widest transition-all whitespace-nowrap ${
+                    activeTab === tab ? 'text-[#112250] border-b-2 border-[#E0C58F]' : 'text-[#3C507D] hover:text-[#112250]'
+                  } pb-2`}
+                >
+                  {tab}
+                </button>
+              ))}
             </div>
           </div>
         </div>
+
+        {/* Main Content Sections */}
+        <div className="max-w-7xl mx-auto px-6 py-20">
+          <AnimatePresence mode="wait">
+            {activeTab === 'overview' && (
+              <motion.div
+                key="overview"
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: 20 }}
+                className="grid lg:grid-cols-2 gap-16 items-start"
+              >
+                <div className="space-y-8">
+                  <h2 className="text-4xl font-bold text-[#112250]" style={{fontFamily: 'Playfair Display, serif'}}>Description</h2>
+                  <p className="text-gray-700 text-lg leading-relaxed">
+                    {service.fullDescription}
+                  </p>
+                  <div className="bg-[#112250] p-8 rounded-3xl border border-[#E0C58F]/20 shadow-xl">
+                    <h3 className="text-xl font-bold text-[#E0C58F] mb-4 flex items-center gap-2">
+                      <Info className="w-5 h-5" />
+                      Key Features
+                    </h3>
+                    <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      {service.benefits.map((benefit, i) => (
+                        <li key={i} className="flex items-center gap-3 text-[#F5F0E9]/90">
+                          <Check className="w-5 h-5 text-[#E0C58F] shrink-0" />
+                          <span>{benefit}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+                <div className="relative">
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#E0C58F]/20 to-[#112250]/10 rounded-3xl blur-3xl -z-10"></div>
+                  <img src={service.image} className="rounded-3xl shadow-2xl w-full aspect-square object-cover" alt="Service feature" />
+                  <div className="absolute -bottom-8 -left-8 bg-white p-6 rounded-2xl shadow-xl border border-gray-100 hidden md:block max-w-xs">
+                    <div className="flex gap-1 mb-2">
+                       {[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />)}
+                    </div>
+                    <p className="text-sm text-gray-600 italic">"I could see immediate results. My skin has never looked more radiant!"</p>
+                  </div>
+                </div>
+              </motion.div>
+            )}
+
+            {activeTab === 'benefits' && (
+              <motion.div
+                key="benefits"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+              >
+                {service.detailedBenefits.map((detail, i) => (
+                  <div key={i} className="bg-white p-8 rounded-3xl hover:bg-[#F5F0E9] hover:shadow-xl transition-all duration-300 border border-[#E0C58F]/10 hover:border-[#E0C58F]/40 group">
+                    <div className="w-12 h-12 bg-[#112250] rounded-2xl flex items-center justify-center mb-6 shadow-sm group-hover:bg-[#E0C58F] group-hover:text-[#112250] text-[#E0C58F] transition-colors">
+                      <ShieldCheck className="w-6 h-6" />
+                    </div>
+                    <p className="text-[#112250] font-bold text-lg leading-relaxed">{detail}</p>
+                  </div>
+                ))}
+              </motion.div>
+            )}
+
+            {activeTab === 'process' && (
+              <motion.div
+                key="process"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                className="max-w-4xl mx-auto"
+              >
+                <div className="space-y-12">
+                  {service.process.map((step, i) => (
+                    <div key={i} className="flex gap-8 items-start relative">
+                      {i !== service.process.length - 1 && (
+                        <div className="absolute left-6 top-16 bottom-0 w-0.5 bg-[#E0C58F]/30 -translate-x-1/2"></div>
+                      )}
+                      <div className="w-12 h-12 rounded-full bg-[#112250] text-[#E0C58F] flex items-center justify-center shrink-0 font-bold text-xl shadow-lg shadow-[#112250]/20 z-10 border border-[#E0C58F]/50">
+                        {step.step}
+                      </div>
+                      <div className="pt-2">
+                        <h3 className="text-2xl font-bold text-[#112250] mb-2">{step.title}</h3>
+                        <p className="text-[#3C507D] text-lg font-medium">{step.description}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+            )}
+
+            {activeTab === 'faq' && (
+              <motion.div
+                key="faq"
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 1.05 }}
+                className="max-w-3xl mx-auto space-y-6"
+              >
+                {service.faqs.map((faq, i) => (
+                  <div key={i} className="bg-white border border-[#E0C58F]/20 rounded-3xl p-8 shadow-sm hover:shadow-xl transition-all duration-300">
+                    <h3 className="text-xl font-bold text-[#112250] mb-4">{faq.question}</h3>
+                    <p className="text-[#3C507D] text-lg font-medium">{faq.answer}</p>
+                  </div>
+                ))}
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
+
+        {/* Dynamic CTA Section */}
+        <section className="bg-[#112250] py-24 relative overflow-hidden border-t border-[#E0C58F]/20">
+          <div className="absolute top-0 left-0 w-full h-full opacity-10">
+            <div className="absolute -top-24 -left-24 w-96 h-96 bg-[#E0C58F] rounded-full blur-3xl"></div>
+            <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-[#3C507D] rounded-full blur-3xl"></div>
+          </div>
+          
+          <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
+            <h2 className="text-4xl md:text-5xl font-bold text-[#E0C58F] mb-8" style={{fontFamily: 'Playfair Display, serif'}}>
+              Ready for your {service.title}?
+            </h2>
+            <p className="text-[#F5F0E9]/80 text-xl mb-12 font-medium">
+              Transform your skin and experience the glow you've always wanted. 
+              Our appointments fill up fast—secure your spot today.
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+              <Link 
+                href={`https://cal.com/youthfulglowstudiobookings/${service.slug}?overlayCalendar=true`}
+                target="_blank"
+                className="w-full sm:w-auto bg-[#E0C58F] text-[#112250] px-10 py-5 rounded-full font-bold text-lg hover:shadow-2xl hover:shadow-[#E0C58F]/20 transition-all transform hover:-translate-y-1"
+              >
+                Book Now
+              </Link>
+              <Link 
+                href="/services"
+                className="w-full sm:w-auto text-[#F5F0E9] border border-[#E0C58F]/30 hover:bg-[#F5F0E9]/10 px-10 py-5 rounded-full font-bold text-lg transition-all"
+              >
+                View Other Treatments
+              </Link>
+            </div>
+          </div>
+        </section>
       </div>
-    </div>
+    </RootLayout>
   );
 }

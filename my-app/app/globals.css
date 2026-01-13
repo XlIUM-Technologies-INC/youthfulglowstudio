@@ -42,6 +42,13 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+
+  /* Custom Sapphire & Gold Palette */
+  --color-sapphire: #3C507D;
+  --color-royal-blue: #112250;
+  --color-quicksand: #E0C58F;
+  --color-swan-wing: #F5F0E9;
+  --color-shellstone: #D9CBC2;
 }
 
 :root {
@@ -72,14 +79,19 @@
   --chart-3: oklch(0.398 0.07 227.392);
   --chart-4: oklch(0.828 0.189 84.429);
   --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+
+  /* Theme mapping */
+  --background: #F5F0E9;
+  --foreground: #112250;
+  --primary: #112250;
+  --primary-foreground: #F5F0E9;
+  --secondary: #3C507D;
+  --secondary-foreground: #F5F0E9;
+  --accent: #E0C58F;
+  --accent-foreground: #112250;
+  --border: #D9CBC2;
+  --input: #D9CBC2;
 }
 
 .dark {
@@ -120,7 +132,15 @@
   * {
     @apply border-border outline-ring/50;
   }
+  html {
+    scroll-behavior: smooth;
+  }
   body {
     @apply bg-background text-foreground;
+    overflow-x: hidden;
+  }
+  ::selection {
+    background-color: #E0C58F;
+    color: #112250;
   }
 }

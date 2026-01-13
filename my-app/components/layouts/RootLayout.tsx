@@ -12,10 +12,10 @@ interface RootLayoutProps {
  */
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <div className="min-h-screen bg-linear-to-br from-gray-50 via-white to-blue-50 flex flex-col">
+    <div className="min-h-screen bg-[#F5F0E9] flex flex-col">
       <Nav />
       {/* Add pt-20 to account for fixed nav height */}
-      <main className="grow pt-20">
+      <main className="grow pt-28">
         {children}
       </main>
       <Footer />

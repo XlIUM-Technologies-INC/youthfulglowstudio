@@ -52,9 +52,17 @@ export default function ContactPage() {
       <RootLayout>
       <Toaster richColors />
       {/* Hero Section */}
-      <section className="bg-linear-to-r from-[#5A95CD] to-[#3A75AD] text-white py-20 text-center">
-        <h1 className="text-5xl font-bold mb-4" style={{fontFamily: 'Playfair Display, serif'}}>Get In Touch</h1>
-        <p className="text-xl opacity-90" style={{fontFamily: 'Cormorant Garamond, serif'}}>We'd love to hear from you. Let's talk!</p>
+      <section className="bg-[#112250] text-[#F5F0E9] py-24 text-center relative overflow-hidden border-b border-[#E0C58F]/20">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute -top-24 -left-24 w-96 h-96 bg-[#E0C58F] rounded-full blur-3xl"></div>
+          <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-[#3C507D] rounded-full blur-3xl"></div>
+        </div>
+        <div className="relative z-10 px-6">
+          <h1 className="text-5xl md:text-6xl font-black mb-6" style={{fontFamily: 'Playfair Display, serif'}}>Contact Us</h1>
+          <p className="text-xl md:text-2xl max-w-3xl mx-auto text-[#E0C58F] font-medium" style={{fontFamily: 'Cormorant Garamond, serif'}}>
+            We’d love to hear from you! Whether you have questions about our services, need help choosing the right treatment, or want to schedule an appointment, we’re here to help.
+          </p>
+        </div>
       </section>
 
       {/* Contact Info & Form */}
@@ -63,51 +71,52 @@ export default function ContactPage() {
           {/* Contact Info */}
           <div className="space-y-8">
             <div>
-              <h2 className="text-3xl font-bold mb-8 text-gray-900">Contact Information</h2>
+              <h2 className="text-3xl font-bold mb-8 text-[#112250]" style={{fontFamily: 'Playfair Display, serif'}}>Contact Information</h2>
             </div>
 
             <div className="flex items-start gap-4">
-              <Phone className="w-6 h-6 text-[#5A95CD] mt-1 shrink-0" />
+              <Phone className="w-6 h-6 text-[#E0C58F] mt-1 shrink-0" />
               <div>
-                <h3 className="font-semibold text-gray-900 mb-1">Phone</h3>
-                <p className="text-gray-600">+1 (555) 123-4567</p>
+                <h3 className="font-bold text-[#112250] mb-1">Phone/Text</h3>
+                <p className="text-[#3C507D] font-medium">(416) 577-6409</p>
               </div>
             </div>
 
             <div className="flex items-start gap-4">
-              <Mail className="w-6 h-6 text-[#5A95CD] mt-1 shrink-0" />
+              <Mail className="w-6 h-6 text-[#E0C58F] mt-1 shrink-0" />
               <div>
-                <h3 className="font-semibold text-gray-900 mb-1">Email</h3>
-                <p className="text-gray-600">info@youthfulglow.com</p>
+                <h3 className="font-bold text-[#112250] mb-1">Email</h3>
+                <p className="text-[#3C507D] font-medium">marcia@youthfulglowstudio.com</p>
               </div>
             </div>
 
             <div className="flex items-start gap-4">
-              <MapPin className="w-6 h-6 text-[#5A95CD] mt-1 shrink-0" />
+              <MapPin className="w-6 h-6 text-[#E0C58F] mt-1 shrink-0" />
               <div>
-                <h3 className="font-semibold text-gray-900 mb-1">Location</h3>
-                <p className="text-gray-600">123 Beauty Lane<br />Wellness City, ST 12345</p>
+                <h3 className="font-bold text-[#112250] mb-1">Location</h3>
+                <p className="text-[#3C507D] font-medium">1425A Block Line Road<br />Kitchener, Ontario</p>
               </div>
             </div>
 
             <div className="flex items-start gap-4">
-              <Clock className="w-6 h-6 text-[#5A95CD] mt-1 shrink-0" />
+              <Clock className="w-6 h-6 text-[#E0C58F] mt-1 shrink-0" />
               <div>
-                <h3 className="font-semibold text-gray-900 mb-1">Hours</h3>
-                <p className="text-gray-600">
-                  Monday - Friday: 9am - 6pm<br />
-                  Saturday: 10am - 5pm<br />
-                  Sunday: Closed
+                <h3 className="font-bold text-[#112250] mb-1">Response Time</h3>
+                <p className="text-[#3C507D] font-medium">
+                  Expect a friendly response within 24–48 hours. If you reach out during business hours, we’ll get back to you as soon as possible.
                 </p>
               </div>
             </div>
           </div>
 
           {/* Contact Form */}
-          <div className="bg-white rounded-3xl shadow-xl p-8">
+          <div className="bg-white rounded-3xl shadow-2xl p-8 border border-[#E0C58F]/10">
+            <p className="text-[#3C507D] mb-6 font-medium">
+              Use the form below to send us a message. We'll follow up with all the information you need to get glowing!
+            </p>
             <form className="space-y-6" onSubmit={handleSubmit}>
               <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-2">Name</label>
+                <label className="block text-sm font-bold text-[#112250] mb-2 uppercase tracking-wide">Name</label>
                 <input 
                   type="text" 
                   name="name"
@@ -115,12 +124,12 @@ export default function ContactPage() {
                   onChange={handleChange}
                   placeholder="Your name" 
                   required
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-600"
+                  className="w-full px-4 py-3 rounded-lg border border-[#D9CBC2] focus:outline-none focus:ring-2 focus:ring-[#112250] bg-[#F5F0E9]/30 text-[#112250] font-medium"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-2">Email</label>
+                <label className="block text-sm font-bold text-[#112250] mb-2 uppercase tracking-wide">Email</label>
                 <input 
                   type="email" 
                   name="email"
@@ -128,24 +137,24 @@ export default function ContactPage() {
                   onChange={handleChange}
                   placeholder="your@email.com" 
                   required
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-600"
+                  className="w-full px-4 py-3 rounded-lg border border-[#D9CBC2] focus:outline-none focus:ring-2 focus:ring-[#112250] bg-[#F5F0E9]/30 text-[#112250] font-medium"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-2">Phone (Optional)</label>
+                <label className="block text-sm font-bold text-[#112250] mb-2 uppercase tracking-wide">Phone (Optional)</label>
                 <input 
                   type="tel"
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  placeholder="+1 (555) 123-4567" 
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-600"
+                  placeholder="(416) 577-6409" 
+                  className="w-full px-4 py-3 rounded-lg border border-[#D9CBC2] focus:outline-none focus:ring-2 focus:ring-[#112250] bg-[#F5F0E9]/30 text-[#112250] font-medium"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-2">Message</label>
+                <label className="block text-sm font-bold text-[#112250] mb-2 uppercase tracking-wide">Message</label>
                 <textarea 
                   name="message"
                   value={formData.message}
@@ -153,16 +162,16 @@ export default function ContactPage() {
                   placeholder="Tell us what's on your mind..." 
                   rows={5}
                   required
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-600"
+                  className="w-full px-4 py-3 rounded-lg border border-[#D9CBC2] focus:outline-none focus:ring-2 focus:ring-[#112250] bg-[#F5F0E9]/30 text-[#112250] font-medium"
                 ></textarea>
               </div>
 
               <button 
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-linear-to-r from-[#5A95CD] to-[#4A85BD] text-white font-semibold py-3 rounded-lg hover:shadow-lg transition-all flex items-center justify-center gap-2 disabled:opacity-50"
+                className="w-full bg-[#112250] hover:bg-[#3C507D] text-[#F5F0E9] font-bold py-4 rounded-lg shadow-xl transition-all flex items-center justify-center gap-2 disabled:opacity-50 border border-[#E0C58F]/30"
               >
-                <Send className="w-5 h-5" />
+                <Send className="w-5 h-5 text-[#E0C58F]" />
                 {isSubmitting ? "Sending..." : "Send Message"}
               </button>
             </form>
@@ -171,13 +180,16 @@ export default function ContactPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-[#5A95CD]/5 py-16 text-center">
-        <div className="max-w-2xl mx-auto px-6">
-          <h2 className="text-3xl font-bold mb-4 text-gray-900">Prefer to book directly?</h2>
-          <p className="text-gray-600 mb-8">Visit our services page to schedule your appointment.</p>
+      <section className="bg-[#112250] py-20 text-center border-t border-[#E0C58F]/20 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-5">
+           <div className="absolute top-0 left-0 w-64 h-64 bg-[#E0C58F] rounded-full blur-3xl animate-pulse" />
+        </div>
+        <div className="max-w-2xl mx-auto px-6 relative z-10">
+          <h2 className="text-3xl font-bold mb-4 text-[#E0C58F]" style={{fontFamily: 'Playfair Display, serif'}}>Prefer to book directly?</h2>
+          <p className="text-[#F5F0E9]/80 mb-8 font-medium">Visit our services page to schedule your appointment.</p>
           <Link
             href="/services"
-            className="bg-linear-to-r from-[#5A95CD] to-[#4A85BD] text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all inline-block"
+            className="bg-[#E0C58F] text-[#112250] px-10 py-4 rounded-full font-bold hover:shadow-2xl transition-all inline-block hover:scale-105 transform"
           >
             Book Now
           </Link>

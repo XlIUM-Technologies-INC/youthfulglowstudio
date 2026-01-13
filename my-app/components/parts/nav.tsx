@@ -1,28 +1,53 @@
 "use client"
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import Image from 'next/image';
-import { Menu, X, Sparkles } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
+import { SERVICES } from '@/lib/services';
+import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [pathname, setPathname] = useState('/');
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  const pathname = usePathname();
+  const { scrollY } = useScroll();
+
+  const isDarkHeroPage = pathname.startsWith('/services/') || pathname === '/contact';
+
+  // Subtle parallax/scaling for the navbar width
+  const navWidth = useTransform(scrollY, [0, 100], ["100%", "85%"]);
+  const navPadding = useTransform(scrollY, [0, 100], ["0rem", "0.75rem"]);
+  const navRadius = useTransform(scrollY, [0, 100], ["0px", "50px"]);
+  const navTop = useTransform(scrollY, [0, 100], ["0rem", "1.5rem"]);
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      setPathname(window.location.pathname);
-    }
-    
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
+      setScrolled(window.scrollY > 50);
     };
 
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 1024);
+    };
+
+    handleResize();
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
 
-  const isActive = (path) => pathname === path;
+  const isActive = (path: string) => pathname === path;
 
   const navLinks = [
     { href: '/', label: 'Home' },
@@ -33,177 +58,246 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-      scrolled 
-        ? 'bg-white/80 backdrop-blur-xl shadow-2xl shadow-blue-100/50' 
-        : 'bg-gradient-to-b from-white/95 via-white/90 to-transparent backdrop-blur-sm'
-    }`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-24">
-          {/* Logo with Glow Effect */}
-          <Link href="/" className="flex items-center gap-3 group relative">
-            <div className={`relative transition-all duration-500 ${
-              scrolled ? 'w-14 h-14' : 'w-16 h-16'
-            }`}>
-              {/* Glow effect */}
-              <div className="absolute inset-0 bg-gradient-to-br from-[#5A95CD] via-[#7AB8E8] to-[#4A85BD] rounded-2xl opacity-20 blur-xl group-hover:opacity-40 transition-all duration-500 group-hover:blur-2xl"></div>
-              
-              {/* Logo container */}
-              <div className="relative w-full h-full bg-gradient-to-br from-[#5A95CD] to-[#4A85BD] rounded-2xl shadow-lg group-hover:shadow-2xl transition-all duration-500 flex items-center justify-center overflow-hidden group-hover:scale-105">
-                <Sparkles className="w-8 h-8 text-white" strokeWidth={2.5} />
-                {/* Shine effect */}
-                <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+    <motion.nav 
+      style={{ 
+        width: isMobile ? "100%" : navWidth, 
+        top: isMobile ? 0 : navTop,
+        borderRadius: isMobile ? 0 : navRadius,
+        margin: "0 auto",
+        left: 0,
+        right: 0
+      }}
+      className={`fixed z-50 transition-all duration-700 ease-out ${
+        scrolled 
+          ? 'bg-[#F5F0E9]/80 backdrop-blur-2xl shadow-[0_20px_50px_rgba(17,34,80,0.15)] border border-[#E0C58F]/30' 
+          : isDarkHeroPage 
+            ? 'bg-[#112250]/10 backdrop-blur-md border-b border-white/10' 
+            : 'bg-[#F5F0E9]/0'
+      }`}
+    >
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className={`flex items-center justify-between transition-all duration-700 ${scrolled ? 'h-20' : 'h-28'}`}>
+          
+          {/* Logo Section */}
+          <Link href="/" className="flex items-center gap-4 group relative z-10">
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, ease: "circOut" }}
+              className={`relative flex items-center justify-center transition-all duration-700 ${
+                scrolled ? 'w-12 h-12' : 'w-16 h-16'
+              }`}
+            >
+              <div className="relative w-full h-full bg-white rounded-2xl shadow-xl border border-[#E0C58F]/20 group-hover:border-[#E0C58F]/50 transition-all duration-500 overflow-hidden">
+                <Image 
+                  src="/favicon.webp" 
+                  alt="Logo" 
+                  width={64} 
+                  height={64} 
+                  className="w-full h-full object-contain p-2 group-hover:scale-110 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-[#E0C58F]/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
               </div>
-            </div>
+            </motion.div>
             
-            <div className={`transition-all duration-500 ${scrolled ? 'scale-95' : 'scale-100'}`}>
-              <h1 className="font-black text-transparent bg-clip-text bg-gradient-to-r from-[#5A95CD] via-[#6AA5DA] to-[#4A85BD] text-2xl tracking-tight">
-                YOUTHFUL GLOW
+            <motion.div 
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.2, duration: 0.8 }}
+              className={`transition-all duration-700 ${scrolled ? 'scale-90 origin-left' : 'scale-100'}`}
+            >
+              <h1 className={`font-black text-transparent bg-clip-text bg-gradient-to-r text-xl md:text-2xl tracking-[0.1em] uppercase ${
+                !scrolled && isDarkHeroPage 
+                  ? 'from-white via-[#E0C58F] to-white' 
+                  : 'from-[#112250] via-[#3C507D] to-[#112250]'
+              }`}>
+                Youth Glow
               </h1>
-              <div className="flex items-center gap-1.5 -mt-1">
-                <div className="h-0.5 w-8 bg-gradient-to-r from-[#5A95CD] to-transparent rounded-full"></div>
-                <p className="text-xs font-medium text-gray-500 tracking-wider">BEAUTY STUDIO</p>
-              </div>
-            </div>
+              <p className="text-[10px] font-black text-[#E0C58F] tracking-[0.3em] uppercase -mt-0.5">Beauty Studio</p>
+            </motion.div>
           </Link>
           
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-2">
-            {navLinks.map((link) => (
-              <Link
+          {/* Desktop Links */}
+          <div className="hidden lg:flex items-center gap-1.5 bg-white/30 backdrop-blur-md rounded-full p-1.5 border border-[#E0C58F]/10 shadow-sm">
+            {navLinks.map((link, i) => (
+              <motion.div
                 key={link.href}
-                href={link.href}
-                className={`relative px-5 py-2.5 font-semibold transition-all duration-300 rounded-full group ${
-                  isActive(link.href) 
-                    ? 'text-white' 
-                    : 'text-gray-700 hover:text-[#5A95CD]'
-                }`}
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1 * i + 0.3, duration: 0.5 }}
               >
-                {/* Active background */}
-                {isActive(link.href) && (
-                  <div className="absolute inset-0 bg-gradient-to-r from-[#5A95CD] to-[#4A85BD] rounded-full shadow-lg shadow-blue-300/50"></div>
+                {link.label === 'Services' ? (
+                  <DropdownMenu>
+                    <DropdownMenuTrigger className={`relative px-5 py-2.5 font-bold transition-all duration-500 rounded-full group outline-none flex items-center gap-2 ${
+                      isActive(link.href) || pathname.startsWith('/services/')
+                        ? 'text-[#F5F0E9]' 
+                        : !scrolled && isDarkHeroPage
+                          ? 'text-white hover:text-[#E0C58F]'
+                          : 'text-[#112250] hover:text-[#3C507D]'
+                    }`}>
+                      {(isActive(link.href) || pathname.startsWith('/services/')) && (
+                        <motion.div 
+                          layoutId="activeNav"
+                          className="absolute inset-0 bg-gradient-to-r from-[#112250] to-[#3C507D] rounded-full shadow-lg"
+                        />
+                      )}
+                      <span className="relative z-10">{link.label}</span>
+                      <ChevronDown className="relative z-10 w-4 h-4 transition-transform duration-500 group-data-[state=open]:rotate-180" />
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent className="w-64 bg-[#F5F0E9] border-[#E0C58F]/20 p-2 shadow-2xl rounded-2xl backdrop-blur-3xl">
+                      {SERVICES.map((service) => (
+                        <DropdownMenuItem key={service.slug} asChild className="focus:bg-[#112250] focus:text-[#F5F0E9] rounded-xl cursor-pointer">
+                          <Link href={`/services/${service.slug}`} className="w-full px-4 py-3 font-bold transition-colors">
+                            {service.title}
+                          </Link>
+                        </DropdownMenuItem>
+                      ))}
+                      <div className="h-px bg-[#E0C58F]/10 my-2 mx-2" />
+                      <DropdownMenuItem asChild className="focus:bg-[#112250] focus:text-[#F5F0E9] rounded-xl cursor-pointer">
+                        <Link href="/services" className="w-full px-4 py-3 font-black text-[#112250] hover:text-[#112250] transition-colors uppercase tracking-[0.2em] text-[10px]">
+                          All Services
+                        </Link>
+                      </DropdownMenuItem>
+                    </DropdownMenuContent>
+                  </DropdownMenu>
+                ) : (
+                  <Link
+                    href={link.href}
+                    className={`relative px-6 py-2.5 font-bold transition-all duration-500 rounded-full group overflow-hidden ${
+                      isActive(link.href) 
+                        ? 'text-[#F5F0E9]' 
+                        : !scrolled && isDarkHeroPage
+                          ? 'text-white hover:text-[#E0C58F]'
+                          : 'text-[#112250] hover:text-[#3C507D]'
+                    }`}
+                  >
+                    {isActive(link.href) && (
+                      <motion.div 
+                        layoutId="activeNav"
+                        className="absolute inset-0 bg-gradient-to-r from-[#112250] to-[#3C507D] rounded-full shadow-lg"
+                      />
+                    )}
+                    
+                    {/* Unique Hover Effect: Sliding Background */}
+                    <div className="absolute inset-0 bg-[#E0C58F]/10 translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
+                    
+                    <span className="relative z-10">{link.label}</span>
+                  </Link>
                 )}
-                
-                {/* Hover background */}
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-50 to-blue-100 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                
-                <span className="relative z-10">{link.label}</span>
-                
-                {/* Animated underline for non-active items */}
-                {!isActive(link.href) && (
-                  <span className="absolute bottom-1 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-[#5A95CD] to-[#4A85BD] group-hover:w-3/4 transition-all duration-300 rounded-full"></span>
-                )}
-              </Link>
+              </motion.div>
             ))}
           </div>
 
-          {/* CTA Button - Desktop */}
-          <div className="hidden lg:block">
-            <Link href="https://cal.com/youthfulglowstudiobookings?overlayCalendar=true" target="_blank" rel="noopener noreferrer">
-              <button className="relative group overflow-hidden">
-                {/* Animated gradient background */}
-                <div className="absolute inset-0 bg-gradient-to-r from-[#5A95CD] via-[#6AA5DA] to-[#4A85BD] animate-gradient-x"></div>
-                
-                {/* Hover overlay */}
-                <div className="absolute inset-0 bg-gradient-to-r from-[#4A85BD] to-[#3A75AD] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                
-                {/* Shine effect */}
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
-                
-                <span className="relative z-10 flex items-center gap-2 px-7 py-3 text-white font-bold tracking-wide">
-                  <Sparkles className="w-4 h-4" />
-                  Book Now
-                </span>
-                
-                {/* Shadow */}
-                <div className="absolute inset-0 rounded-full shadow-lg shadow-blue-400/50 group-hover:shadow-2xl group-hover:shadow-blue-500/50 transition-all duration-300"></div>
-              </button>
-            </Link>
-          </div>
+          {/* CTA & Mobile Toggle */}
+          <div className="flex items-center gap-4">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.8, duration: 0.5 }}
+              className="hidden lg:block"
+            >
+              <Link href="https://cal.com/youthfulglowstudiobookings?overlayCalendar=true" target="_blank">
+                <button className="relative px-8 py-3 rounded-full font-black text-white uppercase tracking-widest text-xs group overflow-hidden border border-[#E0C58F]/30">
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#112250] to-[#3C507D] transition-transform duration-700 group-hover:scale-110" />
+                  <div className="absolute inset-0 bg-[#E0C58F] translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
+                  <span className="relative z-10 group-hover:text-[#112250] transition-colors duration-500">Book Now</span>
+                </button>
+              </Link>
+            </motion.div>
 
-          {/* Mobile Menu Button */}
-          <button 
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden relative p-3 rounded-2xl text-[#5A95CD] hover:bg-gradient-to-br hover:from-blue-50 hover:to-blue-100 transition-all duration-300 group"
-            aria-label="Toggle menu"
-          >
-            <div className="absolute inset-0 bg-gradient-to-br from-[#5A95CD]/10 to-[#4A85BD]/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            {mobileMenuOpen ? <X className="w-6 h-6 relative z-10" /> : <Menu className="w-6 h-6 relative z-10" />}
-          </button>
-        </div>
-      </div>
-
-      {/* Mobile Menu */}
-      <div className={`lg:hidden transition-all duration-500 ease-in-out ${
-        mobileMenuOpen 
-          ? 'max-h-screen opacity-100' 
-          : 'max-h-0 opacity-0 overflow-hidden'
-      }`}>
-        <div className="bg-gradient-to-b from-white via-blue-50/30 to-white backdrop-blur-xl border-t border-blue-100/50 px-4 py-6 space-y-3 shadow-2xl shadow-blue-100/50">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              onClick={() => setMobileMenuOpen(false)}
-              className={`block relative overflow-hidden rounded-2xl font-semibold transition-all duration-300 group ${
-                isActive(link.href) 
-                  ? 'text-white' 
-                  : 'text-gray-700'
+            <button 
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className={`p-3 rounded-2xl transition-all duration-500 ${
+                !scrolled && isDarkHeroPage
+                  ? 'bg-white/10 text-white hover:bg-white/20'
+                  : 'bg-[#112250]/5 text-[#112250] hover:bg-[#112250] hover:text-white'
               }`}
             >
-              {/* Active/Hover background */}
-              <div className={`absolute inset-0 transition-all duration-300 ${
-                isActive(link.href)
-                  ? 'bg-gradient-to-r from-[#5A95CD] to-[#4A85BD] opacity-100'
-                  : 'bg-gradient-to-r from-blue-50 to-blue-100 opacity-0 group-hover:opacity-100'
-              }`}></div>
-              
-              {/* Active indicator */}
-              {isActive(link.href) && (
-                <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1.5 h-8 bg-white rounded-r-full shadow-lg"></div>
-              )}
-              
-              <span className="relative z-10 block px-6 py-4">{link.label}</span>
-            </Link>
-          ))}
-          
-          {/* Mobile CTA */}
-          <div className="pt-4">
-            <Link href="https://cal.com/youthfulglowstudiobookings?overlayCalendar=true" target="_blank" rel="noopener noreferrer">
-              <button className="w-full relative group overflow-hidden rounded-2xl" onClick={() => setMobileMenuOpen(false)}>
-                {/* Animated gradient background */}
-                <div className="absolute inset-0 bg-gradient-to-r from-[#5A95CD] via-[#6AA5DA] to-[#4A85BD]"></div>
-                
-                {/* Hover overlay */}
-                <div className="absolute inset-0 bg-gradient-to-r from-[#4A85BD] to-[#3A75AD] opacity-0 group-active:opacity-100 transition-opacity duration-200"></div>
-                
-                <span className="relative z-10 flex items-center justify-center gap-2 py-4 text-white font-bold tracking-wide">
-                  <Sparkles className="w-5 h-5" />
-                  Book Appointment
-                </span>
-                
-                {/* Shadow */}
-                <div className="absolute inset-0 rounded-2xl shadow-lg shadow-blue-400/50"></div>
-              </button>
-            </Link>
+              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
           </div>
         </div>
       </div>
 
-      <style jsx>{`
-        @keyframes gradient-x {
-          0%, 100% {
-            background-position: 0% 50%;
-          }
-          50% {
-            background-position: 100% 50%;
-          }
-        }
-        .animate-gradient-x {
-          background-size: 200% 200%;
-          animation: gradient-x 3s ease infinite;
-        }
-      `}</style>
-    </nav>
+      {/* Mobile Menu Overlay */}
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div 
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            className="lg:hidden bg-[#F5F0E9]/95 backdrop-blur-3xl border-t border-[#E0C58F]/20 overflow-hidden"
+          >
+            <div className="px-6 py-12 space-y-4">
+              {navLinks.map((link, i) => (
+                <motion.div
+                  key={link.href}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.1 * i }}
+                >
+                  {link.label === 'Services' ? (
+                    <div className="space-y-4">
+                      <button 
+                        onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+                        className="w-full flex items-center justify-between p-4 rounded-2xl bg-white/50 border border-[#E0C58F]/10 font-bold text-[#112250]"
+                      >
+                        {link.label}
+                        <ChevronDown className={`w-5 h-5 transition-transform duration-500 ${mobileServicesOpen ? 'rotate-180' : ''}`} />
+                      </button>
+                      <AnimatePresence>
+                        {mobileServicesOpen && (
+                          <motion.div 
+                            initial={{ opacity: 0, height: 0 }}
+                            animate={{ opacity: 1, height: 'auto' }}
+                            exit={{ opacity: 0, height: 0 }}
+                            className="space-y-2 pl-6"
+                          >
+                            {SERVICES.map((s) => (
+                              <Link 
+                                key={s.slug} 
+                                href={`/services/${s.slug}`}
+                                onClick={() => setMobileMenuOpen(false)}
+                                className="block p-3 text-sm font-bold text-[#3C507D] hover:text-[#112250] transition-colors"
+                              >
+                                {s.title}
+                              </Link>
+                            ))}
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+                  ) : (
+                    <Link
+                      href={link.href}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className={`block p-4 rounded-2xl font-bold transition-all duration-500 ${
+                        isActive(link.href) 
+                          ? 'bg-[#112250] text-[#F5F0E9] shadow-xl' 
+                          : 'bg-white/50 text-[#112250] border border-[#E0C58F]/10'
+                      }`}
+                    >
+                      {link.label}
+                    </Link>
+                  )}
+                </motion.div>
+              ))}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.6 }}
+                className="pt-6"
+              >
+                <Link href="/booking" className="block">
+                  <button className="w-full py-5 rounded-2xl bg-gradient-to-r from-[#112250] to-[#3C507D] text-white font-black uppercase tracking-[0.2em] shadow-2xl shadow-[#112250]/20">
+                    Book Now
+                  </button>
+                </Link>
+              </motion.div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.nav>
   );
 }

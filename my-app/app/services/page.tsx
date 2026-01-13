@@ -30,7 +30,7 @@ const SERVICES = [
     description:
       "Manual exfoliation using a sterile blade to remove dead skin and peach fuzz. Includes a full facial with customized mask, serum, moisturizer, and SPF for immediate smoothness and radiance.",
     image:
-      "https://plus.unsplash.com/premium_photo-1661281252293-173617fdc3e9?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&q=80",
     price: "$130",
     packagePrice: "Package of 6 – $660 (Save $120)",
     duration: "60 minutes",
@@ -54,7 +54,7 @@ const SERVICES = [
     description:
       "A natural mechanical resurfacing peel using marine algae crystals. Lifts pigmentation, smooths texture, reduces acne, stretch marks, and improves overall skin tone with minimal downtime.",
     image:
-      "https://images.unsplash.com/photo-1664549761426-6a1cb1032854?w=900&auto=format&fit=crop&q=60",
+      "https://images.unsplash.com/photo-1596755389378-c31d21fd1273?auto=format&fit=crop&q=80",
     price: "From $180",
     duration: "40 minutes",
     bestFor:
@@ -77,7 +77,7 @@ const SERVICES = [
     description:
       "A gentle yet effective exfoliation using a diamond-tipped wand to remove dead skin cells, followed by hydrating serums, mask, moisturizer, and SPF.",
     image:
-      "https://images.unsplash.com/photo-1728949202477-bad2935775cb?w=900&auto=format&fit=crop&q=60",
+      "https://images.unsplash.com/photo-1552693673-1bf958298935?auto=format&fit=crop&q=80",
     price: "$120",
     packagePrice: "Package of 6 – $600 (Save $120)",
     duration: "60 minutes",
@@ -100,7 +100,7 @@ const SERVICES = [
     description:
       "A personalized facial tailored to your skin needs. Includes double cleanse, exfoliation, steam, extractions (if needed), facial massage, mask, serum, moisturizer, and SPF.",
     image:
-      "https://plus.unsplash.com/premium_photo-1664298510406-043afac0ac20?q=80&w=2069&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&q=80",
     price: "$110",
     packagePrice: "Package of 6 – $570 (Save $90)",
     duration: "60 minutes",
@@ -123,7 +123,7 @@ const SERVICES = [
     description:
       "A deep-cleansing facial for the back including exfoliation, steam, extractions (if needed), purifying mask, and hydration.",
     image:
-      "https://plus.unsplash.com/premium_photo-1681873742740-9a0e9eaa4584?q=80&w=987&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&q=80",
     price: "$120",
     duration: "60 minutes",
     bestFor:
@@ -138,14 +138,14 @@ const SERVICES = [
   },
 
   {
-    slug: "relaxation-massage",
+    slug: "aromatherapy-massage",
     title: "Relaxation Massage",
     icon: Sparkles,
     short: "Full-body aromatherapy massage for stress relief.",
     description:
       "A calming full-body massage using light to moderate pressure and soothing essential oils to relax the body and mind.",
     image:
-      "https://images.unsplash.com/photo-1519415510236-718bdfcd89c8?w=900&auto=format&fit=crop&q=60",
+      "https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?auto=format&fit=crop&q=80",
     price: "$85",
     duration: "60 minutes",
     bestFor:
@@ -160,6 +160,22 @@ const SERVICES = [
   },
 
   {
+    slug: "chemical-peels",
+    title: "Dermalogica Brightening Peel",
+    icon: Sun,
+    short: "30% Lactic acid peel for intense brightening and hydration.",
+    description:
+      "A professional-grade brightening peel with 30% lactic acid. Ideal for hyperpigmentation and uneven skin tone, leaving your skin with a healthy, radiant glow.",
+    image:
+      "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&q=80",
+    price: "$115",
+    duration: "60 minutes",
+    bestFor: "Clients with hyperpigmentation, uneven skin tone, or signs of aging.",
+    whyLoveIt: ["Intense hydration", "Evens out skin tone", "No significant downtime"],
+    concerns: ["pigmentation", "aging", "dull-skin"],
+    areas: ["face"],
+  },
+  {
     slug: "waxing",
     title: "Waxing Hair Removal",
     icon: Wand2,
@@ -167,7 +183,7 @@ const SERVICES = [
     description:
       "Professional hair removal using hygienic techniques for smooth skin lasting weeks. Suitable for face and body.",
     image:
-      "https://images.unsplash.com/photo-1522338242992-e1a54906a8da?w=900&auto=format&fit=crop&q=60",
+      "https://images.unsplash.com/photo-1522338242992-e1a54906a8da?auto=format&fit=crop&q=80",
     price: "From $10",
     duration: "Varies",
     bestFor:
@@ -191,14 +207,13 @@ export default function ServiceFinder() {
     <RootLayout>
       <div className="max-w-6xl mx-auto p-6 space-y-12">
 
-        {/* INTRO */}
-        <div className="text-center space-y-4">
-          <h1 className="text-4xl font-black">Our Services</h1>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            At Youthful Glow Studio, our mission is to help you feel confident and
-            beautiful in your own skin. Every treatment is personalized and
-            delivered in a calm, welcoming environment.
+        <div className="text-center space-y-4 mb-16">
+          <h1 className="text-5xl md:text-6xl font-bold text-[#112250]" style={{fontFamily: 'Playfair Display, serif'}}>Our Services</h1>
+          <p className="text-xl text-[#3C507D] max-w-3xl mx-auto leading-relaxed" style={{fontFamily: 'Cormorant Garamond, serif'}}>
+            Step into a world of personalized care where your skin's health is our top priority. 
+            Discover our curated collection of medical-grade treatments designed to reveal your most radiant self.
           </p>
+          <div className="h-1 w-24 bg-gradient-to-r from-[#E0C58F] to-transparent mx-auto rounded-full mt-6"></div>
         </div>
 
         {/* SERVICES GRID */}
@@ -208,30 +223,33 @@ export default function ServiceFinder() {
             return (
               <div
                 key={service.slug}
-                className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition"
+                className="bg-white rounded-xl shadow-xl overflow-hidden hover:shadow-2xl transition duration-500 border border-[#E0C58F]/10 hover:border-[#E0C58F]/40 group"
               >
-                <img
-                  src={service.image}
-                  alt={service.title}
-                  className="w-full h-52 object-cover"
-                />
+                <div className="relative h-52 overflow-hidden">
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#112250]/40 to-transparent"></div>
+                </div>
 
                 <div className="p-6 space-y-4">
-                  <h3 className="text-xl font-bold flex items-center gap-2">
-                    <Icon className="w-5 h-5 text-[#5A95CD]" />
+                  <h3 className="text-xl font-bold flex items-center gap-2 text-[#112250]">
+                    <Icon className="w-5 h-5 text-[#E0C58F]" />
                     {service.title}
                   </h3>
 
-                  <p className="text-gray-600 text-sm">
+                  <p className="text-[#3C507D] text-sm leading-relaxed">
                     {service.short}
                   </p>
 
-                  <div className="flex justify-between text-sm">
-                    <span className="font-semibold text-[#5A95CD]">
+                  <div className="flex justify-between items-center text-sm border-t border-[#F5F0E9] pt-4">
+                    <span className="font-bold text-[#112250]">
                       {service.price}
                     </span>
-                    <span className="text-gray-500 flex items-center gap-1">
-                      <Clock className="w-4 h-4" />
+                    <span className="text-[#3C507D] flex items-center gap-1 font-medium">
+                      <Clock className="w-4 h-4 text-[#E0C58F]" />
                       {service.duration}
                     </span>
                   </div>
@@ -239,9 +257,9 @@ export default function ServiceFinder() {
                   <a
                     href={`https://cal.com/youthfulglowstudiobookings/${service.slug}?overlayCalendar=true`}
                     target="_blank"
-                    className="inline-flex items-center gap-2 bg-[#5A95CD] text-white px-4 py-2 rounded-lg font-semibold text-sm hover:bg-[#4A85BD]"
+                    className="w-full inline-flex items-center justify-center gap-2 bg-[#112250] text-[#F5F0E9] px-4 py-3 rounded-lg font-bold text-sm hover:bg-[#3C507D] transition-all border border-[#E0C58F]/20 hover:border-[#E0C58F]/50 shadow-lg shadow-[#112250]/10"
                   >
-                    Book Your Glow Session <ArrowRight className="w-4 h-4" />
+                    Book Your Glow Session <ArrowRight className="w-4 h-4 text-[#E0C58F]" />
                   </a>
                 </div>
               </div>
@@ -250,21 +268,21 @@ export default function ServiceFinder() {
         </div>
 
         {/* BOOKING INFO */}
-        <div className="bg-blue-50 rounded-xl p-8 text-center space-y-4">
-          <h2 className="text-2xl font-bold">✨ How to Book Your Appointment</h2>
-          <p className="text-gray-700 max-w-2xl mx-auto">
+        <div className="bg-[#112250] rounded-2xl p-10 text-center space-y-6 border border-[#E0C58F]/30 shadow-2xl">
+          <h2 className="text-3xl font-bold text-[#E0C58F]">✨ How to Book Your Appointment</h2>
+          <p className="text-[#F5F0E9]/90 max-w-2xl mx-auto text-lg leading-relaxed">
             Simply click “Book Your Glow Session” under any service to choose your
             preferred date and time. You’ll receive instant confirmation by email.
           </p>
-          <p className="font-semibold">
-            Questions? Email:
+          <div className="pt-4 flex flex-col items-center gap-2">
+            <span className="text-[#D9CBC2] text-sm font-medium tracking-wider uppercase">Questions? Reach out to us:</span>
             <a
               href="mailto:marcia@youthfulglowstudio.com"
-              className="text-[#5A95CD] ml-1"
+              className="text-[#E0C58F] text-xl font-bold hover:text-[#F5F0E9] transition-colors border-b-2 border-[#E0C58F]/30 hover:border-[#F5F0E9]"
             >
               marcia@youthfulglowstudio.com
             </a>
-          </p>
+          </div>
         </div>
       </div>
     </RootLayout>
