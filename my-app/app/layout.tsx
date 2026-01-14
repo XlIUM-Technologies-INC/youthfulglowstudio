@@ -1,5 +1,9 @@
 import type { Metadata } from "next";
-import { Montserrat, Playfair_Display, Cormorant_Garamond } from "next/font/google";
+import {
+  Montserrat,
+  Playfair_Display,
+  Cormorant_Garamond,
+} from "next/font/google";
 import { Toaster } from "@/components/ui/sonner";
 import Script from "next/script";
 import "./globals.css";
@@ -23,10 +27,11 @@ const cormorantGaramond = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "Youth Glow Studio | Skincare & Beauty Treatments",
-  description: "Professional skincare and beauty treatments including facial massage, hair therapy, under-eye treatments, and hand massage. Book your glow session today.",
+  title: "Youthful Glow Studio | Skincare & Beauty Treatments",
+  description:
+    "Professional skincare and beauty treatments including facial massage, hair therapy, under-eye treatments, and hand massage. Book your glow session today.",
   keywords: "skincare, beauty, facial massage, treatments, wellness",
-  authors: [{ name: "Youth Glow Studio" }],
+  authors: [{ name: "Youthful Glow Studio" }],
   icons: {
     icon: "/favicon.webp",
   },
@@ -44,7 +49,10 @@ export default function RootLayout({
       >
         {children}
         <Toaster richColors />
-        <Script src="https://assets.calendly.com/assets/external/widget.js" async />
+        <Script
+          src="https://assets.calendly.com/assets/external/widget.js"
+          async
+        />
       </body>
     </html>
   );

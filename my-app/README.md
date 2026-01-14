@@ -1,11 +1,13 @@
-# 🌟 Youth Glow Studio - Complete Project
+# 🌟 Youthful Glow Studio - Complete Project
 
 A modern, full-featured skincare studio website built with Next.js, React, and Tailwind CSS.
 
 ## 🎯 What's Included
 
 ### ✨ **Detailed Service Pages**
+
 Each service has a comprehensive landing page with:
+
 - **Full descriptions** (300+ words)
 - **10+ benefits** per service
 - **5-step process** breakdown
@@ -16,12 +18,14 @@ Each service has a comprehensive landing page with:
 - **Easy booking** with Cal.com
 
 ### 📄 **Pages**
+
 - **Home** (`/`) — Overview with service summary
 - **Services List** (`/services`) — All services in grid
 - **Service Details** (`/services/[slug]`) — Full service page
 - **About, Contact, Reviews** — Additional sections
 
 ### 🏗️ **Architecture**
+
 - **Centralized data** — Single source of truth (`lib/services.ts`)
 - **Reusable components** — Clean, modular sections
 - **Responsive design** — Works on all devices
@@ -32,11 +36,13 @@ Each service has a comprehensive landing page with:
 ## 🚀 Quick Start
 
 ### Installation
+
 ```bash
 npm install
 ```
 
 ### Run Development Server
+
 ```bash
 npm run dev
 ```
@@ -44,6 +50,7 @@ npm run dev
 Open [http://localhost:3000](http://localhost:3000) to view the site.
 
 ### View Service Pages
+
 - Facial Massage: http://localhost:3000/services/facial-massage
 - Hair Treatment: http://localhost:3000/services/hair-treatment
 - Under Eye Treatment: http://localhost:3000/services/under-eye-treatment
@@ -69,6 +76,7 @@ Complete guides for every aspect of the project:
 ## 🎨 Key Features
 
 ### Content Rich
+
 - ✅ 300+ word descriptions per service
 - ✅ 10+ benefits listed for each service
 - ✅ 5-step process with explanations
@@ -78,6 +86,7 @@ Complete guides for every aspect of the project:
 - ✅ Detailed aftercare instructions
 
 ### User Experience
+
 - ✅ Responsive design (mobile, tablet, desktop)
 - ✅ Smooth animations & transitions
 - ✅ Sticky sidebar with booking CTA
@@ -86,6 +95,7 @@ Complete guides for every aspect of the project:
 - ✅ Contact information always visible
 
 ### Technical
+
 - ✅ Built with Next.js 14
 - ✅ Styled with Tailwind CSS
 - ✅ Using Shadcn UI components
@@ -99,21 +109,25 @@ Complete guides for every aspect of the project:
 ## 📱 Services Available
 
 ### 1. Facial Massage
+
 - **Price:** $80 | **Duration:** 45 minutes
 - **Focus:** Circulation, lymphatic drainage, glow
 - [View page](http://localhost:3000/services/facial-massage)
 
 ### 2. Hair Treatment
+
 - **Price:** $60 | **Duration:** 30 minutes
 - **Focus:** Shine, strength, scalp nourishment
 - [View page](http://localhost:3000/services/hair-treatment)
 
 ### 3. Under Eye Treatment
+
 - **Price:** $40 | **Duration:** 25 minutes
 - **Focus:** Dark circles, puffiness, brightness
 - [View page](http://localhost:3000/services/under-eye-treatment)
 
 ### 4. Hand Massage
+
 - **Price:** $35 | **Duration:** 20 minutes
 - **Focus:** Tension relief, hydration, flexibility
 - [View page](http://localhost:3000/services/hand-massage)
@@ -123,17 +137,22 @@ Complete guides for every aspect of the project:
 ## 🛠️ How to Update Content
 
 ### Update Service Pricing
+
 Edit `lib/services.ts`:
+
 ```typescript
 {
   slug: "facial-massage",
   price: "$90",  // Changed from $80
 }
 ```
+
 ✅ Updates everywhere automatically
 
 ### Add a New Service
+
 Add to `SERVICES` array in `lib/services.ts`:
+
 ```typescript
 {
   slug: "new-service",
@@ -143,10 +162,13 @@ Add to `SERVICES` array in `lib/services.ts`:
   // ... all other fields
 }
 ```
+
 ✅ Auto-appears on home, /services, footer, and gets its own page
 
 ### Update Benefits, FAQs, etc.
+
 Simply edit the relevant field in `lib/services.ts`:
+
 - `fullDescription` — Service overview
 - `detailedBenefits` — Benefits list
 - `process` — Step-by-step workflow
@@ -193,12 +215,12 @@ my-app/
 
 ## 🧩 New Components
 
-| Component | Purpose |
-|-----------|---------|
-| `BenefitsSection` | Display 10+ benefits in grid |
-| `ProcessSection` | Show 5-step workflow |
-| `FAQSection` | Accordion with Q&A pairs |
-| `TestimonialsSection` | Customer reviews with ratings |
+| Component              | Purpose                         |
+| ---------------------- | ------------------------------- |
+| `BenefitsSection`      | Display 10+ benefits in grid    |
+| `ProcessSection`       | Show 5-step workflow            |
+| `FAQSection`           | Accordion with Q&A pairs        |
+| `TestimonialsSection`  | Customer reviews with ratings   |
 | `IngredientsAftercare` | Ingredients & care instructions |
 
 ---
@@ -259,6 +281,7 @@ npm run lint
 ## 🚀 Deployment
 
 Build and deploy to Vercel:
+
 ```bash
 npm run build
 ```

@@ -7,24 +7,29 @@ import { SERVICES } from "@/lib/services";
 
 export default function Footer() {
   return (
-    <footer id="contact" className="bg-[#112250] text-[#F5F0E9] pt-16 pb-8 border-t border-[#E0C58F]/20">
+    <footer
+      id="contact"
+      className="bg-[#112250] text-[#F5F0E9] pt-16 pb-8 border-t border-[#E0C58F]/20"
+    >
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-
           {/* Brand */}
           <div className="flex flex-col items-center md:items-start">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center p-1.5 border border-[#E0C58F]/30 shadow-sm">
-                <Image 
-                  src="/favicon.webp" 
-                  alt="Logo" 
-                  width={48} 
-                  height={48} 
+                <Image
+                  src="/favicon.webp"
+                  alt="Logo"
+                  width={48}
+                  height={48}
                   className="w-full h-full object-contain"
                 />
               </div>
-              <h3 className="text-xl font-black text-[#E0C58F] tracking-tight" style={{fontFamily: 'Playfair Display, serif'}}>
-                Youth Glow Studio
+              <h3
+                className="text-xl font-black text-[#E0C58F] tracking-tight"
+                style={{ fontFamily: "Playfair Display, serif" }}
+              >
+                Youthful Glow Studio
               </h3>
             </div>
             <p className="text-[#D9CBC2] text-sm mb-4">
@@ -40,7 +45,9 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-lg font-bold mb-6 border-b border-[#E0C58F]/30 pb-2 inline-block text-[#E0C58F]">Quick Links</h4>
+            <h4 className="text-lg font-bold mb-6 border-b border-[#E0C58F]/30 pb-2 inline-block text-[#E0C58F]">
+              Quick Links
+            </h4>
             <ul className="space-y-3">
               {[
                 { href: "/", label: "Home" },
@@ -50,8 +57,8 @@ export default function Footer() {
                 { href: "/review", label: "Reviews" },
               ].map((link) => (
                 <li key={link.label}>
-                  <Link 
-                    href={link.href} 
+                  <Link
+                    href={link.href}
                     className="text-[#D9CBC2] hover:text-[#E0C58F] transition-all duration-300 flex items-center group font-medium"
                   >
                     <ChevronRight className="w-4 h-4 mr-2 opacity-0 -ml-6 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300 text-[#E0C58F]" />
@@ -63,7 +70,9 @@ export default function Footer() {
           </div>
 
           <div className="lg:col-span-1">
-            <h4 className="text-lg font-semibold mb-6 border-b border-[#E0C58F]/30 pb-2 inline-block text-[#E0C58F]">Services</h4>
+            <h4 className="text-lg font-semibold mb-6 border-b border-[#E0C58F]/30 pb-2 inline-block text-[#E0C58F]">
+              Services
+            </h4>
             <ul className="space-y-3">
               {SERVICES.map((service) => (
                 <li key={service.slug}>
@@ -81,7 +90,9 @@ export default function Footer() {
 
           {/* Contact & Hours */}
           <div>
-            <h4 className="text-lg font-bold mb-6 border-b border-[#E0C58F]/30 pb-2 inline-block text-[#E0C58F]">Connect With Us</h4>
+            <h4 className="text-lg font-bold mb-6 border-b border-[#E0C58F]/30 pb-2 inline-block text-[#E0C58F]">
+              Connect With Us
+            </h4>
             <ul className="space-y-3 text-[#D9CBC2]">
               <li className="flex gap-3">
                 <Mail className="w-5 h-5 text-[#E0C58F]" />
@@ -122,7 +133,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-gray-400 text-sm">
-            © 2025 Youth Glow Studio | All Rights Reserved
+            © 2025 Youthful Glow Studio | All Rights Reserved
           </p>
 
           {/* Social */}
@@ -132,7 +143,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               className="w-10 h-10 bg-[#3C507D] hover:bg-[#E0C58F] rounded-full flex items-center justify-center transition group"
-              aria-label="Youth Glow Studio Instagram"
+              aria-label="Youthful Glow Studio Instagram"
             >
               <Instagram className="w-5 h-5 group-hover:text-[#112250]" />
             </a>
