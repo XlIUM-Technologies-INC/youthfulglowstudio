@@ -11,6 +11,7 @@ import {
   RefreshCcw,
   Check,
   Info,
+  Feather,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -20,24 +21,35 @@ const CONCERNS = [
     label: "Glow & Brighten",
     icon: Sparkles,
     color: "from-amber-200 to-yellow-400",
+    description: "Instant radiance boost",
   },
   {
     id: "acne",
-    label: "Clear Acne",
+    label: "Blemish Control",
     icon: Target,
     color: "from-blue-200 to-cyan-400",
+    description: "Clarify & rebalance skin",
   },
   {
-    id: "aging",
-    label: "Anti-Aging",
-    icon: Zap,
-    color: "from-purple-200 to-pink-400",
-  },
-  {
-    id: "relax",
-    label: "First time with us?",
+    id: "restore",
+    label: "Relax & Restore",
     icon: Waves,
+    color: "from-purple-200 to-pink-400",
+    description: "Deep relaxation experience",
+  },
+  {
+    id: "waxing",
+    label: "Comfort Waxing",
+    icon: Feather, // Light, smooth
+    color: "from-rose-200 to-red-300",
+    description: "Gentle hair removal",
+  },
+  {
+    id: "new",
+    label: "New Here?",
+    icon: User,
     color: "from-emerald-200 to-teal-400",
+    description: "Skin analysis–based facial",
   },
 ];
 
@@ -45,8 +57,7 @@ const RECOMMENDATIONS: Record<string, any> = {
   glow: {
     title: "Dermaplaning",
     slug: "dermaplaning",
-    image:
-      "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&q=80",
+    image: "/images/dermaplaning.webp",
     reason:
       "Perfect for instant brightness and removing 'peach fuzz'. It creates a smooth canvas for your glow.",
     match: "98% Match",
@@ -54,26 +65,31 @@ const RECOMMENDATIONS: Record<string, any> = {
   acne: {
     title: "Zena Algae Peel",
     slug: "zena-algae-peel",
-    image:
-      "https://images.unsplash.com/photo-1596755389378-c31d21fd1273?auto=format&fit=crop&q=80",
+    image: "/images/Zena_Algae_Peel.webp",
     reason:
-      "A natural powerhouse for deep exfoliation and tackling stubborn breakouts.",
+      "A natural, mechanical resurfacing peel that uses marine algae crystals to exfoliate and stimulate collagen—helping reduce acne, smooth texture, and improve overall skin clarity and tone, with minimal downtime.",
     match: "95% Match",
   },
-  aging: {
-    title: "Lactic Acid Brightening Peel",
-    slug: "chemical-peels",
-    image:
-      "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&q=80",
+  restore: {
+    title: "Relaxation Massage",
+    slug: "aromatherapy-massage",
+    image: "/images/Massage.webp",
     reason:
-      "Targets fine lines and sun damage while keeping the skin hydrated and plump.",
-    match: "92% Match",
+      "A gentle, soothing massage that promotes deep relaxation, relieves muscle tension, and improves circulation.",
+    match: "96% Match",
   },
-  relax: {
+  waxing: {
+    title: "Waxing Hair Removal",
+    slug: "waxing",
+    image: "/images/Hair_Removal.webp",
+    reason:
+      "Professional hair removal for smooth, long-lasting results. Customized for your comfort.",
+    match: "100% Match",
+  },
+  new: {
     title: "Made for You Facial",
     slug: "made-for-you-facial",
-    image:
-      "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=400&h=400&fit=crop",
+    image: "/images/Made_for_You_Facial.webp",
     reason:
       "Our Made For You Facial is ideal for first-timers. We assess your skin, tailor every step to your needs, and create a treatment that delivers visible results while keeping your skin calm, balanced, and healthy.",
     match: "100% Match",
@@ -145,7 +161,7 @@ export default function TreatmentFinder() {
                         {concern.label}
                       </span>
                       <span className="text-sm text-[#3C507D] font-medium opacity-60">
-                        Personalized selection
+                        {concern.description}
                       </span>
                     </div>
                     <ArrowRight className="ml-auto w-5 h-5 text-[#E0C58F] opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -172,9 +188,9 @@ export default function TreatmentFinder() {
                 </div>
                 <button
                   onClick={reset}
-                  className="flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-[#3C507D] hover:text-[#112250] transition-colors"
+                  className="flex items-center gap-2 text-xs font-black uppercase tracking-widest text-[#3C507D] hover:text-[#112250] transition-colors"
                 >
-                  <RefreshCcw className="w-3 h-3" /> Start Over
+                  <RefreshCcw className="w-4 h-4" /> Start Over
                 </button>
               </div>
 
@@ -184,13 +200,9 @@ export default function TreatmentFinder() {
                   <div className="w-full md:w-1/3 aspect-square rounded-[2rem] overflow-hidden shadow-xl border-4 border-white">
                     <img
                       src={
-                        selectedConcern === "glow"
-                          ? RECOMMENDATIONS.glow.image
-                          : selectedConcern === "acne"
-                          ? RECOMMENDATIONS.acne.image
-                          : selectedConcern === "aging"
-                          ? RECOMMENDATIONS.aging.image
-                          : "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=400&h=400&fit=crop"
+                        selectedConcern && RECOMMENDATIONS[selectedConcern]
+                          ? RECOMMENDATIONS[selectedConcern].image
+                          : "/images/Made_for_You_Facial.webp"
                       }
                       className="w-full h-full object-cover"
                       alt="Recommended Treatment"

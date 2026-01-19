@@ -3,40 +3,10 @@ import RootLayout from "@/components/layouts/RootLayout";
 import { useState } from "react";
 import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
 import Link from "next/link";
+import { reviews } from "@/lib/reviews";
 
 export default function ReviewPage() {
   const [currentReview, setCurrentReview] = useState(0);
-
-  const reviews = [
-    {
-      name: "Dorina Cercel",
-      role: "Client",
-      review:
-        "Excellent service! I really enjoyed my facial and my massage! Highly recommended!",
-      date: "Google Reviews",
-    },
-    {
-      name: "Melissa",
-      role: "Client",
-      review:
-        "I've gotten a chemical peel done here a couple of times and the results are always amazing! The service is professional and Marcia does a great job making you feel comfortable. My skin looks brand new afterwards so I look forward to coming back for more services!",
-      date: "Google Reviews",
-    },
-    {
-      name: "Donna B.",
-      role: "Client",
-      review:
-        "Got microdermabrasion and dermaplaning with Marcia and all 4 times I had the treatments they were amazing experiences. Marcia is friendly and knowledgeable about the treatment she is providing and the products being used. She explains the process thoroughly and what to expect after the treatment. She treated my skin with care, with an end result of it feeling relaxed, rejuvenated and glowing. She makes you feel at home, comfortable and the whole experience was very pleasant.",
-      date: "Google Reviews",
-    },
-    {
-      name: "Claudia Koop",
-      role: "Client",
-      review:
-        "I went for a facial last week and it was one of the best. My face didn't feel and look that good in years. I will be going regularly and highly recommended it to all my family and friends. Thank you so much!!",
-      date: "Google Reviews",
-    },
-  ];
 
   const nextReview = () => {
     setCurrentReview((prev) => (prev + 1) % reviews.length);
@@ -54,8 +24,6 @@ export default function ReviewPage() {
           className="py-24 bg-[#F5F0E9] relative overflow-hidden"
         >
           {/* Decorative Background Elements */}
-          <div className="absolute top-20 left-10 w-40 h-40 border-4 border-[#E0C58F] opacity-20 rounded-full"></div>
-          <div className="absolute bottom-20 right-10 w-32 h-32 border-4 border-[#112250] opacity-10 rotate-45"></div>
 
           <div className="max-w-7xl mx-auto px-6">
             {/* Header */}
@@ -116,7 +84,7 @@ export default function ReviewPage() {
                 </div>
 
                 {/* Review Text */}
-                <p className="text-[#112250] text-xl md:text-2xl text-center leading-relaxed mb-8 relative z-10 italic font-medium">
+                <p className="text-[#112250] text-xl md:text-xl text-center leading-relaxed mb-8 relative z-10 italic font-medium">
                   "{reviews[currentReview].review}"
                 </p>
 

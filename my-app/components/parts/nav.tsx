@@ -26,8 +26,8 @@ export default function Navbar() {
   const pathname = usePathname();
   const { scrollY } = useScroll();
 
-  const isDarkHeroPage =
-    pathname.startsWith("/services/") || pathname === "/contact";
+  const isDarkHeroPage = false;
+  //  pathname.startsWith("/services/") || pathname === "/contact";
 
   // Subtle parallax/scaling for the navbar width
   const navWidth = useTransform(scrollY, [0, 100], ["100%", "85%"]);
@@ -77,8 +77,8 @@ export default function Navbar() {
         scrolled
           ? "bg-[#F5F0E9]/80 backdrop-blur-2xl shadow-[0_20px_50px_rgba(17,34,80,0.15)] border border-[#E0C58F]/30"
           : isDarkHeroPage
-          ? "bg-[#112250]/10 backdrop-blur-md"
-          : "bg-transparent"
+            ? "bg-[#112250]/10 backdrop-blur-md"
+            : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -151,8 +151,8 @@ export default function Navbar() {
                         isActive(link.href) || pathname.startsWith("/services/")
                           ? "text-[#F5F0E9]"
                           : !scrolled && isDarkHeroPage
-                          ? "text-white hover:text-[#E0C58F]"
-                          : "text-[#112250] hover:text-[#3C507D]"
+                            ? "text-white hover:text-[#E0C58F]"
+                            : "text-[#112250] hover:text-[#3C507D]"
                       }`}
                     >
                       {(isActive(link.href) ||
@@ -201,8 +201,8 @@ export default function Navbar() {
                       isActive(link.href)
                         ? "text-[#F5F0E9]"
                         : !scrolled && isDarkHeroPage
-                        ? "text-white hover:text-[#E0C58F]"
-                        : "text-[#112250] hover:text-[#3C507D]"
+                          ? "text-white hover:text-[#E0C58F]"
+                          : "text-[#112250] hover:text-[#3C507D]"
                     }`}
                   >
                     {isActive(link.href) && (
@@ -243,7 +243,7 @@ export default function Navbar() {
 
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className={`p-3 rounded-2xl transition-all duration-500 ${
+              className={`lg:hidden p-3 rounded-2xl transition-all duration-500 ${
                 !scrolled && isDarkHeroPage
                   ? "bg-white/10 text-white hover:bg-white/20"
                   : "bg-[#112250]/5 text-[#112250] hover:bg-[#112250] hover:text-white"

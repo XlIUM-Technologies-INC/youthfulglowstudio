@@ -43,7 +43,7 @@ export default function AboutSection() {
               <motion.img
                 whileHover={{ scale: 1.1 }}
                 transition={{ duration: 1.5 }}
-                src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=800&h=800&fit=crop"
+                src="/home/studio.png"
                 alt="Skincare professional"
                 className="w-full h-full object-cover"
               />

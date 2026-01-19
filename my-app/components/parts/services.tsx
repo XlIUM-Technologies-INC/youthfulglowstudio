@@ -3,30 +3,10 @@ import { useState, useRef } from "react";
 import { ArrowRight, Sparkles } from "lucide-react";
 import Link from "next/link";
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
+import { SERVICES } from "@/lib/services";
 
-const SERVICES = [
-  {
-    slug: "zena-facial",
-    title: "Zena Facial",
-    short: "Rejuvenating treatment",
-    description:
-      "Experience the premium Zena Facial, a luxurious 60-minute treatment that combines advanced techniques with premium skincare products. This rejuvenating facial deeply cleanses, exfoliates, and hydrates your skin, leaving you with a radiant, youthful glow.",
-    duration: "60 mins",
-    image:
-      "https://images.unsplash.com/photo-1596755389378-c31d21fd1273?auto=format&fit=crop&q=80",
-  },
-
-  {
-    slug: "diamond-peel",
-    title: "Diamond Microdermabrasion",
-    short: "Exfoliation perfection",
-    description:
-      "Reveal smoother, brighter skin with our Diamond Microdermabrasion treatment. This non-invasive procedure gently removes dead skin cells, minimizes pores, and reduces the appearance of fine lines and sun damage for a flawless complexion.",
-    duration: "50 mins",
-    image:
-      "https://images.unsplash.com/photo-1552693673-1bf958298935?auto=format&fit=crop&q=80",
-  },
-];
+// Only show the first 3 services for the homepage
+const FEATURED_SERVICES = SERVICES.slice(0, 3);
 
 export default function ParallaxServices() {
   const containerRef = useRef(null);
@@ -68,7 +48,7 @@ export default function ParallaxServices() {
             className="text-6xl md:text-8xl font-black text-[#112250] tracking-tighter"
             style={{ fontFamily: "Playfair Display, serif" }}
           >
-            Luxury <span className="text-[#3C507D]/40">Treatments</span>
+            Signature <span className="text-[#3C507D]/40">Treatments</span>
           </motion.h2>
 
           <motion.div
@@ -86,10 +66,27 @@ export default function ParallaxServices() {
           </motion.div>
         </div>
 
-        <div className="space-y-64">
-          {SERVICES.map((service, index) => (
+        <div className="space-y-16 md:space-y-32 lg:space-y-64">
+          {FEATURED_SERVICES.map((service, index) => (
             <ServiceCard key={service.slug} service={service} index={index} />
           ))}
+        </div>
+
+        {/* Explore More Button */}
+        <div className="mt-32 flex justify-center">
+          <Link href="/services">
+            <motion.button
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="group bg-[#112250] text-[#F5F0E9] px-10 py-5 rounded-full font-black text-xs uppercase tracking-[0.2em] shadow-[0_20px_40px_-10px_rgba(17,34,80,0.3)] hover:shadow-[0_20px_40px_-5px_rgba(17,34,80,0.4)] transition-all flex items-center gap-3"
+            >
+              Explore All Services
+              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+            </motion.button>
+          </Link>
         </div>
       </div>
     </section>
@@ -107,12 +104,12 @@ function ServiceCard({ service, index }: { service: any; index: number }) {
   const textOpacity = useTransform(
     scrollYProgress,
     [0, 0.2, 0.8, 1],
-    [0, 1, 1, 0]
+    [0, 1, 1, 0],
   );
   const textY = useTransform(
     scrollYProgress,
     [0, 0.2, 0.8, 1],
-    [50, 0, 0, -50]
+    [50, 0, 0, -50],
   );
 
   const isEven = index % 2 === 0;
@@ -146,9 +143,9 @@ function ServiceCard({ service, index }: { service: any; index: number }) {
           style={{ y: useTransform(scrollYProgress, [0, 1], [50, -50]) }}
           className={`absolute ${
             isEven ? "-right-10" : "-left-10"
-          } top-1/2 -translate-y-1/2 bg-white/60 backdrop-blur-2xl p-8 rounded-3xl shadow-2xl border border-white/50 hidden lg:block`}
+          } top-1/2 -translate-y-1/2 bg-white/90 backdrop-blur-2xl p-8 rounded-3xl shadow-2xl border border-[#E0C58F]/30 hidden lg:block`}
         >
-          <p className="text-[#E0C58F] font-black text-xs uppercase tracking-[0.2em] mb-2">
+          <p className="text-[#3C507D] font-black text-xs uppercase tracking-[0.2em] mb-2">
             Duration
           </p>
           <p className="text-[#112250] text-3xl font-black">

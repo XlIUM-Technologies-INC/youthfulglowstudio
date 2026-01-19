@@ -18,6 +18,7 @@ import {
   Info,
 } from "lucide-react";
 import Link from "next/link";
+import { reviews } from "@/lib/reviews";
 
 export default function HeroSection() {
   const [currentReview, setCurrentReview] = useState(0);
@@ -31,35 +32,14 @@ export default function HeroSection() {
   const y1 = useTransform(scrollYProgress, [0, 1], [0, 200]);
   const y2 = useTransform(scrollYProgress, [0, 1], [0, -150]);
   const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.9]);
-  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+  const opacity = useTransform(scrollYProgress, [0.6, 1], [1, 0]);
 
-  const reviews = [
-    {
-      name: "Dorina Cercel",
-      role: "Client",
-      review:
-        "Excellent service! I really enjoyed my facial and my massage! Highly recommended!",
-      date: "Google Reviews",
-    },
-    {
-      name: "Melissa",
-      role: "Client",
-      review:
-        "I've gotten a chemical peel done here a couple of times and the results are always amazing!",
-      date: "Google Reviews",
-    },
-    {
-      name: "Donna B.",
-      role: "Client",
-      review:
-        "Marcia is friendly and knowledgeable. My skin feels relaxed, rejuvenated and glowing.",
-      date: "Google Reviews",
-    },
-  ];
+  // Use only first 3 reviews for hero section
+  const heroReviews = reviews.slice(0, 3);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentReview((prev) => (prev + 1) % reviews.length);
+      setCurrentReview((prev) => (prev + 1) % heroReviews.length);
     }, 5000);
     return () => clearInterval(interval);
   }, []);
@@ -101,9 +81,8 @@ export default function HeroSection() {
   return (
     <section
       ref={containerRef}
-      className="relative min-h-[110vh] flex items-center bg-[#F5F0E9] overflow-hidden"
+      className="relative min-h-[110vh] flex items-start lg:items-center bg-white overflow-hidden"
     >
-      {/* Dynamic Background Elements */}
       <motion.div
         style={{ y: y1 }}
         className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-[#E0C58F]/20 rounded-full blur-[120px]"
@@ -113,39 +92,7 @@ export default function HeroSection() {
         className="absolute bottom-[-10%] right-[-10%] w-[60%] h-[60%] bg-[#3C507D]/10 rounded-full blur-[150px]"
       />
 
-      {/* Floating Particles */}
-      {[
-        { width: 21.32, height: 18.79, left: 39.84, top: 26.41 },
-        { width: 24.85, height: 15.52, left: 42.03, top: 51.57 },
-        { width: 27.56, height: 12.47, left: 90.88, top: 87.44 },
-        { width: 25.04, height: 19.77, left: 74.92, top: 60.26 },
-        { width: 17.08, height: 18.52, left: 91.91, top: 28.52 },
-        { width: 22.68, height: 16.91, left: 89.85, top: 39.48 },
-      ].map((particle, i) => (
-        <motion.div
-          key={i}
-          animate={{
-            y: [0, -30, 0],
-            x: [0, 20, 0],
-            opacity: [0.2, 0.5, 0.2],
-          }}
-          transition={{
-            duration: 5 + i,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-          className="absolute hidden md:block bg-white rounded-full blur-sm"
-          style={{
-            width: particle.width,
-            height: particle.height,
-            left: `${particle.left}%`,
-            top: `${particle.top}%`,
-            opacity: 0.2,
-          }}
-        />
-      ))}
-
-      <div className="max-w-7xl mx-auto px-6 pt-20 pb-20 relative z-10">
+      <div className="max-w-7xl mx-auto px-6 pt-5 pb-20 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Content: Typography Focused */}
           <motion.div
@@ -174,7 +121,7 @@ export default function HeroSection() {
                 }}
               >
                 Glowing Skin,
-                <span className="block pt-3 pb-2 leading-normal text-transparent bg-clip-text bg-gradient-to-r from-[#3C507D] to-[#E0C58F]">
+                <span className="block pt-3 pb-3 leading-[0.9] text-transparent bg-clip-text bg-gradient-to-r from-[#3C507D] to-[#E0C58F]">
                   Graceful Aging
                 </span>
               </motion.h1>
@@ -261,7 +208,7 @@ export default function HeroSection() {
                 <motion.img
                   animate={{ scale: [1, 1.05, 1] }}
                   transition={{ duration: 20, repeat: Infinity }}
-                  src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=800&fit=crop"
+                  src="/home/home-banner.jpg"
                   alt="Radiant Skin"
                   className="w-full h-full object-cover opacity-80"
                 />
@@ -290,11 +237,11 @@ export default function HeroSection() {
                     >
                       <div className="flex items-center gap-3 mb-3">
                         <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#E0C58F] to-[#112250] flex items-center justify-center font-bold text-[#F5F0E9] text-xs">
-                          {reviews[currentReview].name.charAt(0)}
+                          {heroReviews[currentReview].name.charAt(0)}
                         </div>
                         <div>
                           <p className="text-white text-sm font-bold">
-                            {reviews[currentReview].name}
+                            {heroReviews[currentReview].name}
                           </p>
                           <p className="text-[#E0C58F] text-[10px] uppercase tracking-widest font-black">
                             Verified Review
@@ -302,7 +249,7 @@ export default function HeroSection() {
                         </div>
                       </div>
                       <p className="text-white/90 text-sm leading-relaxed italic">
-                        "{reviews[currentReview].review}"
+                        "{heroReviews[currentReview].review}"
                       </p>
                     </motion.div>
                   </AnimatePresence>
@@ -329,7 +276,6 @@ export default function HeroSection() {
           </motion.div>
         </div>
       </div>
-
       {/* Scroll indicator */}
       <motion.div
         animate={{ y: [0, 10, 0] }}
