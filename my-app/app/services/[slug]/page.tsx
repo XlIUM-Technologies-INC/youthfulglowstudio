@@ -18,6 +18,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
+import BookingModal from "@/components/ui/BookingModal";
 
 export default function ServicePage({
   params,
@@ -32,9 +33,18 @@ export default function ServicePage({
   }
 
   const [activeTab, setActiveTab] = useState("overview");
+  const [isBookingOpen, setIsBookingOpen] = useState(false);
+
+  // Handle potential missing bookingSlug property safely
+  const bookingSlug = (service as any).bookingSlug || service.slug;
 
   return (
     <RootLayout>
+      <BookingModal
+        isOpen={isBookingOpen}
+        onClose={() => setIsBookingOpen(false)}
+        bookingSlug={bookingSlug}
+      />
       <div className="bg-[#F5F0E9] min-h-screen">
         {/* Artistic Hero Section */}
         <section className="relative h-[70vh] flex items-center justify-center overflow-hidden">
@@ -313,13 +323,12 @@ export default function ServicePage({
               Our appointments fill up fast—secure your spot today.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-              <Link
-                href={`https://cal.com/youthfulglowstudiobookings/${service.slug}?overlayCalendar=true`}
-                target="_blank"
+              <button
+                onClick={() => setIsBookingOpen(true)}
                 className="w-full sm:w-auto bg-[#112250] text-[#E0C58F] px-10 py-5 rounded-full font-bold text-lg hover:shadow-2xl hover:shadow-[#112250]/20 transition-all transform hover:-translate-y-1"
               >
                 Book Now
-              </Link>
+              </button>
               <Link
                 href="/services"
                 className="w-full sm:w-auto text-[#112250] border border-[#112250]/30 hover:bg-[#112250]/5 px-10 py-5 rounded-full font-bold text-lg transition-all"

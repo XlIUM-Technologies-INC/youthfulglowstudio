@@ -164,7 +164,7 @@ function ServiceCard({ service, index }: { service: any; index: number }) {
             0{index + 1}.
           </p>
           <h3
-            className="text-5xl md:text-6xl font-black text-[#112250] leading-none"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-[#112250] leading-tight"
             style={{ fontFamily: "Playfair Display, serif" }}
           >
             {service.title}

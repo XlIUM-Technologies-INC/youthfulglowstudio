@@ -4,6 +4,7 @@ import { useState } from "react";
 import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
 import Link from "next/link";
 import { reviews } from "@/lib/reviews";
+import PhoneReviews from "@/components/parts/PhoneReviews";
 
 export default function ReviewPage() {
   const [currentReview, setCurrentReview] = useState(0);
@@ -145,6 +146,25 @@ export default function ReviewPage() {
                   Book Your Consultation
                 </button>
               </Link>
+            </div>
+
+            {/* Phone Reviews Section */}
+            <div className="mt-20 pt-16 border-t border-[#E0C58F]/20">
+              <div className="text-center mb-12">
+                <h3
+                  className="text-3xl md:text-4xl font-black text-[#112250] mb-4"
+                  style={{ fontFamily: "Playfair Display, serif" }}
+                >
+                  See What Our{" "}
+                  <span className="text-[#3C507D]">Clients Share</span>
+                </h3>
+                <p className="text-[#3C507D] font-medium">
+                  Real feedback from real people on social media
+                </p>
+              </div>
+              <div className="flex justify-center">
+                <PhoneReviews />
+              </div>
             </div>
           </div>
         </section>

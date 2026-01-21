@@ -12,6 +12,7 @@ import {
 export const SERVICES = [
   {
     slug: "made-for-you-facial",
+    bookingSlug: "signature-facial",
     title: "Made For You Facial",
     icon: Heart,
     short: "Fully customized deep-cleansing facial.",
@@ -112,6 +113,85 @@ export const SERVICES = [
         rating: 5,
       },
     ],
+  },
+  {
+    slug: "dermaplaning",
+    title: "Dermaplaning",
+    icon: Sparkles,
+    short: "Manual exfoliation for ultra-smooth, glowing skin.",
+    description:
+      "Manual exfoliation using a sterile blade to remove dead skin and peach fuzz. Includes full facial with a mask, serum, and SPF.",
+    image: "/images/dermaplaning.webp",
+    price: "$110",
+    duration: "60 minutes",
+    bestFor:
+      "Anyone looking for ultra-smooth, glowing skin — especially before an event or makeup application.",
+    whyLoveIt: [
+      "Makeup applies flawlessly afterward",
+      "Skin feels baby-soft instantly",
+      "Non-invasive and relaxing",
+      "Immediate glow and smoothness",
+    ],
+    concerns: ["dull-skin", "texture", "peach-fuzz"],
+    areas: ["face"],
+    benefits: [
+      "Removes dead skin and peach fuzz",
+      "Instant brightness",
+      "Smoother makeup application",
+    ],
+    fullDescription: `Dermaplaning is a safe, non-invasive treatment that uses a special tool to gently exfoliate the skin's surface. It effectively removes dead skin cells and fine vellus hair (peach fuzz), revealing a smoother, brighter complexion. This treatment also enhances the absorption of skincare products and creates a flawless canvas for makeup.`,
+    detailedBenefits: [
+      "Instantly smoother and softer skin",
+      "Removes peach fuzz and dead skin cells",
+      "Diminishes fine lines and wrinkles",
+      "Increases absorption of topical products",
+      "Creates a flawless base for makeup",
+      "Brightens skin tone",
+    ],
+    process: [
+      {
+        step: 1,
+        title: "Cleansing",
+        description: "Double cleanse to remove makeup and impurities.",
+      },
+      {
+        step: 2,
+        title: "Dermaplaning",
+        description: "Gentle manual exfoliation using a sterile blade.",
+      },
+      {
+        step: 3,
+        title: "Enzyme Peel or Mask",
+        description:
+          "A gentle enzyme treatment or mask to further brighten and hydrate.",
+      },
+      {
+        step: 4,
+        title: "Serums & Moisturizer",
+        description: "Application of targeted serums and hydration.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Will my hair grow back thicker or darker?",
+        answer:
+          "No, dermaplaning does not change the structure of your hair follicle. Your hair will grow back at the same texture and speed as before.",
+      },
+      {
+        question: "Is it painful?",
+        answer:
+          "Not at all. Most clients find it very relaxing, similar to the sensation of shaving your legs.",
+      },
+      {
+        question: "Can I wear makeup after?",
+        answer:
+          "Yes! In fact, your makeup will look better than ever. We just recommend using clean brushes.",
+      },
+    ],
+    aftercare:
+      "Avoid direct sun exposure and use SPF daily. Avoid exfoliating acids (AHAs/BHAs) and retinol for 3-5 days. Keep skin hydrated.",
+    ingredients: ["Sterile Blade", "Hydrating Serums", "SPF"],
+    testimonials: [],
   },
   {
     slug: "zena-algae-peel",
@@ -338,16 +418,15 @@ export const SERVICES = [
       {
         question: "Is this peel suitable for sensitive skin?",
         answer:
-          "This peel may not be suitable for those with very sensitive skin. We recommend a patch test before the full treatment.",
+          "Yes, this is a very mild peel used for brightening the skin and providing a glowing effect. It is suitable for sensitive skin.",
       },
       {
-        question: "How many treatments will I need?",
-        answer: "A series of 3-6 treatments is recommended for best results.",
+        question: "Do I need a patch test?",
+        answer: "No patch test is required.",
       },
       {
         question: "Is there any downtime?",
-        answer:
-          "You may experience some redness and mild peeling for a few days after the treatment.",
+        answer: "No. Clients do not experience redness or peeling.",
       },
     ],
     aftercare:
@@ -475,11 +554,6 @@ export const SERVICES = [
         title: "Massage",
         description:
           "The therapist will use long, smooth, gliding strokes to massage your entire body.",
-      },
-      {
-        step: 3,
-        title: "Finishing Touches",
-        description: "The massage will end with some gentle stretches.",
       },
     ],
     faqs: [

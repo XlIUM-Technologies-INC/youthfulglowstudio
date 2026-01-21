@@ -1,27 +1,10 @@
 "use client";
-import { useState, useEffect, useRef } from "react";
-import {
-  motion,
-  useScroll,
-  useTransform,
-  AnimatePresence,
-  Variants,
-} from "framer-motion";
-import {
-  Play,
-  ArrowRight,
-  X,
-  Camera,
-  Heart,
-  MessageCircle,
-  Send,
-  Info,
-} from "lucide-react";
+import { useRef } from "react";
+import { motion, useScroll, useTransform, Variants } from "framer-motion";
+import { ArrowRight, Info } from "lucide-react";
 import Link from "next/link";
-import { reviews } from "@/lib/reviews";
 
 export default function HeroSection() {
-  const [currentReview, setCurrentReview] = useState(0);
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -33,16 +16,6 @@ export default function HeroSection() {
   const y2 = useTransform(scrollYProgress, [0, 1], [0, -150]);
   const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.9]);
   const opacity = useTransform(scrollYProgress, [0.6, 1], [1, 0]);
-
-  // Use only first 3 reviews for hero section
-  const heroReviews = reviews.slice(0, 3);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentReview((prev) => (prev + 1) % heroReviews.length);
-    }, 5000);
-    return () => clearInterval(interval);
-  }, []);
 
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
@@ -153,10 +126,7 @@ export default function HeroSection() {
               variants={itemVariants}
               className="flex flex-wrap gap-5"
             >
-              <Link
-                href="https://cal.com/youthfulglowstudiobookings?overlayCalendar=true"
-                target="_blank"
-              >
+              <Link href="/services">
                 <button className="relative px-12 py-6 rounded-full font-black text-white tracking-[0.2em] uppercase text-xs overflow-hidden shadow-2xl group transition-transform active:scale-95">
                   <div className="absolute inset-0 bg-gradient-to-r from-[#112250] to-[#3C507D] group-hover:scale-110 transition-transform duration-700" />
                   <div className="absolute inset-0 bg-[#E0C58F] translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
@@ -195,72 +165,25 @@ export default function HeroSection() {
             style={{ scale, opacity }}
             className="relative h-full flex items-center justify-center lg:justify-end"
           >
-            {/* Phone Mockup with 3D Effect */}
+            {/* Main Hero Image */}
             <motion.div
-              initial={{ rotateY: 20, opacity: 0 }}
-              animate={{ rotateY: 0, opacity: 1 }}
-              transition={{ duration: 1.5, delay: 0.5, ease: "easeOut" }}
-              whileHover={{ rotateY: -5, rotateX: 5, scale: 1.02 }}
-              className="relative w-full max-w-[400px] aspect-[9/16] rounded-[3.5rem] p-4 bg-gradient-to-br from-[#E0C58F] to-[#D9CBC2] shadow-[0_50px_100px_-20px_rgba(17,34,80,0.5)] border-[8px] border-white/20"
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1.2, ease: "easeOut", delay: 0.2 }}
+              className="relative w-full max-w-[500px] lg:max-w-[600px] aspect-[4/5] md:aspect-square lg:aspect-[4/5] rounded-[3rem] p-4 bg-white/40 backdrop-blur-md border border-white/50 shadow-[0_30px_60px_-15px_rgba(17,34,80,0.1)]"
             >
-              <div className="w-full h-full rounded-[2.8rem] overflow-hidden bg-black relative">
-                {/* Main Visual */}
+              <div className="w-full h-full rounded-[2.5rem] overflow-hidden relative">
                 <motion.img
-                  animate={{ scale: [1, 1.05, 1] }}
-                  transition={{ duration: 20, repeat: Infinity }}
-                  src="/home/home-banner.jpg"
-                  alt="Radiant Skin"
-                  className="w-full h-full object-cover opacity-80"
+                  initial={{ scale: 1.1 }}
+                  animate={{ scale: 1 }}
+                  transition={{ duration: 1.5, ease: "easeOut" }}
+                  src="/home/main-banner.webp"
+                  alt="Glowing, gracefully aging skin treatment"
+                  className="w-full h-full object-cover"
                 />
 
-                {/* Instagram Style Overlays */}
-                <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/80" />
-
-                {/* Top UI */}
-                <div className="absolute top-8 left-8 right-8 flex justify-between items-center">
-                  <X className="text-white w-6 h-6 opacity-60" />
-                  <div className="flex gap-2">
-                    <Camera className="text-white w-6 h-6 opacity-60" />
-                    <div className="w-1.5 h-1.5 bg-[#E0C58F] rounded-full" />
-                  </div>
-                </div>
-
-                {/* Bottom Reviews Overlay */}
-                <div className="absolute bottom-8 left-6 right-6 space-y-4">
-                  <AnimatePresence mode="wait">
-                    <motion.div
-                      key={currentReview}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -20 }}
-                      className="bg-white/10 backdrop-blur-2xl p-6 rounded-3xl border border-white/20"
-                    >
-                      <div className="flex items-center gap-3 mb-3">
-                        <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#E0C58F] to-[#112250] flex items-center justify-center font-bold text-[#F5F0E9] text-xs">
-                          {heroReviews[currentReview].name.charAt(0)}
-                        </div>
-                        <div>
-                          <p className="text-white text-sm font-bold">
-                            {heroReviews[currentReview].name}
-                          </p>
-                          <p className="text-[#E0C58F] text-[10px] uppercase tracking-widest font-black">
-                            Verified Review
-                          </p>
-                        </div>
-                      </div>
-                      <p className="text-white/90 text-sm leading-relaxed italic">
-                        "{heroReviews[currentReview].review}"
-                      </p>
-                    </motion.div>
-                  </AnimatePresence>
-
-                  {/* Reaction Buttons */}
-                  <div className="flex gap-6 pb-2 pl-2">
-                    <Heart className="text-white w-7 h-7 hover:text-red-400 transition-colors cursor-pointer" />
-                    <MessageCircle className="text-white w-7 h-7 hover:text-[#E0C58F] transition-colors cursor-pointer" />
-                    <Send className="text-white w-7 h-7 hover:text-blue-400 transition-colors cursor-pointer" />
-                  </div>
-                </div>
+                {/* Soft Overlay for "Glow" effect */}
+                <div className="absolute inset-0 bg-gradient-to-tr from-[#E0C58F]/10 to-transparent mix-blend-overlay" />
               </div>
             </motion.div>
 

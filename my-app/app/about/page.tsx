@@ -32,48 +32,53 @@ export default function AboutPage() {
 
         {/* Main Content */}
         <div className="max-w-6xl mx-auto px-6 py-20">
-          {/* Story Section */}
-          <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
-            <div>
-              <img
-                src="/WhatsApp Image 2026-01-11 at 22.18.00.jpeg"
-                alt="Youthful Glow Studio"
-                className="rounded-3xl shadow-2xl w-full h-[500px] object-cover"
-              />
-            </div>
-            <div>
-              <div className="flex items-center gap-3 mb-6">
-                <Heart className="w-8 h-8 text-[#E0C58F]" />
-                <h2
-                  className="text-4xl font-bold text-[#112250]"
-                  style={{ fontFamily: "Playfair Display, serif" }}
-                >
-                  Our Story
-                </h2>
+          {/* Main Feature: Meet Marcia & Our Story */}
+          <div className="bg-white rounded-3xl shadow-xl overflow-hidden border border-[#E0C58F]/20 mb-20">
+            <div className="grid lg:grid-cols-2 gap-0">
+              {/* Image Column */}
+              <div className="relative w-full h-full min-h-[400px] flex items-center justify-center bg-[#FBF9F6] p-8 lg:p-12">
+                <div className="relative rounded-2xl overflow-hidden shadow-lg shadow-[#112250]/5 transform transition-transform duration-500 hover:scale-[1.02]">
+                  <img
+                    src="/marcia.webp"
+                    alt="Marcia Edmondson - Youthful Glow Studio"
+                    className="w-full h-auto object-contain max-h-[600px] block"
+                  />
+                </div>
               </div>
-              <p className="text-[#3C507D] text-lg leading-relaxed mb-6 font-medium">
-                At Youthful Glow Studio, we believe that skincare is more than
-                just a routine—it's a form of self-love. Founded by certified
-                medical esthetician{" "}
-                <span className="font-bold text-[#112250]">
-                  Marcia Edmondson
-                </span>
-                , our studio is a cozy, professional space dedicated to helping
-                you feel confident, radiant, and truly cared for.
-              </p>
-              <p className="text-[#3C507D] text-lg leading-relaxed mb-6 font-medium">
-                We specialize in personalized skincare treatments that bring out
-                your natural glow, using professional products and techniques
-                tailored to your unique needs. Whether you're here for a
-                relaxing facial, a deep-cleansing back treatment, or expert
-                advice, you'll always be treated with kindness, respect, and
-                genuine passion for your skin's health.
-              </p>
-              <div className="bg-[#112250] border-l-4 border-[#E0C58F] p-8 rounded-r-2xl shadow-lg">
-                <p className="text-[#F5F0E9] text-xl italic font-bold">
-                  "Come as you are, and leave feeling your absolute best—because
-                  you deserve it."
-                </p>
+
+              {/* Content Column */}
+              <div className="p-6 lg:p-10 flex flex-col justify-center bg-white">
+                <h2 className="text-3xl lg:text-4xl font-bold text-[#112250] mb-4 font-serif">
+                  Meet Marcia, <br />
+                  <span className="text-[#E0C58F]">
+                    The Heart of Youthful Glow
+                  </span>
+                </h2>
+
+                <div className="space-y-4 text-[#3C507D] text-lg leading-relaxed">
+                  <p>
+                    At Youthful Glow Studio, we believe that skincare is more
+                    than just a routine—it's a form of self-love. Founded by
+                    certified medical esthetician{" "}
+                    <strong className="text-[#112250]">Marcia Edmondson</strong>
+                    , our studio is a cozy, professional space dedicated to
+                    helping you feel confident, radiant, and truly cared for.
+                  </p>
+
+                  <p>
+                    We specialize in personalized skincare treatments that bring
+                    out your natural glow, using professional products and
+                    techniques tailored to your unique needs. Whether you're
+                    here for a relaxing facial, a deep-cleansing back treatment,
+                    or expert advice, you’ll always be treated with kindness,
+                    respect, and genuine passion for your skin’s health.
+                  </p>
+
+                  <div className="bg-[#F5F0E9] text-[#112250] p-6 rounded-xl italic border-l-4 border-[#E0C58F]">
+                    "Come as you are, and leave feeling your absolute
+                    best—because you deserve it."
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -130,39 +135,6 @@ export default function AboutPage() {
                 A cozy, professional space where you're treated with kindness,
                 respect, and genuine care.
               </p>
-            </div>
-          </div>
-
-          {/* Meet Marcia Section */}
-          <div className="bg-[#112250] rounded-3xl shadow-2xl overflow-hidden border border-[#E0C58F]/20 relative">
-            <div className="grid md:grid-cols-2 gap-0">
-              <div className="p-12 text-[#F5F0E9] flex flex-col justify-center relative z-10">
-                <h2
-                  className="text-4xl font-bold mb-6 text-[#E0C58F]"
-                  style={{ fontFamily: "Playfair Display, serif" }}
-                >
-                  Meet Marcia Edmondson
-                </h2>
-                <p className="text-lg leading-relaxed mb-6 opacity-90">
-                  As a certified medical esthetician, Marcia brings professional
-                  expertise and a genuine passion for skincare to every
-                  treatment. Her goal is simple: to help you feel confident,
-                  beautiful, and truly cared for in your own skin.
-                </p>
-                <p className="text-lg leading-relaxed opacity-90">
-                  With a focus on personalized care and using only
-                  professional-grade products, Marcia creates a welcoming
-                  experience where your comfort and skin health always come
-                  first.
-                </p>
-              </div>
-              <div className="h-full min-h-[400px]">
-                <img
-                  src="/facials-skincare-kitchener-waterloo.webp"
-                  alt="Marcia Edmondson - Certified Medical Esthetician"
-                  className="w-full h-full object-cover"
-                />
-              </div>
             </div>
           </div>
 

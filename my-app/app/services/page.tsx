@@ -5,14 +5,27 @@ import Link from "next/link";
 import RootLayout from "@/components/layouts/RootLayout";
 import { SERVICES } from "@/lib/services";
 import { ArrowRight, Clock } from "lucide-react";
+import BookingModal from "@/components/ui/BookingModal";
 
 /* -------------------- COMPONENT -------------------- */
 
 export default function ServiceFinder() {
   const [showQuiz, setShowQuiz] = useState(false);
+  const [isBookingOpen, setIsBookingOpen] = useState(false);
+  const [selectedBookingSlug, setSelectedBookingSlug] = useState("");
+
+  const handleBookClick = (slug: string) => {
+    setSelectedBookingSlug(slug);
+    setIsBookingOpen(true);
+  };
 
   return (
     <RootLayout>
+      <BookingModal
+        isOpen={isBookingOpen}
+        onClose={() => setIsBookingOpen(false)}
+        bookingSlug={selectedBookingSlug}
+      />
       <div className="max-w-6xl mx-auto p-6 space-y-12">
         <div className="text-center space-y-4 mb-16">
           <h1
@@ -78,14 +91,15 @@ export default function ServiceFinder() {
                       >
                         Details
                       </Link>
-                      <a
-                        href={`https://cal.com/youthfulglowstudiobookings/${service.slug}?overlayCalendar=true`}
-                        target="_blank"
+                      <button
+                        onClick={() =>
+                          handleBookClick(service.bookingSlug || service.slug)
+                        }
                         className="inline-flex items-center justify-center gap-2 bg-[#112250] text-[#F5F0E9] px-4 py-3 rounded-lg font-bold text-xs uppercase tracking-wider hover:bg-[#3C507D] transition-all border border-[#E0C58F]/20 hover:border-[#E0C58F]/50 shadow-lg shadow-[#112250]/10"
                       >
                         Book
                         <ArrowRight className="w-3 h-3 text-[#E0C58F]" />
-                      </a>
+                      </button>
                     </div>
                   </div>
                 </div>
