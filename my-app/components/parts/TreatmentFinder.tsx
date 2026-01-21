@@ -39,10 +39,10 @@ const CONCERNS = [
   },
   {
     id: "waxing",
-    label: "Comfort Waxing",
-    icon: Feather, // Light, smooth
+    label: "Clean & Smooth",
+    icon: Feather,
     color: "from-rose-200 to-red-300",
-    description: "Gentle hair removal",
+    description: "Silky-smooth skin",
   },
   {
     id: "new",
