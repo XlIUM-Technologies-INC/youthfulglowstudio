@@ -32,15 +32,6 @@ export const metadata: Metadata = {
     "Professional skincare and beauty treatments including facial massage, hair therapy, under-eye treatments, and hand massage. Book your glow session today.",
   keywords: "skincare, beauty, facial massage, treatments, wellness",
   authors: [{ name: "Youthful Glow Studio" }],
-  icons: {
-    icon: [
-      { url: "/favicon.webp", type: "image/webp" },
-      { url: "/favicon/favicon.ico", sizes: "any" },
-      { url: "/favicon/favicon-16x16.png", type: "image/png", sizes: "16x16" },
-      { url: "/favicon/favicon-32x32.png", type: "image/png", sizes: "32x32" },
-    ],
-    apple: "/favicon/apple-touch-icon.png",
-  },
   manifest: "/favicon/site.webmanifest",
   openGraph: {
     type: "website",
