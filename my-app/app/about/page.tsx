@@ -16,16 +16,17 @@ export default function AboutPage() {
           </div>
           <div className="max-w-7xl mx-auto px-6 text-center relative z-10">
             <h1
-              className="text-5xl md:text-6xl font-black mb-6"
+              className="text-4xl md:text-5xl font-black mb-6"
               style={{ fontFamily: "Playfair Display, serif" }}
             >
-              Who We Are
+              About Youthful Glow Studio
             </h1>
             <p
-              className="text-xl md:text-2xl max-w-3xl mx-auto text-[#E0C58F] font-medium"
+              className="text-lg md:text-xl max-w-3xl mx-auto text-[#E0C58F] font-medium"
               style={{ fontFamily: "Cormorant Garamond, serif" }}
             >
-              Welcome to Youthful Glow Studio
+              Skincare is more than a routine it's an act of self-care,
+              confidence, and connection
             </p>
           </div>
         </div>
@@ -33,65 +34,88 @@ export default function AboutPage() {
         {/* Main Content */}
         <div className="max-w-6xl mx-auto px-6 py-20">
           {/* Main Feature: Meet Marcia & Our Story */}
-          <div className="bg-white rounded-3xl shadow-xl overflow-hidden border border-[#E0C58F]/20 mb-20">
-            <div className="grid lg:grid-cols-2 gap-0">
-              {/* Image Column */}
-              <div className="relative w-full h-full min-h-[400px] flex items-center justify-center bg-[#FBF9F6] p-8 lg:p-12">
+          <div className="bg-white rounded-3xl shadow-xl overflow-hidden border border-[#E0C58F]/20 mb-20 p-6 lg:p-10">
+            {/* Image */}
+            <div className="lg:float-left lg:w-[40%] lg:mr-8 mb-6 lg:mb-0">
+              <div className="relative bg-[#FBF9F6] p-4 lg:p-6 rounded-2xl">
                 <div className="relative rounded-2xl overflow-hidden shadow-lg shadow-[#112250]/5 transform transition-transform duration-500 hover:scale-[1.02]">
                   <img
                     src="/marcia.webp"
                     alt="Marcia Edmondson - Youthful Glow Studio"
-                    className="w-full h-auto object-contain max-h-[600px] block"
+                    className="w-full h-auto object-cover block"
                   />
                 </div>
               </div>
+            </div>
 
-              {/* Content Column */}
-              <div className="p-6 lg:p-10 flex flex-col justify-center bg-white">
-                <h2 className="text-3xl lg:text-4xl font-bold text-[#112250] mb-4 font-serif">
-                  Meet Marcia, <br />
-                  <span className="text-[#E0C58F]">
-                    The Heart of Youthful Glow
-                  </span>
-                </h2>
+            {/* Content */}
+            <div>
+              <h2 className="text-2xl lg:text-3xl font-bold text-[#112250] mb-6 font-serif">
+                Meet Marcia <br />
+                <span className="text-[#E0C58F]">
+                  The Heart of Youthful Glow
+                </span>
+              </h2>
 
-                <div className="space-y-4 text-[#3C507D] text-lg leading-relaxed">
-                  <p>
-                    At Youthful Glow Studio, we believe that skincare is more
-                    than just a routine—it's a form of self-love. Founded by
-                    certified medical esthetician{" "}
-                    <strong className="text-[#112250]">Marcia Edmondson</strong>
-                    , our studio is a cozy, professional space dedicated to
-                    helping you feel confident, radiant, and truly cared for.
-                  </p>
+              <div className="space-y-4 text-[#3C507D] text-sm lg:text-base leading-relaxed">
+                <p>
+                  At Youthful Glow Studio, skincare is more than a routine it's
+                  an act of self-care, confidence, and connection. Founded by{" "}
+                  <strong className="text-[#112250]">Marcia Edmondson</strong>,
+                  a double-certified medical skincare esthetician, the studio
+                  was created from a genuine love for working with people and
+                  helping them feel confident in their skin.
+                </p>
 
-                  <p>
-                    We specialize in personalized skincare treatments that bring
-                    out your natural glow, using professional products and
-                    techniques tailored to your unique needs. Whether you're
-                    here for a relaxing facial, a deep-cleansing back treatment,
-                    or expert advice, you’ll always be treated with kindness,
-                    respect, and genuine passion for your skin’s health.
-                  </p>
+                <p>
+                  After years in an administrative role that required long hours
+                  behind a computer, Marcia realized she was truly a people
+                  person energized by interaction, conversation, and hands-on
+                  care. She began seeking a career that would allow her to
+                  connect with others in a meaningful way. An unexpected
+                  encounter with the world of non-surgical aesthetic treatments
+                  sparked her interest in esthetics and set her on a new path.
+                </p>
 
-                  <div className="bg-[#F5F0E9] text-[#112250] p-6 rounded-xl italic border-l-4 border-[#E0C58F]">
-                    "Come as you are, and leave feeling your absolute
-                    best—because you deserve it."
-                  </div>
+                <p>
+                  Drawn to the science of skin and the confidence that comes
+                  from caring for it, Marcia pursued formal esthetics training
+                  in 2022, completing her studies in 2023. Wanting a stronger
+                  clinical foundation and hands-on experience, she continued her
+                  education at a medical esthetics college, completing extensive
+                  in-class and clinical training by March 2024. This advanced
+                  training gave her the confidence and expertise to open
+                  Youthful Glow Studio.
+                </p>
+
+                <p>
+                  Today, Marcia specializes in personalized, results-focused
+                  skincare treatments, combining professional-grade products
+                  with thoughtful, individualized care. Every treatment is
+                  guided by education, safety, and genuine care ensuring clients
+                  feel heard, respected, and supported throughout their skincare
+                  journey.
+                </p>
+
+                <div className="bg-[#F5F0E9] text-[#112250] p-6 rounded-xl italic border-l-4 border-[#E0C58F] font-medium text-base text-center">
+                  "Come as you are, and leave feeling your absolute best because
+                  you deserve it."
                 </div>
               </div>
             </div>
+
+            <div className="clear-both"></div>
           </div>
 
           {/* Mission Statement */}
           <div className="bg-[#F5F0E9] rounded-3xl shadow-xl p-12 mb-20 text-center border border-[#E0C58F]/20 relative overflow-hidden">
             <h2
-              className="text-3xl md:text-4xl font-bold text-[#112250] mb-6"
+              className="text-2xl md:text-3xl font-bold text-[#112250] mb-6"
               style={{ fontFamily: "Playfair Display, serif" }}
             >
               Our Mission
             </h2>
-            <p className="text-2xl text-[#3C507D] font-black max-w-3xl mx-auto leading-relaxed italic">
+            <p className="text-xl text-[#3C507D] font-black max-w-3xl mx-auto leading-relaxed italic">
               "Helping you glow with confidence, one facial at a time."
             </p>
           </div>
@@ -102,12 +126,12 @@ export default function AboutPage() {
               <div className="bg-[#112250] rounded-2xl w-16 h-16 flex items-center justify-center mx-auto mb-6 shadow-md border border-[#E0C58F]/30">
                 <Award className="w-8 h-8 text-[#E0C58F]" />
               </div>
-              <h3 className="text-2xl font-bold text-[#112250] mb-4">
-                Professional Excellence
+              <h3 className="text-xl font-bold text-[#112250] mb-4">
+                Double-Certified Excellence
               </h3>
               <p className="text-[#3C507D] font-medium leading-relaxed">
-                Certified medical esthetician with expertise in advanced
-                skincare treatments and techniques.
+                Medical skincare esthetician with extensive clinical training
+                and expertise in advanced, results-focused treatments.
               </p>
             </div>
 
@@ -115,7 +139,7 @@ export default function AboutPage() {
               <div className="bg-[#112250] rounded-2xl w-16 h-16 flex items-center justify-center mx-auto mb-6 shadow-md border border-[#E0C58F]/30">
                 <Heart className="w-8 h-8 text-[#E0C58F]" />
               </div>
-              <h3 className="text-2xl font-bold text-[#112250] mb-4">
+              <h3 className="text-xl font-bold text-[#112250] mb-4">
                 Personalized Care
               </h3>
               <p className="text-[#3C507D] font-medium leading-relaxed">
@@ -128,7 +152,7 @@ export default function AboutPage() {
               <div className="bg-[#112250] rounded-2xl w-16 h-16 flex items-center justify-center mx-auto mb-6 shadow-md border border-[#E0C58F]/30">
                 <Users className="w-8 h-8 text-[#E0C58F]" />
               </div>
-              <h3 className="text-2xl font-bold text-[#112250] mb-4">
+              <h3 className="text-xl font-bold text-[#112250] mb-4">
                 Welcoming Environment
               </h3>
               <p className="text-[#3C507D] font-medium leading-relaxed">
@@ -141,12 +165,12 @@ export default function AboutPage() {
           {/* CTA Section */}
           <div className="text-center mt-20">
             <h3
-              className="text-3xl font-bold text-[#112250] mb-6"
+              className="text-2xl font-bold text-[#112250] mb-6"
               style={{ fontFamily: "Playfair Display, serif" }}
             >
               Ready to Experience the Glow?
             </h3>
-            <p className="text-[#3C507D] font-medium text-lg mb-8 max-w-2xl mx-auto">
+            <p className="text-[#3C507D] font-medium text-base mb-8 max-w-2xl mx-auto">
               Book your appointment today and discover why our clients love
               their experience at Youthful Glow Studio.
             </p>

@@ -33,7 +33,37 @@ export const metadata: Metadata = {
   keywords: "skincare, beauty, facial massage, treatments, wellness",
   authors: [{ name: "Youthful Glow Studio" }],
   icons: {
-    icon: "/favicon.webp",
+    icon: [
+      { url: "/favicon/favicon.ico", sizes: "any" },
+      { url: "/favicon/favicon-16x16.png", type: "image/png", sizes: "16x16" },
+      { url: "/favicon/favicon-32x32.png", type: "image/png", sizes: "32x32" },
+    ],
+    apple: "/favicon/apple-touch-icon.png",
+  },
+  manifest: "/favicon/site.webmanifest",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://www.youthfulglowstudio.com/",
+    siteName: "Youthful Glow Studio",
+    title: "Youthful Glow Studio | Skincare & Beauty Treatments",
+    description:
+      "Professional skincare and beauty treatments including facial massage, hair therapy, under-eye treatments, and hand massage. Book your glow session today.",
+    images: [
+      {
+        url: "/favicon/android-chrome-512x512.png",
+        width: 512,
+        height: 512,
+        alt: "Youthful Glow Studio",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Youthful Glow Studio | Skincare & Beauty Treatments",
+    description:
+      "Professional skincare and beauty treatments including facial massage, hair therapy, under-eye treatments, and hand massage. Book your glow session today.",
+    images: ["/favicon/android-chrome-512x512.png"],
   },
 };
 

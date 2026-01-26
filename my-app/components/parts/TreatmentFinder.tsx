@@ -231,7 +231,11 @@ export default function TreatmentFinder() {
                           View Treatment
                         </button>
                       </Link>
-                      <Link href="/booking">
+                      <Link
+                        href={`/services/${
+                          RECOMMENDATIONS[selectedConcern!].slug
+                        }`}
+                      >
                         <button className="border-2 border-[#112250] text-[#112250] px-8 py-3.5 rounded-full font-black text-[10px] uppercase tracking-widest hover:bg-[#112250] hover:text-white transition-all">
                           Book Now
                         </button>

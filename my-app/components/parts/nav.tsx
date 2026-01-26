@@ -166,6 +166,18 @@ export default function Navbar() {
                       <ChevronDown className="relative z-10 w-4 h-4 transition-transform duration-500 group-data-[state=open]:rotate-180" />
                     </DropdownMenuTrigger>
                     <DropdownMenuContent className="w-64 bg-[#F5F0E9] border-[#E0C58F]/20 p-2 shadow-2xl rounded-2xl backdrop-blur-3xl">
+                      <DropdownMenuItem
+                        asChild
+                        className="focus:bg-[#112250] focus:text-[#F5F0E9] rounded-xl cursor-pointer mb-1"
+                      >
+                        <Link
+                          href="/services"
+                          className="w-full px-4 py-3 font-black text-[#112250] hover:text-[#112250] transition-colors uppercase tracking-[0.2em] text-xs"
+                        >
+                          All Services
+                        </Link>
+                      </DropdownMenuItem>
+                      <div className="h-px bg-[#E0C58F]/10 my-2 mx-2" />
                       {SERVICES.map((service) => (
                         <DropdownMenuItem
                           key={service.slug}
@@ -180,18 +192,6 @@ export default function Navbar() {
                           </Link>
                         </DropdownMenuItem>
                       ))}
-                      <div className="h-px bg-[#E0C58F]/10 my-2 mx-2" />
-                      <DropdownMenuItem
-                        asChild
-                        className="focus:bg-[#112250] focus:text-[#F5F0E9] rounded-xl cursor-pointer"
-                      >
-                        <Link
-                          href="/services"
-                          className="w-full px-4 py-3 font-black text-[#112250] hover:text-[#112250] transition-colors uppercase tracking-[0.2em] text-[10px]"
-                        >
-                          All Services
-                        </Link>
-                      </DropdownMenuItem>
                     </DropdownMenuContent>
                   </DropdownMenu>
                 ) : (
@@ -227,10 +227,7 @@ export default function Navbar() {
               transition={{ delay: 0.8, duration: 0.5 }}
               className="hidden lg:block"
             >
-              <Link
-                href="https://cal.com/youthfulglowstudiobookings?overlayCalendar=true"
-                target="_blank"
-              >
+              <Link href="/services">
                 <button className="relative px-8 py-3 rounded-full font-black text-white uppercase tracking-widest text-xs group overflow-hidden border border-[#E0C58F]/30 cursor-pointer ">
                   <div className="absolute inset-0 bg-gradient-to-r from-[#112250] to-[#3C507D] transition-transform duration-700 group-hover:scale-110" />
                   <div className="absolute inset-0 bg-[#E0C58F] translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
@@ -266,7 +263,7 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-[#F5F0E9]/95 backdrop-blur-3xl border-t border-[#E0C58F]/20 overflow-hidden"
+            className="lg:hidden bg-[#F5F0E9]/95 backdrop-blur-3xl border-t border-[#E0C58F]/20 overflow-y-auto max-h-[calc(100vh-6rem)]"
           >
             <div className="px-6 py-12 space-y-4">
               {navLinks.map((link, i) => (
@@ -297,8 +294,15 @@ export default function Navbar() {
                             initial={{ opacity: 0, height: 0 }}
                             animate={{ opacity: 1, height: "auto" }}
                             exit={{ opacity: 0, height: 0 }}
-                            className="space-y-2 pl-6"
+                            className="space-y-2 pl-6 overflow-hidden"
                           >
+                            <Link
+                              href="/services"
+                              onClick={() => setMobileMenuOpen(false)}
+                              className="block p-3 text-sm font-black text-[#112250] hover:text-[#112250] transition-colors uppercase tracking-[0.2em] border-b border-[#E0C58F]/20 pb-3 mb-2"
+                            >
+                              All Services
+                            </Link>
                             {SERVICES.map((s) => (
                               <Link
                                 key={s.slug}
@@ -334,7 +338,7 @@ export default function Navbar() {
                 transition={{ delay: 0.6 }}
                 className="pt-6"
               >
-                <Link href="/booking" className="block">
+                <Link href="/services" className="block">
                   <button className="w-full py-5 rounded-2xl bg-gradient-to-r from-[#112250] to-[#3C507D] text-white font-black uppercase tracking-[0.2em] shadow-2xl shadow-[#112250]/20 cusror-pointer">
                     Book Now
                   </button>

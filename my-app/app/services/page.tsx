@@ -124,7 +124,7 @@ export default function ServiceFinder() {
             </span>
             <a
               href="mailto:marcia@youthfulglowstudio.com"
-              className="text-[#E0C58F] text-xl font-bold hover:text-[#F5F0E9] transition-colors border-b-2 border-[#E0C58F]/30 hover:border-[#F5F0E9]"
+              className="text-[#E0C58F] text-sm sm:text-base md:text-lg lg:text-xl font-bold hover:text-[#F5F0E9] transition-colors border-b-2 border-[#E0C58F]/30 hover:border-[#F5F0E9] break-all max-w-full px-2"
             >
               marcia@youthfulglowstudio.com
             </a>

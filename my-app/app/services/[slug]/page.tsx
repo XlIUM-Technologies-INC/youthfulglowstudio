@@ -70,7 +70,7 @@ export default function ServicePage({
                 </span>
               </div>
               <h1
-                className="text-5xl md:text-7xl font-bold mb-6"
+                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 break-words hyphens-auto max-w-4xl mx-auto leading-tight"
                 style={{ fontFamily: "Playfair Display, serif" }}
               >
                 {service.title}
@@ -108,9 +108,9 @@ export default function ServicePage({
         </section>
 
         {/* Content Navigation */}
-        <div className="bg-[#F5F0E9] backdrop-blur-md transition-all duration-300 mt-10">
-          <div className="max-w-4xl mx-auto px-6">
-            <div className="flex justify-center items-center gap-2 md:gap-4 py-3 overflow-x-auto no-scrollbar">
+        <div className="bg-[#F5F0E9] backdrop-blur-md transition-all duration-300 mt-10 sticky top-0 z-20 border-b border-[#E0C58F]/10">
+          <div className="max-w-4xl mx-auto px-4">
+            <div className="flex flex-wrap justify-center items-center gap-2 md:gap-3 py-4">
               {[
                 { id: "overview", label: "Overview", icon: Info },
                 { id: "benefits", label: "Benefits", icon: ShieldCheck },
@@ -123,10 +123,10 @@ export default function ServicePage({
                   <button
                     key={tab.id}
                     onClick={() => setActiveTab(tab.id)}
-                    className={`relative px-4 md:px-6 py-2.5 rounded-full flex items-center gap-2 transition-all duration-300 outline-none group shrink-0 ${
+                    className={`relative px-4 md:px-6 py-2.5 md:py-3 rounded-full flex items-center gap-1.5 transition-all duration-300 outline-none group ${
                       isActive
                         ? "text-[#F5F0E9]"
-                        : "text-[#3C507D] hover:text-[#112250] hover:bg-[#F5F0E9]"
+                        : "text-[#3C507D] hover:text-[#112250]"
                     }`}
                   >
                     {isActive && (
@@ -141,13 +141,13 @@ export default function ServicePage({
                         }}
                       />
                     )}
-                    <span className="relative z-10 flex items-center gap-2 text-xs md:text-sm font-bold uppercase tracking-widest">
+                    <span className="relative z-10 flex items-center gap-1.5 text-sm font-bold uppercase tracking-wide">
                       <Icon
-                        className={`w-4 h-4 ${
+                        className={`w-3.5 h-3.5 md:w-4 md:h-4 ${
                           isActive ? "text-[#E0C58F]" : "opacity-70"
                         }`}
                       />
-                      {tab.label}
+                      <span className="whitespace-nowrap">{tab.label}</span>
                     </span>
                   </button>
                 );
