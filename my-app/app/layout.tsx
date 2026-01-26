@@ -33,17 +33,31 @@ export const metadata: Metadata = {
   keywords: "skincare, beauty, facial massage, treatments, wellness",
   authors: [{ name: "Youthful Glow Studio" }],
   manifest: "/favicon/site.webmanifest",
+  icons: {
+    icon: [
+      { url: "/favicon/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon/favicon.ico", sizes: "any" },
+    ],
+    apple: [
+      {
+        url: "/favicon/apple-touch-icon.png",
+        sizes: "180x180",
+        type: "image/png",
+      },
+    ],
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://www.youthfulglowstudio.com/",
+    url: "https://youthfulglowstudio.vercel.app/",
     siteName: "Youthful Glow Studio",
     title: "Youthful Glow Studio | Skincare & Beauty Treatments",
     description:
       "Professional skincare and beauty treatments including facial massage, hair therapy, under-eye treatments, and hand massage. Book your glow session today.",
     images: [
       {
-        url: "/favicon/android-chrome-512x512.png",
+        url: "https://youthfulglowstudio.vercel.app/favicon/android-chrome-512x512.png",
         width: 512,
         height: 512,
         alt: "Youthful Glow Studio",
@@ -55,7 +69,9 @@ export const metadata: Metadata = {
     title: "Youthful Glow Studio | Skincare & Beauty Treatments",
     description:
       "Professional skincare and beauty treatments including facial massage, hair therapy, under-eye treatments, and hand massage. Book your glow session today.",
-    images: ["/favicon/android-chrome-512x512.png"],
+    images: [
+      "https://youthfulglowstudio.vercel.app/favicon/android-chrome-512x512.png",
+    ],
   },
 };
 
