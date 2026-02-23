@@ -111,7 +111,7 @@ export default function ServiceFinder() {
         {/* BOOKING INFO */}
         <div className="bg-[#112250] rounded-2xl p-10 text-center space-y-6 border border-[#E0C58F]/30 shadow-2xl">
           <h2 className="text-3xl font-bold text-[#E0C58F]">
-            ✨ How to Book Your Appointment
+             How to Book Your Appointment
           </h2>
           <p className="text-[#F5F0E9]/90 max-w-2xl mx-auto text-lg leading-relaxed">
             Simply click “Book Your Glow Session” under any service to choose
