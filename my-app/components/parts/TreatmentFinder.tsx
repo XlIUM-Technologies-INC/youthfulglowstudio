@@ -12,6 +12,7 @@ import {
   Check,
   Info,
   Feather,
+  Wind,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -29,6 +30,13 @@ const CONCERNS = [
     icon: Target,
     color: "from-blue-200 to-cyan-400",
     description: "Clarify & rebalance skin",
+  },
+  {
+    id: "signature",
+    label: "Signature Glow",
+    icon: Zap,
+    color: "from-amber-200 to-yellow-500",
+    description: "High-tech skin transformation",
   },
   {
     id: "restore",
@@ -93,6 +101,14 @@ const RECOMMENDATIONS: Record<string, any> = {
     reason:
       "Our Made For You Facial is ideal for first-timers. We assess your skin, tailor every step to your needs, and create a treatment that delivers visible results while keeping your skin calm, balanced, and healthy.",
     match: "100% Match",
+  },
+  signature: {
+    title: "Ultimate Glow Experience",
+    slug: "ultimate-glow-experience",
+    image: "/images/ultimate-glow-experience.png",
+    reason:
+      "The pinnacle of our studio. Combining Nano-Infusion and Pure Oxygen for the ultimate skin transformation—immediate radiance, deep hydration, and long-term rejuvenation.",
+    match: "99% Match",
   },
 };
 

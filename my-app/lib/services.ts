@@ -7,6 +7,8 @@ import {
   Sparkles,
   Sun,
   Wand2,
+  Zap,
+  Wind,
 } from "lucide-react";
 
 export const SERVICES = [
@@ -648,6 +650,215 @@ export const SERVICES = [
     aftercare:
       "Avoid sun exposure, hot baths, and saunas for 24 hours after waxing. Exfoliate the skin a few days after waxing to prevent ingrown hairs.",
     ingredients: ["Wax"],
+    testimonials: [],
+  },
+  {
+    slug: "nano-glow-infusion",
+    title: "Nano Glow Infusion",
+    icon: Zap,
+    short: "Advanced nano-tip infusion for deep serum delivery and radiance.",
+    description:
+      "Our Nano Glow Infusion treatment uses advanced nano-tip technology to gently open microscopic channels in the skin's surface — infusing powerful serums including hyaluronic acid, peptides, and vitamins deep into the epidermis where they work most effectively.",
+    image: "/images/nano-glow-infusion.png",
+    price: "$120",
+    duration: "60 minutes",
+    bestFor:
+      "Treatment targets: acne scarring, aging skin, combination skin, dark spots, dehydration, dry and sensitive skin, hyperpigmentation, mature skin, oily skin, sun damaged skin, and wrinkles.",
+    whyLoveIt: [
+      "Completely comfortable & painless",
+      "Zero downtime",
+      "Safe for all skin types, including sensitive",
+      "Immediate visible results",
+    ],
+    concerns: [
+      "acne-scars",
+      "aging",
+      "hyperpigmentation",
+      "dehydration",
+      "dull-skin",
+    ],
+    areas: ["face"],
+    benefits: [
+      "Smoother skin texture",
+      "Improved hydration",
+      "Radiant glow",
+    ],
+    fullDescription: `Our Nano Glow Infusion treatment uses advanced nano-tip technology to gently open microscopic channels in the skin's surface — infusing powerful serums including hyaluronic acid, peptides, and vitamins deep into the epidermis where they work most effectively. Unlike traditional microneedling, our Nano Glow Infusion is completely comfortable, requires zero downtime, and is safe for all skin types including sensitive skin. Your skin will be visibly smoother, more hydrated, and radiantly glowing — immediately after your very first session.`,
+    detailedBenefits: [
+      "Deeply infuses vitamins and antioxidants",
+      "Reduces appearance of acne scarring",
+      "Smooths fine lines and wrinkles",
+      "Improves skin tone and clarity",
+      "Boosts natural hydration levels",
+      "Safe for sensitive skin and dark spots",
+    ],
+    process: [
+      {
+        step: 1,
+        title: "Cleansing",
+        description: "Double cleanse to prepare the skin for treatment.",
+      },
+      {
+        step: 2,
+        title: "Nano Infusion",
+        description: "Advanced nano-tip technology delivers serums deep into the epidermis.",
+      },
+      {
+        step: 3,
+        title: "Soothing Mask",
+        description: "Application of a calming mask to enhance the glow.",
+      },
+      {
+        step: 4,
+        title: "Finishing Touches",
+        description: "Final serums, moisturizer, and SPF application.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Is this the same as microneedling?",
+        answer: "No, nano-infusion is non-invasive and painless, using microscopic tips rather than needles. It requires zero downtime.",
+      },
+      {
+        question: "How soon will I see results?",
+        answer: "You will see an immediate glow and smoother texture right after your first session.",
+      },
+    ],
+    aftercare: "Maintain hydration and use SPF daily. Avoid harsh exfoliants for 24 hours.",
+    ingredients: ["Hyaluronic Acid", "Peptides", "Vitamins"],
+    testimonials: [],
+  },
+  {
+    slug: "pure-oxygen-glow",
+    title: "Pure Oxygen Glow",
+    icon: Wind,
+    short: "Instant hydration and rejuvenation with pure oxygen infusion.",
+    description:
+      "Our Pure Oxygen Glow treatment delivers highly concentrated oxygen and a customized blend of vitamins, minerals, and hyaluronic acid deep into the skin's surface. This non-invasive procedure immediately revitalizes oxygen-starved skin, leaving it visibly plump, hydrated, and radiant.",
+    image: "/images/pure-oxygen-glow.png",
+    price: "$110",
+    duration: "45-60 minutes",
+    bestFor:
+      "Dehydrated skin, fine lines, dull complexion, and anyone looking for a quick, effective glow before an event.",
+    whyLoveIt: [
+      "Instant plumping effect",
+      "Refreshing and cooling sensation",
+      "Perfect 'Red Carpet' ready skin",
+      "Deeply hydrating",
+    ],
+    concerns: ["dehydration", "dull-skin", "aging"],
+    areas: ["face"],
+    benefits: [
+      "Deeply hydrates and plumps",
+      "Reduces appearance of fine lines",
+      "Brightens the complexion",
+    ],
+    fullDescription: `Experience the ultimate breath of fresh air for your skin with our Pure Oxygen Glow facial. This treatment uses pressurized oxygen to infuse a specialty cocktail of hyaluronic acid and antioxidants deep into the skin layers. It's the perfect solution for tired, dull, or dehydrated skin that needs an instant boost of life and radiance.`,
+    detailedBenefits: [
+      "Immediately plumps the skin",
+      "Reduces fine lines and wrinkles",
+      "Encourages collagen production",
+      "Detoxifies the skin",
+      "Enhances overall skin tone and texture",
+      "No recovery time needed",
+    ],
+    process: [
+      {
+        step: 1,
+        title: "Cleansing",
+        description: "Gentle cleanse to remove surface impurities.",
+      },
+      {
+        step: 2,
+        title: "Oxygen Infusion",
+        description: "Delivery of pure oxygen and specialized serums using a hand-held wand.",
+      },
+      {
+        step: 3,
+        title: "Hydrating Seal",
+        description: "Locking in the moisture with a lightweight hydrator.",
+      },
+      {
+        step: 4,
+        title: "SPF Protection",
+        description: "Finishing with sun protection to maintain that glow.",
+      },
+    ],
+    faqs: [
+      {
+        question: "What does it feel like?",
+        answer: "It feels like a cool, refreshing mist on your face. Most clients find it very relaxing.",
+      },
+      {
+        question: "Is it good for acne?",
+        answer: "Yes, oxygen helps to calm inflammation and can help in the healing process of acne.",
+      },
+    ],
+    aftercare: "Avoid heavy makeup for a few hours. Keep skin hydrated with serums.",
+    ingredients: ["Pure Oxygen", "Hyaluronic Acid", "Antioxidants"],
+    testimonials: [],
+  },
+  {
+    slug: "ultimate-glow-experience",
+    title: "Ultimate Glow Experience",
+    icon: Sparkles,
+    short: "The pinnacle of skincare revitalization: Nano Glow + Pure Oxygen.",
+    description:
+      "The ultimate transformation for your skin. This premium combination treatment pairs our advanced Nano Glow Infusion with the refreshing Pure Oxygen Glow. The result is unparalleled hydration, immediate radiance, and long-term skin health benefits.",
+    image: "/images/ultimate-glow-experience.png",
+    price: "$180",
+    duration: "90 minutes",
+    bestFor: "The ultimate glow seeker wanting the maximum transformation for an event or self-care.",
+    whyLoveIt: [
+      "Best value combination",
+      "Combined benefits of two advanced technologies",
+      "Unmatched level of hydration and glow",
+    ],
+    concerns: ["aging", "dehydration", "dull-skin", "texture", "acne-scars"],
+    areas: ["face"],
+    benefits: [
+      "Maximum hydration",
+      "Immediate and lasting radiance",
+      "Deepest serum penetration",
+    ],
+    fullDescription: `The Ultimate Glow Experience is specifically designed for those who want it all. By combining the deep-reaching effects of our Nano Glow Infusion with the immediate plumping and hydrating power of Pure Oxygen, we create a skincare treatment that addresses multiple concerns in one session. Your skin will look and feel its absolute best—superbly hydrated, smooth, and radiantly luminous.`,
+    detailedBenefits: [
+      "Maximum penetration of potent serums",
+      "Intense hydration at multiple levels",
+      "Significant reduction in appearance of fine lines",
+      "Improved skin elasticity and firmness",
+      "Long-lasting 'glass skin' effect",
+    ],
+    process: [
+      {
+        step: 1,
+        title: "Preparation",
+        description: "Double cleanse and professional skin assessment.",
+      },
+      {
+        step: 2,
+        title: "Nano Infusion",
+        description: "Targeted serum delivery using nano-tip technology.",
+      },
+      {
+        step: 3,
+        title: "Oxygen Infusion",
+        description: "Cooling oxygen mist to plump and soothe.",
+      },
+      {
+        step: 4,
+        title: "Final Rejuvenation",
+        description: "A combination of cooling masks and finishing serums.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Is this treatment session long?",
+        answer: "Yes, it takes about 90 minutes as it is a comprehensive, multi-step process for maximum results.",
+      },
+    ],
+    aftercare: "Continue your home care routine with extra focus on hydration for the next 48 hours.",
+    ingredients: ["Nano-Infused Serums", "Pure Oxygen", "Hyaluronic Acid", "Peptides"],
     testimonials: [],
   },
 ];
