@@ -15,6 +15,7 @@ import {
   Star,
   List,
   HelpCircle,
+  Layers,
 } from "lucide-react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
@@ -194,6 +195,122 @@ export default function ServicePage({
                       ))}
                     </ul>
                   </div>
+
+                  {/* Area Pricing Table */}
+                  {(service as any).areaPricing &&
+                    (() => {
+                      const items = (service as any).areaPricing as {
+                        area: string;
+                        price: string;
+                        category?: string;
+                      }[];
+                      const categories = [
+                        ...new Set(items.map((i) => i.category || "")),
+                      ];
+                      const hasCategories = categories.some((c) => c !== "");
+                      return (
+                        <div className="bg-gradient-to-br from-[#F5F0E9] to-white p-8 rounded-3xl border border-[#E0C58F]/30 shadow-lg">
+                          <h3 className="text-xl font-bold text-[#112250] mb-2 flex items-center gap-2">
+                            <DollarSign className="w-5 h-5 text-[#E0C58F]" />
+                            Pricing
+                          </h3>
+                          <p className="text-[#3C507D] text-sm mb-5">
+                            Treatment pricing varies depending on the service:
+                          </p>
+                          {hasCategories ? (
+                            <div className="space-y-6">
+                              {categories.filter(Boolean).map((cat) => (
+                                <div key={cat}>
+                                  <h4 className="font-bold text-[#112250] text-sm uppercase tracking-wider mb-3 flex items-center gap-2">
+                                    <div className="h-px flex-1 bg-[#E0C58F]/30"></div>
+                                    {cat}
+                                    <div className="h-px flex-1 bg-[#E0C58F]/30"></div>
+                                  </h4>
+                                  <div className="space-y-2">
+                                    {items
+                                      .filter((i) => i.category === cat)
+                                      .map((item, i) => (
+                                        <div
+                                          key={i}
+                                          className="flex items-center justify-between bg-white px-5 py-3 rounded-xl border border-[#E0C58F]/20 hover:border-[#E0C58F]/50 hover:shadow-sm transition-all duration-300"
+                                        >
+                                          <span className="font-bold text-[#112250]">
+                                            {item.area}
+                                          </span>
+                                          <span
+                                            className={`font-bold px-3 py-1 rounded-lg text-sm ${item.price === "Inquire" ? "text-[#3C507D] bg-[#F5F0E9] border border-[#E0C58F]/30" : "text-[#E0C58F] bg-[#112250]"}`}
+                                          >
+                                            {item.price}
+                                          </span>
+                                        </div>
+                                      ))}
+                                  </div>
+                                </div>
+                              ))}
+                            </div>
+                          ) : (
+                            <div className="space-y-2">
+                              {items.map((item, i) => (
+                                <div
+                                  key={i}
+                                  className="flex items-center justify-between bg-white px-5 py-3 rounded-xl border border-[#E0C58F]/20 hover:border-[#E0C58F]/50 hover:shadow-sm transition-all duration-300"
+                                >
+                                  <span className="font-bold text-[#112250]">
+                                    {item.area}
+                                  </span>
+                                  <span className="font-bold text-[#E0C58F] bg-[#112250] px-3 py-1 rounded-lg text-sm">
+                                    {item.price}
+                                  </span>
+                                </div>
+                              ))}
+                            </div>
+                          )}
+                        </div>
+                      );
+                    })()}
+
+                  {/* Add-On Options Section */}
+                  {(service as any).addOns && (
+                    <div className="bg-gradient-to-br from-[#F5F0E9] to-white p-8 rounded-3xl border border-[#E0C58F]/30 shadow-lg">
+                      <h3 className="text-xl font-bold text-[#112250] mb-2 flex items-center gap-2">
+                        <Layers className="w-5 h-5 text-[#E0C58F]" />
+                        Choose Your Treatment Add-On
+                      </h3>
+                      <p className="text-[#3C507D] text-sm mb-5">
+                        Select one of the following add-on treatments to
+                        customize your session:
+                      </p>
+                      <div className="space-y-3">
+                        {(service as any).addOns.map(
+                          (
+                            addOn: { name: string; description: string },
+                            i: number,
+                          ) => (
+                            <div
+                              key={i}
+                              className="flex items-start gap-3 bg-white p-4 rounded-2xl border border-[#E0C58F]/20 hover:border-[#E0C58F]/50 hover:shadow-md transition-all duration-300"
+                            >
+                              <div className="w-8 h-8 bg-[#112250] rounded-xl flex items-center justify-center shrink-0 mt-0.5">
+                                <Check className="w-4 h-4 text-[#E0C58F]" />
+                              </div>
+                              <div>
+                                <span className="font-bold text-[#112250] block">
+                                  {addOn.name}
+                                </span>
+                                <span className="text-[#3C507D] text-sm">
+                                  {addOn.description}
+                                </span>
+                              </div>
+                            </div>
+                          ),
+                        )}
+                      </div>
+                      <p className="text-xs text-[#3C507D]/70 mt-4 italic">
+                        You can finalize your add-on choice during your
+                        consultation with Marcia.
+                      </p>
+                    </div>
+                  )}
                 </div>
                 <div className="relative">
                   <div className="absolute inset-0 bg-gradient-to-br from-[#E0C58F]/20 to-[#112250]/10 rounded-3xl blur-3xl -z-10"></div>

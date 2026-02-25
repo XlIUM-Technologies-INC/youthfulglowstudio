@@ -204,8 +204,15 @@ export const SERVICES = [
     description:
       "A natural mechanical resurfacing peel using marine algae crystals. Lifts pigmentation, smooths texture, reduces acne, stretch marks, and improves overall skin tone with minimal downtime.",
     image: "/images/Zena_Algae_Peel.webp",
-    price: "From $180",
-    duration: "40 minutes",
+    price: "From $200",
+    duration: "60 minutes",
+    areaPricing: [
+      { area: "Face", price: "$200" },
+      { area: "Arms / Belly / Leg", price: "$250" },
+      { area: "Back", price: "$280" },
+      { area: "Butt", price: "$280" },
+      { area: "Thighs", price: "$350" },
+    ],
     bestFor:
       "Clients with acne, scarring, dull skin, or uneven tone seeking a gentle yet powerful peel.",
     whyLoveIt: [
@@ -578,14 +585,48 @@ export const SERVICES = [
   },
   {
     slug: "waxing",
-    title: "Waxing Hair Removal",
+    title: "Waxing & Lash / Brow Services",
     icon: Wand2,
-    short: "Professional waxing for smooth, long-lasting results.",
+    short:
+      "Professional waxing, lash lifts, brow lamination, and tinting services.",
     description:
-      "Professional hair removal using hygienic techniques for smooth skin lasting weeks. Suitable for face and body.",
+      "Professional hair removal using hygienic techniques for smooth skin lasting weeks. Plus lash lift, brow lamination, and tinting services to frame your face beautifully.",
     image: "/images/Hair_Removal.webp",
     price: "From $10",
     duration: "Varies",
+    areaPricing: [
+      { area: "Brows", price: "$10", category: "Waxing" },
+      { area: "Brows & Upper Lip", price: "$15", category: "Waxing" },
+      { area: "Lip & Chin", price: "$15", category: "Waxing" },
+      { area: "Full Face", price: "$40", category: "Waxing" },
+      { area: "Under Arms", price: "$20", category: "Waxing" },
+      { area: "Half Arms", price: "$30", category: "Waxing" },
+      { area: "Full Arms", price: "$45", category: "Waxing" },
+      { area: "Lower Legs", price: "$35", category: "Waxing" },
+      { area: "Upper Legs", price: "$40", category: "Waxing" },
+      { area: "Full Legs", price: "$65", category: "Waxing" },
+      { area: "Full Legs with Bikini", price: "$70", category: "Waxing" },
+      { area: "Bikini Line", price: "$20", category: "Waxing" },
+      { area: "Belly Line", price: "$20", category: "Waxing" },
+      { area: "Brazilian", price: "$50", category: "Waxing" },
+      { area: "Back & Chest", price: "$80", category: "Waxing" },
+      { area: "Back & Shoulders", price: "$70", category: "Waxing" },
+      { area: "Chest & Abdomen", price: "$60", category: "Waxing" },
+      { area: "Full Body", price: "$170", category: "Waxing" },
+      {
+        area: "Brow Lamination & Tint",
+        price: "Inquire",
+        category: "Lash & Brow",
+      },
+      { area: "Lash Lift & Tint", price: "Inquire", category: "Lash & Brow" },
+      { area: "Eyebrow Wax & Tint", price: "Inquire", category: "Lash & Brow" },
+      { area: "Lash Tint Only", price: "Inquire", category: "Lash & Brow" },
+      {
+        area: "Lash Lift Without Tint",
+        price: "Inquire",
+        category: "Lash & Brow",
+      },
+    ],
     bestFor: "Anyone wanting longer-lasting smoothness than shaving.",
     whyLoveIt: [
       "Smooth results for weeks",
@@ -599,7 +640,7 @@ export const SERVICES = [
       "Softer and finer hair regrowth",
       "Exfoliates the skin",
     ],
-    fullDescription: `Waxing is a popular hair removal method that is effective for removing hair from all parts of the body. It is a great alternative to shaving, as it provides longer-lasting results and can help to reduce hair growth over time.`,
+    fullDescription: `Professional waxing and hair removal for smooth skin lasting weeks. We also offer lash lift, brow lamination, and tinting services to complete your look. Full Body waxing includes Full Legs, Full Arms, Under Arms, and Brazilian.`,
     detailedBenefits: [
       "Long-lasting results (2-8 weeks)",
       "Softer and finer hair regrowth",
@@ -654,14 +695,16 @@ export const SERVICES = [
   },
   {
     slug: "nano-glow-infusion",
-    title: "Nano Glow Infusion",
+    bookingSlug: "nano-glow-infusion-150",
+    title: "Nano Glow Infusion Facial",
     icon: Zap,
-    short: "Advanced nano-tip infusion for deep serum delivery and radiance.",
+    short:
+      "Gentle nano infusion to enhance product absorption. Boosts hydration, glow, and skin smoothness.",
     description:
-      "Our Nano Glow Infusion treatment uses advanced nano-tip technology to gently open microscopic channels in the skin's surface — infusing powerful serums including hyaluronic acid, peptides, and vitamins deep into the epidermis where they work most effectively.",
-    image: "/images/nano-glow-infusion.png",
-    price: "$120",
-    duration: "60 minutes",
+      "Gentle nano infusion to enhance product absorption. Boosts hydration, glow, and skin smoothness. Helps improve tone, texture, and radiance. No downtime — instant refreshed look.",
+    image: "/images/nano-glow-infusion.jpg",
+    price: "$150",
+    duration: "90 minutes",
     bestFor:
       "Treatment targets: acne scarring, aging skin, combination skin, dark spots, dehydration, dry and sensitive skin, hyperpigmentation, mature skin, oily skin, sun damaged skin, and wrinkles.",
     whyLoveIt: [
@@ -678,11 +721,7 @@ export const SERVICES = [
       "dull-skin",
     ],
     areas: ["face"],
-    benefits: [
-      "Smoother skin texture",
-      "Improved hydration",
-      "Radiant glow",
-    ],
+    benefits: ["Smoother skin texture", "Improved hydration", "Radiant glow"],
     fullDescription: `Our Nano Glow Infusion treatment uses advanced nano-tip technology to gently open microscopic channels in the skin's surface — infusing powerful serums including hyaluronic acid, peptides, and vitamins deep into the epidermis where they work most effectively. Unlike traditional microneedling, our Nano Glow Infusion is completely comfortable, requires zero downtime, and is safe for all skin types including sensitive skin. Your skin will be visibly smoother, more hydrated, and radiantly glowing — immediately after your very first session.`,
     detailedBenefits: [
       "Deeply infuses vitamins and antioxidants",
@@ -701,7 +740,8 @@ export const SERVICES = [
       {
         step: 2,
         title: "Nano Infusion",
-        description: "Advanced nano-tip technology delivers serums deep into the epidermis.",
+        description:
+          "Advanced nano-tip technology delivers serums deep into the epidermis.",
       },
       {
         step: 3,
@@ -717,27 +757,32 @@ export const SERVICES = [
     faqs: [
       {
         question: "Is this the same as microneedling?",
-        answer: "No, nano-infusion is non-invasive and painless, using microscopic tips rather than needles. It requires zero downtime.",
+        answer:
+          "No, nano-infusion is non-invasive and painless, using microscopic tips rather than needles. It requires zero downtime.",
       },
       {
         question: "How soon will I see results?",
-        answer: "You will see an immediate glow and smoother texture right after your first session.",
+        answer:
+          "You will see an immediate glow and smoother texture right after your first session.",
       },
     ],
-    aftercare: "Maintain hydration and use SPF daily. Avoid harsh exfoliants for 24 hours.",
+    aftercare:
+      "Maintain hydration and use SPF daily. Avoid harsh exfoliants for 24 hours.",
     ingredients: ["Hyaluronic Acid", "Peptides", "Vitamins"],
     testimonials: [],
   },
   {
     slug: "pure-oxygen-glow",
-    title: "Pure Oxygen Glow",
+    bookingSlug: "pure-oxygen-glow-110",
+    title: "Pure Oxygen Glow Facial",
     icon: Wind,
-    short: "Instant hydration and rejuvenation with pure oxygen infusion.",
+    short:
+      "Oxygen infusion to revitalize, brighten, and hydrate skin — perfect before events.",
     description:
-      "Our Pure Oxygen Glow treatment delivers highly concentrated oxygen and a customized blend of vitamins, minerals, and hyaluronic acid deep into the skin's surface. This non-invasive procedure immediately revitalizes oxygen-starved skin, leaving it visibly plump, hydrated, and radiant.",
-    image: "/images/pure-oxygen-glow.png",
+      "Oxygen infusion to revitalize, brighten, and hydrate skin while supporting circulation and a natural glow — perfect before events.",
+    image: "/images/pure-oxygen-glow.jpg",
     price: "$110",
-    duration: "45-60 minutes",
+    duration: "60 minutes",
     bestFor:
       "Dehydrated skin, fine lines, dull complexion, and anyone looking for a quick, effective glow before an event.",
     whyLoveIt: [
@@ -771,7 +816,8 @@ export const SERVICES = [
       {
         step: 2,
         title: "Oxygen Infusion",
-        description: "Delivery of pure oxygen and specialized serums using a hand-held wand.",
+        description:
+          "Delivery of pure oxygen and specialized serums using a hand-held wand.",
       },
       {
         step: 3,
@@ -787,28 +833,34 @@ export const SERVICES = [
     faqs: [
       {
         question: "What does it feel like?",
-        answer: "It feels like a cool, refreshing mist on your face. Most clients find it very relaxing.",
+        answer:
+          "It feels like a cool, refreshing mist on your face. Most clients find it very relaxing.",
       },
       {
         question: "Is it good for acne?",
-        answer: "Yes, oxygen helps to calm inflammation and can help in the healing process of acne.",
+        answer:
+          "Yes, oxygen helps to calm inflammation and can help in the healing process of acne.",
       },
     ],
-    aftercare: "Avoid heavy makeup for a few hours. Keep skin hydrated with serums.",
+    aftercare:
+      "Avoid heavy makeup for a few hours. Keep skin hydrated with serums.",
     ingredients: ["Pure Oxygen", "Hyaluronic Acid", "Antioxidants"],
     testimonials: [],
   },
   {
     slug: "ultimate-glow-experience",
-    title: "Ultimate Glow Experience",
+    bookingSlug: "ultimate-glow-experience-nano-glow-infusion-pure-oxygen-glow",
+    title: "Ultimate Glow Experience Facial",
     icon: Sparkles,
-    short: "The pinnacle of skincare revitalization: Nano Glow + Pure Oxygen.",
+    short:
+      "Nano Glow Infusion + Pure Oxygen Glow for maximum radiance, hydration, and smooth, glowing skin.",
     description:
-      "The ultimate transformation for your skin. This premium combination treatment pairs our advanced Nano Glow Infusion with the refreshing Pure Oxygen Glow. The result is unparalleled hydration, immediate radiance, and long-term skin health benefits.",
-    image: "/images/ultimate-glow-experience.png",
-    price: "$180",
+      "Nano Glow Infusion and oxygen boost for maximum radiance, hydration, and smooth, glowing skin. The ultimate transformation combining two advanced technologies in one premium session.",
+    image: "/images/ultimate-glow-experience.jpg",
+    price: "$230",
     duration: "90 minutes",
-    bestFor: "The ultimate glow seeker wanting the maximum transformation for an event or self-care.",
+    bestFor:
+      "The ultimate glow seeker wanting the maximum transformation for an event or self-care.",
     whyLoveIt: [
       "Best value combination",
       "Combined benefits of two advanced technologies",
@@ -854,11 +906,124 @@ export const SERVICES = [
     faqs: [
       {
         question: "Is this treatment session long?",
-        answer: "Yes, it takes about 90 minutes as it is a comprehensive, multi-step process for maximum results.",
+        answer:
+          "Yes, it takes about 90 minutes as it is a comprehensive, multi-step process for maximum results.",
       },
     ],
-    aftercare: "Continue your home care routine with extra focus on hydration for the next 48 hours.",
-    ingredients: ["Nano-Infused Serums", "Pure Oxygen", "Hyaluronic Acid", "Peptides"],
+    aftercare:
+      "Continue your home care routine with extra focus on hydration for the next 48 hours.",
+    ingredients: [
+      "Nano-Infused Serums",
+      "Pure Oxygen",
+      "Hyaluronic Acid",
+      "Peptides",
+    ],
+    testimonials: [],
+  },
+  {
+    slug: "oxygen-glow-fusion",
+    bookingSlug: "oxygen-glow-fusion-treatment-add-on",
+    title: "Pure Oxygen Glow Fusion Facial + Add-On",
+    icon: Wind,
+    short:
+      "Customized glow treatment with oxygen + your choice of dermaplaning, facial, or microdermabrasion for smooth radiant skin.",
+    description:
+      "Customized glow treatment with oxygen + your choice of dermaplaning, facial, or microdermabrasion for smooth radiant skin.",
+    image: "/images/oxygen-glow-fusion.jpg",
+    price: "$180",
+    duration: "90 minutes",
+    bestFor:
+      "Clients who want a combined treatment experience with oxygen therapy plus their preferred exfoliation or facial add-on.",
+    whyLoveIt: [
+      "Customizable treatment combination",
+      "Oxygen-infused radiance",
+      "Choose your perfect add-on",
+      "Maximum results in one session",
+    ],
+    addOns: [
+      {
+        name: "Dermaplaning",
+        description:
+          "Expert dermaplaning removes peach fuzz + dead skin for instant smoothness and glow.",
+      },
+      {
+        name: "Made For You Facial",
+        description:
+          "Customized facial tailored to your unique skin type, concerns, and goals.",
+      },
+      {
+        name: "Diamond Microdermabrasion",
+        description:
+          "Diamond-tip exfoliation for smoother, brighter, and more radiant skin.",
+      },
+    ],
+    concerns: ["dull-skin", "texture", "dehydration", "aging"],
+    areas: ["face"],
+    benefits: [
+      "Combined treatment power",
+      "Personalized add-on choice",
+      "Instant radiant glow",
+    ],
+    fullDescription: `Experience the best of both worlds with our Pure Oxygen Glow Fusion Facial + Treatment Add-On. This premium combination begins with a revitalizing pure oxygen infusion to brighten, hydrate, and rejuvenate your skin. Then, choose your preferred add-on treatment — dermaplaning for ultra-smooth skin, a Made For You Facial customized to your needs, or diamond microdermabrasion for deep exfoliation. The result is a comprehensive, customized treatment that delivers maximum radiance and glow in a single 90-minute session.`,
+    detailedBenefits: [
+      "Oxygen infusion revitalizes and brightens",
+      "Choose from three premium add-on treatments",
+      "Deeper product absorption from combined techniques",
+      "Addresses multiple skin concerns in one session",
+      "Instant visible results with lasting benefits",
+      "Customized to your specific skin needs",
+    ],
+    process: [
+      {
+        step: 1,
+        title: "Consultation & Cleansing",
+        description:
+          "Skin assessment and double cleanse to prepare for treatment.",
+      },
+      {
+        step: 2,
+        title: "Pure Oxygen Infusion",
+        description:
+          "Pressurized oxygen delivers vitamins and hyaluronic acid deep into the skin.",
+      },
+      {
+        step: 3,
+        title: "Your Chosen Add-On",
+        description:
+          "Dermaplaning, Made For You Facial, or Diamond Microdermabrasion — your pick!",
+      },
+      {
+        step: 4,
+        title: "Finishing Touches",
+        description:
+          "Sealing in moisture with hydrating serums, moisturizer, and SPF protection.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Which add-on should I choose?",
+        answer:
+          "It depends on your skin goals! Dermaplaning is great for smoothness and peach fuzz removal, the Made For You Facial addresses your specific concerns, and microdermabrasion is ideal for deep exfoliation and texture improvement. Our esthetician will help you decide during your consultation.",
+      },
+      {
+        question: "Can I change my add-on choice at the appointment?",
+        answer:
+          "Absolutely! You can finalize your add-on choice during your consultation with Marcia.",
+      },
+      {
+        question: "Is this treatment suitable for sensitive skin?",
+        answer:
+          "Yes, the treatment can be customized to suit all skin types, including sensitive skin.",
+      },
+    ],
+    aftercare:
+      "Avoid sun exposure for 24 hours. Stay hydrated and use a gentle cleanser. Apply moisturizer morning and night. Avoid exfoliants for 48 hours. Use SPF daily.",
+    ingredients: [
+      "Pure Oxygen",
+      "Hyaluronic Acid",
+      "Custom Serums",
+      "Vitamins",
+    ],
     testimonials: [],
   },
 ];
