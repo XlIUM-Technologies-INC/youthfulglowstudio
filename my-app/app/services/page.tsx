@@ -6,6 +6,7 @@ import RootLayout from "@/components/layouts/RootLayout";
 import { SERVICES } from "@/lib/services";
 import { ArrowRight, Clock } from "lucide-react";
 import BookingModal from "@/components/ui/BookingModal";
+import { Layers } from "lucide-react";
 
 /* -------------------- COMPONENT -------------------- */
 
@@ -73,6 +74,28 @@ export default function ServiceFinder() {
                     {service.short}
                   </p>
 
+                  {/* Add-On Options Badge */}
+                  {(service as any).addOns && (
+                    <div className="space-y-2">
+                      <div className="flex items-center gap-1.5 text-xs font-bold text-[#112250] uppercase tracking-wider">
+                        <Layers className="w-3.5 h-3.5 text-[#E0C58F]" />
+                        Choose Your Add-On:
+                      </div>
+                      <div className="flex flex-wrap gap-1.5">
+                        {(service as any).addOns.map(
+                          (addOn: { name: string }, i: number) => (
+                            <span
+                              key={i}
+                              className="inline-block bg-[#F5F0E9] text-[#3C507D] text-xs font-medium px-2.5 py-1 rounded-full border border-[#E0C58F]/30"
+                            >
+                              {addOn.name}
+                            </span>
+                          ),
+                        )}
+                      </div>
+                    </div>
+                  )}
+
                   <div className="mt-auto space-y-4 pt-4 border-t border-[#F5F0E9]">
                     <div className="flex justify-between items-center text-sm">
                       <span className="font-bold text-[#112250]">
@@ -111,7 +134,7 @@ export default function ServiceFinder() {
         {/* BOOKING INFO */}
         <div className="bg-[#112250] rounded-2xl p-10 text-center space-y-6 border border-[#E0C58F]/30 shadow-2xl">
           <h2 className="text-3xl font-bold text-[#E0C58F]">
-             How to Book Your Appointment
+            How to Book Your Appointment
           </h2>
           <p className="text-[#F5F0E9]/90 max-w-2xl mx-auto text-lg leading-relaxed">
             Simply click “Book Your Glow Session” under any service to choose

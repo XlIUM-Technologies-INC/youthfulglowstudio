@@ -204,8 +204,15 @@ export const SERVICES = [
     description:
       "A natural mechanical resurfacing peel using marine algae crystals. Lifts pigmentation, smooths texture, reduces acne, stretch marks, and improves overall skin tone with minimal downtime.",
     image: "/images/Zena_Algae_Peel.webp",
-    price: "From $180",
-    duration: "40 minutes",
+    price: "From $200",
+    duration: "60 minutes",
+    areaPricing: [
+      { area: "Face", price: "$200" },
+      { area: "Arms / Belly / Leg", price: "$250" },
+      { area: "Back", price: "$280" },
+      { area: "Butt", price: "$280" },
+      { area: "Thighs", price: "$350" },
+    ],
     bestFor:
       "Clients with acne, scarring, dull skin, or uneven tone seeking a gentle yet powerful peel.",
     whyLoveIt: [
@@ -578,14 +585,34 @@ export const SERVICES = [
   },
   {
     slug: "waxing",
-    title: "Waxing Hair Removal",
+    title: "Waxing / Hair Removal",
     icon: Wand2,
-    short: "Professional waxing for smooth, long-lasting results.",
+    short: "Professional waxing for smooth skin lasting weeks.",
     description:
-      "Professional hair removal using hygienic techniques for smooth skin lasting weeks. Suitable for face and body.",
+      "Professional hair removal using hygienic techniques for smooth skin lasting weeks.",
     image: "/images/Hair_Removal.webp",
     price: "From $10",
     duration: "Varies",
+    areaPricing: [
+      { area: "Brows", price: "$10", category: "Face" },
+      { area: "Brows & Upper Lip", price: "$15", category: "Face" },
+      { area: "Lip & Chin", price: "$15", category: "Face" },
+      { area: "Full Face", price: "$40", category: "Face" },
+      { area: "Under Arms", price: "$20", category: "Arms" },
+      { area: "Half Arms", price: "$30", category: "Arms" },
+      { area: "Full Arms", price: "$45", category: "Arms" },
+      { area: "Lower Legs", price: "$35", category: "Legs" },
+      { area: "Upper Legs", price: "$40", category: "Legs" },
+      { area: "Full Legs", price: "$65", category: "Legs" },
+      { area: "Full Legs with Bikini", price: "$70", category: "Legs" },
+      { area: "Bikini Line", price: "$20", category: "Bikini" },
+      { area: "Belly Line", price: "$20", category: "Bikini" },
+      { area: "Brazilian", price: "$50", category: "Bikini" },
+      { area: "Back & Chest", price: "$80", category: "Body" },
+      { area: "Back & Shoulders", price: "$70", category: "Body" },
+      { area: "Chest & Abdomen", price: "$60", category: "Body" },
+      { area: "Full Body", price: "$170", category: "Full Body" },
+    ],
     bestFor: "Anyone wanting longer-lasting smoothness than shaving.",
     whyLoveIt: [
       "Smooth results for weeks",
@@ -599,7 +626,7 @@ export const SERVICES = [
       "Softer and finer hair regrowth",
       "Exfoliates the skin",
     ],
-    fullDescription: `Waxing is a popular hair removal method that is effective for removing hair from all parts of the body. It is a great alternative to shaving, as it provides longer-lasting results and can help to reduce hair growth over time.`,
+    fullDescription: `Professional waxing and hair removal for smooth skin lasting weeks. Full Body waxing includes Full Legs, Full Arms, Under Arms, and Brazilian.`,
     detailedBenefits: [
       "Long-lasting results (2-8 weeks)",
       "Softer and finer hair regrowth",
@@ -654,9 +681,11 @@ export const SERVICES = [
   },
   {
     slug: "nano-glow-infusion",
-    title: "Nano Glow Infusion",
+    bookingSlug: "nano-glow-infusion-150",
+    title: "Nano Glow Infusion Facial",
     icon: Zap,
-    short: "Advanced nano-tip infusion for deep serum delivery and radiance.",
+    short:
+      "Gentle nano infusion to enhance product absorption. Boosts hydration, glow, and skin smoothness.",
     description:
       "Our Nano Glow Infusion treatment uses advanced nano-tip technology to gently open microscopic channels in the skin's surface — infusing powerful serums including hyaluronic acid, peptides, and vitamins deep into the epidermis where they work most effectively.",
     image: "/images/nano-glow-infusion.png",
@@ -678,11 +707,7 @@ export const SERVICES = [
       "dull-skin",
     ],
     areas: ["face"],
-    benefits: [
-      "Smoother skin texture",
-      "Improved hydration",
-      "Radiant glow",
-    ],
+    benefits: ["Smoother skin texture", "Improved hydration", "Radiant glow"],
     fullDescription: `Our Nano Glow Infusion treatment uses advanced nano-tip technology to gently open microscopic channels in the skin's surface — infusing powerful serums including hyaluronic acid, peptides, and vitamins deep into the epidermis where they work most effectively. Unlike traditional microneedling, our Nano Glow Infusion is completely comfortable, requires zero downtime, and is safe for all skin types including sensitive skin. Your skin will be visibly smoother, more hydrated, and radiantly glowing — immediately after your very first session.`,
     detailedBenefits: [
       "Deeply infuses vitamins and antioxidants",
@@ -701,7 +726,8 @@ export const SERVICES = [
       {
         step: 2,
         title: "Nano Infusion",
-        description: "Advanced nano-tip technology delivers serums deep into the epidermis.",
+        description:
+          "Advanced nano-tip technology delivers serums deep into the epidermis.",
       },
       {
         step: 3,
@@ -717,14 +743,17 @@ export const SERVICES = [
     faqs: [
       {
         question: "Is this the same as microneedling?",
-        answer: "No, nano-infusion is non-invasive and painless, using microscopic tips rather than needles. It requires zero downtime.",
+        answer:
+          "No, nano-infusion is non-invasive and painless, using microscopic tips rather than needles. It requires zero downtime.",
       },
       {
         question: "How soon will I see results?",
-        answer: "You will see an immediate glow and smoother texture right after your first session.",
+        answer:
+          "You will see an immediate glow and smoother texture right after your first session.",
       },
     ],
-    aftercare: "Maintain hydration and use SPF daily. Avoid harsh exfoliants for 24 hours.",
+    aftercare:
+      "Maintain hydration and use SPF daily. Avoid harsh exfoliants for 24 hours.",
     ingredients: ["Hyaluronic Acid", "Peptides", "Vitamins"],
     testimonials: [],
   },
@@ -732,7 +761,8 @@ export const SERVICES = [
     slug: "pure-oxygen-glow",
     title: "Oxygen Glow Infusion Facial",
     icon: Wind,
-    short: "Instant hydration and rejuvenation with pure oxygen infusion.",
+    short:
+      "Oxygen infusion to revitalize, brighten, and hydrate skin — perfect before events.",
     description:
       "Our Oxygen Glow Infusion Facial treatment delivers highly concentrated oxygen and a customized blend of vitamins, minerals, and hyaluronic acid deep into the skin's surface. This non-invasive procedure immediately revitalizes oxygen-starved skin, leaving it visibly plump, hydrated, and radiant.",
     image: "/images/images.jpeg",
@@ -771,7 +801,8 @@ export const SERVICES = [
       {
         step: 2,
         title: "Oxygen Infusion",
-        description: "Delivery of pure oxygen and specialized serums using a hand-held wand.",
+        description:
+          "Delivery of pure oxygen and specialized serums using a hand-held wand.",
       },
       {
         step: 3,
@@ -787,14 +818,17 @@ export const SERVICES = [
     faqs: [
       {
         question: "What does it feel like?",
-        answer: "It feels like a cool, refreshing mist on your face. Most clients find it very relaxing.",
+        answer:
+          "It feels like a cool, refreshing mist on your face. Most clients find it very relaxing.",
       },
       {
         question: "Is it good for acne?",
-        answer: "Yes, oxygen helps to calm inflammation and can help in the healing process of acne.",
+        answer:
+          "Yes, oxygen helps to calm inflammation and can help in the healing process of acne.",
       },
     ],
-    aftercare: "Avoid heavy makeup for a few hours. Keep skin hydrated with serums.",
+    aftercare:
+      "Avoid heavy makeup for a few hours. Keep skin hydrated with serums.",
     ingredients: ["Pure Oxygen", "Hyaluronic Acid", "Antioxidants"],
     testimonials: [],
   },
