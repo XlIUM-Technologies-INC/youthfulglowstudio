@@ -359,7 +359,7 @@ export const SERVICES = [
   },
   {
     slug: "chemical-peels",
-    title: "Dermalogica Lactic Acid Brightening Peels",
+    title: "Brightening Peel",
     icon: Sun,
     short: "30% Lactic acid peel for intense brightening and hydration.",
     description:
@@ -660,7 +660,7 @@ export const SERVICES = [
     description:
       "Our Nano Glow Infusion treatment uses advanced nano-tip technology to gently open microscopic channels in the skin's surface — infusing powerful serums including hyaluronic acid, peptides, and vitamins deep into the epidermis where they work most effectively.",
     image: "/images/nano-glow-infusion.png",
-    price: "$120",
+    price: "Starting at $180",
     duration: "60 minutes",
     bestFor:
       "Treatment targets: acne scarring, aging skin, combination skin, dark spots, dehydration, dry and sensitive skin, hyperpigmentation, mature skin, oily skin, sun damaged skin, and wrinkles.",
@@ -730,14 +730,14 @@ export const SERVICES = [
   },
   {
     slug: "pure-oxygen-glow",
-    title: "Pure Oxygen Glow",
+    title: "Oxygen Glow Infusion Facial",
     icon: Wind,
     short: "Instant hydration and rejuvenation with pure oxygen infusion.",
     description:
-      "Our Pure Oxygen Glow treatment delivers highly concentrated oxygen and a customized blend of vitamins, minerals, and hyaluronic acid deep into the skin's surface. This non-invasive procedure immediately revitalizes oxygen-starved skin, leaving it visibly plump, hydrated, and radiant.",
-    image: "/images/pure-oxygen-glow.png",
-    price: "$110",
-    duration: "45-60 minutes",
+      "Our Oxygen Glow Infusion Facial treatment delivers highly concentrated oxygen and a customized blend of vitamins, minerals, and hyaluronic acid deep into the skin's surface. This non-invasive procedure immediately revitalizes oxygen-starved skin, leaving it visibly plump, hydrated, and radiant.",
+    image: "/images/images.jpeg",
+    price: "$180",
+    duration: "90 minutes",
     bestFor:
       "Dehydrated skin, fine lines, dull complexion, and anyone looking for a quick, effective glow before an event.",
     whyLoveIt: [
@@ -753,7 +753,7 @@ export const SERVICES = [
       "Reduces appearance of fine lines",
       "Brightens the complexion",
     ],
-    fullDescription: `Experience the ultimate breath of fresh air for your skin with our Pure Oxygen Glow facial. This treatment uses pressurized oxygen to infuse a specialty cocktail of hyaluronic acid and antioxidants deep into the skin layers. It's the perfect solution for tired, dull, or dehydrated skin that needs an instant boost of life and radiance.`,
+    fullDescription: `Experience the ultimate breath of fresh air for your skin with our Oxygen Glow Infusion Facial. This treatment uses pressurized oxygen to infuse a specialty cocktail of hyaluronic acid and antioxidants deep into the skin layers. It's the perfect solution for tired, dull, or dehydrated skin that needs an instant boost of life and radiance.`,
     detailedBenefits: [
       "Immediately plumps the skin",
       "Reduces fine lines and wrinkles",
@@ -798,69 +798,7 @@ export const SERVICES = [
     ingredients: ["Pure Oxygen", "Hyaluronic Acid", "Antioxidants"],
     testimonials: [],
   },
-  {
-    slug: "ultimate-glow-experience",
-    title: "Ultimate Glow Experience",
-    icon: Sparkles,
-    short: "The pinnacle of skincare revitalization: Nano Glow + Pure Oxygen.",
-    description:
-      "The ultimate transformation for your skin. This premium combination treatment pairs our advanced Nano Glow Infusion with the refreshing Pure Oxygen Glow. The result is unparalleled hydration, immediate radiance, and long-term skin health benefits.",
-    image: "/images/ultimate-glow-experience.png",
-    price: "$180",
-    duration: "90 minutes",
-    bestFor: "The ultimate glow seeker wanting the maximum transformation for an event or self-care.",
-    whyLoveIt: [
-      "Best value combination",
-      "Combined benefits of two advanced technologies",
-      "Unmatched level of hydration and glow",
-    ],
-    concerns: ["aging", "dehydration", "dull-skin", "texture", "acne-scars"],
-    areas: ["face"],
-    benefits: [
-      "Maximum hydration",
-      "Immediate and lasting radiance",
-      "Deepest serum penetration",
-    ],
-    fullDescription: `The Ultimate Glow Experience is specifically designed for those who want it all. By combining the deep-reaching effects of our Nano Glow Infusion with the immediate plumping and hydrating power of Pure Oxygen, we create a skincare treatment that addresses multiple concerns in one session. Your skin will look and feel its absolute best—superbly hydrated, smooth, and radiantly luminous.`,
-    detailedBenefits: [
-      "Maximum penetration of potent serums",
-      "Intense hydration at multiple levels",
-      "Significant reduction in appearance of fine lines",
-      "Improved skin elasticity and firmness",
-      "Long-lasting 'glass skin' effect",
-    ],
-    process: [
-      {
-        step: 1,
-        title: "Preparation",
-        description: "Double cleanse and professional skin assessment.",
-      },
-      {
-        step: 2,
-        title: "Nano Infusion",
-        description: "Targeted serum delivery using nano-tip technology.",
-      },
-      {
-        step: 3,
-        title: "Oxygen Infusion",
-        description: "Cooling oxygen mist to plump and soothe.",
-      },
-      {
-        step: 4,
-        title: "Final Rejuvenation",
-        description: "A combination of cooling masks and finishing serums.",
-      },
-    ],
-    faqs: [
-      {
-        question: "Is this treatment session long?",
-        answer: "Yes, it takes about 90 minutes as it is a comprehensive, multi-step process for maximum results.",
-      },
-    ],
-    aftercare: "Continue your home care routine with extra focus on hydration for the next 48 hours.",
-    ingredients: ["Nano-Infused Serums", "Pure Oxygen", "Hyaluronic Acid", "Peptides"],
-    testimonials: [],
-  },
+
 ];
 
 export function getServiceBySlug(slug: string) {

@@ -103,11 +103,11 @@ const RECOMMENDATIONS: Record<string, any> = {
     match: "100% Match",
   },
   signature: {
-    title: "Ultimate Glow Experience",
-    slug: "ultimate-glow-experience",
-    image: "/images/ultimate-glow-experience.png",
+    title: "Oxygen Glow Infusion Facial",
+    slug: "pure-oxygen-glow",
+    image: "/images/images.jpeg",
     reason:
-      "The pinnacle of our studio. Combining Nano-Infusion and Pure Oxygen for the ultimate skin transformation—immediate radiance, deep hydration, and long-term rejuvenation.",
+      "A specialty cocktail of hyaluronic acid and antioxidants infused deep into the skin layers for instant revitalization, plumping, and radiant hydration.",
     match: "99% Match",
   },
 };
