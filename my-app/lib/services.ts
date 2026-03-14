@@ -384,7 +384,7 @@ export const SERVICES = [
     concerns: ["pigmentation", "aging", "dull-skin"],
     areas: ["face"],
     benefits: ["Evens skin tone", "Reduces fine lines", "Brightens skin"],
-    fullDescription: `The Dermalogica Lactic Acid Brightening Peel is a professional-grade peel that provides intense exfoliation and hydration. It is ideal for those with hyperpigmentation, uneven skin tone, and signs of aging. The peel is formulated with 30% lactic acid, which helps to remove dead skin cells, stimulate cell renewal, and brighten the skin.`,
+    fullDescription: `The Brightening Peel is a professional-grade peel that provides intense exfoliation and hydration. It is ideal for those with hyperpigmentation, uneven skin tone, and signs of aging. The peel is formulated with 30% lactic acid, which helps to remove dead skin cells, stimulate cell renewal, and brighten the skin.`,
     detailedBenefits: [
       "Evens out skin tone and texture",
       "Reduces the appearance of fine lines and wrinkles",
@@ -688,7 +688,7 @@ export const SERVICES = [
       "Gentle nano infusion to enhance product absorption. Boosts hydration, glow, and skin smoothness.",
     description:
       "Our Nano Glow Infusion treatment uses advanced nano-tip technology to gently open microscopic channels in the skin's surface — infusing powerful serums including hyaluronic acid, peptides, and vitamins deep into the epidermis where they work most effectively.",
-    image: "/images/nano-glow-infusion.png",
+    image: "/images/nano-glow-infusion.jpg",
     price: "Starting at $180",
     duration: "60 minutes",
     bestFor:
@@ -832,7 +832,6 @@ export const SERVICES = [
     ingredients: ["Pure Oxygen", "Hyaluronic Acid", "Antioxidants"],
     testimonials: [],
   },
-
 ];
 
 export function getServiceBySlug(slug: string) {
