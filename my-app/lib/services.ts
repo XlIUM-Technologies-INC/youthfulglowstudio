@@ -681,7 +681,7 @@ export const SERVICES = [
   },
   {
     slug: "nano-glow-infusion",
-    bookingSlug: "nano-glow-infusion-150",
+    bookingSlug: "nano-glow-infusion-facial-180",
     title: "Nano Glow Infusion Facial",
     icon: Zap,
     short:
@@ -759,6 +759,7 @@ export const SERVICES = [
   },
   {
     slug: "pure-oxygen-glow",
+    bookingSlug: "oxygen-glow-infusion-facial",
     title: "Oxygen Glow Infusion Facial",
     icon: Wind,
     short:
@@ -800,17 +801,23 @@ export const SERVICES = [
       },
       {
         step: 2,
+        title: "Mechanical, Physical or Chemical Exfoliation",
+        description:
+          "Exfoliation to remove dead skin cells and prepare the skin for optimal oxygen absorption.",
+      },
+      {
+        step: 3,
         title: "Oxygen Infusion",
         description:
           "Delivery of pure oxygen and specialized serums using a hand-held wand.",
       },
       {
-        step: 3,
+        step: 4,
         title: "Hydrating Seal",
         description: "Locking in the moisture with a lightweight hydrator.",
       },
       {
-        step: 4,
+        step: 5,
         title: "SPF Protection",
         description: "Finishing with sun protection to maintain that glow.",
       },
