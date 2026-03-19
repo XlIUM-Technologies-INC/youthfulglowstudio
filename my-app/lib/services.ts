@@ -365,6 +365,99 @@ export const SERVICES = [
     testimonials: [],
   },
   {
+    slug: "nano-oxygen-glow",
+    bookingSlug: "nano-oxygen-glow-infusion-facial",
+    title: "Nano + Oxygen Glow Infusion Facial",
+    icon: Sparkles,
+    short: "Two advanced technologies. One radiant result — no downtime.",
+    description:
+      "Our most advanced glow treatment combining nano-serum infusion with oxygen-powered hydration. This treatment is perfect for clients who want healthier, glowing skin without downtime.",
+    image: "/images/ultimate-glow-experience.jpg",
+    price: "$280",
+    duration: "90 minutes",
+    bestFor:
+      "Anyone seeking maximum glow and hydration — ideal before special events or for tired, dull skin that needs a boost.",
+    whyLoveIt: [
+      "Combines two powerful technologies",
+      "Zero downtime",
+      "Instant visible results",
+      "Deep hydration and radiance",
+    ],
+    concerns: ["dehydration", "dull-skin", "aging", "texture"],
+    areas: ["face"],
+    benefits: [
+      "Maximum hydration and glow",
+      "Enhanced product absorption",
+      "Instant radiant results",
+    ],
+    fullDescription: `Experience the ultimate glow treatment that combines two advanced technologies for one radiant result. Our Nano + Oxygen Glow Infusion Facial first uses nano-tip technology to gently open microscopic channels in the skin, infusing powerful serums deep into the epidermis. Then, pressurized oxygen delivers a specialty cocktail of hyaluronic acid and antioxidants, plumping and revitalizing the skin from within. This treatment is perfect for clients who want healthier, deeply hydrated, radiant skin — without any downtime. Ideal before events or anytime your skin needs a serious glow boost.`,
+    detailedBenefits: [
+      "Combines nano-infusion and oxygen technology",
+      "Deeply infuses vitamins and antioxidants",
+      "Immediately plumps and hydrates the skin",
+      "Reduces fine lines and wrinkles",
+      "Improves skin tone and texture",
+      "Zero downtime — instant glow",
+      "Safe for all skin types",
+    ],
+    process: [
+      {
+        step: 1,
+        title: "Cleansing",
+        description: "Double cleanse to prepare the skin for treatment.",
+      },
+      {
+        step: 2,
+        title: "Nano Infusion",
+        description:
+          "Advanced nano-tip technology delivers serums deep into the epidermis.",
+      },
+      {
+        step: 3,
+        title: "Oxygen Infusion",
+        description:
+          "Pressurized oxygen infuses hyaluronic acid and antioxidants into the skin.",
+      },
+      {
+        step: 4,
+        title: "Hydrating Seal",
+        description: "Locking in the moisture with a lightweight hydrator.",
+      },
+      {
+        step: 5,
+        title: "SPF Protection",
+        description: "Finishing with sun protection to maintain that glow.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Why combine nano and oxygen treatments?",
+        answer:
+          "Nano-infusion opens microscopic channels allowing for deeper product penetration, while oxygen infusion delivers hydration and antioxidants under pressure. Together, they provide maximum absorption and visible results.",
+      },
+      {
+        question: "Is there any downtime?",
+        answer:
+          "No downtime at all! You can return to your normal activities immediately with beautifully glowing skin.",
+      },
+      {
+        question: "How often should I get this treatment?",
+        answer:
+          "For optimal results, we recommend this treatment every 4-6 weeks, or as a special boost before important events.",
+      },
+    ],
+    aftercare:
+      "Maintain hydration and use SPF daily. Avoid harsh exfoliants for 24 hours.",
+    ingredients: [
+      "Hyaluronic Acid",
+      "Peptides",
+      "Vitamins",
+      "Pure Oxygen",
+      "Antioxidants",
+    ],
+    testimonials: [],
+  },
+  {
     slug: "chemical-peels",
     title: "Brightening Peel",
     icon: Sun,
