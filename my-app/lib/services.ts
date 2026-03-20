@@ -7,6 +7,8 @@ import {
   Sparkles,
   Sun,
   Wand2,
+  Zap,
+  Wind,
 } from "lucide-react";
 
 export const SERVICES = [
@@ -202,8 +204,15 @@ export const SERVICES = [
     description:
       "A natural mechanical resurfacing peel using marine algae crystals. Lifts pigmentation, smooths texture, reduces acne, stretch marks, and improves overall skin tone with minimal downtime.",
     image: "/images/Zena_Algae_Peel.webp",
-    price: "From $180",
-    duration: "40 minutes",
+    price: "From $200",
+    duration: "60 minutes",
+    areaPricing: [
+      { area: "Face", price: "$200" },
+      { area: "Arms / Belly / Leg", price: "$250" },
+      { area: "Back", price: "$280" },
+      { area: "Butt", price: "$280" },
+      { area: "Thighs", price: "$350" },
+    ],
     bestFor:
       "Clients with acne, scarring, dull skin, or uneven tone seeking a gentle yet powerful peel.",
     whyLoveIt: [
@@ -356,8 +365,101 @@ export const SERVICES = [
     testimonials: [],
   },
   {
+    slug: "nano-oxygen-glow",
+    bookingSlug: "nano-oxygen-glow-infusion-facial",
+    title: "Nano + Oxygen Glow Infusion Facial",
+    icon: Sparkles,
+    short: "Two advanced technologies. One radiant result — no downtime.",
+    description:
+      "Our most advanced glow treatment combining nano-serum infusion with oxygen-powered hydration. This treatment is perfect for clients who want healthier, glowing skin without downtime.",
+    image: "/images/ultimate-glow-experience.jpg",
+    price: "$280",
+    duration: "90 minutes",
+    bestFor:
+      "Anyone seeking maximum glow and hydration — ideal before special events or for tired, dull skin that needs a boost.",
+    whyLoveIt: [
+      "Combines two powerful technologies",
+      "Zero downtime",
+      "Instant visible results",
+      "Deep hydration and radiance",
+    ],
+    concerns: ["dehydration", "dull-skin", "aging", "texture"],
+    areas: ["face"],
+    benefits: [
+      "Maximum hydration and glow",
+      "Enhanced product absorption",
+      "Instant radiant results",
+    ],
+    fullDescription: `Experience the ultimate glow treatment that combines two advanced technologies for one radiant result. Our Nano + Oxygen Glow Infusion Facial first uses nano-tip technology to gently open microscopic channels in the skin, infusing powerful serums deep into the epidermis. Then, pressurized oxygen delivers a specialty cocktail of hyaluronic acid and antioxidants, plumping and revitalizing the skin from within. This treatment is perfect for clients who want healthier, deeply hydrated, radiant skin — without any downtime. Ideal before events or anytime your skin needs a serious glow boost.`,
+    detailedBenefits: [
+      "Combines nano-infusion and oxygen technology",
+      "Deeply infuses vitamins and antioxidants",
+      "Immediately plumps and hydrates the skin",
+      "Reduces fine lines and wrinkles",
+      "Improves skin tone and texture",
+      "Zero downtime — instant glow",
+      "Safe for all skin types",
+    ],
+    process: [
+      {
+        step: 1,
+        title: "Cleansing",
+        description: "Double cleanse to prepare the skin for treatment.",
+      },
+      {
+        step: 2,
+        title: "Nano Infusion",
+        description:
+          "Advanced nano-tip technology delivers serums deep into the epidermis.",
+      },
+      {
+        step: 3,
+        title: "Oxygen Infusion",
+        description:
+          "Pressurized oxygen infuses hyaluronic acid and antioxidants into the skin.",
+      },
+      {
+        step: 4,
+        title: "Hydrating Seal",
+        description: "Locking in the moisture with a lightweight hydrator.",
+      },
+      {
+        step: 5,
+        title: "SPF Protection",
+        description: "Finishing with sun protection to maintain that glow.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Why combine nano and oxygen treatments?",
+        answer:
+          "Nano-infusion opens microscopic channels allowing for deeper product penetration, while oxygen infusion delivers hydration and antioxidants under pressure. Together, they provide maximum absorption and visible results.",
+      },
+      {
+        question: "Is there any downtime?",
+        answer:
+          "No downtime at all! You can return to your normal activities immediately with beautifully glowing skin.",
+      },
+      {
+        question: "How often should I get this treatment?",
+        answer:
+          "For optimal results, we recommend this treatment every 4-6 weeks, or as a special boost before important events.",
+      },
+    ],
+    aftercare:
+      "Maintain hydration and use SPF daily. Avoid harsh exfoliants for 24 hours.",
+    ingredients: [
+      "Hyaluronic Acid",
+      "Peptides",
+      "Vitamins",
+      "Pure Oxygen",
+      "Antioxidants",
+    ],
+    testimonials: [],
+  },
+  {
     slug: "chemical-peels",
-    title: "Dermalogica Lactic Acid Brightening Peels",
+    title: "Brightening Peel",
     icon: Sun,
     short: "30% Lactic acid peel for intense brightening and hydration.",
     description:
@@ -375,7 +477,7 @@ export const SERVICES = [
     concerns: ["pigmentation", "aging", "dull-skin"],
     areas: ["face"],
     benefits: ["Evens skin tone", "Reduces fine lines", "Brightens skin"],
-    fullDescription: `The Dermalogica Lactic Acid Brightening Peel is a professional-grade peel that provides intense exfoliation and hydration. It is ideal for those with hyperpigmentation, uneven skin tone, and signs of aging. The peel is formulated with 30% lactic acid, which helps to remove dead skin cells, stimulate cell renewal, and brighten the skin.`,
+    fullDescription: `The Brightening Peel is a professional-grade peel that provides intense exfoliation and hydration. It is ideal for those with hyperpigmentation, uneven skin tone, and signs of aging. The peel is formulated with 30% lactic acid, which helps to remove dead skin cells, stimulate cell renewal, and brighten the skin.`,
     detailedBenefits: [
       "Evens out skin tone and texture",
       "Reduces the appearance of fine lines and wrinkles",
@@ -576,14 +678,34 @@ export const SERVICES = [
   },
   {
     slug: "waxing",
-    title: "Waxing Hair Removal",
+    title: "Waxing / Hair Removal",
     icon: Wand2,
-    short: "Professional waxing for smooth, long-lasting results.",
+    short: "Professional waxing for smooth skin lasting weeks.",
     description:
-      "Professional hair removal using hygienic techniques for smooth skin lasting weeks. Suitable for face and body.",
+      "Professional hair removal using hygienic techniques for smooth skin lasting weeks.",
     image: "/images/Hair_Removal.webp",
     price: "From $10",
     duration: "Varies",
+    areaPricing: [
+      { area: "Brows", price: "$10", category: "Face" },
+      { area: "Brows & Upper Lip", price: "$15", category: "Face" },
+      { area: "Lip & Chin", price: "$15", category: "Face" },
+      { area: "Full Face", price: "$40", category: "Face" },
+      { area: "Under Arms", price: "$20", category: "Arms" },
+      { area: "Half Arms", price: "$30", category: "Arms" },
+      { area: "Full Arms", price: "$45", category: "Arms" },
+      { area: "Lower Legs", price: "$35", category: "Legs" },
+      { area: "Upper Legs", price: "$40", category: "Legs" },
+      { area: "Full Legs", price: "$65", category: "Legs" },
+      { area: "Full Legs with Bikini", price: "$70", category: "Legs" },
+      { area: "Bikini Line", price: "$20", category: "Bikini" },
+      { area: "Belly Line", price: "$20", category: "Bikini" },
+      { area: "Brazilian", price: "$50", category: "Bikini" },
+      { area: "Back & Chest", price: "$80", category: "Body" },
+      { area: "Back & Shoulders", price: "$70", category: "Body" },
+      { area: "Chest & Abdomen", price: "$60", category: "Body" },
+      { area: "Full Body", price: "$170", category: "Full Body" },
+    ],
     bestFor: "Anyone wanting longer-lasting smoothness than shaving.",
     whyLoveIt: [
       "Smooth results for weeks",
@@ -597,7 +719,7 @@ export const SERVICES = [
       "Softer and finer hair regrowth",
       "Exfoliates the skin",
     ],
-    fullDescription: `Waxing is a popular hair removal method that is effective for removing hair from all parts of the body. It is a great alternative to shaving, as it provides longer-lasting results and can help to reduce hair growth over time.`,
+    fullDescription: `Professional waxing and hair removal for smooth skin lasting weeks. Full Body waxing includes Full Legs, Full Arms, Under Arms, and Brazilian.`,
     detailedBenefits: [
       "Long-lasting results (2-8 weeks)",
       "Softer and finer hair regrowth",
@@ -648,6 +770,166 @@ export const SERVICES = [
     aftercare:
       "Avoid sun exposure, hot baths, and saunas for 24 hours after waxing. Exfoliate the skin a few days after waxing to prevent ingrown hairs.",
     ingredients: ["Wax"],
+    testimonials: [],
+  },
+  {
+    slug: "nano-glow-infusion",
+    bookingSlug: "nano-glow-infusion-facial-180",
+    title: "Nano Glow Infusion Facial",
+    icon: Zap,
+    short:
+      "Gentle nano infusion to enhance product absorption. Boosts hydration, glow, and skin smoothness.",
+    description:
+      "Our Nano Glow Infusion treatment uses advanced nano-tip technology to gently open microscopic channels in the skin's surface — infusing powerful serums including hyaluronic acid, peptides, and vitamins deep into the epidermis where they work most effectively.",
+    image: "/images/nano-glow-infusion.jpg",
+    price: "Starting at $180",
+    duration: "60 minutes",
+    bestFor:
+      "Treatment targets: acne scarring, aging skin, combination skin, dark spots, dehydration, dry and sensitive skin, hyperpigmentation, mature skin, oily skin, sun damaged skin, and wrinkles.",
+    whyLoveIt: [
+      "Completely comfortable & painless",
+      "Zero downtime",
+      "Safe for all skin types, including sensitive",
+      "Immediate visible results",
+    ],
+    concerns: [
+      "acne-scars",
+      "aging",
+      "hyperpigmentation",
+      "dehydration",
+      "dull-skin",
+    ],
+    areas: ["face"],
+    benefits: ["Smoother skin texture", "Improved hydration", "Radiant glow"],
+    fullDescription: `Our Nano Glow Infusion treatment uses advanced nano-tip technology to gently open microscopic channels in the skin's surface — infusing powerful serums including hyaluronic acid, peptides, and vitamins deep into the epidermis where they work most effectively. Unlike traditional microneedling, our Nano Glow Infusion is completely comfortable, requires zero downtime, and is safe for all skin types including sensitive skin. Your skin will be visibly smoother, more hydrated, and radiantly glowing — immediately after your very first session.`,
+    detailedBenefits: [
+      "Deeply infuses vitamins and antioxidants",
+      "Reduces appearance of acne scarring",
+      "Smooths fine lines and wrinkles",
+      "Improves skin tone and clarity",
+      "Boosts natural hydration levels",
+      "Safe for sensitive skin and dark spots",
+    ],
+    process: [
+      {
+        step: 1,
+        title: "Cleansing",
+        description: "Double cleanse to prepare the skin for treatment.",
+      },
+      {
+        step: 2,
+        title: "Nano Infusion",
+        description:
+          "Advanced nano-tip technology delivers serums deep into the epidermis.",
+      },
+      {
+        step: 3,
+        title: "Soothing Mask",
+        description: "Application of a calming mask to enhance the glow.",
+      },
+      {
+        step: 4,
+        title: "Finishing Touches",
+        description: "Final serums, moisturizer, and SPF application.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Is this the same as microneedling?",
+        answer:
+          "No, nano-infusion is non-invasive and painless, using microscopic tips rather than needles. It requires zero downtime.",
+      },
+      {
+        question: "How soon will I see results?",
+        answer:
+          "You will see an immediate glow and smoother texture right after your first session.",
+      },
+    ],
+    aftercare:
+      "Maintain hydration and use SPF daily. Avoid harsh exfoliants for 24 hours.",
+    ingredients: ["Hyaluronic Acid", "Peptides", "Vitamins"],
+    testimonials: [],
+  },
+  {
+    slug: "pure-oxygen-glow",
+    bookingSlug: "oxygen-glow-infusion-facial",
+    title: "Oxygen Glow Infusion Facial",
+    icon: Wind,
+    short:
+      "Oxygen infusion to revitalize, brighten, and hydrate skin — perfect before events.",
+    description:
+      "Our Oxygen Glow Infusion Facial treatment delivers highly concentrated oxygen and a customized blend of vitamins, minerals, and hyaluronic acid deep into the skin's surface. This non-invasive procedure immediately revitalizes oxygen-starved skin, leaving it visibly plump, hydrated, and radiant.",
+    image: "/images/images.jpeg",
+    price: "$180",
+    duration: "90 minutes",
+    bestFor:
+      "Dehydrated skin, fine lines, dull complexion, and anyone looking for a quick, effective glow before an event.",
+    whyLoveIt: [
+      "Instant plumping effect",
+      "Refreshing and cooling sensation",
+      "Perfect 'Red Carpet' ready skin",
+      "Deeply hydrating",
+    ],
+    concerns: ["dehydration", "dull-skin", "aging"],
+    areas: ["face"],
+    benefits: [
+      "Deeply hydrates and plumps",
+      "Reduces appearance of fine lines",
+      "Brightens the complexion",
+    ],
+    fullDescription: `Experience the ultimate breath of fresh air for your skin with our Oxygen Glow Infusion Facial. This treatment uses pressurized oxygen to infuse a specialty cocktail of hyaluronic acid and antioxidants deep into the skin layers. It's the perfect solution for tired, dull, or dehydrated skin that needs an instant boost of life and radiance.`,
+    detailedBenefits: [
+      "Immediately plumps the skin",
+      "Reduces fine lines and wrinkles",
+      "Encourages collagen production",
+      "Detoxifies the skin",
+      "Enhances overall skin tone and texture",
+      "No recovery time needed",
+    ],
+    process: [
+      {
+        step: 1,
+        title: "Cleansing",
+        description: "Gentle cleanse to remove surface impurities.",
+      },
+      {
+        step: 2,
+        title: "Mechanical, Physical or Chemical Exfoliation",
+        description:
+          "Exfoliation to remove dead skin cells and prepare the skin for optimal oxygen absorption.",
+      },
+      {
+        step: 3,
+        title: "Oxygen Infusion",
+        description:
+          "Delivery of pure oxygen and specialized serums using a hand-held wand.",
+      },
+      {
+        step: 4,
+        title: "Hydrating Seal",
+        description: "Locking in the moisture with a lightweight hydrator.",
+      },
+      {
+        step: 5,
+        title: "SPF Protection",
+        description: "Finishing with sun protection to maintain that glow.",
+      },
+    ],
+    faqs: [
+      {
+        question: "What does it feel like?",
+        answer:
+          "It feels like a cool, refreshing mist on your face. Most clients find it very relaxing.",
+      },
+      {
+        question: "Is it good for acne?",
+        answer:
+          "Yes, oxygen helps to calm inflammation and can help in the healing process of acne.",
+      },
+    ],
+    aftercare:
+      "Avoid heavy makeup for a few hours. Keep skin hydrated with serums.",
+    ingredients: ["Pure Oxygen", "Hyaluronic Acid", "Antioxidants"],
     testimonials: [],
   },
 ];

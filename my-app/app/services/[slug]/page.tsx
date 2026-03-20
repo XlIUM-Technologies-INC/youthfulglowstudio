@@ -15,6 +15,7 @@ import {
   Star,
   List,
   HelpCircle,
+  Layers,
 } from "lucide-react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
@@ -194,15 +195,17 @@ export default function ServicePage({
                       ))}
                     </ul>
                   </div>
+
+                  {/* Area Pricing Table - moved below grid as full width */}
                 </div>
-                <div className="relative">
+                <div className="relative lg:sticky lg:top-28 lg:self-start">
                   <div className="absolute inset-0 bg-gradient-to-br from-[#E0C58F]/20 to-[#112250]/10 rounded-3xl blur-3xl -z-10"></div>
                   <img
                     src={service.image}
-                    className="rounded-3xl shadow-2xl w-full aspect-square object-cover"
+                    className="rounded-3xl shadow-2xl w-full max-h-[500px] object-cover"
                     alt="Service feature"
                   />
-                  <div className="absolute -bottom-8 -left-8 bg-white p-6 rounded-2xl shadow-xl border border-gray-100 hidden md:block max-w-xs">
+                  <div className="mt-6 bg-white p-6 rounded-2xl shadow-xl border border-gray-100 hidden md:block">
                     <div className="flex gap-1 mb-2">
                       {[...Array(5)].map((_, i) => (
                         <Star
@@ -218,6 +221,123 @@ export default function ServicePage({
                   </div>
                 </div>
               </motion.div>
+            )}
+
+            {/* Full-width Area Pricing (below the two-column grid) */}
+            {activeTab === "overview" &&
+              (service as any).areaPricing &&
+              (() => {
+                const items = (service as any).areaPricing as {
+                  area: string;
+                  price: string;
+                  category?: string;
+                }[];
+                const categories = [
+                  ...new Set(items.map((i) => i.category || "")),
+                ];
+                const hasCategories = categories.some((c) => c !== "");
+                return (
+                  <div className="mt-16 bg-gradient-to-br from-[#F5F0E9] to-white p-6 sm:p-8 rounded-3xl border border-[#E0C58F]/30 shadow-lg">
+                    <h3 className="text-xl font-bold text-[#112250] mb-2 flex items-center gap-2">
+                      <DollarSign className="w-5 h-5 text-[#E0C58F]" />
+                      Pricing
+                    </h3>
+                    <p className="text-[#3C507D] text-sm mb-5">
+                      Treatment pricing varies depending on the area:
+                    </p>
+                    {hasCategories ? (
+                      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {categories.filter(Boolean).map((cat) => (
+                          <div key={cat}>
+                            <h4 className="font-bold text-[#112250] text-sm uppercase tracking-wider mb-3 flex items-center gap-2">
+                              <div className="h-px flex-1 bg-[#E0C58F]/30"></div>
+                              {cat}
+                              <div className="h-px flex-1 bg-[#E0C58F]/30"></div>
+                            </h4>
+                            <div className="space-y-2">
+                              {items
+                                .filter((i) => i.category === cat)
+                                .map((item, i) => (
+                                  <div
+                                    key={i}
+                                    className="flex items-center justify-between bg-white px-4 py-2.5 rounded-xl border border-[#E0C58F]/20 hover:border-[#E0C58F]/50 hover:shadow-sm transition-all duration-300"
+                                  >
+                                    <span className="text-sm font-medium text-[#112250]">
+                                      {item.area}
+                                    </span>
+                                    <span
+                                      className={`font-bold px-2.5 py-0.5 rounded-lg text-xs ${item.price === "Inquire" ? "text-[#3C507D] bg-[#F5F0E9] border border-[#E0C58F]/30" : "text-[#E0C58F] bg-[#112250]"}`}
+                                    >
+                                      {item.price}
+                                    </span>
+                                  </div>
+                                ))}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    ) : (
+                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
+                        {items.map((item, i) => (
+                          <div
+                            key={i}
+                            className="flex items-center justify-between bg-white px-4 py-2.5 rounded-xl border border-[#E0C58F]/20 hover:border-[#E0C58F]/50 hover:shadow-sm transition-all duration-300"
+                          >
+                            <span className="text-sm font-medium text-[#112250]">
+                              {item.area}
+                            </span>
+                            <span className="font-bold text-[#E0C58F] bg-[#112250] px-2.5 py-0.5 rounded-lg text-xs">
+                              {item.price}
+                            </span>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                );
+              })()}
+
+            {/* Full-width Add-On Options */}
+            {activeTab === "overview" && (service as any).addOns && (
+              <div className="mt-10 bg-gradient-to-br from-[#F5F0E9] to-white p-8 rounded-3xl border border-[#E0C58F]/30 shadow-lg">
+                <h3 className="text-xl font-bold text-[#112250] mb-2 flex items-center gap-2">
+                  <Layers className="w-5 h-5 text-[#E0C58F]" />
+                  Choose Your Treatment Add-On
+                </h3>
+                <p className="text-[#3C507D] text-sm mb-5">
+                  Select one of the following add-on treatments to customize
+                  your session:
+                </p>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  {(service as any).addOns.map(
+                    (
+                      addOn: { name: string; description: string },
+                      i: number,
+                    ) => (
+                      <div
+                        key={i}
+                        className="flex items-start gap-3 bg-white p-4 rounded-2xl border border-[#E0C58F]/20 hover:border-[#E0C58F]/50 hover:shadow-md transition-all duration-300"
+                      >
+                        <div className="w-8 h-8 bg-[#112250] rounded-xl flex items-center justify-center shrink-0 mt-0.5">
+                          <Check className="w-4 h-4 text-[#E0C58F]" />
+                        </div>
+                        <div>
+                          <span className="font-bold text-[#112250] block">
+                            {addOn.name}
+                          </span>
+                          <span className="text-[#3C507D] text-sm">
+                            {addOn.description}
+                          </span>
+                        </div>
+                      </div>
+                    ),
+                  )}
+                </div>
+                <p className="text-xs text-[#3C507D]/70 mt-4 italic">
+                  You can finalize your add-on choice during your consultation
+                  with Marcia.
+                </p>
+              </div>
             )}
 
             {activeTab === "benefits" && (

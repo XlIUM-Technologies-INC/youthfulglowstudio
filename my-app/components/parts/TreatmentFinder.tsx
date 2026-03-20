@@ -31,6 +31,13 @@ const CONCERNS = [
     description: "Clarify & rebalance skin",
   },
   {
+    id: "signature",
+    label: "Signature Glow",
+    icon: Zap,
+    color: "from-amber-200 to-yellow-500",
+    description: "High-tech skin transformation",
+  },
+  {
     id: "restore",
     label: "Relax & Restore",
     icon: Waves,
@@ -93,6 +100,14 @@ const RECOMMENDATIONS: Record<string, any> = {
     reason:
       "Our Made For You Facial is ideal for first-timers. We assess your skin, tailor every step to your needs, and create a treatment that delivers visible results while keeping your skin calm, balanced, and healthy.",
     match: "100% Match",
+  },
+  signature: {
+    title: "Oxygen Glow Infusion Facial",
+    slug: "pure-oxygen-glow",
+    image: "/images/images.jpeg",
+    reason:
+      "A specialty cocktail of hyaluronic acid and antioxidants infused deep into the skin layers for instant revitalization, plumping, and radiant hydration.",
+    match: "99% Match",
   },
 };
 
