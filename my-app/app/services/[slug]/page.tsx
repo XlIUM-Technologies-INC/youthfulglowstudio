@@ -202,10 +202,10 @@ export default function ServicePage({
                   <div className="absolute inset-0 bg-gradient-to-br from-[#E0C58F]/20 to-[#112250]/10 rounded-3xl blur-3xl -z-10"></div>
                   <img
                     src={service.image}
-                    className="rounded-3xl shadow-2xl w-full aspect-square object-cover"
+                    className="rounded-3xl shadow-2xl w-full max-h-[500px] object-cover"
                     alt="Service feature"
                   />
-                  <div className="absolute -bottom-8 -left-8 bg-white p-6 rounded-2xl shadow-xl border border-gray-100 hidden md:block max-w-xs">
+                  <div className="mt-6 bg-white p-6 rounded-2xl shadow-xl border border-gray-100 hidden md:block">
                     <div className="flex gap-1 mb-2">
                       {[...Array(5)].map((_, i) => (
                         <Star
