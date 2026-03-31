@@ -371,9 +371,9 @@ export const SERVICES = [
     icon: Sparkles,
     short: "Two advanced technologies. One radiant result — no downtime.",
     description:
-      "Our most advanced glow treatment combining nano-serum infusion with oxygen-powered hydration. This treatment is perfect for clients who want healthier, glowing skin without downtime.",
+      "Experience the ultimate in skin renewal with our Nano + Oxygen Glow Infusion—a powerful, results-driven treatment that combines advanced exfoliation, transdermal infusion, and oxygen therapy for visibly radiant, healthy skin.",
     image: "/images/ultimate-glow-experience.jpg",
-    price: "$280",
+    price: "Starting at $180",
     duration: "90 minutes",
     bestFor:
       "Anyone seeking maximum glow and hydration — ideal before special events or for tired, dull skin that needs a boost.",
@@ -390,7 +390,17 @@ export const SERVICES = [
       "Enhanced product absorption",
       "Instant radiant results",
     ],
-    fullDescription: `Experience the ultimate glow treatment that combines two advanced technologies for one radiant result. Our Nano + Oxygen Glow Infusion Facial first uses nano-tip technology to gently open microscopic channels in the skin, infusing powerful serums deep into the epidermis. Then, pressurized oxygen delivers a specialty cocktail of hyaluronic acid and antioxidants, plumping and revitalizing the skin from within. This treatment is perfect for clients who want healthier, deeply hydrated, radiant skin — without any downtime. Ideal before events or anytime your skin needs a serious glow boost.`,
+    fullDescription: `Experience the ultimate in skin renewal with our Nano + Oxygen Glow Infusion—a powerful, results-driven treatment that combines advanced exfoliation, transdermal infusion, and oxygen therapy for visibly radiant, healthy skin.
+
+This multi-corrective facial begins with nano-needling (transdermal infusion), creating microscopic channels in the skin to deliver customized, infusion serum(s) deep into the epidermis—targeting concerns such as uneven texture, hyperpigmentation, fine lines, and dullness.
+
+The treatment is then enhanced with our Oxygen Glow Infusion system, using pressurized oxygen and bio-available nano-emulsion technology to further infuse the skin with nutrient-rich serum(s). This process creates an oxygen-rich environment that supports optimal skin function and promotes a revitalized, glowing complexion at the cellular level.
+
+Powered by the synergy of science and nature, this advanced treatment delivers deep hydration, improved skin tone and texture, and long-lasting, healthy skin results.
+
+Suitable for all skin types, tones, and conditions, this non-invasive treatment requires no downtime—making it the perfect choice for clients seeking both immediate glow and ongoing skin transformation.
+
+Perfect before special events or anytime your skin needs a noticeable, radiant boost.`,
     detailedBenefits: [
       "Combines nano-infusion and oxygen technology",
       "Deeply infuses vitamins and antioxidants",
@@ -416,7 +426,7 @@ export const SERVICES = [
         step: 3,
         title: "Oxygen Infusion",
         description:
-          "Pressurized oxygen infuses hyaluronic acid and antioxidants into the skin.",
+          "Pressurized oxygen and bio-available nano-emulsion technology infuse nutrient-rich serum(s) into the skin.",
       },
       {
         step: 4,
@@ -449,7 +459,7 @@ export const SERVICES = [
     aftercare:
       "Maintain hydration and use SPF daily. Avoid harsh exfoliants for 24 hours.",
     ingredients: [
-      "Hyaluronic Acid",
+      "Customized Infusion Serums",
       "Peptides",
       "Vitamins",
       "Pure Oxygen",
@@ -780,9 +790,9 @@ export const SERVICES = [
     short:
       "Gentle nano infusion to enhance product absorption. Boosts hydration, glow, and skin smoothness.",
     description:
-      "Our Nano Glow Infusion treatment uses advanced nano-tip technology to gently open microscopic channels in the skin's surface — infusing powerful serums including hyaluronic acid, peptides, and vitamins deep into the epidermis where they work most effectively.",
+      "Our Nano Glow Infusion is a non-invasive, transdermal infusion treatment—also known as nano-needling—designed to rejuvenate the skin and target a variety of common skin concerns. Using advanced nano-tip technology, this treatment creates microscopic channels in the skin's surface, allowing customized infusion serum(s) to be delivered deeper into the epidermis for enhanced absorption and results.",
     image: "/images/nano-glow-infusion.jpg",
-    price: "Starting at $180",
+    price: "Starting at $140",
     duration: "60 minutes",
     bestFor:
       "Treatment targets: acne scarring, aging skin, combination skin, dark spots, dehydration, dry and sensitive skin, hyperpigmentation, mature skin, oily skin, sun damaged skin, and wrinkles.",
@@ -801,7 +811,13 @@ export const SERVICES = [
     ],
     areas: ["face"],
     benefits: ["Smoother skin texture", "Improved hydration", "Radiant glow"],
-    fullDescription: `Our Nano Glow Infusion treatment uses advanced nano-tip technology to gently open microscopic channels in the skin's surface — infusing powerful serums including hyaluronic acid, peptides, and vitamins deep into the epidermis where they work most effectively. Unlike traditional microneedling, our Nano Glow Infusion is completely comfortable, requires zero downtime, and is safe for all skin types including sensitive skin. Your skin will be visibly smoother, more hydrated, and radiantly glowing — immediately after your very first session.`,
+    fullDescription: `Our Nano Glow Infusion is a non-invasive, transdermal infusion treatment—also known as nano-needling—designed to rejuvenate the skin and target a variety of common skin concerns.
+
+Using advanced nano-tip technology, this treatment creates microscopic channels in the skin's surface, allowing customized Infusion serum(s) to be delivered deeper into the epidermis for enhanced absorption and results. Each treatment is tailored to your skin type and specific concerns.
+
+This gentle yet effective treatment helps improve overall skin tone, refine uneven texture, and reduce the appearance of hyperpigmentation, scarring, fine lines, and wrinkles.
+
+Nano Glow Infusion is completely comfortable, requires no downtime, and is suitable for all skin types, including sensitive skin. The result is smoother, healthier-looking skin with a radiant, natural glow after just one session.`,
     detailedBenefits: [
       "Deeply infuses vitamins and antioxidants",
       "Reduces appearance of acne scarring",
@@ -818,17 +834,23 @@ export const SERVICES = [
       },
       {
         step: 2,
-        title: "Nano Infusion",
+        title: "Exfoliation",
         description:
-          "Advanced nano-tip technology delivers serums deep into the epidermis.",
+          "Gentle exfoliation to remove dead skin cells and prepare the skin for optimal serum absorption.",
       },
       {
         step: 3,
+        title: "Nano Infusion",
+        description:
+          "Advanced nano-tip technology delivers customized infusion serum(s) deep into the epidermis.",
+      },
+      {
+        step: 4,
         title: "Soothing Mask",
         description: "Application of a calming mask to enhance the glow.",
       },
       {
-        step: 4,
+        step: 5,
         title: "Finishing Touches",
         description: "Final serums, moisturizer, and SPF application.",
       },
@@ -847,7 +869,7 @@ export const SERVICES = [
     ],
     aftercare:
       "Maintain hydration and use SPF daily. Avoid harsh exfoliants for 24 hours.",
-    ingredients: ["Hyaluronic Acid", "Peptides", "Vitamins"],
+    ingredients: ["Customized Infusion Serums", "Peptides", "Vitamins"],
     testimonials: [],
   },
   {
@@ -858,9 +880,9 @@ export const SERVICES = [
     short:
       "Oxygen infusion to revitalize, brighten, and hydrate skin — perfect before events.",
     description:
-      "Our Oxygen Glow Infusion Facial treatment delivers highly concentrated oxygen and a customized blend of vitamins, minerals, and hyaluronic acid deep into the skin's surface. This non-invasive procedure immediately revitalizes oxygen-starved skin, leaving it visibly plump, hydrated, and radiant.",
+      "Experience a true breath of fresh air for your skin with our Oxygen Glow Infusion Facial—a results-driven treatment designed to deeply hydrate, revitalize, and restore your natural radiance. This advanced delivery system uses pressurized oxygen combined with bio-available nano-emulsion technology to infuse customized infusion serum(s) into the skin, enhancing absorption and overall effectiveness.",
     image: "/images/images.jpeg",
-    price: "$180",
+    price: "Starting at $150",
     duration: "90 minutes",
     bestFor:
       "Dehydrated skin, fine lines, dull complexion, and anyone looking for a quick, effective glow before an event.",
@@ -877,7 +899,17 @@ export const SERVICES = [
       "Reduces appearance of fine lines",
       "Brightens the complexion",
     ],
-    fullDescription: `Experience the ultimate breath of fresh air for your skin with our Oxygen Glow Infusion Facial. This treatment uses pressurized oxygen to infuse a specialty cocktail of hyaluronic acid and antioxidants deep into the skin layers. It's the perfect solution for tired, dull, or dehydrated skin that needs an instant boost of life and radiance.`,
+    fullDescription: `Experience a true breath of fresh air for your skin with our Oxygen Glow Infusion Facial—a results-driven treatment designed to deeply hydrate, revitalize, and restore your natural radiance.
+
+This advanced delivery system uses pressurized oxygen combined with bio-available nano-emulsion technology to infuse customized, infusion serum(s) into the skin, enhancing absorption and overall effectiveness.
+
+Powered by the synergy of science and nature, this treatment creates an oxygen-rich environment that supports optimal skin function and promotes a healthy, revitalized complexion at the cellular level.
+
+Ideal for all skin types, tones, and conditions, the Oxygen Glow Infusion helps improve hydration, brighten dull skin, and restore a smooth, luminous appearance. With continued treatments, clients can experience long-lasting, healthy skin results while working toward their individual skincare goals.
+
+This relaxing, non-invasive treatment requires no downtime—leaving your skin instantly refreshed, radiant, and glowing.
+
+Perfect before special events or anytime your skin needs an instant glow boost.`,
     detailedBenefits: [
       "Immediately plumps the skin",
       "Reduces fine lines and wrinkles",
@@ -929,7 +961,7 @@ export const SERVICES = [
     ],
     aftercare:
       "Avoid heavy makeup for a few hours. Keep skin hydrated with serums.",
-    ingredients: ["Pure Oxygen", "Hyaluronic Acid", "Antioxidants"],
+    ingredients: ["Pure Oxygen", "Customized Infusion Serums", "Antioxidants"],
     testimonials: [],
   },
 ];
