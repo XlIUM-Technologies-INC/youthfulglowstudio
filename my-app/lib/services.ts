@@ -204,7 +204,7 @@ export const SERVICES = [
     description:
       "A natural mechanical resurfacing peel using marine algae crystals. Lifts pigmentation, smooths texture, reduces acne, stretch marks, and improves overall skin tone with minimal downtime.",
     image: "/images/Zena_Algae_Peel.webp",
-    price: "From $200",
+    price: "$200",
     duration: "60 minutes",
     areaPricing: [
       { area: "Face", price: "$200" },
@@ -290,7 +290,7 @@ export const SERVICES = [
     description:
       "A gentle yet effective exfoliation using a diamond-tipped wand to remove dead skin cells, followed by hydrating serums, mask, moisturizer, and SPF.",
     image: "/images/Microdermabrasion.webp",
-    price: "Starting at $110",
+    price: "$110",
     packagePrice: "Package of 6 – $600 (Save $120)",
     duration: "60 minutes",
     bestFor:
@@ -373,7 +373,7 @@ export const SERVICES = [
     description:
       "Experience the ultimate in skin renewal with our Nano + Oxygen Glow Infusion—a powerful, results-driven treatment that combines advanced exfoliation, transdermal infusion, and oxygen therapy for visibly radiant, healthy skin.",
     image: "/images/ultimate-glow-experience.jpg",
-    price: "Starting at $180",
+    price: "$180",
     duration: "90 minutes",
     bestFor:
       "Anyone seeking maximum glow and hydration — ideal before special events or for tired, dull skin that needs a boost.",
@@ -475,7 +475,7 @@ Perfect before special events or anytime your skin needs a noticeable, radiant b
     description:
       "A professional-grade brightening peel with 30% lactic acid. Ideal for hyperpigmentation and uneven skin tone, leaving your skin with a healthy, radiant glow.",
     image: "/images/Lactic_Acid_Brightening.webp",
-    price: "Starting at $110",
+    price: "$110",
     duration: "60 minutes",
     bestFor:
       "Clients with hyperpigmentation, uneven skin tone, or signs of aging.",
@@ -694,7 +694,7 @@ Perfect before special events or anytime your skin needs a noticeable, radiant b
     description:
       "Professional hair removal using hygienic techniques for smooth skin lasting weeks.",
     image: "/images/Hair_Removal.webp",
-    price: "From $10",
+    price: "$10",
     duration: "Varies",
     areaPricing: [
       { area: "Brows", price: "$10", category: "Face" },
@@ -792,7 +792,7 @@ Perfect before special events or anytime your skin needs a noticeable, radiant b
     description:
       "Our Nano Glow Infusion is a non-invasive, transdermal infusion treatment—also known as nano-needling—designed to rejuvenate the skin and target a variety of common skin concerns. Using advanced nano-tip technology, this treatment creates microscopic channels in the skin's surface, allowing customized infusion serum(s) to be delivered deeper into the epidermis for enhanced absorption and results.",
     image: "/images/nano-glow-infusion.jpg",
-    price: "Starting at $140",
+    price: "$140",
     duration: "60 minutes",
     bestFor:
       "Treatment targets: acne scarring, aging skin, combination skin, dark spots, dehydration, dry and sensitive skin, hyperpigmentation, mature skin, oily skin, sun damaged skin, and wrinkles.",
@@ -882,7 +882,7 @@ Nano Glow Infusion is completely comfortable, requires no downtime, and is suita
     description:
       "Experience a true breath of fresh air for your skin with our Oxygen Glow Infusion Facial—a results-driven treatment designed to deeply hydrate, revitalize, and restore your natural radiance. This advanced delivery system uses pressurized oxygen combined with bio-available nano-emulsion technology to infuse customized infusion serum(s) into the skin, enhancing absorption and overall effectiveness.",
     image: "/images/images.jpeg",
-    price: "Starting at $150",
+    price: "$150",
     duration: "90 minutes",
     bestFor:
       "Dehydrated skin, fine lines, dull complexion, and anyone looking for a quick, effective glow before an event.",
