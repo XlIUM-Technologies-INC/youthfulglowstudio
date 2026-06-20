@@ -53,7 +53,7 @@ export default function BookingPage() {
           <div className="bg-white rounded-3xl shadow-lg p-8 text-center border border-[#E0C58F]/10">
             <MapPin className="w-12 h-12 text-[#E0C58F] mx-auto mb-4" />
             <h3 className="text-xl font-bold mb-2 text-[#112250]">Our Location</h3>
-            <p className="text-[#3C507D] font-medium">1425A Block Line Road, Kitchener, Ontario</p>
+            <p className="text-[#3C507D] font-medium">Mississauga, ON | By Appointment Only</p>
           </div>
 
           <div className="bg-white rounded-3xl shadow-lg p-8 text-center border border-[#E0C58F]/10">
