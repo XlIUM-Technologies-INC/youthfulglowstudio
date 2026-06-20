@@ -34,7 +34,7 @@ export default function Footer() {
             </div>
             <p className="text-[#D9CBC2] text-sm mb-4">
               Certified Medical Skincare Esthetician <br />
-              Kitchener, ON
+              Mississauga, ON
             </p>
             <p className="text-[#D9CBC2]/80 leading-relaxed italic">
               "Personalized medical-grade skincare treatments designed to help
@@ -116,7 +116,7 @@ export default function Footer() {
 
               <li className="flex gap-3">
                 <MapPin className="w-5 h-5 text-[#E0C58F]" />
-                <span>1425A Block Line Road, Kitchener, Ontario</span>
+                <span>Mississauga, ON | By Appointment Only</span>
               </li>
 
               <li className="text-sm leading-relaxed pt-2">

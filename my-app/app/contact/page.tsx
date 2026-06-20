@@ -116,9 +116,9 @@ export default function ContactPage() {
                 <div>
                   <h3 className="font-bold text-[#112250] mb-1">Location</h3>
                   <p className="text-[#3C507D] font-medium">
-                    1425A Block Line Road
+                    Mississauga, ON
                     <br />
-                    Kitchener, Ontario
+                    By Appointment Only
                   </p>
                 </div>
               </div>
@@ -228,7 +228,7 @@ export default function ContactPage() {
               loading="lazy"
               allowFullScreen
               referrerPolicy="no-referrer-when-downgrade"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2898.07084236343!2d-80.4709140228557!3d43.41734657111438!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882bf5dfd07f715d%3A0xa08a452a1fbbbbfd!2sYOUTHFUL%20GLOW%20STUDIO!5e0!3m2!1sen!2s!4v1768850320418!5m2!1sen!2s"
+              src="https://www.google.com/maps?q=3665+Arista+Way,+Mississauga,+Ontario&output=embed"
             ></iframe>
           </div>
         </section>
