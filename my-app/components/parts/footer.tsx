@@ -114,10 +114,7 @@ export default function Footer() {
                 </a>
               </li>
 
-              <li className="flex gap-3">
-                <MapPin className="w-5 h-5 text-[#E0C58F]" />
-                <span>Mississauga, ON | By Appointment Only</span>
-              </li>
+              
 
               <li className="text-sm leading-relaxed pt-2">
                 <strong>Business Hours</strong> <br />
