@@ -468,6 +468,134 @@ Perfect before special events or anytime your skin needs a noticeable, radiant b
     testimonials: [],
   },
   {
+    slug: "hydroderm-glow-facial",
+    bookingSlug: "hydroderm-glow-facial-to-reserve-appointment-50-e-transfer-deposit-to-youthfulglowstudio-gmail.com",
+    title: "HydroDerm Glow Facial",
+    icon: Droplets,
+    short: "Advanced hydrodermabrasion for deeply cleansed, hydrated, radiant skin.",
+    description:
+      "An advanced, non-invasive treatment that deeply cleanses, gently exfoliates, hydrates, and replenishes the skin in one relaxing session — using a specialized hydrodermabrasion system.",
+    image: "/images/HydroDermGlowFacial.jpeg",
+    price: "Starting @ $150",
+    duration: "60 minutes",
+    bestFor:
+      "All skin types, including sensitive — ideal for dehydrated, dull, congested, or oily skin seeking regular maintenance and a healthy glow.",
+    whyLoveIt: [
+      "No discomfort or downtime",
+      "Suitable for all skin types",
+      "Instant freshness and hydration",
+      "Visibly smoother and more radiant skin",
+    ],
+    concerns: ["dehydration", "dull-skin", "texture", "acne"],
+    areas: ["face"],
+    benefits: [
+      "Deeply cleanses and hydrates",
+      "Gentle exfoliation with no downtime",
+      "Improves radiance and pore appearance",
+    ],
+    fullDescription: `Experience healthy, radiant skin with our HydroDerm Glow Facial, an advanced, non-invasive treatment that deeply cleanses, gently exfoliates, hydrates, and replenishes the skin in one relaxing session.
+
+Using a specialized hydrodermabrasion system, this treatment lifts away dead skin cells, excess oil, and surface impurities while continuously bathing the skin with hydrating, skin-loving solutions. The result is skin that feels refreshed, smoother, softer, and visibly more radiant—without discomfort or downtime.
+
+Whether you're preparing for a special occasion or investing in your long-term skin health, the HydroDerm Glow Facial delivers immediate freshness, lasting hydration, and a naturally luminous complexion.
+
+No downtime. Just clean, hydrated, healthy-looking skin that glows.`,
+    detailedBenefits: [
+      "Deeply cleanses the skin and pores",
+      "Gently exfoliates dull, dead skin cells",
+      "Removes excess oil and surface impurities",
+      "Replenishes essential hydration",
+      "Leaves the skin softer, smoother, and more supple",
+      "Improves the appearance of dull, tired-looking skin",
+      "Helps refine the look of enlarged pores",
+      "Supports a brighter, healthier-looking complexion",
+      "Enhances the absorption of professional skincare products",
+      "Suitable for all skin types, including sensitive skin",
+    ],
+    process: [
+      {
+        step: 1,
+        title: "Personalized Skin Analysis",
+        description:
+          "Your treatment begins with an assessment of your skin's current condition and concerns.",
+      },
+      {
+        step: 2,
+        title: "Double Cleanse",
+        description:
+          "Thoroughly removes makeup, sunscreen, oil, and impurities to prepare the skin.",
+      },
+      {
+        step: 3,
+        title: "HydroDerm Deep Cleansing & Gentle Exfoliation",
+        description:
+          "A specialized hydrodermabrasion treatment lifts away dead skin cells, excess oil, and pore buildup while refreshing and hydrating the skin.",
+      },
+      {
+        step: 4,
+        title: "Targeted Extractions (if needed)",
+        description:
+          "Gentle removal of blackheads and congestion to promote clearer-looking skin.",
+      },
+      {
+        step: 5,
+        title: "Customized Treatment Mask",
+        description:
+          "Selected specifically for your skin's needs, whether hydration, brightening, calming, or purification.",
+      },
+      {
+        step: 6,
+        title: "Professional Serums",
+        description:
+          "Concentrated active ingredients are applied to address concerns such as dehydration, uneven skin tone, dullness, or signs of aging.",
+      },
+      {
+        step: 7,
+        title: "Moisturizer",
+        description:
+          "Locks in hydration and supports the skin's natural barrier.",
+      },
+      {
+        step: 8,
+        title: "Broad-Spectrum SPF",
+        description:
+          "Protects your freshly treated skin from UV damage and helps maintain your results (daytime treatments).",
+      },
+    ],
+    faqs: [
+      {
+        question: "What is hydrodermabrasion?",
+        answer:
+          "Hydrodermabrasion is an advanced skin treatment that combines gentle exfoliation with simultaneous hydration, using a specialized system to lift away dead skin cells and impurities while infusing the skin with nourishing solutions.",
+      },
+      {
+        question: "Is this treatment suitable for sensitive skin?",
+        answer:
+          "Yes! The HydroDerm Glow Facial is gentle enough for all skin types, including sensitive skin. There is no discomfort and no downtime.",
+      },
+      {
+        question: "Is there any downtime?",
+        answer:
+          "No downtime at all. You can return to your normal activities immediately with clean, refreshed, glowing skin.",
+      },
+      {
+        question: "How often should I get this treatment?",
+        answer:
+          "For best results and ongoing skin maintenance, we recommend this treatment every 4–6 weeks.",
+      },
+    ],
+    aftercare:
+      "Keep skin hydrated and apply SPF daily. Avoid harsh exfoliants for 48 hours after treatment.",
+    ingredients: [
+      "Hydrating infusion solutions",
+      "Customized treatment mask",
+      "Professional serums",
+      "Moisturizer",
+      "Broad-spectrum SPF",
+    ],
+    testimonials: [],
+  },
+  {
     slug: "chemical-peels",
     title: "Brightening Peel",
     icon: Sun,
