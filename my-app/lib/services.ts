@@ -468,14 +468,14 @@ Perfect before special events or anytime your skin needs a noticeable, radiant b
     testimonials: [],
   },
   {
-    slug: "hydroderm-glow-facial",
+    slug: "hydraderm-glow-facial",
     bookingSlug: "hydroderm-glow-facial-to-reserve-appointment-50-e-transfer-deposit-to-youthfulglowstudio-gmail.com",
-    title: "HydroDerm Glow Facial",
+    title: "HydraDerm Glow Facial",
     icon: Droplets,
     short: "Advanced hydrodermabrasion for deeply cleansed, hydrated, radiant skin.",
     description:
       "An advanced, non-invasive treatment that deeply cleanses, gently exfoliates, hydrates, and replenishes the skin in one relaxing session — using a specialized hydrodermabrasion system.",
-    image: "/images/HydroDermGlowFacial.jpeg",
+    image: "/images/HydraDermGlowFacial.jpeg",
     price: "Starting @ $150",
     duration: "60 minutes",
     bestFor:
@@ -493,11 +493,11 @@ Perfect before special events or anytime your skin needs a noticeable, radiant b
       "Gentle exfoliation with no downtime",
       "Improves radiance and pore appearance",
     ],
-    fullDescription: `Experience healthy, radiant skin with our HydroDerm Glow Facial, an advanced, non-invasive treatment that deeply cleanses, gently exfoliates, hydrates, and replenishes the skin in one relaxing session.
+    fullDescription: `Experience healthy, radiant skin with our HydraDerm Glow Facial, an advanced, non-invasive treatment that deeply cleanses, gently exfoliates, hydrates, and replenishes the skin in one relaxing session.
 
 Using a specialized hydrodermabrasion system, this treatment lifts away dead skin cells, excess oil, and surface impurities while continuously bathing the skin with hydrating, skin-loving solutions. The result is skin that feels refreshed, smoother, softer, and visibly more radiant—without discomfort or downtime.
 
-Whether you're preparing for a special occasion or investing in your long-term skin health, the HydroDerm Glow Facial delivers immediate freshness, lasting hydration, and a naturally luminous complexion.
+Whether you're preparing for a special occasion or investing in your long-term skin health, the HydraDerm Glow Facial delivers immediate freshness, lasting hydration, and a naturally luminous complexion.
 
 No downtime. Just clean, hydrated, healthy-looking skin that glows.`,
     detailedBenefits: [
@@ -527,7 +527,7 @@ No downtime. Just clean, hydrated, healthy-looking skin that glows.`,
       },
       {
         step: 3,
-        title: "HydroDerm Deep Cleansing & Gentle Exfoliation",
+        title: "HydraDerm Deep Cleansing & Gentle Exfoliation",
         description:
           "A specialized hydrodermabrasion treatment lifts away dead skin cells, excess oil, and pore buildup while refreshing and hydrating the skin.",
       },
@@ -571,7 +571,7 @@ No downtime. Just clean, hydrated, healthy-looking skin that glows.`,
       {
         question: "Is this treatment suitable for sensitive skin?",
         answer:
-          "Yes! The HydroDerm Glow Facial is gentle enough for all skin types, including sensitive skin. There is no discomfort and no downtime.",
+          "Yes! The HydraDerm Glow Facial is gentle enough for all skin types, including sensitive skin. There is no discomfort and no downtime.",
       },
       {
         question: "Is there any downtime?",
