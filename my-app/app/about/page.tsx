@@ -62,7 +62,7 @@ export default function AboutPage() {
                   At Youthful Glow Studio, skincare is more than a routine it's
                   an act of self-care, confidence, and connection. Founded by{" "}
                   <strong className="text-[#112250]">Marcia Edmondson</strong>,
-                  a double-certified medical skincare esthetician, the studio
+                  a double-certified professional esthetician, the studio
                   was created from a genuine love for working with people and
                   helping them feel confident in their skin.
                 </p>
@@ -130,7 +130,7 @@ export default function AboutPage() {
                 Double-Certified Excellence
               </h3>
               <p className="text-[#3C507D] font-medium leading-relaxed">
-                Medical skincare esthetician with extensive clinical training
+                Certified professional esthetician with extensive clinical training
                 and expertise in advanced, results-focused treatments.
               </p>
             </div>

@@ -33,7 +33,7 @@ export default function Footer() {
               </h3>
             </div>
             <p className="text-[#D9CBC2] text-sm mb-4">
-              Certified Medical Skincare Esthetician <br />
+              Certified Professional Esthetician <br />
               Mississauga, ON
             </p>
             <p className="text-[#D9CBC2]/80 leading-relaxed italic">
