@@ -22,7 +22,7 @@ export const SERVICES = [
     description:
       "A personalized facial tailored to your skin needs. Includes double cleanse, exfoliation, steam, extractions (if needed), facial massage, mask, serum, moisturizer, and SPF.",
     image: "/images/Made_for_You_Facial.webp",
-    price: "$110",
+    price: "$99",
     packagePrice: "Package of 6 – $570 (Save $90)",
     duration: "60 minutes",
     bestFor:
@@ -125,7 +125,7 @@ export const SERVICES = [
     description:
       "Manual exfoliation using a sterile blade to remove dead skin and peach fuzz. Includes full facial with a mask, serum, and SPF.",
     image: "/images/dermaplaning.webp",
-    price: "$110",
+    price: "$99",
     duration: "60 minutes",
     bestFor:
       "Anyone looking for ultra-smooth, glowing skin — especially before an event or makeup application.",
@@ -205,10 +205,10 @@ export const SERVICES = [
     description:
       "A natural mechanical resurfacing peel using marine algae crystals. Lifts pigmentation, smooths texture, reduces acne, stretch marks, and improves overall skin tone with minimal downtime.",
     image: "/images/Zena_Algae_Peel.webp",
-    price: "$200",
+    price: "$180",
     duration: "60 minutes",
     areaPricing: [
-      { area: "Face", price: "$200" },
+      { area: "Face", price: "$180" },
       { area: "Arms / Belly / Leg", price: "$250" },
       { area: "Back", price: "$280" },
       { area: "Butt", price: "$280" },
@@ -291,7 +291,7 @@ export const SERVICES = [
     description:
       "A gentle yet effective exfoliation using a diamond-tipped wand to remove dead skin cells, followed by hydrating serums, mask, moisturizer, and SPF.",
     image: "/images/Microdermabrasion.webp",
-    price: "$110",
+    price: "$99",
     packagePrice: "Package of 6 – $600 (Save $120)",
     duration: "60 minutes",
     bestFor:
@@ -606,8 +606,8 @@ No downtime. Just clean, hydrated, healthy-looking skin that glows.`,
       "Collagen Induction Therapy (CIT) Microneedling that stimulates collagen for younger, healthier-looking skin.",
     description:
       "A minimally invasive skin rejuvenation treatment that uses fine, sterile needles to trigger your body's natural healing process and boost collagen production.",
-    image: "/images/Microneedling.jpg",
-    price: "$220",
+    image: "/images/Microneedling_Renew_Rebuild_Glow.jpg",
+    price: "$199",
     duration: "90 minutes",
     bestFor:
       "Fine lines and wrinkles, acne scars, enlarged pores, uneven skin tone and texture, and hyperpigmentation.",
@@ -707,7 +707,7 @@ Downtime is minimal, and results build with each session. Typically 3 to 6 treat
     description:
       "A professional-grade brightening peel with 30% lactic acid. Ideal for hyperpigmentation and uneven skin tone, leaving your skin with a healthy, radiant glow.",
     image: "/images/Lactic_Acid_Brightening.webp",
-    price: "$110",
+    price: "$99",
     duration: "60 minutes",
     bestFor:
       "Clients with hyperpigmentation, uneven skin tone, or signs of aging.",
@@ -1114,7 +1114,7 @@ Nano Glow Infusion is completely comfortable, requires no downtime, and is suita
     description:
       "Experience a true breath of fresh air for your skin with our Oxygen Glow Infusion Facial—a results-driven treatment designed to deeply hydrate, revitalize, and restore your natural radiance. This advanced delivery system uses pressurized oxygen combined with bio-available nano-emulsion technology to infuse customized infusion serum(s) into the skin, enhancing absorption and overall effectiveness.",
     image: "/images/images.jpeg",
-    price: "$150",
+    price: "$140",
     duration: "90 minutes",
     bestFor:
       "Dehydrated skin, fine lines, dull complexion, and anyone looking for a quick, effective glow before an event.",
