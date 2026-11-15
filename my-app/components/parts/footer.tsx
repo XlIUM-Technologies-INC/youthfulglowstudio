@@ -124,7 +124,7 @@ export default function Footer() {
                 Monday – Friday: 10:00 AM – 7:00 PM <br />
                 Saturday: 10:00 AM – 6:00 PM <br />
                 Sunday: Closed <br />
-                <span className="italic">By Appointment Only</span>
+                
               </li>
             </ul>
           </div>
