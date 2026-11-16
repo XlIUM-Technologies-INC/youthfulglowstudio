@@ -477,7 +477,7 @@ Perfect before special events or anytime your skin needs a noticeable, radiant b
     description:
       "An advanced, non-invasive treatment that deeply cleanses, gently exfoliates, hydrates, and replenishes the skin in one relaxing session — using a specialized HydraDermabrasion system.",
     image: "/images/HydraDermGlowFacial.jpeg",
-    price: "Starting at $150",
+    price: "$150",
     duration: "60 minutes",
     bestFor:
       "All skin types, including sensitive — ideal for dehydrated, dull, congested, or oily skin seeking regular maintenance and a healthy glow.",
@@ -607,7 +607,7 @@ No downtime. Just clean, hydrated, healthy-looking skin that glows.`,
     description:
       "A minimally invasive skin rejuvenation treatment that uses fine, sterile needles to trigger your body's natural healing process and boost collagen production.",
     image: "/images/Microneedling_Renew_Rebuild_Glow.jpg",
-    price: "$199",
+    price: "$250",
     duration: "90 minutes",
     bestFor:
       "Fine lines and wrinkles, acne scars, enlarged pores, uneven skin tone and texture, and hyperpigmentation.",
