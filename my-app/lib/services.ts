@@ -9,6 +9,7 @@ import {
   Wand2,
   Zap,
   Wind,
+  PenTool,
 } from "lucide-react";
 
 export const SERVICES = [
@@ -21,7 +22,7 @@ export const SERVICES = [
     description:
       "A personalized facial tailored to your skin needs. Includes double cleanse, exfoliation, steam, extractions (if needed), facial massage, mask, serum, moisturizer, and SPF.",
     image: "/images/Made_for_You_Facial.webp",
-    price: "$110",
+    price: "$99",
     packagePrice: "Package of 6 – $570 (Save $90)",
     duration: "60 minutes",
     bestFor:
@@ -124,7 +125,7 @@ export const SERVICES = [
     description:
       "Manual exfoliation using a sterile blade to remove dead skin and peach fuzz. Includes full facial with a mask, serum, and SPF.",
     image: "/images/dermaplaning.webp",
-    price: "$110",
+    price: "$99",
     duration: "60 minutes",
     bestFor:
       "Anyone looking for ultra-smooth, glowing skin — especially before an event or makeup application.",
@@ -204,10 +205,10 @@ export const SERVICES = [
     description:
       "A natural mechanical resurfacing peel using marine algae crystals. Lifts pigmentation, smooths texture, reduces acne, stretch marks, and improves overall skin tone with minimal downtime.",
     image: "/images/Zena_Algae_Peel.webp",
-    price: "$200",
+    price: "$180",
     duration: "60 minutes",
     areaPricing: [
-      { area: "Face", price: "$200" },
+      { area: "Face", price: "$180" },
       { area: "Arms / Belly / Leg", price: "$250" },
       { area: "Back", price: "$280" },
       { area: "Butt", price: "$280" },
@@ -290,7 +291,7 @@ export const SERVICES = [
     description:
       "A gentle yet effective exfoliation using a diamond-tipped wand to remove dead skin cells, followed by hydrating serums, mask, moisturizer, and SPF.",
     image: "/images/Microdermabrasion.webp",
-    price: "$110",
+    price: "$99",
     packagePrice: "Package of 6 – $600 (Save $120)",
     duration: "60 minutes",
     bestFor:
@@ -472,11 +473,11 @@ Perfect before special events or anytime your skin needs a noticeable, radiant b
     bookingSlug: "hydroderm-glow-facial-to-reserve-appointment-50-e-transfer-deposit-to-youthfulglowstudio-gmail.com",
     title: "HydraDerm Glow Facial",
     icon: Droplets,
-    short: "Advanced hydrodermabrasion for deeply cleansed, hydrated, radiant skin.",
+    short: "Advanced HydraDermabrasion for deeply cleansed, hydrated, radiant skin.",
     description:
-      "An advanced, non-invasive treatment that deeply cleanses, gently exfoliates, hydrates, and replenishes the skin in one relaxing session — using a specialized hydrodermabrasion system.",
+      "An advanced, non-invasive treatment that deeply cleanses, gently exfoliates, hydrates, and replenishes the skin in one relaxing session — using a specialized HydraDermabrasion system.",
     image: "/images/HydraDermGlowFacial.jpeg",
-    price: "Starting @ $150",
+    price: "$150",
     duration: "60 minutes",
     bestFor:
       "All skin types, including sensitive — ideal for dehydrated, dull, congested, or oily skin seeking regular maintenance and a healthy glow.",
@@ -495,7 +496,7 @@ Perfect before special events or anytime your skin needs a noticeable, radiant b
     ],
     fullDescription: `Experience healthy, radiant skin with our HydraDerm Glow Facial, an advanced, non-invasive treatment that deeply cleanses, gently exfoliates, hydrates, and replenishes the skin in one relaxing session.
 
-Using a specialized hydrodermabrasion system, this treatment lifts away dead skin cells, excess oil, and surface impurities while continuously bathing the skin with hydrating, skin-loving solutions. The result is skin that feels refreshed, smoother, softer, and visibly more radiant—without discomfort or downtime.
+Using a specialized HydraDermabrasion system, this treatment lifts away dead skin cells, excess oil, and surface impurities while continuously bathing the skin with hydrating, skin-loving solutions. The result is skin that feels refreshed, smoother, softer, and visibly more radiant—without discomfort or downtime.
 
 Whether you're preparing for a special occasion or investing in your long-term skin health, the HydraDerm Glow Facial delivers immediate freshness, lasting hydration, and a naturally luminous complexion.
 
@@ -529,7 +530,7 @@ No downtime. Just clean, hydrated, healthy-looking skin that glows.`,
         step: 3,
         title: "HydraDerm Deep Cleansing & Gentle Exfoliation",
         description:
-          "A specialized hydrodermabrasion treatment lifts away dead skin cells, excess oil, and pore buildup while refreshing and hydrating the skin.",
+          "A specialized HydraDermabrasion treatment lifts away dead skin cells, excess oil, and pore buildup while refreshing and hydrating the skin.",
       },
       {
         step: 4,
@@ -564,9 +565,9 @@ No downtime. Just clean, hydrated, healthy-looking skin that glows.`,
     ],
     faqs: [
       {
-        question: "What is hydrodermabrasion?",
+        question: "What is HydraDermabrasion?",
         answer:
-          "Hydrodermabrasion is an advanced skin treatment that combines gentle exfoliation with simultaneous hydration, using a specialized system to lift away dead skin cells and impurities while infusing the skin with nourishing solutions.",
+          "HydraDermabrasion is an advanced skin treatment that combines gentle exfoliation with simultaneous hydration, using a specialized system to lift away dead skin cells and impurities while infusing the skin with nourishing solutions.",
       },
       {
         question: "Is this treatment suitable for sensitive skin?",
@@ -596,6 +597,109 @@ No downtime. Just clean, hydrated, healthy-looking skin that glows.`,
     testimonials: [],
   },
   {
+    slug: "microneedling",
+    bookingSlug:
+      "🪡-collagen-induction-therapy-microneedling-l-to-reserve-appointment-50-e-transfer-deposit-to-youthfulglowstudio-gmail.com",
+    title: "Microneedling",
+    icon: PenTool,
+    short:
+      "Collagen Induction Therapy (CIT) Microneedling that stimulates collagen for younger, healthier-looking skin.",
+    description:
+      "A minimally invasive skin rejuvenation treatment that uses fine, sterile needles to trigger your body's natural healing process and boost collagen production.",
+    image: "/images/Microneedling_Renew_Rebuild_Glow.jpg",
+    price: "$250",
+    duration: "90 minutes",
+    bestFor:
+      "Fine lines and wrinkles, acne scars, enlarged pores, uneven skin tone and texture, and hyperpigmentation.",
+    whyLoveIt: [
+      "Boosts natural collagen production",
+      "Improves skin firmness and elasticity",
+      "Helps treat wrinkles, fine lines, large pores, acne scars and pigmentation",
+      "Enhances absorption of skincare products",
+    ],
+    concerns: ["aging", "texture", "acne", "pigmentation"],
+    areas: ["face"],
+    benefits: [
+      "Stimulates collagen & elastin",
+      "Improves skin texture & tone",
+      "Reduces fine lines & wrinkles",
+      "Minimizes pores & scars",
+    ],
+    fullDescription: `Renew. Rebuild. Glow. Collagen Induction Therapy (CIT) Microneedling is a minimally invasive skin rejuvenation treatment that uses fine, sterile needles to create controlled micro-injuries in the skin, triggering your body's natural healing process and boosting collagen and elastin production.
+
+As your skin repairs itself, it becomes firmer, smoother, and more even in tone and texture. Microneedling helps reduce fine lines and wrinkles, minimize the appearance of pores and acne scars, fade hyperpigmentation, and enhance the absorption of your skincare products—revealing a healthier, more radiant glow.
+
+Downtime is minimal, and results build with each session. Typically 3 to 6 treatments are recommended for the best results.`,
+    detailedBenefits: [
+      "Firmer, smoother, younger-looking skin",
+      "Improved skin tone and texture",
+      "Reduced hyperpigmentation and acne scars",
+      "Reduces fine lines and wrinkles",
+      "Minimizes the appearance of pores and scars",
+      "Boosts natural collagen and elastin production",
+      "Improves skin firmness and elasticity",
+      "Enhances absorption of skincare products",
+      "Healthier, radiant glow",
+    ],
+    process: [
+      {
+        step: 1,
+        title: "Cleansing Your Skin",
+        description:
+          "Your skin is thoroughly cleansed to remove makeup, oil, and impurities so the treatment area is clean and prepared.",
+      },
+      {
+        step: 2,
+        title: "Numbing Cream",
+        description:
+          "A topical numbing cream is applied and given time to take effect, keeping you comfortable throughout the treatment.",
+      },
+      {
+        step: 3,
+        title: "Microneedling Treatment",
+        description:
+          "Using a sterile microneedling device, fine needles create controlled micro-channels in the skin, stimulating collagen and elastin production (Collagen Induction Therapy).",
+      },
+      {
+        step: 4,
+        title: "Soothing Serum & Care",
+        description:
+          "Calming, hydrating serums are applied to soothe the skin and support healing, followed by SPF and personalized aftercare guidance.",
+      },
+    ],
+    faqs: [
+      {
+        question: "What is Collagen Induction Therapy (CIT) Microneedling?",
+        answer:
+          "Microneedling, also known as Collagen Induction Therapy (CIT), is a minimally invasive skin rejuvenation treatment that uses fine, sterile needles to create micro-injuries in the skin, triggering your body's natural healing process and boosting collagen production.",
+      },
+      {
+        question: "Is it painful?",
+        answer:
+          "Most clients feel only mild discomfort, often described as a light prickling sensation. A numbing cream is applied before the treatment to keep you comfortable.",
+      },
+      {
+        question: "How many treatments do I need?",
+        answer:
+          "Typically 3 to 6 treatments are recommended for best results.",
+      },
+      {
+        question: "Is there downtime?",
+        answer:
+          "Minimal downtime. You may have slight redness similar to a mild sunburn, which usually subsides within 24–48 hours.",
+      },
+    ],
+    aftercare:
+      "Keep the skin clean and hydrated, avoid direct sun exposure, and apply SPF daily. Skip makeup, active ingredients (retinol, acids), and strenuous exercise for 24–48 hours while any redness subsides.",
+    ingredients: [
+      "Topical numbing cream",
+      "Sterile microneedling cartridge",
+      "Soothing & hydrating serums",
+      "Broad-spectrum SPF",
+    ],
+    testimonials: [],
+  },
+  {
     slug: "chemical-peels",
     title: "Brightening Peel",
     icon: Sun,
@@ -603,7 +707,7 @@ No downtime. Just clean, hydrated, healthy-looking skin that glows.`,
     description:
       "A professional-grade brightening peel with 30% lactic acid. Ideal for hyperpigmentation and uneven skin tone, leaving your skin with a healthy, radiant glow.",
     image: "/images/Lactic_Acid_Brightening.webp",
-    price: "$110",
+    price: "$99",
     duration: "60 minutes",
     bestFor:
       "Clients with hyperpigmentation, uneven skin tone, or signs of aging.",
@@ -1010,7 +1114,7 @@ Nano Glow Infusion is completely comfortable, requires no downtime, and is suita
     description:
       "Experience a true breath of fresh air for your skin with our Oxygen Glow Infusion Facial—a results-driven treatment designed to deeply hydrate, revitalize, and restore your natural radiance. This advanced delivery system uses pressurized oxygen combined with bio-available nano-emulsion technology to infuse customized infusion serum(s) into the skin, enhancing absorption and overall effectiveness.",
     image: "/images/images.jpeg",
-    price: "$150",
+    price: "$140",
     duration: "90 minutes",
     bestFor:
       "Dehydrated skin, fine lines, dull complexion, and anyone looking for a quick, effective glow before an event.",

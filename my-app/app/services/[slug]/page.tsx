@@ -92,7 +92,9 @@ export default function ServicePage({
                 <div className="flex items-center gap-2">
                   <DollarSign className="w-5 h-5 text-[#E0C58F]" />
                   <span className="font-bold text-[#F5F0E9]">
-                    Starting at {service.price}
+                    {/^starting/i.test(service.price)
+                      ? service.price
+                      : `Starting at ${service.price}`}
                   </span>
                 </div>
               </div>

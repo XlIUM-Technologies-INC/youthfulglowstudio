@@ -97,7 +97,7 @@ export default function AboutSection() {
               {[
                 {
                   title: "Years of Expert Care",
-                  desc: "Certified knowledge in advanced medical esthetics.",
+                  desc: "Certified knowledge in advanced esthetics.",
                 },
                 {
                   title: "Commitment to Results",
